@@ -1,0 +1,28 @@
+---
+choices:
+  - id: success
+    label: "Yes"
+    summary: Passing the buffer size to `serializeJson()` fixed the issue
+    next: done
+  - id: failure
+    label: "No"
+    summary: Passing the buffer size to `serializeJson()` didn't fix the issue
+    next: deadend
+---
+
+This error occurs when you pass a `char*` to [`serializeJson()`]({% link v6/api/json/serializejson.md %}) but forget to pass the third argument.
+For example:
+
+```c++
+serializeJson(doc, ptr);  // request for member 'write' in ..., which is of non-class type 'char*' 
+```
+
+To fix this error, you must pass the size of the destination buffer as the third argument, like so:
+
+```c++
+serializeJson(doc, ptr, size);  // OK
+```
+
+In the examples, you may have seen that I didn't use the size argument; that's because the second argument was not a `char*` but a `char[N]`, and [`serializeJson()`]({% link v6/api/json/serializejson.md %}) was able to infer the value of `N` from the type.
+
+Did this solve your issue?

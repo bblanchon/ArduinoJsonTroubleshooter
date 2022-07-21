@@ -1,0 +1,27 @@
+---
+choices:
+  - id: success
+    label: "Yes"
+    summary: Replacing `strcmp()` with `==` solves the issue
+    next: done
+  - id: failure
+    label: "No"
+    summary: Replacing `strcmp()` with `==` doesn't solve the issue
+    next: deadend
+---
+
+As per the standard, the behavior of {% include links/c/strcmp %} is undefined if one of the two arguments is null.
+
+That's not a problem for you because you don't need to call {% include links/c/strcmp %}. Indeed, [`JsonVariant`]({% link v6/api/jsonvariant/index.md %}) supports all comparisons operators (`==`, `<`, `>`, `<=`, `>=`), and these operators handle null values correctly.
+
+Please replace calls to {% include links/c/strcmp %} with `==`, like so:
+
+```c++
+// replace this:
+if (strcmp(doc["event"], "wakeup")) ...
+
+// ...with this:
+if (doc["event"] == "wakeup") ...
+```
+
+Did this solve your issue?

@@ -1,0 +1,45 @@
+---
+choices:
+  - id: success
+    label: "Yes"
+    summary: Removing CRLF fixes the issue
+    next: done
+  - id: failure
+    label: "No"
+    summary: Removing CRLF doesn't fix the issue
+    next: deadend
+---
+
+[`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) also returns [`EmptyInput`]({% link v6/api/misc/deserializationerror.md %}#emptyinput) when the input contains only spaces. 
+
+For example, this can happen when you call [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) repeatedly and there are spaces (or line breaks) between the documents. Suppose you use the following program to parse JSON input from the serial port:
+
+```c++
+void loop() {
+  // wait from an incomming message
+  while (Serial.available() == 0)
+    delay(100);
+    
+  StaticJsonDocument<1024> doc;
+  DeserializationError err = deserializeJson(doc, Serial);
+  
+  ...
+}
+```
+
+If you use the default settings of the Arduino Serial Monitor, `err` will contains [`Ok`]({% link v6/api/misc/deserializationerror.md %}#ok) and then [`EmptyInput`]({% link v6/api/misc/deserializationerror.md %}#emptyinput) each time you press "Send".
+
+Indeed, by default the Arduino Serial Monitor appends [CRLF](https://fr.wikipedia.org/wiki/Carriage_Return_Line_Feed) at the end of the message, so when you enter `{"hello":"world"}` in the input box, what is really sent is `{"hello":"world"}\r\n`.
+Since [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) stops reading immediately at the end of the object, the `\r\n` remains in the serial buffer.
+Therefore, {% include links/arduino/serial/available %} returns `2` and the program calls [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) again.
+[`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) reads `\r\n`, which are just white spaces for him, so it continues reading until a timeout occurs (1s by default), and it finally returns [`EmptyInput`]({% link v6/api/misc/deserializationerror.md %}#emptyinput).
+
+You can fix this problem by changing the configuration of the Serial Monitor to "No line ending".
+If you cannot remove the CR+LF at the end of the message, you must add a flush loop after `deserializeJson(doc, Serial)`, like so:
+
+```c++
+while (isspace(Serial.peek())
+  Serial.read();
+```
+
+Did this solve your issue?
