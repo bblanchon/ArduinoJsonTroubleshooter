@@ -36,7 +36,7 @@ void setup() {
 
 This is a simplified example; in a real project, things would be more tangled. For example, the variable could be in a `struct` or a class `class`, and the program could use the string much later.
 
-To fix this program, you must make a copy of the string and not simply store the pointer. For example, you can use a {% include links/arduino/string/class %}, like so:
+To fix this program, you must make a copy of the string and not simply store the pointer. For example, you can use a [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/), like so:
 
 ```c++
 String username;
@@ -56,6 +56,6 @@ void setup() {
 }
 ```
 
-Alternatively, you can use a `char[]` and {% include links/c/strcpy %}; I invite you to check the [JsonConfigFile.ino](/v6/example/config/) for the details.
+Alternatively, you can use a `char[]` and [`strcpy()`](https://en.cppreference.com/w/c/string/byte/strcpy); I invite you to check the [JsonConfigFile.ino](/v6/example/config/) for the details.
 
 Did this solve your issue?

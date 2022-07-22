@@ -22,11 +22,11 @@ If you read the JSON from a stream and place it in a buffer, you should instead 
 
 If there are other large buffers, you can move them to the heap by using one of the following:
 
-* {% include links/arduino/string/class %}
-* {% include links/std/vector %}
-* {% include links/std/string %}
-* {% include links/std/unique_ptr %}
+* [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+* [`std::vector`](https://en.cppreference.com/w/cpp/container/vector)
+* [`std::string](https://en.cppreference.com/w/cpp/string/basic_string)
+* [`std::unique_ptr`](https://en.cppreference.com/w/cpp/memory/unique_ptr)
 
-In the last resort, you can use {% include links/c/malloc %} and {% include links/c/free %}.
+In the last resort, you can use [`malloc()`](https://en.cppreference.com/w/c/memory/malloc) and [`free()`](https://en.cppreference.com/w/c/memory/free).
 
 Does your program still crash?

@@ -12,6 +12,6 @@ choices:
 
 I think this output buffer could cause a [stack overflow](https://en.wikipedia.org/wiki/Stack_buffer_overflow).
 
-Please try with a {% include links/arduino/string/class %} instead of a `char[]`.
+Please try with a [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) instead of a `char[]`.
 
 Did this solve your issue?

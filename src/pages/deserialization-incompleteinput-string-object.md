@@ -22,7 +22,7 @@ This can be caused by a lack of RAM: the string object failed to allocate a buff
 This issue may come from [heap fragmentated](https://cpp4arduino.com/2018/11/06/what-is-heap-fragmentation.html).
 Fixing this problem is very hard because it involve fixing the whole program, not just the JSON deserialization.
 
-Yet, you can try to preallocate the buffer by calling {% include links/arduino/string/reserve %} before loading the content of the input, like so:
+Yet, you can try to preallocate the buffer by calling [`String::reserve()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/reserve/) before loading the content of the input, like so:
 
 ```c++
 input.reserve(1024);  // adapt the value to the size of your input

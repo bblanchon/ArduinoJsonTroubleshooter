@@ -10,11 +10,11 @@ choices:
     next: deadend
 ---
 
-As per the standard, the behavior of {% include links/c/strcmp %} is undefined if one of the two arguments is null.
+As per the standard, the behavior of [`strcmp()`](https://en.cppreference.com/w/c/string/byte/strcmp) is undefined if one of the two arguments is null.
 
-That's not a problem for you because you don't need to call {% include links/c/strcmp %}. Indeed, [`JsonVariant`](/v6/api/jsonvariant/) supports all comparisons operators (`==`, `<`, `>`, `<=`, `>=`), and these operators handle null values correctly.
+That's not a problem for you because you don't need to call [`strcmp()`](https://en.cppreference.com/w/c/string/byte/strcmp). Indeed, [`JsonVariant`](/v6/api/jsonvariant/) supports all comparisons operators (`==`, `<`, `>`, `<=`, `>=`), and these operators handle null values correctly.
 
-Please replace calls to {% include links/c/strcmp %} with `==`, like so:
+Please replace calls to [`strcmp()`](https://en.cppreference.com/w/c/string/byte/strcmp) with `==`, like so:
 
 ```c++
 // replace this:

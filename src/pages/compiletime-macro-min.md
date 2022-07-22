@@ -10,7 +10,7 @@ choices:
     next: deadend
 ---
 
-This is a bug in some Arduino cores, most notably the one for {% include links/cpu/samd21 %}.
+This is a bug in some Arduino cores, most notably the one for [SAMD21](https://en.wikipedia.org/wiki/Atmel_ARM-based_processors#SAM_D).
 
 You can workaround this bug by defining both [`ARDUINOJSON_ENABLE_STD_STRING`](/v6/api/config/enable_std_string/) and [`ARDUINOJSON_ENABLE_STD_STREAM`](/v6/api/config/enable_std_stream/) to `0`, like so:
 

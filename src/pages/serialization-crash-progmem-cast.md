@@ -12,7 +12,7 @@ choices:
 
 When you use `PROGMEM` with ArduinoJson (and any other Arduino code, really), you must make sure that the addresses in Flash memory aren't interpreted as addresses in RAM.
 
-Indeed, [Harvard architectures](https://en.wikipedia.org/wiki/Harvard_architecture) (like {% include links/cpu/avr %} and {% include links/cpu/esp8266 %}) use different addresses spaces for RAM and Flash. This means that the same address can refer to either Flash or RAM, so the CPU has no way to tell that some pointers target RAM and some others target Flash. That's why the program needs to treat the two areas separately.
+Indeed, [Harvard architectures](https://en.wikipedia.org/wiki/Harvard_architecture) (like [AVR](https://en.wikipedia.org/wiki/AVR_microcontrollers) and [ESP8266](https://en.wikipedia.org/wiki/ESP8266)) use different addresses spaces for RAM and Flash. This means that the same address can refer to either Flash or RAM, so the CPU has no way to tell that some pointers target RAM and some others target Flash. That's why the program needs to treat the two areas separately.
 
 Getting back to your program, you must make sure that ArduinoJson can clearly identify Flash strings as such. The `PROGMEM` attribute itself isn't sufficient because it doesn't alter the C++ type of the string. That's why ArduinoJson needs you to pass a pointer of type `const __FlashStringHelper*` when you refer to a Flash string.
 

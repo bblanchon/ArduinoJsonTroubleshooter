@@ -17,7 +17,7 @@ To do that, please print the input to the serial port, like so:
 Serial.print(Serial1.readString());
 ```
 
-Note that {% include links/arduino/serial/readstring obj="Serial1" %} will wait for a timeout before returning, so the statement may appear frozen. Be patient.
+Note that [`Serial1.readString()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/) will wait for a timeout before returning, so the statement may appear frozen. Be patient.
 
 Then, copy the response and paste it in a JSON linter, like [jsonlint.com](https://jsonlint.com/).
 

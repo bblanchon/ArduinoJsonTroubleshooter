@@ -30,7 +30,7 @@ String readInput() {
 }
 ```
 
-If you pass {% include links/arduino/string/class %} to [`deserializeJson()`](/v6/api/json/deserializejson/), make sure you don't call `c_str()` in between:
+If you pass [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) to [`deserializeJson()`](/v6/api/json/deserializejson/), make sure you don't call `c_str()` in between:
 
 ```c++
 // 💀 DON'T DO THAT!!!

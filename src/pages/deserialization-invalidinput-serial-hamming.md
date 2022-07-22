@@ -24,8 +24,8 @@ HammingStream<7, 4> eccLinkSerial(linkSerial);
 Now, you can use `eccSerial1` in place of the original `Serial1`; it will automatically encode and decode the information.
 
 As [Hamming(7,4)](https://en.wikipedia.org/wiki/Hamming(7,4)) only transmits 7 bits of data, you can safely downgrade the serial link from 8 to 7 bits.
-You can do this by passing `SERIAL_7N1` as the second argument of {% include links/arduino/serial/begin %}.
-This feature is not supported by {% include links/arduino/softwareserial %}, which is yet another reason to avoid it.
+You can do this by passing `SERIAL_7N1` as the second argument of [`Serial::begin()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/).
+This feature is not supported by [`SoftwareSerial`](https://www.arduino.cc/en/Reference/SoftwareSerial), which is yet another reason to avoid it.
 
 Error-correction codes are very powerful, but they'll never eliminate errors completely. For example, [Hamming(7,4)](https://en.wikipedia.org/wiki/Hamming(7,4)) can only fix a 1-bit error, so if two or more bits are swapped, it will not fix them.
 To get more confidence in the integrity of the received data, the ultimate solution is to add an error detection scheme, like a checksum.

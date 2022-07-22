@@ -10,7 +10,7 @@ choices:
     next: deadend
 ---
 
-On some Arduino core (most notably [AVR core](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/Stream.h)), {% include links/arduino/stream_find %} takes a `char*` instead of a `const char*`. In this case, you'll get a compiler warning, which you can fix by extracting a char array, like so:
+On some Arduino core (most notably [AVR core](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/Stream.h)), [`Stream::find()`](https://www.arduino.cc/reference/en/language/functions/communication/stream/streamfind/) takes a `char*` instead of a `const char*`. In this case, you'll get a compiler warning, which you can fix by extracting a char array, like so:
 
 ```c++
 char endOfHeaders[] = "\r\n\r\n";

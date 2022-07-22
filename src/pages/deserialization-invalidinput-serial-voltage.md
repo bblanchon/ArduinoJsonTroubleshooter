@@ -11,10 +11,10 @@ choices:
 ---
 
 Not all microcontrollers use the same voltage for the serial port.
-Some use 5V logic; others use 3.3V; the table below shows the values for the most common development boards:
+Some use 5V logic; others use 3.3V.
 
-{% include tables/boards_voltage.html %}
+For example, the Arduino UNO uses 5V whereas the ESP8266 uses 3.3V.
 
-If you need to wire two devices with different voltages, you need a [logic-level converter]({% include urls/amz/product asin='B00NAY2BBY' %}).
+If you need to wire two devices with different voltages, you need a [logic-level converter](https://www.amazon.com/dp/B00NAY2BBY?tag=bblanchon0b-20).
 
 Did this solve your issue?

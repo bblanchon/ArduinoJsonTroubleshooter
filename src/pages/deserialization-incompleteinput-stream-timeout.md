@@ -13,7 +13,7 @@ choices:
 
 [`IncompleteInput`](/v6/api/misc/deserializationerror/#incompleteinput) can be caused by a timeout.
 
-Please increase the value of the timeout by calling {% include links/arduino/stream_settimeout %} before calling [`deserializeJson()`](/v6/api/json/deserializejson/). For example:
+Please increase the value of the timeout by calling [`Stream::setTimeout()`](https://www.arduino.cc/reference/en/language/functions/communication/stream/streamsettimeout/) before calling [`deserializeJson()`](/v6/api/json/deserializejson/). For example:
 
 ```c++
 stream.setTimeout(10000);  // 10 seconds

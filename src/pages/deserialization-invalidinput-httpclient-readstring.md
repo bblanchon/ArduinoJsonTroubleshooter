@@ -13,7 +13,7 @@ choices:
 You're calling the wrong function:
 
 * `HTTPClient::getString()` extracts the response's body
-* `HTTPClient::readString()` is inherited from {% include links/arduino/stream %} and reads the complete response
+* `HTTPClient::readString()` is inherited from [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/) and reads the complete response
 
 Unless you have very good reasons, you should call `getString()` not `readString()`.
 

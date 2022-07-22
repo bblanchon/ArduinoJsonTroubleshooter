@@ -10,9 +10,9 @@ choices:
     next: deadend
 ---
 
-This error occurs when you try to assign a [`JsonVariant`](/v6/api/jsonvariant/) to a {% include links/arduino/string/class %}.
+This error occurs when you try to assign a [`JsonVariant`](/v6/api/jsonvariant/) to a [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/).
 
-Indeed, due to the way these two classes are defined, you can *construct* a {% include links/arduino/string/class %} from a [`JsonVariant`](/v6/api/jsonvariant/), but you cannot *assign* a [`JsonVariant`](/v6/api/jsonvariant/) to an existing string.
+Indeed, due to the way these two classes are defined, you can *construct* a [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) from a [`JsonVariant`](/v6/api/jsonvariant/), but you cannot *assign* a [`JsonVariant`](/v6/api/jsonvariant/) to an existing string.
 
 ```
 String name = doc["name"];  // contruction -> works

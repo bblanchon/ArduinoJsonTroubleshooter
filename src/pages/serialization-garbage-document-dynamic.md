@@ -10,4 +10,4 @@ choices:
     next: deadend
 ---
 
-Do you use {% include links/arduino/string/class %} in your program?
+Do you use [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) in your program?

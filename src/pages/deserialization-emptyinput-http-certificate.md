@@ -12,6 +12,6 @@ choices:
 
 With HTTPS, [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) can be due to an error during the validation of the certificate.
 
-Please try to disable certificate validation by calling {% include links/esp8266/wificlientsecure/setinsecure %} before starting the HTTP request.
+Please try to disable certificate validation by calling [`WiFiClientSecure::setInsecure()`](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/bearssl-client-secure-class.html#setinsecure) before starting the HTTP request.
 
 Did this solve your issue?
