@@ -47,7 +47,12 @@
             </div>
           </div>
         </div>
-        <div v-else v-html="step.content" :key="step.hash" :id="step.id"></div>
+        <component
+          v-else
+          :is="step.component"
+          class="troubleshooter-step-content"
+          :id="step.id"
+        />
       </transition>
     </template>
   </div>
