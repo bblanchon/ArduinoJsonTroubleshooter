@@ -10,4 +10,4 @@ choices:
     next: serialization-garbage-serialize
 ---
 
-Do you call [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) before calling [`serializeJson()`]({% link v6/api/json/serializejson.md %})? (with the same [`JsonDocument`]({% link v6/api/jsondocument/index.md %}))
+Do you call [`deserializeJson()`](/v6/api/json/deserializejson/) before calling [`serializeJson()`](/v6/api/json/serializejson/)? (with the same [`JsonDocument`](/v6/api/jsondocument/))

@@ -14,4 +14,4 @@ choices:
     next: deadend
 --- 
 
-What kind of [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) do you use?
+What kind of [`JsonDocument`](/v6/api/jsondocument/) do you use?

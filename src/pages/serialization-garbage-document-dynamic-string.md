@@ -10,7 +10,7 @@ choices:
     next: deadend
 ---
 
-You can insert {% include links/arduino/string/class %} objects in a [`JsonDocument`]({% link v6/api/jsondocument/index.md %}), but make sure you don't store the result of {% include links/arduino/string/c_str %}.
+You can insert {% include links/arduino/string/class %} objects in a [`JsonDocument`](/v6/api/jsondocument/), but make sure you don't store the result of {% include links/arduino/string/c_str %}.
 
 The pointer returned by {% include links/arduino/string/c_str %} is valid only if you don't modify or destroy the string.
 Indeed, this function returns the address of the internal buffer of the {% include links/arduino/string/class %} instance.
@@ -25,7 +25,7 @@ doc["address"] = address.toString().c_str();
 serializeJson(doc, Serial);  // <- likely to produce garbage
 ```
 
-Here, `address.toString()` returns a temporary {% include links/arduino/string/class %} which is destructed after executing the first statement. When [`serializeJson()`]({% link v6/api/json/serializejson.md %}) runs, the pointer stored in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) will be pointing to an invalid location. It may work by accident, but if the memory location is reused by another variable, it will print garbage to the serial port.
+Here, `address.toString()` returns a temporary {% include links/arduino/string/class %} which is destructed after executing the first statement. When [`serializeJson()`](/v6/api/json/serializejson/) runs, the pointer stored in the [`JsonDocument`](/v6/api/jsondocument/) will be pointing to an invalid location. It may work by accident, but if the memory location is reused by another variable, it will print garbage to the serial port.
 
 The solution is to duplicate string instead of saving a pointer.
 Since ArduinoJson automatically duplicates {% include links/arduino/string/class %} instances, all you need to do is  removing the call to {% include links/arduino/string/c_str %}, like so:
@@ -36,6 +36,6 @@ doc["address"] = address.toString(); // <- duplicates
 serializeJson(doc, Serial);
 ```
 
-Now, ArduinoJson sees a {% include links/arduino/string/class %} and knows that it needs to make a copy of the string in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}).
+Now, ArduinoJson sees a {% include links/arduino/string/class %} and knows that it needs to make a copy of the string in the [`JsonDocument`](/v6/api/jsondocument/).
 
 Did this solve your issue?

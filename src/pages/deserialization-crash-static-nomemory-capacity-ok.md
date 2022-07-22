@@ -11,8 +11,8 @@ choices:
 ---
 
 Good news!  
-The memory allocation succeeds; the [`DynamicJsonDocument`]({% link v6/api/dynamicjsondocument/index.md %}) is simply too small, so you need to increase its capacity.
+The memory allocation succeeds; the [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) is simply too small, so you need to increase its capacity.
 
-Use the [ArduinoJson Assistant]({% link v6/assistant/index.html %}) to compute the right capacity for your input.
+Use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your input.
 
 Did this solve your issue?

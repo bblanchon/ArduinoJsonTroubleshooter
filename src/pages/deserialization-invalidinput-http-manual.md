@@ -10,4 +10,4 @@ choices:
     next: deserialization-invalidinput-http-manual-headers
 ---
 
-Before calling [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}), did you skip the HTTP headers?
+Before calling [`deserializeJson()`](/v6/api/json/deserializejson/), did you skip the HTTP headers?

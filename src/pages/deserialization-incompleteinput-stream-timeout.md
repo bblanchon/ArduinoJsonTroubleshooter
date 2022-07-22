@@ -11,9 +11,9 @@ choices:
     
 ---
 
-[`IncompleteInput`]({% link v6/api/misc/deserializationerror.md %}#incompleteinput) can be caused by a timeout.
+[`IncompleteInput`](/v6/api/misc/deserializationerror/#incompleteinput) can be caused by a timeout.
 
-Please increase the value of the timeout by calling {% include links/arduino/stream_settimeout %} before calling [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}). For example:
+Please increase the value of the timeout by calling {% include links/arduino/stream_settimeout %} before calling [`deserializeJson()`](/v6/api/json/deserializejson/). For example:
 
 ```c++
 stream.setTimeout(10000);  // 10 seconds

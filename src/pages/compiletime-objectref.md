@@ -28,7 +28,7 @@ In other words, "cannot assign `JsonObject` to `JsonObject&`".
 The compiler refuses to save a reference to a temporary variable because the reference would inevitably dangle.
 
 
-To fix this issue, you must remove the ampersand (`&`) after [`JsonObject`]({% link v6/api/jsonobject/index.md %}), like so: 
+To fix this issue, you must remove the ampersand (`&`) after [`JsonObject`](/v6/api/jsonobject/), like so: 
 
 ```c++
 JsonObject obj = doc["key"].as<JsonObject>();

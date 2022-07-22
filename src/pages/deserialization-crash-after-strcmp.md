@@ -12,7 +12,7 @@ choices:
 
 As per the standard, the behavior of {% include links/c/strcmp %} is undefined if one of the two arguments is null.
 
-That's not a problem for you because you don't need to call {% include links/c/strcmp %}. Indeed, [`JsonVariant`]({% link v6/api/jsonvariant/index.md %}) supports all comparisons operators (`==`, `<`, `>`, `<=`, `>=`), and these operators handle null values correctly.
+That's not a problem for you because you don't need to call {% include links/c/strcmp %}. Indeed, [`JsonVariant`](/v6/api/jsonvariant/) supports all comparisons operators (`==`, `<`, `>`, `<=`, `>=`), and these operators handle null values correctly.
 
 Please replace calls to {% include links/c/strcmp %} with `==`, like so:
 

@@ -19,7 +19,7 @@ Please print the filter to the serial port, like so:
 serializeJsonPretty(filter, Serial);
 ```
 
-Then, open the [ArduinoJson Assistant]({% link v6/assistant/index.html %}):
+Then, open the [ArduinoJson Assistant](/v6/assistant/):
 
 * in step 1: choose "Deserialize and filter"
 * in step 2:

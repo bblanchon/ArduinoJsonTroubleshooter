@@ -10,7 +10,7 @@ choices:
     next: deadend
 ---
 
-When a program fails to extract the values from a [`JsonDocument`]({% link v6/api/jsondocument/index.md %}), it's often because there is a confusion between arrays and objects.
+When a program fails to extract the values from a [`JsonDocument`](/v6/api/jsondocument/), it's often because there is a confusion between arrays and objects.
 
 For example, a common mistake is to write:
 
@@ -24,6 +24,6 @@ instead of
 const char* temperature = doc["list"][0]["main"]["temp"];
 ```
 
-You can find other examples in [deserializeJson() succeeds but I cannot read any value]({% link v6/issues/cannot-get-values.md %}), but the simplest solution is to use the [ArduinoJson Assistant]({% link v6/assistant/index.html %}) because the last step shows how to extract the values.
+You can find other examples in [deserializeJson() succeeds but I cannot read any value](/v6/issues/cannot-get-values/), but the simplest solution is to use the [ArduinoJson Assistant](/v6/assistant/) because the last step shows how to extract the values.
 
 Did this solve your issue?

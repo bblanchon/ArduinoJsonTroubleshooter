@@ -18,7 +18,7 @@ choices:
     next: deserialization-crash-after-pointer
 ---
 
-Most of the time, when a program crashes after [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}), it's because it dereferences a null pointer returned by the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}).
+Most of the time, when a program crashes after [`deserializeJson()`](/v6/api/json/deserializejson/), it's because it dereferences a null pointer returned by the [`JsonDocument`](/v6/api/jsondocument/).
 
 Take the following statement for example:
 
@@ -28,6 +28,6 @@ Take the following statement for example:
 myFunction(doc["value"]);
 ```
 
-If the key `"value"` isn't in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}), the function `myFunction()` will receive a null pointer, which can cause a crash if the function isn't prepared for this.
+If the key `"value"` isn't in the [`JsonDocument`](/v6/api/jsondocument/), the function `myFunction()` will receive a null pointer, which can cause a crash if the function isn't prepared for this.
 
 Do you see something like this in your code?

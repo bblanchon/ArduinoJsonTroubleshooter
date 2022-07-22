@@ -30,6 +30,6 @@ Yes. This is the expected result.
 
 Now that this question is cleared, let's move on with the diagnostic.
 
-I need you to edit your program to replace [`serializeMsgPack()`]({% link v6/api/msgpack/serializemsgpack.md %}) with [`serializeJson()`]({% link v6/api/json/serializejson.md %}).
+I need you to edit your program to replace [`serializeMsgPack()`](/v6/api/msgpack/serializemsgpack/) with [`serializeJson()`](/v6/api/json/serializejson/).
 
 Do you see the garbage in the JSON output?

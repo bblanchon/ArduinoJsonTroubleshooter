@@ -10,7 +10,7 @@ choices:
     next: serialization-incomplete-nul
 ---
 
-Please print the value of [`JsonDocument::overflowed()`]({% link v6/api/jsondocument/overflowed.md %}), like so:
+Please print the value of [`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/), like so:
 
 ```c++
 Serial.println(doc.overflowed());

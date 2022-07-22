@@ -15,6 +15,6 @@ I recommend that you download {% include links/arduinojson_h version=version %} 
 
 You can choose to keep the name `ArduinoJson-v{{version}}.h` and update the `#include` directive, or you can rename the file to `ArduinoJson.h`; either way is fine, as long as the header is in the same folder as the file that includes it.
 
-Please see [installation instructions]({% link v5/doc/installation.md %}) for details
+Please see [installation instructions](/v5/doc/installation/) for details
 
 Did this solve your issue?

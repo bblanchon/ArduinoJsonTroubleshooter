@@ -10,4 +10,4 @@ choices:
     next: deadend
 ---
 
-Does one of the strings in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) contains a NUL (i.e.,  ASCII code 0, or `\u0000`)?
+Does one of the strings in the [`JsonDocument`](/v6/api/jsondocument/) contains a NUL (i.e.,  ASCII code 0, or `\u0000`)?

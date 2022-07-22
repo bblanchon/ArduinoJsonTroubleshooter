@@ -10,6 +10,6 @@ choices:
     next: serialization-incomplete-noloop
 ---
 
-Please replace the call to [`JsonDocument::clear()`]({% link v6/api/jsondocument/clear.md %}) with [`JsonDocument::garbageCollect()`]({% link v6/api/jsondocument/garbagecollect.md %}).
+Please replace the call to [`JsonDocument::clear()`](/v6/api/jsondocument/clear/) with [`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/).
 
 Did this solve your issue?

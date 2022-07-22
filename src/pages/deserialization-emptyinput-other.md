@@ -12,4 +12,4 @@ choices:
 
 The input is probably starting with a NUL character.
 
-What type of input are you passing to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %})?
+What type of input are you passing to [`deserializeJson()`](/v6/api/json/deserializejson/)?

@@ -18,4 +18,4 @@ choices:
     next: deadend
 ---
 
-What is the type of the second argument passed to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %})?
+What is the type of the second argument passed to [`deserializeJson()`](/v6/api/json/deserializejson/)?

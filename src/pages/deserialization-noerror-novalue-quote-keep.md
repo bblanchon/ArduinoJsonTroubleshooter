@@ -12,7 +12,7 @@ choices:
 
 If you cannot fix the server, you can at least reverse the double serialization (stringification) to get back the original object.
 
-To do this, you must call [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) twice, like so:
+To do this, you must call [`deserializeJson()`](/v6/api/json/deserializejson/) twice, like so:
 
 ```c++
 StaticJsonDocument<512> doc1, doc2;
@@ -33,6 +33,6 @@ DeserilizationError deserializeJsonTwice(JsonDocument& doc, Stream& input) {
 }
 ```
 
-Of course, if you need to use the [filtering feature]({% link _posts/2020-03-22-version-6-15-0.md %}), you must pass `DeserializationOption::Filter` to the second call to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}).
+Of course, if you need to use the [filtering feature](/news/2020/03/22/version-6-15-0/), you must pass `DeserializationOption::Filter` to the second call to [`deserializeJson()`](/v6/api/json/deserializejson/).
 
 Did this solve your issue?

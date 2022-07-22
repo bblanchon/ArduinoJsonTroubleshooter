@@ -14,8 +14,8 @@ choices:
     next: serialization-incomplete-loop-outside-clear
 ---
 
-We can try to clear the content of the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}).
+We can try to clear the content of the [`JsonDocument`](/v6/api/jsondocument/).
 
-Please call [`JsonDocument::clear()`]({% link v6/api/jsondocument/clear.md %}) at the beginning of the loop.
+Please call [`JsonDocument::clear()`](/v6/api/jsondocument/clear/) at the beginning of the loop.
 
 Did this solve your issue?

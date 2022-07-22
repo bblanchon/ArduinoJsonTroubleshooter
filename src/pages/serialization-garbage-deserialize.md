@@ -18,4 +18,4 @@ choices:
     next: serialization-garbage-serialize
 ---
 
-What's the type of the second argument passed to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %})?
+What's the type of the second argument passed to [`deserializeJson()`](/v6/api/json/deserializejson/)?

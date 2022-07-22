@@ -22,7 +22,7 @@ If you try to compile this code, you will get the following error:
 no matching function for call to 'ArduinoJson6194_F1::BasicJsonDocument<ArduinoJson6194_F1::DefaultAllocator>::BasicJsonDocument()'
 ```
 
-These errors occur when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`]({% link v6/api/dynamicjsondocument/index.md %}).
+These errors occur when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/).
 
 To fix them, you must specify the capacity of the memory pool, like so:
 
@@ -30,8 +30,8 @@ To fix them, you must specify the capacity of the memory pool, like so:
 DynamicJsonDocument doc(2048);
 ```
 
-As usual, you can use the [ArduinoJson Assistant]({% link v6/assistant/index.html %}) to compute the right capacity for your project.
+As usual, you can use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your project.
 
-For more information, please read [no matching function for call to 'BasicJsonDocument::BasicJsonDocument()']({% link v6/error/no-matching-function-for-call-to-basicjsondocument-basicjsondocument.md %}).
+For more information, please read [no matching function for call to 'BasicJsonDocument::BasicJsonDocument()'](/v6/error/no-matching-function-for-call-to-basicjsondocument-basicjsondocument/).
 
 Did this solve your issue?

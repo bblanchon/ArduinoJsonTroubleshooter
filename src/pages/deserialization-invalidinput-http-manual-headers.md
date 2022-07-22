@@ -15,7 +15,7 @@ choices:
 ---
 
 Just like the HTTP request, the response contains some headers, followed by an empty line, and then followed by the body.
-The body is the part that contains the JSON document; therefore, before calling [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}), you must skip the headers.
+The body is the part that contains the JSON document; therefore, before calling [`deserializeJson()`](/v6/api/json/deserializejson/), you must skip the headers.
 
 To skip the headers, call {% include links/arduino/stream_find %}, like so:
 
@@ -25,6 +25,6 @@ client.find("\r\n\r\n");
 
 This function consumes the input stream until it finds the empty line (`\r\n\r\n`).
 
-See the example [JsonHttpClient.ino]({% link v6/example/http-client.md %}) for a complete implementation.
+See the example [JsonHttpClient.ino](/v6/example/http-client/) for a complete implementation.
 
 Did this fix your problem?

@@ -10,4 +10,4 @@ choices:
     next: deserialization-invalidinput-string-jsonlint
 ---
 
-Did you call [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) twice with the same input buffer?
+Did you call [`deserializeJson()`](/v6/api/json/deserializejson/) twice with the same input buffer?

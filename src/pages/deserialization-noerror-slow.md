@@ -10,12 +10,12 @@ choices:
     next: deadend
 ---
 
-Indeed, [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) can be pretty slow with unbuffered implementations of {% include links/arduino/stream %} (such as `File` and `WiFiClient`) because it reads characters one by one.
+Indeed, [`deserializeJson()`](/v6/api/json/deserializejson/) can be pretty slow with unbuffered implementations of {% include links/arduino/stream %} (such as `File` and `WiFiClient`) because it reads characters one by one.
 
 Why does it reads bytes one by one?  
 Because it has to stop exactly at the end of the document to support [JSON streaming](https://en.wikipedia.org/wiki/JSON_streaming) and similar techniques.
 
-To speed up the process, we need to insert a buffer between the {% include links/arduino/stream %} and [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}).  The easiest way to do this is to use `ReadBufferingStream` from the [StreamUtils library](https://github.com/bblanchon/ArduinoStreamUtils):
+To speed up the process, we need to insert a buffer between the {% include links/arduino/stream %} and [`deserializeJson()`](/v6/api/json/deserializejson/).  The easiest way to do this is to use `ReadBufferingStream` from the [StreamUtils library](https://github.com/bblanchon/ArduinoStreamUtils):
 
 ```c++
 // replace the following line:

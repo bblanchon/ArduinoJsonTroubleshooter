@@ -34,7 +34,7 @@ choices:
     summary: "The program crashes"
 ---
 
-[`DeserializationError`]({% link v6/api/misc/deserializationerror.md %}) is the return type of [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}). It tells whether the operation succeeded and indicates the cause of the error.
+[`DeserializationError`](/v6/api/misc/deserializationerror/) is the return type of [`deserializeJson()`](/v6/api/json/deserializejson/). It tells whether the operation succeeded and indicates the cause of the error.
 
 Modify your program to show the error code, like so:
 

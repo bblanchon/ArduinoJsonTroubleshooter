@@ -16,12 +16,12 @@ This error occurs when you try to store a pointer of type `const char*` into a v
 char* eventName = doc["event"];
 ```
 
-Indeed, [`JsonVariant`]({% link v6/api/jsonvariant/index.md %}) returns a `const char*`, not a `char*`. You must change the type of the pointer, like so:
+Indeed, [`JsonVariant`](/v6/api/jsonvariant/) returns a `const char*`, not a `char*`. You must change the type of the pointer, like so:
 
 ```c++
 const char* eventName = doc["event"];
 ```
 
-There are other similar situations where this error can occur. For more information, please read [invalid conversion from 'const char*' to 'char*' [-fpermissive]]({% link v6/error/invalid-conversion-from-const-char-to-char.md %}).
+There are other similar situations where this error can occur. For more information, please read [invalid conversion from 'const char*' to 'char*' [-fpermissive]](/v6/error/invalid-conversion-from-const-char-to-char/).
 
 Did this solve your issue?

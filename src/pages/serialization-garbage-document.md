@@ -10,4 +10,4 @@ choices:
     next: serialization-garbage-document-static
 ---
 
-Which kind of [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) do you use?
+Which kind of [`JsonDocument`](/v6/api/jsondocument/) do you use?

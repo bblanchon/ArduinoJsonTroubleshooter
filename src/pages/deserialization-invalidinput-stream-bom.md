@@ -16,11 +16,10 @@ choices:
 
 We must check that the JSON document is not preceded by a  [Byte Order Mark](https://en.wikipedia.org/wiki/Byte_order_mark) (BOM).
 
-To do this, we'll peek at the first byte in the stream and print the value to the serial. Insert the following line before the call to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}):
+To do this, we'll peek at the first byte in the stream and print the value to the serial. Insert the following line before the call to [`deserializeJson()`](/v6/api/json/deserializejson/):
 
 ```c++
 Serial.println(stream.peek());
 ```
 
 What value does it print?
-

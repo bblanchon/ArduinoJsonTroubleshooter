@@ -10,9 +10,9 @@ choices:
     next: deserialization-nomemory-document
 --- 
 
-[`NoMemory`]({% link v6/api/misc/deserializationerror.md %}#nomemory) means that the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) is too small to hold the entire document.
+[`NoMemory`](/v6/api/misc/deserializationerror/#nomemory) means that the [`JsonDocument`](/v6/api/jsondocument/) is too small to hold the entire document.
 
-Please use the [ArduinoJson Assistant]({% link v6/assistant/index.html %}) to compute the right capacity for your document.
-Use the recommended capacity when creating [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) and retry.
+Please use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your document.
+Use the recommended capacity when creating [`JsonDocument`](/v6/api/jsondocument/) and retry.
 
 Did this solve your issue?

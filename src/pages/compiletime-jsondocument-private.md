@@ -10,9 +10,9 @@ choices:
     next: deadend
 ---
 
-[`JsonDocument`]({% link v6/api/jsondocument/index.md %}) doesn't support copying.
+[`JsonDocument`](/v6/api/jsondocument/) doesn't support copying.
 
-If you need to pass a [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) to a function, you can use a reference, like so:
+If you need to pass a [`JsonDocument`](/v6/api/jsondocument/) to a function, you can use a reference, like so:
 
 ```c++
 void myFunction(JsonDocument& doc)
@@ -28,6 +28,6 @@ void myFunction(JsonVariant var)
 void myFunction(JsonVariantConst var)
 ```
 
-If you must make a copy, use either [`DynamicJsonDocument`]({% link v6/api/dynamicjsondocument/index.md %}) or [`StaticJsonDocument`]({% link v6/api/staticjsondocument/index.md %}).
+If you must make a copy, use either [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) or [`StaticJsonDocument`](/v6/api/staticjsondocument/).
 
 Did this solve your issue?

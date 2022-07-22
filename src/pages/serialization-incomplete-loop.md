@@ -14,9 +14,9 @@ choices:
     next: serialization-incomplete-loop-outside
 ---
 
-Calling [`serializeJson()`]({% link v6/api/json/serializejson.md %}) is safe, but you'll run into issues if you modify the same [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) in a loop.
+Calling [`serializeJson()`](/v6/api/json/serializejson/) is safe, but you'll run into issues if you modify the same [`JsonDocument`](/v6/api/jsondocument/) in a loop.
 
-The best workaround is to move the declaration of the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) inside the loop.
+The best workaround is to move the declaration of the [`JsonDocument`](/v6/api/jsondocument/) inside the loop.
 
 For example:
 
@@ -36,6 +36,6 @@ for (int i=0; i<10; i++) {
 }
 ```
 
-Please read [I found a memory leak in the library!]({% link v6/issues/memory-leak.md %}) for an explanation.
+Please read [I found a memory leak in the library!](/v6/issues/memory-leak/) for an explanation.
 
 Did this solve your issue?

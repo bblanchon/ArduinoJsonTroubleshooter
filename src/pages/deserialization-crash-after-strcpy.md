@@ -12,7 +12,7 @@ choices:
 
 As per the standard, the behavior of {% include links/c/strcpy %} (and {% include links/c/strlcpy %}) is undefined if one of the pointers is null.
 
-The simplest solution is to change the default value returned by [`JsonDocument`]({% link v6/api/jsondocument/index.md %}): instead of returning a null pointer when the value is missing, we can ask it to return an empty string (i.e., `""`) or some other replacement (e.g., `"<null>"`). We can do that with [`operator|`]({% link v6/api/jsonvariant/or.md %}).
+The simplest solution is to change the default value returned by [`JsonDocument`](/v6/api/jsondocument/): instead of returning a null pointer when the value is missing, we can ask it to return an empty string (i.e., `""`) or some other replacement (e.g., `"<null>"`). We can do that with [`operator|`](/v6/api/jsonvariant/or/).
 
 Please provide a non-null default for all calls to {% include links/c/strcpy %}, like so:
 

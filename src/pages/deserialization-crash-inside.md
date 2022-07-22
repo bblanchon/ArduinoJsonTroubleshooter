@@ -12,7 +12,7 @@ choices:
 
 Passing a dangling pointer could cause a crash.
 
-If you pass a pointer to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}), make sure that this pointer is still valid. For example, if the pointer is returned by a function, inspect the function to make sure pointer is not refering to a stack variable:
+If you pass a pointer to [`deserializeJson()`](/v6/api/json/deserializejson/), make sure that this pointer is still valid. For example, if the pointer is returned by a function, inspect the function to make sure pointer is not refering to a stack variable:
 
 ```c++
 // 💀 DON'T DO THAT!!!
@@ -30,7 +30,7 @@ String readInput() {
 }
 ```
 
-If you pass {% include links/arduino/string/class %} to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}), make sure you don't call `c_str()` in between:
+If you pass {% include links/arduino/string/class %} to [`deserializeJson()`](/v6/api/json/deserializejson/), make sure you don't call `c_str()` in between:
 
 ```c++
 // 💀 DON'T DO THAT!!!
@@ -40,6 +40,6 @@ const char* input = readInput().c_str();
 String input = readInput();
 ```
 
-Please review your code to make sure you're not passsing a dangling pointer to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}).
+Please review your code to make sure you're not passsing a dangling pointer to [`deserializeJson()`](/v6/api/json/deserializejson/).
 
 Does your program still crash?

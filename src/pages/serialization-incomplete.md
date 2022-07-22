@@ -10,4 +10,4 @@ choices:
     next: serialization-incomplete-noloop
 ---
 
-Does your program call [`serializeJson()`]({% link v6/api/json/serializejson.md %}) in a loop?
+Does your program call [`serializeJson()`](/v6/api/json/serializejson/) in a loop?

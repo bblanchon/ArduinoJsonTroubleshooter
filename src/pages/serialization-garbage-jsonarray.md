@@ -10,9 +10,9 @@ choices:
     next: serialization-garbage-reference
 ---
 
-[`JsonArray`]({% link v6/api/jsonarray/index.md %}) doesn't contain any data: it is a reference to an object stored in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}). It becomes invalid as soon as the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) is destroyed; this could explain the garbage you see in the output.
+[`JsonArray`](/v6/api/jsonarray/) doesn't contain any data: it is a reference to an object stored in the [`JsonDocument`](/v6/api/jsondocument/). It becomes invalid as soon as the [`JsonDocument`](/v6/api/jsondocument/) is destroyed; this could explain the garbage you see in the output.
 
-For example, here is a function that creates a dangling [`JsonArray`]({% link v6/api/jsonarray/index.md %}):
+For example, here is a function that creates a dangling [`JsonArray`](/v6/api/jsonarray/):
 
 ```c++
 // DON'T DO THAT!!!  💀
@@ -25,9 +25,9 @@ JsonArray createArray() {
 }
 ```
 
-The [`JsonArray`]({% link v6/api/jsonarray/index.md %}) returned by this function points to a destructed [`JsonDocument`]({% link v6/api/jsondocument/index.md %}), and therefore is likely to produce garbage or crash the program.
+The [`JsonArray`](/v6/api/jsonarray/) returned by this function points to a destructed [`JsonDocument`](/v6/api/jsondocument/), and therefore is likely to produce garbage or crash the program.
 
-The best way to fix this function is to pass the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) as an argument:
+The best way to fix this function is to pass the [`JsonDocument`](/v6/api/jsondocument/) as an argument:
 
 ```c++
 JsonArray createArray(JsonDocument& doc) {
@@ -38,6 +38,6 @@ JsonArray createArray(JsonDocument& doc) {
 }
 ```
 
-This way, you can keep the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) alive when you call [`serializeJson()`]({% link v6/api/json/serializejson.md %})
+This way, you can keep the [`JsonDocument`](/v6/api/jsondocument/) alive when you call [`serializeJson()`](/v6/api/json/serializejson/)
 
 Did this solve your issue?

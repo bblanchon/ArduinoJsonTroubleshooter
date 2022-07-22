@@ -38,4 +38,4 @@ choices:
     summary: The program doesn't check the error
 ---
 
-What is the value of [`DeserializationError`]({% link v6/api/misc/deserializationerror.md %})?
+What is the value of [`DeserializationError`](/v6/api/misc/deserializationerror/)?

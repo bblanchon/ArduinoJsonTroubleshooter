@@ -12,7 +12,7 @@ choices:
 
 Let's verify that the memory allocation succeeded.
 
-Please print the capacity of the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) to the serial port, like so:
+Please print the capacity of the [`JsonDocument`](/v6/api/jsondocument/) to the serial port, like so:
 
 ```c++
 Serial.println(doc.capacity());

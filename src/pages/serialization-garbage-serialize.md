@@ -18,4 +18,4 @@ choices:
     next: serialization-garbage-jsonvariant
 ---
 
-What is the type of the first argument passed to [`serializeJson()`]({% link v6/api/json/serializejson.md %})?
+What is the type of the first argument passed to [`serializeJson()`](/v6/api/json/serializejson/)?

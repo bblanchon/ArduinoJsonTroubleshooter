@@ -36,7 +36,7 @@ The root of this bug was fixed in October 2020 in [arduino/ArduinoCore-API#118](
 To fix this issue, update your Arduino Core (or "framework") to the newest version.  
 
 If the same error still occurs, please contact the relevant support team.
-In the meantime, you can work around this issue by disabling PROGMEM support in ArduinoJson by setting [`ARDUINOJSON_ENABLE_PROGMEM`]({% link v6/api/config/enable_progmem.md %}) to&nbsp;`0`, like so:
+In the meantime, you can work around this issue by disabling PROGMEM support in ArduinoJson by setting [`ARDUINOJSON_ENABLE_PROGMEM`](/v6/api/config/enable_progmem/) to&nbsp;`0`, like so:
 
 ```c++
 #define ARDUINOJSON_ENABLE_PROGMEM 0

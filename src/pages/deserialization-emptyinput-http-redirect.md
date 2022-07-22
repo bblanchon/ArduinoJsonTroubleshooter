@@ -10,7 +10,7 @@ choices:
     next: deserialization-emptyinput-http-certificate
 ---
 
-[`EmptyInput`]({% link v6/api/misc/deserializationerror.md %}#emptyinput) in the context of an HTTP response usually means that the server returns a [redirection code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections) (like [301 Moved Permanently](https://en.wikipedia.org/wiki/HTTP_301) or [302 Found](https://en.wikipedia.org/wiki/HTTP_302)), but the client doesn't follow the redirection.
+[`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) in the context of an HTTP response usually means that the server returns a [redirection code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections) (like [301 Moved Permanently](https://en.wikipedia.org/wiki/HTTP_301) or [302 Found](https://en.wikipedia.org/wiki/HTTP_302)), but the client doesn't follow the redirection.
 
 Please check the HTTP status code in the response. If it's 301 or 302, you must modify your program to handle the redirection.
 

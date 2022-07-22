@@ -10,4 +10,4 @@ choices:
     next: deserialization-invalidinput-string-bom
 ---
 
-What's the type of the input that you pass to [`deserializeJson()`]({% link v6/api/json/deserializejson.md %})
+What's the type of the input that you pass to [`deserializeJson()`](/v6/api/json/deserializejson/)

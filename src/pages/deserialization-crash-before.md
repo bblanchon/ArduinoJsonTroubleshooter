@@ -12,4 +12,4 @@ choices:
 
 A stack-overflow could cause the crash.
 
-Do you use a [`StaticJsonDocument`]({% link v6/api/staticjsondocument/index.md %})?
+Do you use a [`StaticJsonDocument`](/v6/api/staticjsondocument/)?

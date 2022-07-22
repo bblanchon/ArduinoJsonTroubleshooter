@@ -10,9 +10,9 @@ choices:
     next: deadend
 ---
 
-So, I guess that you're not using [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) but [`deserializeMsgPack()`]({% link v6/api/msgpack/deserializemsgpack.md %}), right?
+So, I guess that you're not using [`deserializeJson()`](/v6/api/json/deserializejson/) but [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack/), right?
 
-Indeed, before [ArduinoJson 6.18]({% link _posts/2021-05-04-version-6-18-0.md %}), [`deserializeMsgPack()`]({% link v6/api/msgpack/deserializemsgpack.md %}) returned [`NotSupported`]({% link v6/api/misc/deserializationerror.md %}#notsupported) as soon as the input contains an unsupported MsgPack value type:
+Indeed, before [ArduinoJson 6.18](/news/2021/05/04/version-6-18-0/), [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack/) returned [`NotSupported`](/v6/api/misc/deserializationerror/#notsupported) as soon as the input contains an unsupported MsgPack value type:
 
 * a binary value
 * an extension value

@@ -10,5 +10,5 @@ choices:
     next: serialization-crash-output-type
 ---
 
-Does your program insert string pointers in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %})?  
+Does your program insert string pointers in the [`JsonDocument`](/v6/api/jsondocument/)?  
 (for example, `doc["name"] = name` where `name` is a `const char*`)

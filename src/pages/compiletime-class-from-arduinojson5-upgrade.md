@@ -11,6 +11,6 @@ choices:
 ---
 
 Upgrading from v5 to v6 isn't trivial but isn't complicated either.  
-Please follow the [upgrade instructions]({% link v6/doc/upgrade.md %}).
+Please follow the [upgrade instructions](/v6/doc/upgrade/).
 
 Did this solve your issue?

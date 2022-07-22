@@ -10,7 +10,7 @@ choices:
     next: serialization-garbage-document
 ---
 
-[`JsonDocument::garbageCollect()`]({% link v6/api/jsondocument/garbagecollect.md %}) invalidates all previously acquired [`JsonArray`]({% link v6/api/jsonarray/index.md %}), [`JsonObject`]({% link v6/api/jsonobject/index.md %}), and [`JsonVariant`]({% link v6/api/jsonvariant/index.md %}).
+[`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/) invalidates all previously acquired [`JsonArray`](/v6/api/jsonarray/), [`JsonObject`](/v6/api/jsonobject/), and [`JsonVariant`](/v6/api/jsonvariant/).
 
 After you call it, make sure to reassign  every references, like so:
 

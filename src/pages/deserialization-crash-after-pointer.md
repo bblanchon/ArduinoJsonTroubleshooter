@@ -10,9 +10,9 @@ choices:
     next: deadend
 ---
 
-A programs can also crash after calling [`deserializeJson()`]({% link v6/api/json/deserializejson.md %}) because it keeps a pointer to a string stored in the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}).
+A programs can also crash after calling [`deserializeJson()`](/v6/api/json/deserializejson/) because it keeps a pointer to a string stored in the [`JsonDocument`](/v6/api/jsondocument/).
 
-Indeed, when [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) returns a `const char*`, it doesn't return a copy of the string, but the address of the string in the memory pool. When the [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) is destructed, the memory pool gets released and the pointer dangles. Later, when the program tries to use the string, it reads at an invalid memory location and crashes.
+Indeed, when [`JsonDocument`](/v6/api/jsondocument/) returns a `const char*`, it doesn't return a copy of the string, but the address of the string in the memory pool. When the [`JsonDocument`](/v6/api/jsondocument/) is destructed, the memory pool gets released and the pointer dangles. Later, when the program tries to use the string, it reads at an invalid memory location and crashes.
 
 For example, it happens with the following program:
 
@@ -56,6 +56,6 @@ void setup() {
 }
 ```
 
-Alternatively, you can use a `char[]` and {% include links/c/strcpy %}; I invite you to check the [JsonConfigFile.ino]({% link v6/example/config.md %}) for the details.
+Alternatively, you can use a `char[]` and {% include links/c/strcpy %}; I invite you to check the [JsonConfigFile.ino](/v6/example/config/) for the details.
 
 Did this solve your issue?

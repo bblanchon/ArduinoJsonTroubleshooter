@@ -10,7 +10,7 @@ choices:
     next: deserialization-emptyinput-http-timeout
 ---
 
-With HTTPS, [`EmptyInput`]({% link v6/api/misc/deserializationerror.md %}#emptyinput) can be due to an error during the validation of the certificate.
+With HTTPS, [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) can be due to an error during the validation of the certificate.
 
 Please try to disable certificate validation by calling {% include links/esp8266/wificlientsecure/setinsecure %} before starting the HTTP request.
 

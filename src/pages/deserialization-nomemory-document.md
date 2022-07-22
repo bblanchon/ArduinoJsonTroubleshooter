@@ -14,4 +14,4 @@ choices:
     next: deserialization-nomemory-assistant-settings   
 ---
 
-What kind of [`JsonDocument`]({% link v6/api/jsondocument/index.md %}) are you using?
+What kind of [`JsonDocument`](/v6/api/jsondocument/) are you using?

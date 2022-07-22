@@ -10,7 +10,7 @@ choices:
     next: deadend
 ---
 
-This error occurs when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`]({% link v6/api/dynamicjsondocument/index.md %}), like so:
+This error occurs when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/), like so:
 
 ```c++
 DynamicJsonDocument doc;
@@ -22,8 +22,8 @@ Instead, you need to specify the capacity of the memory pool, like so:
 DynamicJsonDocument doc(2048);
 ```
 
-As usual, you can use the [ArduinoJson Assistant]({% link v6/assistant/index.html %}) to compute the right capacity for your project.
+As usual, you can use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your project.
 
-For more information, please read [no matching function for call to 'BasicJsonDocument::BasicJsonDocument()']({% link v6/error/no-matching-function-for-call-to-basicjsondocument-basicjsondocument.md %}).
+For more information, please read [no matching function for call to 'BasicJsonDocument::BasicJsonDocument()'](/v6/error/no-matching-function-for-call-to-basicjsondocument-basicjsondocument/).
 
 Did this solve your issue?
