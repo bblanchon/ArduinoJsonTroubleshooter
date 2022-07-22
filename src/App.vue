@@ -157,13 +157,12 @@ export default {
     }
   },
   watch: {
-    hash(hash) {
+    async hash(hash) {
       const id = hash.substring(1)
-      setTimeout(() => {
-        const elm = document.getElementById(id)
-        if (elm) elm.scrollIntoView({ behavior: "smooth" })
-        else console.error(`Element with id "${id}" not found`)
-      }, 300)
+      await sleep(300)
+      const elm = document.getElementById(id)
+      if (elm) elm.scrollIntoView({ behavior: "smooth" })
+      else console.error(`Element with id "${id}" not found`)
     }
   },
   methods: {
@@ -192,6 +191,18 @@ export default {
     "number choices";
   grid-template-columns: auto 1fr;
   column-gap: 1em;
+  pre {
+    background: #eeeeee;
+    padding: 0.4rem 0.4rem;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.code-wrap {
+  pre {
+    white-space: normal;
+  }
 }
 
 .troubleshooter-step-number {
