@@ -1,10 +1,11 @@
 <template>
   <div>
-    <template v-for="step in steps" :key="step.hash">
-      <transition name="fade" mode="out-in">
+    <component :is="intro" />
+    <TransitionGroup name="fade" mode="out-in">
+      <template v-for="step in steps" :key="step.hash">
         <TroubleshooterStep :id="step.id" :step="step" @choose="choose" />
-      </transition>
-    </template>
+      </template>
+    </TransitionGroup>
     <div v-if="needsAssistance">
       <button
         type="button"
@@ -80,9 +81,9 @@ export default {
       return !this.currentStep || this.currentStep.needs_assistance
     },
     steps() {
-      const steps = [makeStep("intro"), makeStep("start", undefined, 1)]
+      const steps = [makeStep("start", undefined, 1)]
       if (this.hash) {
-        let lastStep = steps[1]
+        let lastStep = steps[0]
         for (let choiceId of this.hash.substring(1).split("/")) {
           const choice = lastStep.choices.filter(
             (choice) => choice.id === choiceId
@@ -137,7 +138,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.25s;
 }
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
