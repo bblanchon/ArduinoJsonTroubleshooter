@@ -1,6 +1,5 @@
 <template>
   <div>
-    <component :is="intro" />
     <template v-for="(step, index) in steps">
       <transition name="fade" mode="out-in">
         <div
@@ -14,7 +13,7 @@
             :title="debug && step.slug"
           >
             <div class="bg-secondary text-white rounded-circle">
-              {{ index + 1 }}
+              {{ index }}
               <span v-if="debug" class="sr-only">: {{ step.slug }}</span>
             </div>
           </h2>
@@ -129,9 +128,9 @@ export default {
       return !this.currentStep || this.currentStep.needs_assistance
     },
     steps() {
-      const steps = [makeStep("start")]
+      const steps = [makeStep("intro"), makeStep("start")]
       if (this.hash) {
-        let lastStep = steps[0]
+        let lastStep = steps[1]
         for (let choiceId of this.hash.substring(1).split("/")) {
           const choice = lastStep.choices.filter(
             (choice) => choice.id === choiceId
