@@ -16,7 +16,8 @@ for (const path in pagesModules) {
         next: c.next,
         label: md.renderInline(c.label),
         summary: md.renderInline(c.summary)
-      })) || []
+      })) || [],
+    needs_assistance: module.frontmatter.needs_assistance
   }
 }
 
