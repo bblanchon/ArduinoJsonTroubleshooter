@@ -1,12 +1,12 @@
 import { defineConfig } from "vite"
 import Vue from "@vitejs/plugin-vue"
 import Markdown, { link } from "vite-plugin-md"
+import mdiAttrs from "markdown-it-attrs"
+import mdiHljs from "markdown-it-highlightjs"
 import hljs from "highlight.js/lib/core"
-import cpp from "highlight.js/lib/languages/cpp"
-import json from "highlight.js/lib/languages/json"
 
-hljs.registerLanguage("cpp", cpp)
-hljs.registerLanguage("json", json)
+hljs.registerLanguage("cpp", require("highlight.js/lib/languages/cpp"))
+hljs.registerLanguage("json", require("highlight.js/lib/languages/json"))
 
 function makeInternalLinkAbsolute(lnk) {
   lnk.href = new URL(lnk.href, "https://arduinojson.org").href
@@ -27,6 +27,10 @@ export default defineConfig(({ mode }) => ({
           return "" // use external default escaping
         }
       },
+      markdownItUses: [
+        [mdiAttrs, { leftDelimiter: "{:", rightDelimiter: "}" }],
+        [mdiHljs, { hljs }]
+      ],
       builders: [
         link({
           useRouterLinks: false,
