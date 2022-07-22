@@ -194,7 +194,9 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import "./assets/highlight.scss";
+
 .troubleshooter-step {
   display: grid;
   grid-template-areas:
