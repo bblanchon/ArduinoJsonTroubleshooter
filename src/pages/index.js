@@ -2,7 +2,7 @@ import MarkdownIt from "markdown-it"
 
 const md = MarkdownIt()
 
-const pagesModules = import.meta.globEager("./*.md")
+const pagesModules = import.meta.globEager("./**/*.md")
 
 const pages = {}
 for (const path in pagesModules) {

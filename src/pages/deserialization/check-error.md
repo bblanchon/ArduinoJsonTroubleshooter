@@ -32,10 +32,17 @@ choices:
     label: "I can't tell because the program crashes"
     next: deserialization/crash
     summary: "The program crashes"
-  - id: unknown
-    label: I don't know what you're talking about
-    next: deserialization/check-error
-    summary: The program doesn't check the error
 ---
 
-What is the value of [`DeserializationError`](/v6/api/misc/deserializationerror/)?
+[`DeserializationError`](/v6/api/misc/deserializationerror/) is the return type of [`deserializeJson()`](/v6/api/json/deserializejson/). It tells whether the operation succeeded and indicates the cause of the error.
+
+Modify your program to show the error code, like so:
+
+```c++
+DeserializationError error = deserializeJson(doc, input);
+
+Serial.print("deserializeJson() returned ");
+Serial.println(error.c_str());
+```
+
+Now, what does it show?
