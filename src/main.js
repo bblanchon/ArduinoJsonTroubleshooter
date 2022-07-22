@@ -1,4 +1,8 @@
 import { createApp } from "vue"
 import App from "./App.vue"
 
-createApp(App).mount("#troubleshooter-app")
+const app = createApp(App)
+
+app.provide("debug", import.meta.env.DEV)
+
+app.mount("#troubleshooter-app")
