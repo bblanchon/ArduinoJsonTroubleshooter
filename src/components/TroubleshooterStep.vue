@@ -12,31 +12,12 @@
     </h2>
     <component :is="step.component" class="troubleshooter-step-content" />
     <div class="troubleshooter-step-choices">
-      <div
+      <TroubleshooterStepChoice
         v-for="choice in step.choices"
         :key="choice.label"
-        class="form-check"
-      >
-        <input
-          type="radio"
-          :name="step.id"
-          :id="choice.inputId"
-          class="form-check-input"
-          :checked="choice.selected"
-          @click="$emit('choose', choice)"
-          :disabled="choice.missing"
-        />
-        <label
-          class="form-check-label"
-          :for="choice.inputId"
-          v-html="choice.label"
-        ></label>
-        <div
-          v-if="debug"
-          class="d-block mb-2 small text-muted"
-          v-html="choice.summary"
-        ></div>
-      </div>
+        :choice="choice"
+        @click="$emit('choose', choice)"
+      />
     </div>
   </div>
   <component
@@ -49,6 +30,7 @@
 
 <script>
 import { defineComponent } from "vue"
+import TroubleshooterStepChoice from "./TroubleshooterStepChoice.vue"
 
 export default defineComponent({
   inject: ["debug"],
@@ -62,7 +44,8 @@ export default defineComponent({
       type: Number,
       default: 0
     }
-  }
+  },
+  components: { TroubleshooterStepChoice }
 })
 </script>
 
