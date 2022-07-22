@@ -1,36 +1,23 @@
 <template>
   <div v-if="step.choices.length" class="troubleshooter-step mb-4">
-    <h2
-      class="troubleshooter-step-number"
-      :id="step.id"
-      :title="debug && step.slug"
-    >
-      <div class="bg-secondary text-white rounded-circle">
-        {{ index }}
-        <span v-if="debug" class="sr-only">: {{ step.slug }}</span>
-      </div>
-    </h2>
+    <TroubleshooterStepNumber :step="step" />
     <component :is="step.component" class="troubleshooter-step-content" />
     <div class="troubleshooter-step-choices">
       <TroubleshooterStepChoice
         v-for="choice in step.choices"
-        :key="choice.label"
+        :key="choice.hash"
         :choice="choice"
         @click="$emit('choose', choice)"
       />
     </div>
   </div>
-  <component
-    v-else
-    :is="step.component"
-    class="troubleshooter-step-content"
-    :id="step.id"
-  />
+  <component v-else :is="step.component" class="troubleshooter-step-content" />
 </template>
 
 <script>
 import { defineComponent } from "vue"
 import TroubleshooterStepChoice from "./TroubleshooterStepChoice.vue"
+import TroubleshooterStepNumber from "./TroubleshooterStepNumber.vue"
 
 export default defineComponent({
   inject: ["debug"],
@@ -39,13 +26,9 @@ export default defineComponent({
     step: {
       type: Object,
       required: true
-    },
-    index: {
-      type: Number,
-      default: 0
     }
   },
-  components: { TroubleshooterStepChoice }
+  components: { TroubleshooterStepChoice, TroubleshooterStepNumber }
 })
 </script>
 

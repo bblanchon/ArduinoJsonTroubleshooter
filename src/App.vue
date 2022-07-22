@@ -1,8 +1,8 @@
 <template>
   <div>
-    <template v-for="(step, index) in steps" :key="step.hash">
+    <template v-for="step in steps" :key="step.hash">
       <transition name="fade" mode="out-in">
-        <TroubleshooterStep :index="index" :step="step" @choose="choose" />
+        <TroubleshooterStep :id="step.id" :step="step" @choose="choose" />
       </transition>
     </template>
     <div v-if="needsAssistance">
@@ -37,11 +37,12 @@ import TroubleshooterStep from "./components/TroubleshooterStep.vue"
 
 const sleep = (m) => new Promise((r) => setTimeout(r, m))
 
-function makeStep(pageKey, hash) {
+function makeStep(pageKey, hash, number) {
   const page = pages[pageKey]
   if (!page) return null
   return {
     ...page,
+    number,
     slug: pageKey,
     hash: hash || "#",
     id: (hash || "#start").substring(1),
@@ -79,7 +80,7 @@ export default {
       return !this.currentStep || this.currentStep.needs_assistance
     },
     steps() {
-      const steps = [makeStep("intro"), makeStep("start")]
+      const steps = [makeStep("intro"), makeStep("start", undefined, 1)]
       if (this.hash) {
         let lastStep = steps[1]
         for (let choiceId of this.hash.substring(1).split("/")) {
@@ -92,7 +93,7 @@ export default {
           }
           choice.selected = true
           lastStep.selectedChoice = choice
-          lastStep = makeStep(choice.next, choice.hash)
+          lastStep = makeStep(choice.next, choice.hash, lastStep.number + 1)
           if (!lastStep) break
           steps.push(lastStep)
         }
