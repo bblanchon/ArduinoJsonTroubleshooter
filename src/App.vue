@@ -37,12 +37,12 @@
               <label
                 class="form-check-label"
                 :for="choice.inputId"
-                v-html="choice.label"
+                v-html="md.renderInline(choice.label)"
               ></label>
               <div
                 v-if="debug"
                 class="d-block mb-2 small text-muted"
-                v-html="choice.summary"
+                v-html="md.renderInline(choice.summary)"
               ></div>
             </div>
           </div>
@@ -54,6 +54,9 @@
 </template>
 
 <script>
+import MarkdownIt from "markdown-it"
+const md = MarkdownIt()
+
 const pagesModules = import.meta.globEager("./pages/*.md")
 
 const pages = {}
@@ -66,13 +69,12 @@ for (const path in pagesModules) {
   }
 }
 
-console.log(pages)
-
 export default {
   setup() {
     return {
       pages,
-      intro: pages["intro"].component
+      intro: pages["intro"].component,
+      md
     }
   },
   data() {
