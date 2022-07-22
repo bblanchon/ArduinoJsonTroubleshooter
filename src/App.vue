@@ -56,10 +56,26 @@
 <script>
 import pages from "./pages"
 
+function makeStep(pageKey, hash) {
+  const page = pages[pageKey]
+  if (!page) return null
+  return {
+    ...page,
+    slug: pageKey,
+    hash: hash || "#",
+    id: (hash || "#start").substring(1),
+    choices: page.choices?.map((choice) => ({
+      ...choice,
+      inputId: (hash ? hash.substring(1) + "/" : "") + choice.id,
+      hash: (hash ? hash + "/" : "#") + choice.id,
+      missing: !pages[choice.next]
+    }))
+  }
+}
+
 export default {
   setup() {
     return {
-      pages,
       intro: pages["intro"].component
     }
   },
@@ -85,7 +101,7 @@ export default {
       return !this.currentStep || this.currentStep.needs_assistance
     },
     steps() {
-      const steps = [this.makeStep("start")]
+      const steps = [makeStep("start")]
       if (this.hash) {
         let lastStep = steps[0]
         for (let choiceId of this.hash.substring(1).split("/")) {
@@ -98,7 +114,7 @@ export default {
           }
           choice.selected = true
           lastStep.selectedChoice = choice
-          lastStep = this.makeStep(choice.next, choice.hash)
+          lastStep = makeStep(choice.next, choice.hash)
           if (!lastStep) break
           steps.push(lastStep)
         }
@@ -123,22 +139,6 @@ export default {
     }
   },
   methods: {
-    makeStep(pageKey, hash) {
-      const page = this.pages[pageKey]
-      if (!page) return null
-      return {
-        ...page,
-        slug: pageKey,
-        hash: hash || "#",
-        id: (hash || "#start").substring(1),
-        choices: page.choices?.map((choice) => ({
-          ...choice,
-          inputId: (hash ? hash.substring(1) + "/" : "") + choice.id,
-          hash: (hash ? hash + "/" : "#") + choice.id,
-          missing: !this.pages[choice.next]
-        }))
-      }
-    },
     choose(choice) {
       document.location.assign(choice.hash)
       ga("set", "page", document.location.pathname + document.location.hash)
