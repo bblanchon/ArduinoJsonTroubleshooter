@@ -5,6 +5,7 @@ import mdiAttrs from "markdown-it-attrs"
 import mdiHljs from "markdown-it-highlightjs"
 import hljs from "highlight.js/lib/core"
 import { resolve } from "path"
+import frontmatterMarkdown from "./plugins/frontmatter-markdown"
 
 hljs.registerLanguage("cpp", require("highlight.js/lib/languages/cpp"))
 hljs.registerLanguage("json", require("highlight.js/lib/languages/json"))
@@ -48,7 +49,8 @@ export default defineConfig(({ mode }) => ({
           externalLinkClass: undefined,
           postProcessing:
             mode == "development" ? makeInternalLinkAbsolute : (x) => x
-        })
+        }),
+        frontmatterMarkdown()
       ]
     })
   ]
