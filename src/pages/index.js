@@ -11,22 +11,25 @@ for (const path in pagesModules) {
   }
 }
 
+function warn(message) {
+  console.warn(message)
+  import.meta.hot.send("warning", { message })
+}
+
 function reportMissingPage(page, referrer) {
-  console.warn(`Page \"${page}\" is missing (referenced from \"${referrer}\")`)
+  warn(`Page \"${page}\" is missing (referenced from \"${referrer}\")`)
 }
 
 function reportUnusedPage(page) {
-  console.warn(`Page \"${page}\" is unused`)
+  warn(`Page \"${page}\" is unused`)
 }
 
 function reportChoiceMissingField(page, choice, field) {
-  console.warn(
-    `Page \"${page}\": choice ${choice} lacks the \"${field}\" field`
-  )
+  warn(`Page \"${page}\": choice ${choice} lacks the \"${field}\" field`)
 }
 
 function reportDuplicateChoice(page, field, value) {
-  console.warn(`Page \"${page}\": duplicate choice ${field} \"${value}\"`)
+  warn(`Page \"${page}\": duplicate choice ${field} \"${value}\"`)
 }
 
 if (import.meta.env.DEV) {
