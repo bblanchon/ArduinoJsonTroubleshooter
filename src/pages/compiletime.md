@@ -81,6 +81,11 @@ choices:
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
     next: compiletime/unresolved-overloaded-function-type
 
+  - id: passing-volatile-as-this-argument-discards-qualifiers
+    label: passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]
+    summary: Error says "passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]"
+    next: compiletime/passing-volatile-as-this-argument-discards-qualifiers
+
   - id: cast-void-to-flashstringhelper
     label: reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed
     summary: Error says "reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed"
