@@ -18,26 +18,9 @@ jobs:
         with:
           name: arduinojson-troubleshooter
           path: dist/
-
-  deploy:
-    needs: [build]
-    if: github.ref == 'refs/heads/6.x'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/6.x'
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          name: arduinojson-troubleshooter
-          path: dist
-      - uses: leigholiver/commit-with-deploy-key@v1.0.3
-        with:
-          source: dist
-          destination_folder: v6/troubleshooter
-          destination_repo: bblanchon/ArduinoJson-web
-          destination_branch: master
-          commit_message: |
-            Update troubleshooter
-
-            https://github.com/${{ github.repository }}/commit/${{ github.sha }}
-          git_username: GitHub Actions
-          git_email: 41898282+github-actions[bot]@users.noreply.github.com
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
+          folder: dist
+          target-folder: v6
