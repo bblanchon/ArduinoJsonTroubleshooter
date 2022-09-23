@@ -104,7 +104,7 @@ choices:
   - id: not-in-list
     label: None of the above
     summary:  The error is not in the list
-    next: deadend
+    next: compiletime/unknown-error
 ---
 
 Please look at the **first** error in the compiler output, and tell me what it is...
