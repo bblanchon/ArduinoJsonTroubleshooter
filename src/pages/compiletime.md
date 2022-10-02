@@ -1,5 +1,9 @@
 ---
 choices:
+  - id: assignment-of-read-only-location
+    label: assignment of read-only location
+    summary: Error says "assignment of read-only location"
+    next: compiletime/assignment-of-read-only-location
 
   - id: ambiguous-string-assign
     label: ambiguous overload for `operator=` (operand types are `String` and ...)
