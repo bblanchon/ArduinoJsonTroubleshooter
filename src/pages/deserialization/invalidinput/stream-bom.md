@@ -2,11 +2,11 @@
 choices:
   - id: utf8
     label: "`239`"
-    summary: Input's first byte suggest an UTF-8 BOM
+    summary: Input's first byte suggests a UTF-8 BOM
     next: deserialization/invalidinput/bom-utf8
   - id: utf16
     label: "`254` or `255`"
-    summary: Input's first byte suggest an UTF-16 BOM
+    summary: Input's first byte suggests a UTF-16 BOM
     next: deserialization/invalidinput/bom-utf16
   - id: no-bom
     label: Something else
