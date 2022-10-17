@@ -6,14 +6,14 @@ choices:
     next: done
   - id: filter-ok
     label: "No"
-    summary: Fixing the filter doen't solve the issue
+    summary: Fixing the filter doesn't solve the issue
     next: deserialization/noerror/novalue-print
 ---
 
 
 Maybe the filter excludes the part that it should keep. Let's verify that it's doing its job correctly:
 
-Please print the filter to the serial port, like so:
+Please print the filter to the serial port like so:
 
 ```c++
 serializeJsonPretty(filter, Serial);
@@ -27,7 +27,7 @@ Then, open the [ArduinoJson Assistant](/v6/assistant/):
   * in the "filter" column, paste the filter that your program just printed
 
 The column "filtered input" shows the result of applying the filter to the input.  
-Make sure that the result is what you expect and adjust the filter as needed.  
+Make sure the result is what you expect, and adjust the filter as needed.  
 Once happy with the result, you can move to step 4 and copy the block that fills the filter.
 
 Did this solve your issue?

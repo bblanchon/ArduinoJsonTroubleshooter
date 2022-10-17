@@ -6,7 +6,7 @@ choices:
     next: deserialization/noerror/slow
   - id: invalid
     label: "I expected `InvalidInput` instead of `Ok`"
-    summary: "`Ok` is incorrect, it should be `InvalidInput`"
+    summary: "`Ok` is incorrect; it should be `InvalidInput`"
     next: deserialization/noerror/firstchar
   - id: crash
     label: My program crashes after calling `deserializeJson()`
