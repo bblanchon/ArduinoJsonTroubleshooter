@@ -3,7 +3,7 @@ choices:
   - id: getstream
     label: "`getStream()`"
     summary: Response comes from `HTTPClient::getStream()`
-    next: deserialization/noerror/truncatedstrings-http-httpclient-stream
+    next: deserialization/noerror/truncatedstrings/http-httpclient-stream
   - id: getstring
     label: "`getString()`"
     summary: Response comes from `HTTPClient::getString()`
