@@ -1,5 +1,5 @@
 import MarkdownIt from "markdown-it"
-import { createBuilder, PipelineStage } from "vite-plugin-md"
+import { createBuilder, PipelineStage } from "@yankeeinlondon/builder-api"
 
 const md = MarkdownIt()
 

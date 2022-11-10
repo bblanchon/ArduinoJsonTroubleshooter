@@ -1,10 +1,13 @@
+import { resolve } from "node:path"
+
 import { defineConfig } from "vite"
 import Vue from "@vitejs/plugin-vue"
-import Markdown, { link } from "vite-plugin-md"
+import Markdown from "vite-plugin-md"
+import link from "@yankeeinlondon/link-builder"
 import mdiAttrs from "markdown-it-attrs"
 import mdiHljs from "markdown-it-highlightjs"
 import hljs from "highlight.js/lib/core"
-import { resolve } from "path"
+
 import frontmatterMarkdown from "./plugins/frontmatter-markdown"
 import clientWarnings from "./plugins/client-warnings"
 
@@ -25,6 +28,9 @@ export default defineConfig(({ mode }) => ({
       name: "ArduinoJsonTroubleshooter",
       fileName: (format) => "troubleshooter.js"
     }
+  },
+  define: {
+    "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV)
   },
   plugins: [
     Vue({
