@@ -35,9 +35,9 @@ choices:
     summary: Error says "`doc` does not name a type"
     next: compiletime/doesnt-name-a-type
 
-  - id: class-from-arduinojson5
-    label: DynamicJsonBuffer/StaticJsonBuffer is a class from ArduinoJson 5
-    summary: Error says "DynamicJsonBuffer/StaticJsonBuffer is a class from ArduinoJson 5"
+  - id: dynamicjsonbuffer
+    label: '`DynamicJsonBuffer` is a class from ArduinoJson 5'
+    summary: Error says "`DynamicJsonBuffer` is a class from ArduinoJson 5"
     next: compiletime/class-from-arduinojson5
 
   - id: char-pointer-conversion
@@ -99,6 +99,11 @@ choices:
     label: request for member `write` in ..., which is of non-class type `char*`
     summary: Error says "request for member `write` in ..., which is of non-class type `char*`"
     next: compiletime/member-write-in-char-ptr
+
+  - id: staticjsonbuffer
+    label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
+    summary: Error says "`StaticJsonBuffer` is a class from ArduinoJson 5"
+    next: compiletime/class-from-arduinojson5
 
   - id: range-based-for-requires-begin
     label: this range-based `for` statement requires a suitable "begin" function and none was found
