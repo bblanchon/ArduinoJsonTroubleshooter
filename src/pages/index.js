@@ -71,6 +71,13 @@ if (import.meta.env.DEV) {
       duplicates.forEach((value) => reportDuplicateChoice(key, field, value))
     })
   })
+
+  Object.entries(pages).forEach(([key, page]) => {
+    page.choices.forEach((choice, index) => {
+      if (/[^a-z0-9\-]/.test(choice.id))
+        warn(`Page \"${key}\": invalid id \"${choice.id}\" for choice ${index}`)
+    })
+  })
 }
 
 export default pages

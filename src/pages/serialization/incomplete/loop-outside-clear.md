@@ -4,7 +4,7 @@ choices:
     label: "Yes"
     summary: Calling `JsonDocument::garbageCollect()` solves the issue
     next: done
-  - id: garbageCollect
+  - id: gc
     label: "No"
     summary: Calling `JsonDocument::garbageCollect()` doesn't solve the issue
     next: serialization/incomplete/noloop

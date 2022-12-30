@@ -1,10 +1,10 @@
 ---
 choices:
-  - id: serialization/crash/charptr-print
+  - id: crash-with-literals
     label: "Yes"
     summary: Replacing string pointers with literals doesn't fix the crash
     next: serialization/crash/output-type
-  - id: no-charptr
+  - id: no-crash-with-literals
     label: "No"
     summary: Replacing string pointers with literals fixes the crash
     next: serialization/crash/charptr-print
