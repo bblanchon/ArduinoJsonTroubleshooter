@@ -45,7 +45,3 @@ export function listFiles(folder: string) {
   )
   return files
 }
-
-export function getPageKey(filename: string) {
-  return path.relative(folder, filename).slice(0, -3).replace(/\\/g, '/')
-}
