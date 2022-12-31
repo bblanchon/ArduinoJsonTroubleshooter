@@ -1,12 +1,14 @@
 import glob from 'glob'
+import minimatch from 'minimatch'
 import { dataToEsm } from '@rollup/pluginutils'
 import type { Plugin, Logger } from 'vite'
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import path from 'node:path'
 
 interface UserOptions {
+  folder?: string
   markdownItOptions?: MarkdownIt.Options
   markdownItUses?: [MarkdownIt.PluginWithOptions, any][]
 }
@@ -23,8 +25,13 @@ interface Page {
   choices: Choice[]
 }
 
+function slash(s: string) {
+  return s.replace(/\\/g, "/")
+}
+
 export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plugin {
-  const folder = "src/pages"
+  const folder = path.resolve(userOptions.folder || "src/pages")
+  const pageGlob = slash(path.join(folder, "**/*.md"))
   const virtualModuleId = 'virtual:troubleshooter'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
 
@@ -35,22 +42,6 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   const pages: { [key: string]: Page } = {}
 
   let logger: Logger
-
-  async function loadPage(filename: string) {
-    const key = filename.slice(0, -3)
-    const { data: frontmatter, content } = matter(await readFile(join(folder, filename)), { excerpt: false })
-    const page: Page = {
-      ...frontmatter,
-      choices: frontmatter.choices || [],
-      content: mdi.render(content),
-    }
-    page.choices.forEach((choice: Choice) => {
-      if (choice.label) choice.label = mdi.renderInline(choice.label)
-      if (choice.summary) choice.summary = mdi.renderInline(choice.summary)
-    })
-    pages[key] = page
-    logger.info(filename)
-  }
 
   function checkIntegrity() {
     Object.entries(pages).forEach(([key, page]) => {
@@ -103,12 +94,50 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     })
   }
 
+  function isPage(filename: string) {
+    return minimatch(filename, pageGlob)
+  }
+
+  function getPageKey(filename: string) {
+    return path.relative(folder, filename).slice(0, -3).replace(/\\/g, '/')
+  }
+
+  async function loadPage(filename: string, { check = true }) {
+    if (!isPage(filename)) return
+    const key = getPageKey(filename)
+    const { data: frontmatter, content } = matter(await readFile(filename), { excerpt: false })
+    const page: Page = {
+      ...frontmatter,
+      choices: frontmatter.choices || [],
+      content: mdi.render(content),
+    }
+    page.choices.forEach((choice: Choice) => {
+      if (choice.label) choice.label = mdi.renderInline(choice.label)
+      if (choice.summary) choice.summary = mdi.renderInline(choice.summary)
+    })
+    pages[key] = page
+    if (check) checkIntegrity()
+  }
+
+  function removePage(filename) {
+    if (!isPage(filename)) return
+    const key = getPageKey(filename)
+    delete pages[key]
+    logger.info(key + " removed")
+    checkIntegrity()
+  }
+
   return {
     name: 'troubleshooter', // required, will show up in warnings and errors
     async configResolved(config) {
       logger = config.logger
-      const filenames = glob.sync("**/*.md", { cwd: folder }).forEach(loadPage)
+      glob.sync(pageGlob).forEach(f => loadPage(f, { check: false }))
       checkIntegrity()
+    },
+    configureServer(server) {
+      server.watcher.on("change", loadPage)
+      server.watcher.on("add", loadPage)
+      server.watcher.on("unlink", removePage)
     },
     resolveId(id) {
       if (id === virtualModuleId) {

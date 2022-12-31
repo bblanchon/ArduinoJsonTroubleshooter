@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@types/glob": "^8.0.0",
     "@vitejs/plugin-vue": "^3.2.0",
     "@yankeeinlondon/builder-api": "^0.4.1",
     "@yankeeinlondon/link-builder": "^1.0.5",
