@@ -1,12 +1,10 @@
 import path from 'node:path'
-import { readdirSync, readFileSync } from 'node:fs'
 
 import { dataToEsm, createFilter } from '@rollup/pluginutils'
-import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 import { Plugin, Logger, normalizePath, ViteDevServer } from 'vite'
 
-import { Choice, Page, PageMap } from "./pages"
+import { listFiles, loadPageFile, PageMap } from "./pages"
 import { getErrors } from "./validation"
 
 interface UserOptions {
@@ -45,37 +43,13 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   function loadPage(filename: string) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
-    const { data: frontmatter, content } = matter(readFileSync(filename), { excerpt: false })
-    const page: Page = {
-      ...frontmatter,
-      choices: frontmatter.choices || [],
-      content: mdi.render(content),
-    }
-    page.choices.forEach((choice: Choice) => {
-      if (choice.label) choice.label = mdi.renderInline(choice.label)
-      if (choice.summary) choice.summary = mdi.renderInline(choice.summary)
-    })
-    pages[key] = page
+    pages[key] = loadPageFile(filename, mdi)
   }
 
   function removePage(filename: string) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     delete pages[key]
-  }
-
-  function listFiles(folder: string) {
-    const files: string[] = []
-    readdirSync(folder, { withFileTypes: true }).forEach(
-      (entry) => {
-        const filename = path.join(folder, entry.name)
-        if (entry.isDirectory())
-          files.push(...listFiles(filename))
-        else
-          files.push(filename)
-      }
-    )
-    return files
   }
 
   function reloadModule(server: ViteDevServer) {
@@ -87,7 +61,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
 
   return {
     name: 'troubleshooter', // required, will show up in warnings and errors
-    async configResolved(config) {
+    configResolved(config) {
       logger = config.logger
       isProduction = config.isProduction
       listFiles(folder).forEach(f => loadPage(f))
