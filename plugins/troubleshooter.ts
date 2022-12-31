@@ -1,10 +1,9 @@
-import glob from 'glob'
 import { dataToEsm, createFilter } from '@rollup/pluginutils'
 import { Plugin, Logger, normalizePath } from 'vite'
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
-import { readFile } from 'node:fs/promises'
 import path from 'node:path'
+import { readdirSync, readFileSync } from 'node:fs'
 
 interface UserOptions {
   folder?: string
@@ -31,8 +30,8 @@ interface PageError {
 
 export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plugin {
   const folder = path.resolve(userOptions.folder || "src/pages")
-  const pageGlob = normalizePath(path.join(folder, "**/*.md"))
-  const isPage = createFilter(pageGlob)
+  const filenamePattern = normalizePath(path.join(folder, "**/*.md"))
+  const isPage = createFilter(filenamePattern)
   const virtualModuleId = 'virtual:troubleshooter'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
 
@@ -121,10 +120,10 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     return path.relative(folder, filename).slice(0, -3).replace(/\\/g, '/')
   }
 
-  async function loadPage(filename: string, { check = true }) {
+  function loadPage(filename: string, { check = true }) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
-    const { data: frontmatter, content } = matter(await readFile(filename), { excerpt: false })
+    const { data: frontmatter, content } = matter(readFileSync(filename), { excerpt: false })
     const page: Page = {
       ...frontmatter,
       choices: frontmatter.choices || [],
@@ -142,8 +141,21 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     delete pages[key]
-    logger.info(key + " removed")
     checkIntegrity()
+  }
+
+  function listFiles(folder: string) {
+    const files: string[] = []
+    readdirSync(folder, { withFileTypes: true }).forEach(
+      (entry) => {
+        const filename = path.join(folder, entry.name)
+        if (entry.isDirectory())
+          files.push(...listFiles(filename))
+        else
+          files.push(filename)
+      }
+    )
+    return files
   }
 
   return {
@@ -151,7 +163,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     async configResolved(config) {
       logger = config.logger
       isProduction = config.isProduction
-      glob.sync(pageGlob).forEach(f => loadPage(f, { check: false }))
+      listFiles(folder).forEach(f => loadPage(f, { check: false }))
     },
     configureServer(server) {
       server.watcher.on("change", loadPage)
