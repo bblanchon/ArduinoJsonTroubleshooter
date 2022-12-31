@@ -1,6 +1,6 @@
 <template>
   <div>
-    <component :is="intro" />
+    <div v-html="intro.content"></div>
     <TransitionGroup name="fade" mode="out-in">
       <template v-for="step in steps" :key="step.hash">
         <TroubleshooterStep :id="step.id" :step="step" @choose="choose" />
@@ -32,7 +32,8 @@
 </template>
 
 <script>
-import pages from "./pages"
+import pages from "virtual:troubleshooter"
+
 import AssistanceModal from "./components/AssistanceModal.vue"
 import TroubleshooterStep from "./components/TroubleshooterStep.vue"
 
@@ -60,7 +61,7 @@ export default {
   components: { AssistanceModal, TroubleshooterStep },
   setup() {
     return {
-      intro: pages["intro"].component
+      intro: pages["intro"]
     }
   },
   data() {
@@ -138,6 +139,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.25s;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

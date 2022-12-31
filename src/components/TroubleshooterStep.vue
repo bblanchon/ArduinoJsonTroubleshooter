@@ -1,7 +1,7 @@
 <template>
   <div v-if="step.choices.length" class="troubleshooter-step mb-4">
     <TroubleshooterStepNumber :step="step" />
-    <component :is="step.component" class="troubleshooter-step-content" />
+    <div v-html="step.content" class="troubleshooter-step-content" />
     <div class="troubleshooter-step-choices">
       <TroubleshooterStepChoice
         v-for="choice in step.choices"
@@ -42,6 +42,7 @@ export default defineComponent({
     "number choices";
   grid-template-columns: auto 1fr;
   column-gap: 1em;
+
   pre {
     background: #eeeeee;
     padding: 0.4rem 0.4rem;
