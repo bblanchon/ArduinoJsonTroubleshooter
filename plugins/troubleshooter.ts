@@ -1,5 +1,5 @@
 import { dataToEsm, createFilter } from '@rollup/pluginutils'
-import { Plugin, Logger, normalizePath, ModuleNode, ViteDevServer } from 'vite'
+import { Plugin, Logger, normalizePath, ViteDevServer } from 'vite'
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import path from 'node:path'
