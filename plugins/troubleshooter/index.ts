@@ -6,27 +6,13 @@ import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
 import { Plugin, Logger, normalizePath, ViteDevServer } from 'vite'
 
+import { Choice, Page, PageMap } from "./pages"
+import { getErrors } from "./validation"
+
 interface UserOptions {
   folder?: string
   markdownItOptions?: MarkdownIt.Options
   markdownItUses?: [MarkdownIt.PluginWithOptions, any][]
-}
-
-interface Choice {
-  id: string
-  label: string
-  summary: string
-  next: string
-}
-
-interface Page {
-  content: string
-  choices: Choice[]
-}
-
-interface PageError {
-  page: string
-  message: string
 }
 
 export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plugin {
@@ -39,81 +25,13 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   userOptions.markdownItUses?.forEach(
     ([plugin, options]) => mdi.use(plugin, options)
   )
-  const pages: { [key: string]: Page } = {}
+  const pages: PageMap = {}
 
   let logger: Logger
   let isProduction = false
 
   function checkIntegrity() {
-    const errors: PageError[] = []
-
-    errors.push(
-      ...Object.entries(pages).map(([key, page]) =>
-        page.choices.filter(choice => choice.next && !(choice.next in pages))
-          .map((choice) => ({
-            page: key,
-            message: `page \"${choice.next}\" is missing`
-          }))
-      ).flat()
-    )
-
-    const usedPages = new Set([
-      "intro",
-      "start",
-      ...Object.values(pages)
-        .map((page) => page.choices)
-        .flat()
-        .map((choice) => choice.next)
-    ])
-    errors.push(...Object.keys(pages)
-      .filter((key) => !usedPages.has(key))
-      .map((key) => ({
-        page: key,
-        message: "this page is unused"
-      }))
-    )
-
-    const requiredFields = ["id", "label", "summary", "next"]
-    errors.push(
-      ...Object.entries(pages).map(([key, page]) =>
-        page.choices.map((choice, index) =>
-          requiredFields.filter(field => !choice[field])
-            .map((field) => ({
-              page: key,
-              message: `choice ${index} lacks the \"${field}\" field`
-            }))
-        )
-      ).flat(2)
-    )
-
-    const uniqueFields = ["id", "label", "summary"]
-    errors.push(
-      ...Object.entries(pages).map(([key, page]) =>
-        uniqueFields.map((field) => {
-          const values = page.choices.map((choice) => choice[field])
-          const duplicates = values.filter(
-            (val, idx) => values.indexOf(val) !== idx
-          )
-          return duplicates.map(
-            (value) => ({
-              page: key,
-              message: `duplicate choice ${field} \"${value}\"`
-            })
-          )
-        })
-      ).flat(2)
-    )
-
-    errors.push(
-      ...Object.entries(pages).map(([key, page]) =>
-        page.choices
-          .filter(choice => (/[^a-z0-9\-]/.test(choice.id)))
-          .map((choice, index) => ({
-            page: key,
-            message: `invalid id \"${choice.id}\" for choice ${index}`
-          }))
-      ).flat()
-    )
+    const errors = getErrors(pages)
 
     errors.forEach(error => logger.error(`${error.page + '.md'}: ${error.message}`))
     if (isProduction && errors.length)
@@ -140,7 +58,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     pages[key] = page
   }
 
-  function removePage(filename) {
+  function removePage(filename: string) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     delete pages[key]
