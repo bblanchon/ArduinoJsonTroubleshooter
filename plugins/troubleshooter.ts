@@ -1,5 +1,5 @@
 import { dataToEsm, createFilter } from '@rollup/pluginutils'
-import { Plugin, Logger, normalizePath } from 'vite'
+import { Plugin, Logger, normalizePath, ModuleNode, ViteDevServer } from 'vite'
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import path from 'node:path'
@@ -33,7 +33,6 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   const filenamePattern = normalizePath(path.join(folder, "**/*.md"))
   const isPage = createFilter(filenamePattern)
   const virtualModuleId = 'virtual:troubleshooter'
-  const resolvedVirtualModuleId = '\0' + virtualModuleId
 
   const mdi = MarkdownIt(userOptions.markdownItOptions || {})
   userOptions.markdownItUses?.forEach(
@@ -120,7 +119,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     return path.relative(folder, filename).slice(0, -3).replace(/\\/g, '/')
   }
 
-  function loadPage(filename: string, { check = true }) {
+  function loadPage(filename: string) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     const { data: frontmatter, content } = matter(readFileSync(filename), { excerpt: false })
@@ -134,14 +133,12 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
       if (choice.summary) choice.summary = mdi.renderInline(choice.summary)
     })
     pages[key] = page
-    if (check) checkIntegrity()
   }
 
   function removePage(filename) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     delete pages[key]
-    checkIntegrity()
   }
 
   function listFiles(folder: string) {
@@ -158,25 +155,44 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     return files
   }
 
+  function reloadModule(server: ViteDevServer) {
+    const { moduleGraph } = server
+    const module = moduleGraph.getModuleById(virtualModuleId)
+    if (module)
+      server.reloadModule(module)
+  }
+
   return {
     name: 'troubleshooter', // required, will show up in warnings and errors
     async configResolved(config) {
       logger = config.logger
       isProduction = config.isProduction
-      listFiles(folder).forEach(f => loadPage(f, { check: false }))
+      listFiles(folder).forEach(f => loadPage(f))
     },
     configureServer(server) {
-      server.watcher.on("change", loadPage)
-      server.watcher.on("add", loadPage)
-      server.watcher.on("unlink", removePage)
+      server.watcher.on("change", (f) => {
+        loadPage(f)
+        checkIntegrity()
+        reloadModule(server)
+      })
+      server.watcher.on("add", (f) => {
+        loadPage(f)
+        checkIntegrity()
+        reloadModule(server)
+      })
+      server.watcher.on("unlink", (f) => {
+        removePage(f)
+        checkIntegrity()
+        reloadModule(server)
+      })
     },
     resolveId(id) {
       if (id === virtualModuleId) {
-        return resolvedVirtualModuleId
+        return virtualModuleId
       }
     },
     load(id) {
-      if (id === resolvedVirtualModuleId) {
+      if (id === virtualModuleId) {
         checkIntegrity()
         return {
           code: dataToEsm(pages, { compact: true, namedExports: false, preferConst: true })
