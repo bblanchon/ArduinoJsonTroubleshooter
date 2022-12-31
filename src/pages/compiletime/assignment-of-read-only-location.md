@@ -4,7 +4,7 @@ choices:
     label: "Yes"
     summary: Using an integer or switching to an object fixes the issue
     next: done
-  - id: failure
+  - id: failur
     label: "No"
     summary: Neither using an integer nor switching to an object fixes the issue
     next: deadend
