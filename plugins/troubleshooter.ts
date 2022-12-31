@@ -1,9 +1,10 @@
-import { dataToEsm, createFilter } from '@rollup/pluginutils'
-import { Plugin, Logger, normalizePath, ViteDevServer } from 'vite'
-import MarkdownIt from 'markdown-it'
-import matter from 'gray-matter'
 import path from 'node:path'
 import { readdirSync, readFileSync } from 'node:fs'
+
+import { dataToEsm, createFilter } from '@rollup/pluginutils'
+import matter from 'gray-matter'
+import MarkdownIt from 'markdown-it'
+import { Plugin, Logger, normalizePath, ViteDevServer } from 'vite'
 
 interface UserOptions {
   folder?: string
