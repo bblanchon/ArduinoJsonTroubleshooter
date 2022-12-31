@@ -13,7 +13,7 @@ hljs.registerLanguage("cpp", require("highlight.js/lib/languages/cpp"))
 hljs.registerLanguage("json", require("highlight.js/lib/languages/json"))
 
 // https://vitejs.dev/config/
-export default defineConfig(() => ({
+export default defineConfig(({ mode }) => ({
   build: {
     lib: {
       entry: resolve(__dirname, "src/main.js"),
@@ -42,7 +42,10 @@ export default defineConfig(() => ({
         [mdiHljs, { hljs }],
         [mdiReplaceLink, {
           replaceLink(link) {
-            return new URL(link, "https://arduinojson.org").href
+            if (mode == "development")
+              return new URL(link, "https://arduinojson.org").href
+            else
+              return link
           }
         }],
       ]
