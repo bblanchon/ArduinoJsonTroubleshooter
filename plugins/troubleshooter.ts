@@ -1,7 +1,6 @@
 import glob from 'glob'
-import minimatch from 'minimatch'
-import { dataToEsm } from '@rollup/pluginutils'
-import type { Plugin, Logger } from 'vite'
+import { dataToEsm, createFilter } from '@rollup/pluginutils'
+import { Plugin, Logger, normalizePath } from 'vite'
 import MarkdownIt from 'markdown-it'
 import matter from 'gray-matter'
 import { readFile } from 'node:fs/promises'
@@ -25,13 +24,15 @@ interface Page {
   choices: Choice[]
 }
 
-function slash(s: string) {
-  return s.replace(/\\/g, "/")
+interface PageError {
+  page: string
+  message: string
 }
 
 export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plugin {
   const folder = path.resolve(userOptions.folder || "src/pages")
-  const pageGlob = slash(path.join(folder, "**/*.md"))
+  const pageGlob = normalizePath(path.join(folder, "**/*.md"))
+  const isPage = createFilter(pageGlob)
   const virtualModuleId = 'virtual:troubleshooter'
   const resolvedVirtualModuleId = '\0' + virtualModuleId
 
@@ -42,12 +43,18 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   const pages: { [key: string]: Page } = {}
 
   let logger: Logger
+  let isProduction = false
 
   function checkIntegrity() {
+    const errors: PageError[] = []
+
     Object.entries(pages).forEach(([key, page]) => {
       page.choices.forEach((choice) => {
         if (choice.next && !(choice.next in pages))
-          logger.warn(`Page \"${choice.next}\" is missing (referenced from \"${key}\")`)
+          errors.push({
+            page: key,
+            message: `page \"${choice.next}\" is missing`
+          })
       })
     })
 
@@ -61,14 +68,20 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     ])
     Object.keys(pages)
       .filter((key) => !usedPages.has(key))
-      .forEach((key) => logger.warn(`Page \"${key}\" is unused`))
+      .forEach((key) => errors.push({
+        page: key,
+        message: "this page is unused"
+      }))
 
     const requiredFields = ["id", "label", "summary", "next"]
     Object.entries(pages).forEach(([key, page]) => {
       page.choices.forEach((choice, index) => {
         requiredFields.forEach((field) => {
           if (!choice[field])
-            logger.warn(`Page \"${key}\": choice ${index} lacks the \"${field}\" field`)
+            errors.push({
+              page: key,
+              message: `choice ${index} lacks the \"${field}\" field`
+            })
         })
       })
     })
@@ -81,7 +94,10 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
           (val, idx) => values.indexOf(val) !== idx
         )
         duplicates.forEach(
-          (value) => logger.warn(`Page \"${key}\": duplicate choice ${field} \"${value}\"`)
+          (value) => errors.push({
+            page: key,
+            message: `duplicate choice ${field} \"${value}\"`
+          })
         )
       })
     })
@@ -89,13 +105,16 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     Object.entries(pages).forEach(([key, page]) => {
       page.choices.forEach((choice, index) => {
         if (/[^a-z0-9\-]/.test(choice.id))
-          logger.warn(`Page \"${key}\": invalid id \"${choice.id}\" for choice ${index}`)
+          errors.push({
+            page: key,
+            message: `invalid id \"${choice.id}\" for choice ${index}`
+          })
       })
     })
-  }
 
-  function isPage(filename: string) {
-    return minimatch(filename, pageGlob)
+    errors.forEach(error => logger.error(`${error.page + '.md'}: ${error.message}`))
+    if (isProduction && errors.length)
+      throw new Error(JSON.stringify(errors, null, 2))
   }
 
   function getPageKey(filename: string) {
@@ -131,8 +150,8 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     name: 'troubleshooter', // required, will show up in warnings and errors
     async configResolved(config) {
       logger = config.logger
+      isProduction = config.isProduction
       glob.sync(pageGlob).forEach(f => loadPage(f, { check: false }))
-      checkIntegrity()
     },
     configureServer(server) {
       server.watcher.on("change", loadPage)
@@ -146,6 +165,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     },
     load(id) {
       if (id === resolvedVirtualModuleId) {
+        checkIntegrity()
         return {
           code: dataToEsm(pages, { compact: true, namedExports: false, preferConst: true })
         }
