@@ -1,7 +1,7 @@
 <template>
   <div v-if="step.choices.length" class="troubleshooter-step mb-4">
     <TroubleshooterStepNumber :step="step" />
-    <component :is="step.component" class="troubleshooter-step-content" />
+    <div v-html="step.content" class="troubleshooter-step-content" />
     <div class="troubleshooter-step-choices">
       <TroubleshooterStepChoice
         v-for="choice in step.choices"
@@ -11,7 +11,7 @@
       />
     </div>
   </div>
-  <component v-else :is="step.component" class="troubleshooter-step-content" />
+  <div v-else v-html="step.content" class="troubleshooter-step-content" />
 </template>
 
 <script>

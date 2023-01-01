@@ -2,22 +2,15 @@ import { resolve } from "node:path"
 
 import { defineConfig } from "vite"
 import Vue from "@vitejs/plugin-vue"
-import Markdown from "vite-plugin-md"
-import link from "@yankeeinlondon/link-builder"
 import mdiAttrs from "markdown-it-attrs"
 import mdiHljs from "markdown-it-highlightjs"
+import mdiReplaceLink from "markdown-it-replace-link"
 import hljs from "highlight.js/lib/core"
 
-import frontmatterMarkdown from "./plugins/frontmatter-markdown"
-import clientWarnings from "./plugins/client-warnings"
+import TroubleshooterPlugin from "./plugins/troubleshooter"
 
 hljs.registerLanguage("cpp", require("highlight.js/lib/languages/cpp"))
 hljs.registerLanguage("json", require("highlight.js/lib/languages/json"))
-
-function makeInternalLinkAbsolute(lnk) {
-  lnk.href = new URL(lnk.href, "https://arduinojson.org").href
-  return lnk
-}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -36,7 +29,7 @@ export default defineConfig(({ mode }) => ({
     Vue({
       include: [/\.vue$/, /\.md$/]
     }),
-    Markdown({
+    TroubleshooterPlugin({
       markdownItOptions: {
         highlight(str, lang) {
           if (lang && hljs.getLanguage(lang))
@@ -46,20 +39,16 @@ export default defineConfig(({ mode }) => ({
       },
       markdownItUses: [
         [mdiAttrs, { leftDelimiter: "{:", rightDelimiter: "}" }],
-        [mdiHljs, { hljs }]
-      ],
-      builders: [
-        link({
-          useRouterLinks: false,
-          internalLinkClass: undefined,
-          internalTarget: "_blank",
-          externalLinkClass: undefined,
-          postProcessing:
-            mode == "development" ? makeInternalLinkAbsolute : (x) => x
-        }),
-        frontmatterMarkdown()
+        [mdiHljs, { hljs }],
+        [mdiReplaceLink, {
+          replaceLink(link) {
+            if (mode == "development")
+              return new URL(link, "https://arduinojson.org").href
+            else
+              return link
+          }
+        }],
       ]
     }),
-    clientWarnings()
   ]
 }))
