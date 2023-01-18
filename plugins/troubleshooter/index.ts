@@ -24,6 +24,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     ([plugin, options]) => mdi.use(plugin, options)
   )
   const pages: PageMap = {}
+  const filenames: { [key: string]: string } = {}
 
   let logger: Logger
   let isProduction = false
@@ -31,7 +32,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   function checkIntegrity() {
     const errors = getErrors(pages)
 
-    errors.forEach(error => logger.error(`${error.page + '.md'}: ${error.message}`))
+    errors.forEach(error => logger.error(`${filenames[error.page]}: ${error.message}`))
     if (isProduction && errors.length)
       throw new Error(JSON.stringify(errors, null, 2))
   }
@@ -44,12 +45,14 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     pages[key] = loadPageFile(filename, mdi)
+    filenames[key] = filename
   }
 
   function removePage(filename: string) {
     if (!isPage(filename)) return
     const key = getPageKey(filename)
     delete pages[key]
+    delete filenames[key]
   }
 
   function reloadModule(server: ViteDevServer) {
