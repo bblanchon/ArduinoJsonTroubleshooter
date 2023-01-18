@@ -40,6 +40,7 @@
 </template>
 
 <script>
+/// <reference path="../plugins/troubleshooter/client.d.ts" />
 import pages from "virtual:troubleshooter"
 
 import AssistanceModal from "./components/AssistanceModal.vue"
