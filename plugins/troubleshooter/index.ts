@@ -38,7 +38,11 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
   }
 
   function getPageKey(filename: string) {
-    return path.relative(folder, filename).slice(0, -3).replace(/\\/g, '/')
+    return path
+      .relative(folder, filename)
+      .slice(0, -3)
+      .replace(/\\/g, '/')
+      .replace(/\/index$/, '')
   }
 
   function loadPage(filename: string) {
