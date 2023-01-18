@@ -20,9 +20,14 @@ choices:
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
     next: compiletime/no-matching-function/unresolved-overloaded-function-type
   
+  - id: as-char
+    label: no matching function for call to `...as<char>() const`
+    summary: Error says "no matching function for call to `...as<char>()` const"
+    next: compiletime/no-matching-function/as-char
+
   - id: as-char-ptr
-    label: no matching function for call to `...as<char*>()`
-    summary: Error says "no matching function for call to `...as<char*>()`"
+    label: no matching function for call to `...as<char*>() const`
+    summary: Error says "no matching function for call to `...as<char*>()` const"
     next: compiletime/no-matching-function/as-char-ptr
 
   - id: not-in-list
