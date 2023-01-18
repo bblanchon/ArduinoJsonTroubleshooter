@@ -20,6 +20,11 @@ choices:
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
     next: compiletime/no-matching-function/unresolved-overloaded-function-type
   
+  - id: as-char-ptr
+    label: no matching function for call to `...as<char*>()`
+    summary: Error says "no matching function for call to `...as<char*>()`"
+    next: compiletime/no-matching-function/as-char-ptr
+
   - id: not-in-list
     label: None of the above
     summary:  The error is not in the list
