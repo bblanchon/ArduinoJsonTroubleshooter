@@ -65,25 +65,10 @@ choices:
     summary: Error says "no default constructor exists for class `BasicJsonDocument`"
     next: compiletime/basicjsondocument-default-constructor
 
-  - id: basicjsondocument-missing-argument
-    label: no matching function for call to `BasicJsonDocument::BasicJsonDocument()`
-    summary: Error says "no matching function for call to `BasicJsonDocument::BasicJsonDocument()`"
-    next: compiletime/basicjsondocument-missing-argument
-
-  - id: converttojson
-    label: no matching function for call to `convertToJson(...)`
-    summary: Error says "no matching function for call to `convertToJson(...)`"
-    next: compiletime/converttojson
-
-  - id: no-matching-deserializejson
-    label: no matching function for call to `deserializeJson(StaticJsonDocument<200> (&)(), ...)`
-    summary: Error says "no matching function for call to `deserializeJson(StaticJsonDocument<200> (&)(), ...)`"
-    next: compiletime/no-matching-deserializejson
-
-  - id: unresolved-overloaded-function-type
-    label: no matching function for call to `...(<unresolved overloaded function type>)`
-    summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
-    next: compiletime/unresolved-overloaded-function-type
+  - id: no-matching-function
+    label: no matching function for call to ...
+    summary: Error says "no matching function for call to ..."
+    next: compiletime/no-matching-function
 
   - id: passing-volatile-as-this-argument-discards-qualifiers
     label: passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]
