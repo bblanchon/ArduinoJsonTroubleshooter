@@ -1,6 +1,14 @@
 <template>
   <div>
-    <div v-html="intro.content"></div>
+    <div>
+      <p>Hi!</p>
+      <p>
+        I'm the <i>ArduinoJson Troubleshooter</i>, and I'm here to help you fix
+        your problem. I'll ask you a series of questions and give you some
+        instructions along the way.
+      </p>
+      <p>Ready? Here we go!</p>
+    </div>
     <TransitionGroup name="fade" mode="out-in">
       <template v-for="step in steps" :key="step.hash">
         <TroubleshooterStep :id="step.id" :step="step" @choose="choose" />
@@ -59,11 +67,6 @@ function makeStep(pageKey, hash, number) {
 
 export default {
   components: { AssistanceModal, TroubleshooterStep },
-  setup() {
-    return {
-      intro: pages["intro"]
-    }
-  },
   data() {
     return {
       reportCopied: false,
