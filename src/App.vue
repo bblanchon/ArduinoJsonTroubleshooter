@@ -40,31 +40,11 @@
 </template>
 
 <script>
-/// <reference path="../plugins/troubleshooter/client.d.ts" />
-import pages from "virtual:troubleshooter"
-
 import AssistanceModal from "./components/AssistanceModal.vue"
 import TroubleshooterStep from "./components/TroubleshooterStep.vue"
+import { getSteps, generateReport } from "./troubleshooter"
 
 const sleep = (m) => new Promise((r) => setTimeout(r, m))
-
-function makeStep(pageKey, hash, number) {
-  const page = pages[pageKey]
-  if (!page) return null
-  return {
-    ...page,
-    number,
-    slug: pageKey,
-    hash: hash || "#",
-    id: (hash || "#start").substring(1),
-    choices: page.choices?.map((choice) => ({
-      ...choice,
-      inputId: (hash ? hash.substring(1) + "/" : "") + choice.id,
-      hash: (hash ? hash + "/" : "#") + choice.id,
-      missing: !pages[choice.next]
-    }))
-  }
-}
 
 export default {
   components: { AssistanceModal, TroubleshooterStep },
@@ -79,38 +59,15 @@ export default {
     window.addEventListener("hashchange", () => (this.hash = location.hash))
   },
   computed: {
-    currentStep() {
-      return this.steps[this.steps.length - 1]
-    },
     needsAssistance() {
-      return !this.currentStep || this.currentStep.needs_assistance
+      const currentStep = this.steps[this.steps.length - 1]
+      return currentStep.needs_assistance
     },
     steps() {
-      const steps = [makeStep("start", undefined, 1)]
-      if (this.hash) {
-        let lastStep = steps[0]
-        for (let choiceId of this.hash.substring(1).split("/")) {
-          const choice = lastStep.choices?.find(
-            (choice) => choice.id === choiceId
-          )
-          if (!choice) {
-            console.error(`Choice "${choiceId}" not found`)
-            break
-          }
-          choice.selected = true
-          lastStep.selectedChoice = choice
-          lastStep = makeStep(choice.next, choice.hash, lastStep.number + 1)
-          if (!lastStep) break
-          steps.push(lastStep)
-        }
-      }
-      return steps
+      return getSteps(this.hash)
     },
     report() {
-      return this.steps
-        .filter((step) => step.selectedChoice)
-        .map((step, index) => `${index + 1}. ${step.selectedChoice.summary}`)
-        .join("\n")
+      return generateReport(this.steps)
     }
   },
   watch: {
