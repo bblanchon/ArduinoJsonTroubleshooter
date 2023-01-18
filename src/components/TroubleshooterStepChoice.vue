@@ -13,11 +13,9 @@
       :for="choice.inputId"
       v-html="choice.label"
     ></label>
-    <div
-      v-if="debug"
-      class="d-block mb-2 small text-muted"
-      v-html="choice.summary"
-    ></div>
+    <div v-if="debug" class="d-block mb-2 small text-muted">
+      {{ choice.summary }}
+    </div>
   </div>
 </template>
 

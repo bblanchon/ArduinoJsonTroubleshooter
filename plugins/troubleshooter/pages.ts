@@ -34,7 +34,6 @@ export function loadPageFile(filename: string, mdi: MarkdownIt): Page {
     choices: frontmatter.choices?.map((choice) => ({
       ...choice,
       label: mdi.renderInline(choice.label),
-      summary: mdi.renderInline(choice.summary),
     }))
   }
 }
