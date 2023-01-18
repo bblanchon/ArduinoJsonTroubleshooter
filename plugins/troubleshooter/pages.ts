@@ -13,7 +13,7 @@ export interface Choice {
 
 export interface Page {
   content: string
-  choices: Choice[]
+  choices?: Choice[]
 }
 
 export type PageMap = { [key: string]: Page }
@@ -22,10 +22,9 @@ export function loadPageFile(filename: string, mdi: MarkdownIt): Page {
   const { data: frontmatter, content } = matter(readFileSync(filename), { excerpt: false })
   const page: Page = {
     ...frontmatter,
-    choices: frontmatter.choices || [],
     content: mdi.render(content),
   }
-  page.choices.forEach((choice: Choice) => {
+  page.choices?.forEach((choice: Choice) => {
     if (choice.label) choice.label = mdi.renderInline(choice.label)
     if (choice.summary) choice.summary = mdi.renderInline(choice.summary)
   })

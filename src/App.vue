@@ -86,9 +86,9 @@ export default {
       if (this.hash) {
         let lastStep = steps[0]
         for (let choiceId of this.hash.substring(1).split("/")) {
-          const choice = lastStep.choices.filter(
+          const choice = lastStep.choices?.find(
             (choice) => choice.id === choiceId
-          )[0]
+          )
           if (!choice) {
             console.error(`Choice "${choiceId}" not found`)
             break
@@ -139,6 +139,7 @@ export default {
 .fade-leave-active {
   transition: opacity 0.25s;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;

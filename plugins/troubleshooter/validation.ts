@@ -8,11 +8,11 @@ interface PageError {
 
 function getMissingPages(pages: PageMap): PageError[] {
   return Object.entries(pages).map(([key, page]) =>
-    page.choices.filter(choice => choice.next && !(choice.next in pages))
+    page.choices?.filter(choice => choice.next && !(choice.next in pages))
       .map((choice) => ({
         page: key,
         message: `page \"${choice.next}\" is missing`
-      }))
+      })) || []
   ).flat()
 }
 
@@ -21,7 +21,8 @@ function getUnusedPages(pages: PageMap): PageError[] {
     "intro",
     "start",
     ...Object.values(pages)
-      .map((page) => page.choices)
+      .filter((page) => page.choices !== undefined)
+      .map((page) => page.choices!)
       .flat()
       .map((choice) => choice.next)
   ])
@@ -38,13 +39,13 @@ function getMissingFields(pages: PageMap): PageError[] {
   const requiredFields = ["id", "label", "summary", "next"]
 
   return Object.entries(pages).map(([key, page]) =>
-    page.choices.map((choice, index) =>
+    page.choices?.map((choice, index) =>
       requiredFields.filter(field => !choice[field])
         .map((field) => ({
           page: key,
           message: `choice ${index} lacks the \"${field}\" field`
         }))
-    )
+    ) || []
   ).flat(2)
 }
 
@@ -53,7 +54,7 @@ function getDuplicateChoices(pages: PageMap): PageError[] {
 
   return Object.entries(pages).map(([key, page]) =>
     uniqueFields.map((field) => {
-      const values = page.choices.map((choice) => choice[field])
+      const values = page.choices?.map((choice) => choice[field]) || []
       const duplicates = values.filter(
         (val, idx) => values.indexOf(val) !== idx
       )
@@ -69,12 +70,11 @@ function getDuplicateChoices(pages: PageMap): PageError[] {
 
 function getInvalidChoiceIds(pages: PageMap): PageError[] {
   return Object.entries(pages).map(([key, page]) =>
-    page.choices
-      .filter(choice => (/[^a-z0-9\-]/.test(choice.id)))
+    page.choices?.filter(choice => (/[^a-z0-9\-]/.test(choice.id)))
       .map((choice, index) => ({
         page: key,
         message: `invalid id \"${choice.id}\" for choice ${index}`
-      }))
+      })) || []
   ).flat()
 }
 
