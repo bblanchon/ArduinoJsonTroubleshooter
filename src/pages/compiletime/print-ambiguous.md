@@ -2,11 +2,11 @@
 choices:
   - id: success
     label: "Yes"
-    summary: Casting the value or using serializeJson() solves the issue
+    summary: Casting the value or using `serializeJson()` solves the issue
     next: done
   - id: failure
     label: "No"
-    summary: Neither casting the value nor using serializeJson() solves the issue
+    summary: Neither casting the value nor using `serializeJson()` solves the issue
     next: deadend
 ---
 
