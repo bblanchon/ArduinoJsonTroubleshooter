@@ -11,24 +11,32 @@ export interface Choice {
   next: string
 }
 
+interface PageFrontmatter {
+  choices?: Choice[]
+  needs_assistance?: boolean
+}
+
 export interface Page {
   content: string
   choices?: Choice[]
+  needs_assistance: boolean
 }
 
 export type PageMap = { [key: string]: Page }
 
 export function loadPageFile(filename: string, mdi: MarkdownIt): Page {
-  const { data: frontmatter, content } = matter(readFileSync(filename), { excerpt: false })
-  const page: Page = {
-    ...frontmatter,
+  const { data: frontmatter, content }
+    : { data: PageFrontmatter, content: string }
+    = matter(readFileSync(filename), { excerpt: false })
+  return {
     content: mdi.render(content),
+    needs_assistance: !!frontmatter.needs_assistance,
+    choices: frontmatter.choices?.map((choice) => ({
+      ...choice,
+      label: mdi.renderInline(choice.label),
+      summary: mdi.renderInline(choice.summary),
+    }))
   }
-  page.choices?.forEach((choice: Choice) => {
-    if (choice.label) choice.label = mdi.renderInline(choice.label)
-    if (choice.summary) choice.summary = mdi.renderInline(choice.summary)
-  })
-  return page
 }
 
 export function listFiles(folder: string) {
