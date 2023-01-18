@@ -18,7 +18,7 @@ function getMissingPages(pages: PageMap): PageError[] {
 
 function getUnusedPages(pages: PageMap): PageError[] {
   const usedPages = new Set([
-    "start",
+    "index",
     ...Object.values(pages)
       .filter((page) => page.choices !== undefined)
       .map((page) => page.choices!)

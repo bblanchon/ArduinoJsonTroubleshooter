@@ -42,7 +42,7 @@ function makeStep(pageKey: string, hash?: string, number?: number): Step {
 }
 
 export function getSteps(hash?: string): Step[] {
-  const steps = [makeStep("start")]
+  const steps = [makeStep("index")]
 
   if (hash) {
     let lastStep = steps[0]
