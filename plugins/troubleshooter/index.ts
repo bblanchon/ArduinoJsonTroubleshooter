@@ -1,28 +1,18 @@
-import path from 'node:path'
+import { dataToEsm } from '@rollup/pluginutils'
+import { Plugin, Logger, ViteDevServer } from 'vite'
 
-import { dataToEsm, createFilter } from '@rollup/pluginutils'
-import MarkdownIt from 'markdown-it'
-import { Plugin, Logger, normalizePath, ViteDevServer } from 'vite'
-
-import { listFiles, loadPageFile, PageMap } from "./pages"
+import { PageMap } from "./pages"
 import { getErrors } from "./validation"
+import { PageLoader, LoaderConfig } from './loader'
 
-interface UserOptions {
-  folder?: string
-  markdownItOptions?: MarkdownIt.Options
-  markdownItUses?: [MarkdownIt.PluginWithOptions, any][]
-}
+type UserOptions = LoaderConfig
+
 
 export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plugin {
-  const folder = path.resolve(userOptions.folder || "src/pages")
-  const filenamePattern = normalizePath(path.join(folder, "**/*.md"))
-  const isPage = createFilter(filenamePattern)
   const virtualModuleId = 'virtual:troubleshooter'
 
-  const mdi = MarkdownIt(userOptions.markdownItOptions || {})
-  userOptions.markdownItUses?.forEach(
-    ([plugin, options]) => mdi.use(plugin, options)
-  )
+  const loader = new PageLoader(userOptions)
+
   const pages: PageMap = {}
   const filenames: { [key: string]: string } = {}
 
@@ -37,24 +27,16 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
       throw new Error(JSON.stringify(errors, null, 2))
   }
 
-  function getPageKey(filename: string) {
-    return path
-      .relative(folder, filename)
-      .slice(0, -3)
-      .replace(/\\/g, '/')
-      .replace(/\/index$/, '')
-  }
-
   function loadPage(filename: string) {
-    if (!isPage(filename)) return
-    const key = getPageKey(filename)
-    pages[key] = loadPageFile(filename, mdi)
+    if (!loader.checkFilename(filename)) return
+    const key = loader.getFileKey(filename)
+    pages[key] = loader.loadFile(filename)
     filenames[key] = filename
   }
 
   function removePage(filename: string) {
-    if (!isPage(filename)) return
-    const key = getPageKey(filename)
+    if (!loader.checkFilename(filename)) return
+    const key = loader.getFileKey(filename)
     delete pages[key]
     delete filenames[key]
   }
@@ -71,7 +53,7 @@ export default function TroubleshooterPlugin(userOptions: UserOptions = {}): Plu
     configResolved(config) {
       logger = config.logger
       isProduction = config.isProduction
-      listFiles(folder).forEach(f => loadPage(f))
+      loader.listFiles().forEach(f => loadPage(f))
     },
     configureServer(server) {
       server.watcher.on("change", (f) => {
