@@ -7,20 +7,20 @@ choices:
   - id: lint
     label: "No"
     summary: No garbage characters follow the input
-    next: jsonlint
+    next: ../jsonlint
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) stops reading as soon as the JSON document ends.
-In your case, it will read the input until it reaches the matching `]` and ignore any remaining characters.
+In your case, it will read the input until it reaches the matching `"` and ignore any remaining characters.
 
 
 Suppose the input looks like this:
 
 ```json
-[1,2,3]GARBAGE
+"hello"GARBAGE
 ```
 
-Here, [`deserializeJson()`](/v6/api/json/deserializejson/) reads the JSON array `[1,2,3]` and returns `Ok` ignoring the `GARBAGE` part.
+Here, [`deserializeJson()`](/v6/api/json/deserializejson/) reads the JSON string `"hello"` and returns `Ok` ignoring the `GARBAGE` part.
 
 This feature enables [deserializing in chunks](/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks) and allows non-zero-terminated input strings.
 
