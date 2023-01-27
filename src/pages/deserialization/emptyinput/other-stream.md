@@ -3,7 +3,7 @@ choices:
   - id: zero
     label: "`0`"
     summary: The first character is NUL
-    next: /deserialization/emptyinput/other-nul
+    next: other-nul
   - id: non-zero
     label: Something else
     summary: The first character is not NUL

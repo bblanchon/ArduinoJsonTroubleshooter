@@ -7,7 +7,7 @@ choices:
   - id: getstring
     label: "No"
     summary: "Calling `HTTPClient::getString()` doesn't solves the issue"
-    next: /deserialization/invalidinput/string-jsonlint
+    next: string-jsonlint
 ---
 
 You're calling the wrong function:

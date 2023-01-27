@@ -3,11 +3,11 @@ choices:
   - id: static
     label: "Yes" 
     summary: Program uses `StaticJsonDocument`
-    next: /deserialization/crash/static
+    next: static
   - id: no-static
     label: "No"
     summary: Program doesn't use `StaticJsonDocument`
-    next: /deserialization/crash/dynamic
+    next: dynamic
 ---
 
 A stack-overflow could cause the crash.

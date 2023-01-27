@@ -7,7 +7,7 @@ choices:
   - id: lint
     label: "No"
     summary: No garbage characters follow the input
-    next: /deserialization/noerror/jsonlint
+    next: jsonlint
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) stops reading as soon as the JSON document ends.

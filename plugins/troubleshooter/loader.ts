@@ -58,15 +58,22 @@ export class PageLoader {
       .replace(/\/index$/, '') || "/"
   }
 
+  resolveNext(next: string, from: string) {
+    from = normalizePath(path.relative(this.folder, from))
+    return new URL(next, `foo://bar/${from}`).pathname
+  }
+
   loadFile(filename: string): Page {
     const { data: frontmatter, content }
       : { data: PageFrontmatter, content: string }
       = matter(readFileSync(filename), { excerpt: false })
+    const pageKey = this.getFileKey(filename)
     return {
       content: this.mdi.render(content),
       needs_assistance: !!frontmatter.needs_assistance,
       choices: frontmatter.choices?.map((choice) => ({
         ...choice,
+        next: this.resolveNext(choice.next, filename),
         label: this.mdi.renderInline(choice.label),
       }))
     }

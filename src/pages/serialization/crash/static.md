@@ -7,7 +7,7 @@ choices:
   - id: dynamicjsondocument-tried
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't fix the issue
-    next: /serialization/crash/progmem
+    next: progmem
 ---
 
 Because a [`StaticJsonDocument`](/v6/api/staticjsondocument/) resides on the stack, it may cause a [stack-overflow](https://en.wikipedia.org/wiki/Stack_buffer_overflow).

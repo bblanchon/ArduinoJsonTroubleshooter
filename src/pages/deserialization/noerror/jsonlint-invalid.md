@@ -6,7 +6,7 @@ choices:
     summary: "`deserializeJson()` tolerates the error, and that's OK"
   - id: unacceptable
     label: "No"
-    next: /deserialization/noerror/unacceptable
+    next: unacceptable
     summary: "`deserializeJson()` should not let this error pass"
 ---
 

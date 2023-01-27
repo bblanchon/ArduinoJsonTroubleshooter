@@ -3,7 +3,7 @@ choices:
   - id: deserialize-yes
     label: "Yes"
     summary: Program calls `deserializeJson()`
-    next: /serialization/emptystrings/deserialize
+    next: emptystrings/deserialize
   - id: deserialize-no
     label: "No"
     summary: Program doesn't call `deserializeJson()`

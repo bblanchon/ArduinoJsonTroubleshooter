@@ -7,7 +7,7 @@ choices:
   - id: dynamic
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't fix the issue
-    next: /serialization/garbage/document-dynamic
+    next: document-dynamic
 ---
 
 [`StaticJsonDocument`](/v6/api/staticjsondocument/) stores its memory pool in the stack.

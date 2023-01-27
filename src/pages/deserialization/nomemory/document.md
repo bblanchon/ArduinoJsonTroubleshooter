@@ -3,15 +3,15 @@ choices:
   - id: basic
     label: "`BasicJsonDocument<T>`"
     summary: The document is a `BasicJsonDocument<T>`
-    next: /deserialization/nomemory/document-basic
+    next: document-basic
   - id: dynamicjsondocument
     label: "`DynamicJsonDocument`"
     summary: The `JsonDocument` is a `DynamicJsonDocument`
-    next: /deserialization/nomemory/document-dynamic
+    next: document-dynamic
   - id: staticjsondocument
     label: "`StaticJsonDocument`"
     summary: The `JsonDocument` is a `StaticJsonDocument`
-    next: /deserialization/nomemory/assistant-settings   
+    next: assistant-settings   
 ---
 
 What kind of [`JsonDocument`](/v6/api/jsondocument/) are you using?

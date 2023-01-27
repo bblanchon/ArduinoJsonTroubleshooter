@@ -3,11 +3,11 @@ choices:
   - id: capacity-0
     label: "`0`"
     summary: "`doc.capacity()` returns `0`"
-    next: /deserialization/nomemory/document-basic-capacity-0
+    next: document-basic-capacity-0
   - id: capacity-ok
     label: The value passed to the constructor of `DynamicJsonDocument`
     summary: "`doc.capacity()` returns the right value"
-    next: /deserialization/nomemory/assistant-settings
+    next: assistant-settings
 ---
 
 Let's verify that the memory allocation succeeded.

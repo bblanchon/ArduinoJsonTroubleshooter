@@ -7,7 +7,7 @@ choices:
   - id: voltage-ok
     label: "No"
     summary: The issue is not a voltage mismatch
-    next: /deserialization/invalidinput/serial-rate
+    next: serial-rate
 ---
 
 Not all microcontrollers use the same voltage for the serial port.

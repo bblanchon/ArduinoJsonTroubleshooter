@@ -3,7 +3,7 @@ choices:
   - id: string
     label: "Yes"
     summary: Program uses `String`
-    next: /serialization/garbage/document-dynamic-string
+    next: document-dynamic-string
   - id: no-string
     label: "No"
     summary: Program doesn't use `String`

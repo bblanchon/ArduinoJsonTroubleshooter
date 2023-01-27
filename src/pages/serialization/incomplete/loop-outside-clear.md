@@ -7,7 +7,7 @@ choices:
   - id: gc
     label: "No"
     summary: Calling `JsonDocument::garbageCollect()` doesn't solve the issue
-    next: /serialization/incomplete/noloop
+    next: noloop
 ---
 
 Please replace the call to [`JsonDocument::clear()`](/v6/api/jsondocument/clear/) with [`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/).

@@ -7,7 +7,7 @@ choices:
   - id: not-destroyed
     label: "No"
     summary: Extending the lifetime of the `JsonDocument` doesn't solve the issue
-    next: /serialization/garbage/reference
+    next: reference
 ---
 
 [`JsonVariant`](/v6/api/jsonvariant/) doesn't contain any data: it is a reference to an object stored in the [`JsonDocument`](/v6/api/jsondocument/). It becomes invalid as soon as the [`JsonDocument`](/v6/api/jsondocument/) is destroyed; this could explain the garbage you see in the output.

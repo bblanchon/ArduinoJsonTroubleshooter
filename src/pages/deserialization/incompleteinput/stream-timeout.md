@@ -7,7 +7,7 @@ choices:
   - id: timeout-increased
     label: "No"
     summary: Inreasing the timeout doesn't solve the issue
-    next: /deserialization/incompleteinput/stream-buffer
+    next: stream-buffer
     
 ---
 

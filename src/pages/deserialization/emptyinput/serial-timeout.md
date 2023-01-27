@@ -7,7 +7,7 @@ choices:
   - id: available
     label: "No"
     summary:  Adding a wait loop doesn't fix the issue
-    next: /deserialization/emptyinput/serial-crlf
+    next: serial-crlf
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) can be caused by a timeout while waiting for the input.

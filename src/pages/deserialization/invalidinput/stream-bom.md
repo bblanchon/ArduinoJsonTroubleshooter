@@ -3,15 +3,15 @@ choices:
   - id: utf8
     label: "`239`"
     summary: Input's first byte suggests a UTF-8 BOM
-    next: /deserialization/invalidinput/bom-utf8
+    next: bom-utf8
   - id: utf16
     label: "`254` or `255`"
     summary: Input's first byte suggests a UTF-16 BOM
-    next: /deserialization/invalidinput/bom-utf16
+    next: bom-utf16
   - id: no-bom
     label: Something else
     summary: Input's first byte doesn't suggest a BOM
-    next: /deserialization/invalidinput/bom-none
+    next: bom-none
 ---
 
 We must check that the JSON document is not preceded by a  [Byte Order Mark](https://en.wikipedia.org/wiki/Byte_order_mark) (BOM).

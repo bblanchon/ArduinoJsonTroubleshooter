@@ -7,11 +7,11 @@ choices:
   - id: better
     label: Somehow
     summary: Reducing baud rate improves the situation
-    next: /deserialization/invalidinput/serial-cable
+    next: serial-cable
   - id: not-better
     label: "No"
     summary: Reducing baud rate doesn't fix the issue
-    next: /deserialization/invalidinput/serial-jsonlint
+    next: serial-jsonlint
 ---
 
 Any kind of communication is subject to errors: sometimes you send a `1` and receive a `0`.

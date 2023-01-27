@@ -7,7 +7,7 @@ choices:
  - id: larger-buffer
    label: "No"
    summary: Increasing the buffer size doesn't solve the issue
-   next: /deserialization/incompleteinput/string-stream
+   next: string-stream
 ---
 
 I'll assume that your input is stored in a buffer similar to this one:

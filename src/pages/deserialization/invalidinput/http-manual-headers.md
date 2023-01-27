@@ -7,11 +7,11 @@ choices:
   - id: warning
     label: Yes, but there is a compiler warning about `client.find()`
     summary: Skipping HTTP headers solves the issue, but there is a warning
-    next: /deserialization/invalidinput/http-manual-headers-warning
+    next: http-manual-headers-warning
   - id: header-skipped
     label: "No"
     summary: Skipping HTTP headers doesn't solve the issue
-    next: /deserialization/invalidinput/http-manual-http10
+    next: http-manual-http10
 ---
 
 Just like the HTTP request, the response contains some headers, followed by an empty line, and then followed by the body.

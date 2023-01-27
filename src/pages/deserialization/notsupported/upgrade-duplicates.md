@@ -7,7 +7,7 @@ choices:
   - id: duplicates-removed
     label: "No"
     summary: Removing duplicates doesn't fix the issue
-    next: /deserialization/notsupported/unicode
+    next: unicode
 ---
 
 If you're still seeing `NotSupported` after upgrading the library, it means that your code is not using the upgraded library.

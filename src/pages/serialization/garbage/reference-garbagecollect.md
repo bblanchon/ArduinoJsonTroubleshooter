@@ -7,7 +7,7 @@ choices:
   - id: reassigned
     label: "No"
     summary: Reassigning references doesn't fix the issue
-    next: /serialization/garbage/document
+    next: document
 ---
 
 [`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/) invalidates all previously acquired [`JsonArray`](/v6/api/jsonarray/), [`JsonObject`](/v6/api/jsonobject/), and [`JsonVariant`](/v6/api/jsonvariant/).

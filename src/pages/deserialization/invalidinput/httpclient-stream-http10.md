@@ -7,7 +7,7 @@ choices:
   - id: changed
     label:  "No"
     summary: "Calling `HTTPClient::useHTTP10(true)` doesn't solve the issue"
-    next: /deserialization/invalidinput/httpclient-stream-jsonlint
+    next: httpclient-stream-jsonlint
 ---
 
 When you call `HTTPClient::getStream()`, you bypass the part that handles [Chunked Transfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding).

@@ -4,11 +4,11 @@ choices:
   - id: valid
     label: "Yes"
     summary: "`jsonlint` says the document is valid"
-    next: /deserialization/invalidinput/stream-buffer
+    next: stream-buffer
   - id: invalid
     label: "No"
     summary: "`jsonlint` says the document is invalid"
-    next: /deserialization/invalidinput/jsonlint-bad
+    next: jsonlint-bad
 ---
 
 We need to make sure that the JSON document is valid.

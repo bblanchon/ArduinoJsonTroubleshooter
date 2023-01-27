@@ -7,7 +7,7 @@ choices:
   - id: double
     label: "No"
     summary: Rounding the value doesn't fix the issue
-    next: /serialization/floats/double-rounded
+    next: double-rounded
 ---
 
 Please add the following function somewhere in your program:

@@ -7,7 +7,7 @@ choices:
   - id: flush
     label: "No"
     summary: Flushing the serial buffer doesn't fix the issue
-    next: /deserialization/invalidinput/serial-voltage
+    next: serial-voltage
 ---    
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) may return [`InvalidInput`](/v6/api/misc/deserializationerror/#invalidinput) because it starts reading the input mid-stream.

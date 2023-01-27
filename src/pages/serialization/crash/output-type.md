@@ -3,7 +3,7 @@ choices:
   - id: char-array
     label: "`char[]`"
     summary: Output type is `char[]`
-    next: /serialization/crash/output-char-array
+    next: output-char-array
   - id: char-ptr
     label: "`char*`"
     summary: Output type is `char*`

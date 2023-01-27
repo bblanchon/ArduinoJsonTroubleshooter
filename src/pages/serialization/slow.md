@@ -3,7 +3,7 @@ choices:
   - id: success
     label: "Yes"
     summary: Adding `WriteBufferingStream` fixes the issue
-    next: /serialization/incomplete/overflowed
+    next: incomplete/overflowed
   - id: failure
     label: "No"
     summary: Adding `WriteBufferingStream` doesn't fix the issue

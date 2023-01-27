@@ -7,7 +7,7 @@ choices:
  - id: same-with-reserve
    label: "No"
    summary: Calling `String::reserve()` doesn't solve the issue
-   next: /deserialization/incompleteinput/string-stream
+   next: string-stream
 ---
 
 Please print the content of the string to the serial port, like so:

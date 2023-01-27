@@ -7,7 +7,7 @@ choices:
   - id: updraded
     label: "No"
     summary: Upgrading doesn't solves the issue
-    next: /deserialization/notsupported/upgrade-duplicates
+    next: upgrade-duplicates
 ---
 
 Please upgrade ArduinoJson to the latest version.  

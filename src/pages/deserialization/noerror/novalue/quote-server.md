@@ -7,7 +7,7 @@ choices:
   - id: server-ok
     label: "No"
     summary: Fixing the server doesn't fix the issue
-    next: /deserialization/noerror/novalue/quote-keep
+    next: quote-keep
 ---
 
 In the server implementation, please look at the view that returns the faulty JSON.

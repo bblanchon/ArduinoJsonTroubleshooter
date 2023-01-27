@@ -3,7 +3,7 @@ choices:
   - id: char-ptr
     label: "`char*` (or `char[]`)"
     summary: Input type is `char*`
-    next: /serialization/emptystrings/deserialize-zerocopy
+    next: deserialize-zerocopy
   - id: const-char-ptr
     label: "`const char*`"
     summary: Input type is `const char*`

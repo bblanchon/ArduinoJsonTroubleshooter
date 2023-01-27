@@ -3,15 +3,15 @@ choices:
   - id: getstream
     label: "`getStream()`"
     summary: Response comes from `HTTPClient::getStream()`
-    next: /deserialization/invalidinput/httpclient-stream
+    next: httpclient-stream
   - id: getstring
     label: "`getString()`"
     summary: Response comes from `HTTPClient::getString()`
-    next: /deserialization/invalidinput/string-jsonlint
+    next: string-jsonlint
   - id: readstring
     label: "`readString()`"
     summary: Response comes from `HTTPClient::readString()`
-    next: /deserialization/invalidinput/httpclient-readstring
+    next: httpclient-readstring
 ---
 
 Which function of `HTTPClient` do you call to get the response?

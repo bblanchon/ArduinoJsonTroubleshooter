@@ -7,7 +7,7 @@ choices:
   - id: filter-ok
     label: "No"
     summary: Fixing the filter doesn't solve the issue
-    next: /deserialization/noerror/novalue/print
+    next: print
 ---
 
 

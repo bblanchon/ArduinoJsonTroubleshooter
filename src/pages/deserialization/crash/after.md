@@ -3,11 +3,11 @@ choices:
   - id: strcmp
     label: Yes, there is a call to `strcmp()`
     summary: Program calls `strcmp()`
-    next: /deserialization/crash/after-strcmp
+    next: after-strcmp
   - id: strcpy
     label: Yes, there is a call to `strcpy()`
     summary: Program calls `strcpy()`
-    next: /deserialization/crash/after-strcpy
+    next: after-strcpy
   - id: success
     label: Yes, I found the issue
     summary: Program dereferences a null pointer
@@ -15,7 +15,7 @@ choices:
   - id: no-usual-suspect
     label: "No"
     summary: Program calls neither `strcmp()` nor `strcpy()`
-    next: /deserialization/crash/after-pointer
+    next: after-pointer
 ---
 
 Most of the time, when a program crashes after [`deserializeJson()`](/v6/api/json/deserializejson/), it's because it dereferences a null pointer returned by the [`JsonDocument`](/v6/api/jsondocument/).

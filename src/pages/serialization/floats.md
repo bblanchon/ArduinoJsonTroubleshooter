@@ -7,7 +7,7 @@ choices:
   - id: double
     label: "No"
     summary: Replacing `float` with `double` doesn't fix the issue
-    next: /serialization/floats/double
+    next: floats/double
 ---
 
 Supposing that the JSON output looks like this:
