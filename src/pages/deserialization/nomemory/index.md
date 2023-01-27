@@ -7,7 +7,7 @@ choices:
   - id: increased-capacity
     label: "No"
     summary: Increasing the capacity of the `JsonDocument` doesn't fix the issue
-    next: nomemory/document
+    next: document
 --- 
 
 [`NoMemory`](/v6/api/misc/deserializationerror/#nomemory) means that the [`JsonDocument`](/v6/api/jsondocument/) is too small to hold the entire document.

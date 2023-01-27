@@ -2,15 +2,15 @@
 choices:
   - id: before
     label: "None: program crashes before calling `deserializeJson()`"
-    next: crash/before
+    next: before
     summary: "Program crashes before calling `deserializeJson()`"
   - id: inside
     label: "Only one: program crashes inside `deserializeJson()`"
-    next: crash/inside
+    next: inside
     summary: "Program crashes inside `deserializeJson()`"
   - id: after
     label: "Two traces: program crashes after calling `deserializeJson()`"
-    next: crash/after
+    next: after
     summary: "Program crashes after calling `deserializeJson()`"
 ---
 

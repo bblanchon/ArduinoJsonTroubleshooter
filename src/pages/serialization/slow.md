@@ -3,7 +3,7 @@ choices:
   - id: success
     label: "Yes"
     summary: Adding `WriteBufferingStream` fixes the issue
-    next: incomplete/overflowed
+    next: /done
   - id: failure
     label: "No"
     summary: Adding `WriteBufferingStream` doesn't fix the issue
@@ -32,3 +32,5 @@ bufferedStream.flush();
 The first line creates a new stream `bufferedStream` that implements buffering on top of the original (this is the [decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern)).  
 The second line writes the JSON document to the [`WiFiClient`](https://www.arduino.cc/en/Reference/WiFiClient) through the buffer.  
 The last line flushes the buffer to make sure we send the end of the document.
+
+Did this solve your issue?

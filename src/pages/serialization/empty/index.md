@@ -3,7 +3,7 @@ choices:
   - id: capacity-0
     label: "`0`"
     summary: "`doc.capacity()` returns `0`"
-    next: empty/capacity-0
+    next: capacity-0
   - id: capacity-ok
     label: "a positive integer"
     summary: "`doc.capacity()` looks good"
