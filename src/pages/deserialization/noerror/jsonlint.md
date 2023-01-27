@@ -2,11 +2,11 @@
 choices:
   - id: valid
     label: Document is valid
-    next: deserialization/noerror/jsonlint-valid
+    next: /deserialization/noerror/jsonlint-valid
     summary: jsonlint says the document is valid
   - id: invalid
     label: Document is invalid
-    next: deserialization/noerror/jsonlint-invalid
+    next: /deserialization/noerror/jsonlint-invalid
     summary: jsonlint says the document is invalid
 ---
 

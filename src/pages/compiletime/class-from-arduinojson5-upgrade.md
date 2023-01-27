@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Upgrading fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Upgrading doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 Upgrading from v5 to v6 isn't trivial but isn't complicated either.  

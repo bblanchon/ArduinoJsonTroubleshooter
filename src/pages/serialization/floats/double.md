@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Rounding the value fixes the issue
-    next: done
+    next: /done
   - id: double
     label: "No"
     summary: Rounding the value doesn't fix the issue
-    next: serialization/floats/double-rounded
+    next: /serialization/floats/double-rounded
 ---
 
 Please add the following function somewhere in your program:

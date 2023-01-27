@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Moving statement to `setup()` fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Moving statement to `setup()` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 This error usually occurs when you write statements at the global scope, which isn't possible in C++.

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: The issue is a voltage mismatch
-    next: done
+    next: /done
   - id: voltage-ok
     label: "No"
     summary: The issue is not a voltage mismatch
-    next: deserialization/invalidinput/serial-rate
+    next: /deserialization/invalidinput/serial-rate
 ---
 
 Not all microcontrollers use the same voltage for the serial port.

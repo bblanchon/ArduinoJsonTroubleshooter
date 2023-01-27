@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Casting the value or using `serializeJson()` solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Neither casting the value nor using `serializeJson()` solves the issue
-    next: deadend
+    next: /deadend
 ---
 
 This error usually occurs when you pass a [`JsonVariant`](/v6/api/jsonvariant/) to [`Serial::print()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/) or [`Serial::print()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/).

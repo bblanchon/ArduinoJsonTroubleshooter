@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Replacing `JsonArray` with `JsonArrayConst` fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Replacing `JsonArray` with `JsonArrayConst` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 Somewhere in your program, there is a conversion from [`JsonVariantConst`](/v6/api/jsonvariantconst/) to [`JsonArray`](/v6/api/jsonarray/). This conversion is invalid because it would convert a *read-only* reference to a *read-write* reference.

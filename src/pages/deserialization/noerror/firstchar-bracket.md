@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Garbage characters follow the input
-    next: done
+    next: /done
   - id: lint
     label: "No"
     summary: No garbage characters follow the input
-    next: deserialization/noerror/jsonlint
+    next: /deserialization/noerror/jsonlint
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) stops reading as soon as the JSON document ends.

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Casting the `JsonVariant` fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Casting the `JsonVariant` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 This error occurs when you try to assign a [`JsonVariant`](/v6/api/jsonvariant/) to a [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/).

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: "`ReadBufferingStream` solves the issue"
-    next: done
+    next: /done
   - id: buffered
     label: "No"
     summary: "`ReadBufferingStream` doesn't solve the issue"
-    next: deadend
+    next: /deadend
 ---
 
 Indeed, [`deserializeJson()`](/v6/api/json/deserializejson/) can be pretty slow with unbuffered implementations of [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/) (such as `File` and `WiFiClient`) because it reads characters one by one.

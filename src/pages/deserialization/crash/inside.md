@@ -3,11 +3,11 @@ choices:
   - id: no-dangling-ptr
     label: "Yes"
     summary: Removing dangling pointers doesn't prevent the crash
-    next: deserialization/crash/before
+    next: /deserialization/crash/before
   - id: success
     label: "No"
     summary: Removing dangling pointers prevents the crash
-    next: done
+    next: /done
 ---
 
 Passing a dangling pointer could cause a crash.

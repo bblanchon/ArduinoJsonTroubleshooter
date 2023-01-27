@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Adding `WriteBufferingStream` fixes the issue
-    next: serialization/incomplete/overflowed
+    next: /serialization/incomplete/overflowed
   - id: failure
     label: "No"
     summary: Adding `WriteBufferingStream` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 [`serializeJson()`](/v6/api/json/serializejson/) writes the JSON document mostly one character at a time, which can be pretty slow with unbuffered streams (such as [`EthernetClient`](https://www.arduino.cc/en/Reference/EthernetClient), [`WifiClient`](https://www.arduino.cc/en/Reference/WiFiClient), [`File`](https://www.arduino.cc/en/Reference/SD), and [PubSubClient](https://github.com/knolleary/pubsubclient/)).

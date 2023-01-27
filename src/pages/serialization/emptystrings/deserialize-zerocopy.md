@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Casting the pointer fixes the issue
-    next: done
+    next: /done
   - id: casting-fails
     label: "No"
     summary: Casting the pointer doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 When you pass a writeable buffer as the input of [`deserializeJson()`](/v6/api/json/deserializejson/), ArduinoJson uses the **zero-copy mode**. Instead of copying the strings from the input into the [`JsonDocument`](/v6/api/jsondocument/), it stores pointers to the input buffer.

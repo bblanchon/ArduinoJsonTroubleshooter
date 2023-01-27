@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: It's the "Most vexing parse"
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: It's not the "Most vexing parse"
-    next: deadend
+    next: /deadend
 ---
 
 This error happens when you write the following:

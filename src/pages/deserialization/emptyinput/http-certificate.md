@@ -3,11 +3,11 @@ choices:
   - id: certificate-problem
     label: "Yes"
     summary: Calling `WiFiClientSecure::setInsecure()` solves the issue.
-    next: deserialization/emptyinput/http-certificate-insecure
+    next: /deserialization/emptyinput/http-certificate-insecure
   - id: certificate-ok
     label: "No"
     summary: Calling `WiFiClientSecure::setInsecure()` doesn't solve the issue.
-    next: deserialization/emptyinput/http-timeout
+    next: /deserialization/emptyinput/http-timeout
 ---
 
 With HTTPS, [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) can be due to an error during the validation of the certificate.

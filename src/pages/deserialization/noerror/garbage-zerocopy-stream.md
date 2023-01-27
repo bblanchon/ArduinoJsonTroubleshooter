@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Passing the stream to `deserializeJson()` fixes the issue
-    next: done
+    next: /done
   - id: cast
     label: "No"
     summary: Passing the stream to `deserializeJson()` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 The easiest solution is to remove the buffer and pass the input stream directly to [`deserializeJson()`](/v6/api/json/deserializejson/).

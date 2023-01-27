@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Adding a buffer solves the issue
-    next: done
+    next: /done
   - id: buffer
     label: "No"
     summary: Adding a buffer doesn't solve the issue
-    next: deserialization/invalidinput/stream-bom
+    next: /deserialization/invalidinput/stream-bom
 ---
 
 Sometimes, the input is invalid because some bytes were dropped when receiving the document.

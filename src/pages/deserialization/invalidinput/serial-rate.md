@@ -3,15 +3,15 @@ choices:
   - id: success
     label: "Yes"
     summary: Reducing baud rate fixes the issue
-    next: done
+    next: /done
   - id: better
     label: Somehow
     summary: Reducing baud rate improves the situation
-    next: deserialization/invalidinput/serial-cable
+    next: /deserialization/invalidinput/serial-cable
   - id: not-better
     label: "No"
     summary: Reducing baud rate doesn't fix the issue
-    next: deserialization/invalidinput/serial-jsonlint
+    next: /deserialization/invalidinput/serial-jsonlint
 ---
 
 Any kind of communication is subject to errors: sometimes you send a `1` and receive a `0`.

@@ -3,15 +3,15 @@ choices:
   - id: success
     label: "Yes" 
     summary: Switching to `DynamicJsonDocument` prevents the crash
-    next: done
+    next: /done
   - id: nomemory
     label: "Yes, but now `deserializeJson()` returns `NoMemory`" 
     summary: Switching to `DynamicJsonDocument` produces `NoMemory`
-    next: deserialization/crash/static-nomemory
+    next: /deserialization/crash/static-nomemory
   - id: dynamicjsondocument-too
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't prevent the crash
-    next: deserialization/crash/dynamic
+    next: /deserialization/crash/dynamic
 ---
 
 A big [`StaticJsonDocument`](/v6/api/staticjsondocument/) might indeed overflow the stack.

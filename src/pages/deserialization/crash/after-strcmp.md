@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Replacing `strcmp()` with `==` solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Replacing `strcmp()` with `==` doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 As per the standard, the behavior of [`strcmp()`](https://en.cppreference.com/w/c/string/byte/strcmp) is undefined if one of the two arguments is null.

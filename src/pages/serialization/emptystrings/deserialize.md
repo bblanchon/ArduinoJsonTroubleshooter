@@ -3,19 +3,19 @@ choices:
   - id: char-ptr
     label: "`char*` (or `char[]`)"
     summary: Input type is `char*`
-    next: serialization/emptystrings/deserialize-zerocopy
+    next: /serialization/emptystrings/deserialize-zerocopy
   - id: const-char-ptr
     label: "`const char*`"
     summary: Input type is `const char*`
-    next: deadend
+    next: /deadend
   - id: string
     label: "`String` (or `std::string`)"
     summary: Input type is `String`
-    next: deadend
+    next: /deadend
   - id: stream
     label: "`Stream` (or `std::istream)`"
     summary: Input type is `Stream`
-    next: deadend
+    next: /deadend
 ---
 
 What's the type of the second argument passed to [`deserializeJson()`](/v6/api/json/deserializejson/)?

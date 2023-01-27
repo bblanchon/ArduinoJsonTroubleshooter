@@ -3,11 +3,11 @@ choices:
  - id: success
    label: "Yes"
    summary: Calling `String::reserve()` solves the issue
-   next: done
+   next: /done
  - id: same-with-reserve
    label: "No"
    summary: Calling `String::reserve()` doesn't solve the issue
-   next: deserialization/incompleteinput/string-stream
+   next: /deserialization/incompleteinput/string-stream
 ---
 
 Please print the content of the string to the serial port, like so:

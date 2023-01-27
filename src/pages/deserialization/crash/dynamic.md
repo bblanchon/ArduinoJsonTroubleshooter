@@ -3,11 +3,11 @@ choices:
   - id: failure
     label: "Yes"
     summary: Reducing stack usage doesn't prevent the crash
-    next: deadend
+    next: /deadend
   - id: success
     label: "No"
     summary: Reducing stack usage prevents the crash
-    next: done
+    next: /done
 ---
 
 I still think this could be a stack-overflow.

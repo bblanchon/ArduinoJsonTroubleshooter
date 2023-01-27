@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_USE_DOUBLE` to `0` fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Defining `ARDUINOJSON_USE_DOUBLE` to `0` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 I'm surprised that the previous solution didn't work.

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Fixing the filter solves the issue
-    next: done
+    next: /done
   - id: filter-ok
     label: "No"
     summary: Fixing the filter doesn't solve the issue
-    next: deserialization/noerror/novalue/print
+    next: /deserialization/noerror/novalue/print
 ---
 
 

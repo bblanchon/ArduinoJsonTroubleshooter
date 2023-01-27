@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Increasing serial buffer size solves the issue
-    next: done
+    next: /done
   - id: larger-buffer
     label: "No"
     summary: Increasing serial buffer size doesn't solves the issue
-    next: deserialization/invalidinput/stream-bom
+    next: /deserialization/invalidinput/stream-bom
 ---
 
 Sometimes, the input is invalid because some bytes were dropped when receiving the document.

@@ -3,15 +3,15 @@ choices:
   - id: success
     label: "Yes"
     summary: Upgrading the cables solves the issue
-    next: done
+    next: /done
   - id: improved
     label: Somehow
     summary: Upgrading the cables improves the situation
-    next: deserialization/invalidinput/serial-hamming
+    next: /deserialization/invalidinput/serial-hamming
   - id: no-improvment
     label: "No"
     summary: Upgrading the cables doesn't solve the issue
-    next: deserialization/invalidinput/serial-jsonlint
+    next: /deserialization/invalidinput/serial-jsonlint
 --- 
 
 Any electric wire acts as an antenna; the longer the wire, the stronger the effect. This antenna picks up every electromagnetic field in the environment, which induces a current in the wire. On long wires, this current is strong enough to introduce errors in the communication.

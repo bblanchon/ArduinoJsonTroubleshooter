@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Using a reference solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Using a reference doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 [`JsonDocument`](/v6/api/jsondocument/) doesn't support copying.

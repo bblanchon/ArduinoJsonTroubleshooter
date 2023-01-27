@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Using `JsonString` solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Using `JsonString` doesn't solves the issue
-    next: deadend
+    next: /deadend
 ---
 
 First, ArduinoJson only supports NUL characters since [version 6.19](/news/2022/01/08/arduinojson-6-19-0/), so make sure you are up-to-date.

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Issue is a confusion between array and object
-    next: done
+    next: /done
   - id: array-object
     label: "No"
     summary: Issue is not a confusion between array and object
-    next: deadend
+    next: /deadend
 ---
 
 When a program fails to extract the values from a [`JsonDocument`](/v6/api/jsondocument/), it's often because there is a confusion between arrays and objects.

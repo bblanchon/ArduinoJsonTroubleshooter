@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Casting the pointer solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Casting the pointer doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 When you use `PROGMEM` with ArduinoJson (and any other Arduino code, really), you must make sure that the addresses in Flash memory aren't interpreted as addresses in RAM.

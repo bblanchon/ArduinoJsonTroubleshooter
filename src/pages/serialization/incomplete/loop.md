@@ -3,15 +3,15 @@ choices:
   - id: success
     label: "Yes"
     summary: Moving the `JsonDocument` inside the loop solves the issue
-    next: done
+    next: /done
   - id: inside
     label: "No"
     summary: Moving the `JsonDocument` inside the loop doesn't solve the issue
-    next: serialization/incomplete/noloop
+    next: /serialization/incomplete/noloop
   - id: outside
     label: "I cannot move the declaration inside the loop"
     summary: The `JsonDocument` cannot be moved inside the loop
-    next: serialization/incomplete/loop-outside
+    next: /serialization/incomplete/loop-outside
 ---
 
 Calling [`serializeJson()`](/v6/api/json/serializejson/) is safe, but you'll run into issues if you modify the same [`JsonDocument`](/v6/api/jsondocument/) in a loop.

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Increasing the limit fixes the issue
-    next: done
+    next: /done
   - id: limit-increased
     label: "No"
     summary: Increasing the limit doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 [`TooDeep`](/v6/api/misc/deserializationerror/#toodeep) means that the input document has too many levels of nesting.

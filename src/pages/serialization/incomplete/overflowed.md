@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Increasing the capacity of the `JsonDocument` solves the issue.
-    next: done
+    next: /done
   - id: capacity-increased
     label: "No"
     summary: Increasing the capacity of the `JsonDocument` doesn't solve the issue.
-    next: deadend
+    next: /deadend
 ---
 
 [`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/) returns `true` when you tried to insert a value in the [`JsonDocument`](/v6/api/jsondocument/) but there isn't enough room to store it.

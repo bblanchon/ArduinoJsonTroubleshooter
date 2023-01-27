@@ -3,35 +3,35 @@ choices:
   - id: crash
     label: The program crashes
     summary: Program crashes
-    next: serialization/crash
+    next: /serialization/crash
   - id: empty
     label: The output is empty (e.g. `{}`, `[]`, or `null`)
     summary: Output is empty
-    next: serialization/empty
+    next: /serialization/empty
   - id: incomplete
     label: The output is incomplete
     summary: Output is incomplete
-    next: serialization/incomplete
+    next: /serialization/incomplete
   - id: garbage
     label: The output contains garbage
     summary: Output contains garbage
-    next: serialization/garbage
+    next: /serialization/garbage
   - id: empty-strings
     label: The output contains empty strings
     summary: Output contains empty strings
-    next: serialization/emptystrings
+    next: /serialization/emptystrings
   - id: "null"
     label: The output contains `null`
     summary: Output contains null
-    next: serialization/incomplete
+    next: /serialization/incomplete
   - id: float
     label: Floating-point values contain too many decimal digits
     summary: Floating-point values contain too many decimal digits
-    next: serialization/floats
+    next: /serialization/floats
   - id: slow
     label: It's slow
     summary: Serialization is slow
-    next: serialization/slow
+    next: /serialization/slow
 ---
 
 What's the problem?

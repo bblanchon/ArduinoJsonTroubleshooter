@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Adding the parentheses fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Adding the parentheses doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 We typically see this error when your program does somethink like this:

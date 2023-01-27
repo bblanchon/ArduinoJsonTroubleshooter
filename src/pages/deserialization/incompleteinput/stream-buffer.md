@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Adding a buffer solves the issue
-    next: done
+    next: /done
   - id: same-with-buffer
     label: "No"
     summary: Adding a buffer doesn't solve the issue
-    next: deserialization/incompleteinput/stream-log    
+    next: /deserialization/incompleteinput/stream-log    
 ---
 
 [`IncompleteInput`](/v6/api/misc/deserializationerror/#incompleteinput) can be caused by an interruped connection. For example, this problem happens when the client reads to slowly.

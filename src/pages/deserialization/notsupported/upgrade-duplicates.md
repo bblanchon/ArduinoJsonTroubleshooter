@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Removing duplicates fixes the issue
-    next: done
+    next: /done
   - id: duplicates-removed
     label: "No"
     summary: Removing duplicates doesn't fix the issue
-    next: deserialization/notsupported/unicode
+    next: /deserialization/notsupported/unicode
 ---
 
 If you're still seeing `NotSupported` after upgrading the library, it means that your code is not using the upgraded library.

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Downloading ArduinoJson 5 fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Downloading ArduinoJson 5 doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 I recommend that you download [`ArduinoJson-v5.13.5.h`](https://github.com/bblanchon/ArduinoJson/releases/download/v5.13.5/ArduinoJson-v5.13.5.h) and save it among the project files, this way you're sure that the project is distributed with the right version of the library.

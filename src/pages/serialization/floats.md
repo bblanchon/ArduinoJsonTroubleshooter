@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Replacing `float` with `double` fixes the issue
-    next: done
+    next: /done
   - id: double
     label: "No"
     summary: Replacing `float` with `double` doesn't fix the issue
-    next: serialization/floats/double
+    next: /serialization/floats/double
 ---
 
 Supposing that the JSON output looks like this:

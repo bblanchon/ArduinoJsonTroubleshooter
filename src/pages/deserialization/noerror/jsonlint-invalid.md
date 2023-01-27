@@ -2,11 +2,11 @@
 choices:
   - id: acceptable
     label: "Yes"
-    next: done
+    next: /done
     summary: "`deserializeJson()` tolerates the error, and that's OK"
   - id: unacceptable
     label: "No"
-    next: deserialization/noerror/unacceptable
+    next: /deserialization/noerror/unacceptable
     summary: "`deserializeJson()` should not let this error pass"
 ---
 

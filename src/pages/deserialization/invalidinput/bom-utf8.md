@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Skipping the first 3 bytes solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Skipping the first 3 bytes doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 `239` is the first by of the UTF-8 [Byte Order Mark](https://en.wikipedia.org/wiki/Byte_order_mark) (BOM).   

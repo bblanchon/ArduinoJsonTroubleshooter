@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Calling `as<JsonObject>()` or `as<JsonArray>()` solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary:  Calling `as<JsonObject>()` or `as<JsonArray>()` doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 You get this error when you try to iterate over a [`JsonDocument`](/v6/api/jsondocument/) or a [`JsonVariant`](/v6/api/jsonvariant/).

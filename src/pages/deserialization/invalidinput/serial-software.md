@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Removing `SoftwareSerial` solves the issue
-    next: done
+    next: /done
   - id: removed
     label: "No"
     summary: Removing `SoftwareSerial` doesn't solve the issue
-    next: deserialization/invalidinput/serial-voltage
+    next: /deserialization/invalidinput/serial-voltage
 ---
 
 The [AVR](https://en.wikipedia.org/wiki/AVR_microcontrollers) implementation of [`SoftwareSerial`](https://www.arduino.cc/en/Reference/SoftwareSerial) is **notoriously unreliable** 😱.

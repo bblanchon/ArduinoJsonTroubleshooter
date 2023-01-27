@@ -52,11 +52,10 @@ export class PageLoader {
   }
 
   getFileKey(filename: string) {
-    return path
-      .relative(this.folder, filename)
-      .slice(0, -3)
-      .replace(/\\/g, '/')
-      .replace(/\/index$/, '')
+    return ("/" + normalizePath(path
+      .relative(this.folder, filename)))
+      .replace(/.md$/, '')
+      .replace(/\/index$/, '') || "/"
   }
 
   loadFile(filename: string): Page {

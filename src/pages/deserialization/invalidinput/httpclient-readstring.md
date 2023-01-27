@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: "Calling `HTTPClient::getString()` solves the issue"
-    next: done
+    next: /done
   - id: getstring
     label: "No"
     summary: "Calling `HTTPClient::getString()` doesn't solves the issue"
-    next: deserialization/invalidinput/string-jsonlint
+    next: /deserialization/invalidinput/string-jsonlint
 ---
 
 You're calling the wrong function:

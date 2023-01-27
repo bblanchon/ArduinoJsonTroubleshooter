@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Replacing pointer with a `String` solves the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Replacing pointer with a `String` doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 A programs can also crash after calling [`deserializeJson()`](/v6/api/json/deserializejson/) because it keeps a pointer to a string stored in the [`JsonDocument`](/v6/api/jsondocument/).

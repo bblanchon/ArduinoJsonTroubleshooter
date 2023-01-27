@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Upgrading solve the issue
-    next: done
+    next: /done
   - id: upgraded
     label: "No"
     summary: Upgrading doesn't solve the issue
-    next: deadend
+    next: /deadend
 ---
 
 So, I guess that you're not using [`deserializeJson()`](/v6/api/json/deserializejson/) but [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack/), right?

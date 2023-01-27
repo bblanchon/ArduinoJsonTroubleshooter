@@ -2,11 +2,11 @@
 choices:
   - id: serialization
     label: Serialization
-    next: serialization
+    next: /serialization
     summary: The issue concerns serialization
   - id: deserialization
     label: Deserialization
-    next: deserialization
+    next: /deserialization
     summary: The issue concerns deserialization
 ---
 

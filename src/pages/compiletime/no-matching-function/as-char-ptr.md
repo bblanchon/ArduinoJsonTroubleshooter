@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Replacing `char*` with `const char*` fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Replacing `char*` with `const char*` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 This error happens when you write the following:

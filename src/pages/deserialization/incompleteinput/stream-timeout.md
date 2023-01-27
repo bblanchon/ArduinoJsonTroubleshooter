@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Inreasing the timeout solves the issue
-    next: done
+    next: /done
   - id: timeout-increased
     label: "No"
     summary: Inreasing the timeout doesn't solve the issue
-    next: deserialization/incompleteinput/stream-buffer
+    next: /deserialization/incompleteinput/stream-buffer
     
 ---
 

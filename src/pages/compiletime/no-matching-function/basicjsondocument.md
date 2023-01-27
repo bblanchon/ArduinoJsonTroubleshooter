@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Passing the capacity to the constructor fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Passing the capacity to the constructor doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 This error occurs when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/), like so:

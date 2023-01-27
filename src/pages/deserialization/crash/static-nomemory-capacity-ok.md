@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Increasing the capacity fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Increasing the capacity doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 Good news!  

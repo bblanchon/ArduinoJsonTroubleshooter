@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Casting the pointer fixes the issue
-    next: done
+    next: /done
   - id: cast
     label: "No"
     summary: Casting the pointer doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 The easiest solution is to disable the zero-copy mode by passing a read-only input buffer. Casting the pointer will do the trick:

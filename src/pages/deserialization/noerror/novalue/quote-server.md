@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Fixing the server fixes the issue
-    next: done
+    next: /done
   - id: server-ok
     label: "No"
     summary: Fixing the server doesn't fix the issue
-    next: deserialization/noerror/novalue/quote-keep
+    next: /deserialization/noerror/novalue/quote-keep
 ---
 
 In the server implementation, please look at the view that returns the faulty JSON.

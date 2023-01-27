@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Reassigning references fixes the issue
-    next: done
+    next: /done
   - id: reassigned
     label: "No"
     summary: Reassigning references doesn't fix the issue
-    next: serialization/garbage/document
+    next: /serialization/garbage/document
 ---
 
 [`JsonDocument::shrinkToFit()`](/v6/api/basicjsondocument/shrinktofit/) invalidates all previously acquired [`JsonArray`](/v6/api/jsonarray/), [`JsonObject`](/v6/api/jsonobject/), and [`JsonVariant`](/v6/api/jsonvariant/).

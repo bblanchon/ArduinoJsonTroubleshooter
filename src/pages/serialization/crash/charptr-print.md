@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Printing the string reveals the faulty pointer
-    next: done
+    next: /done
   - id: no-faulty-pointer
     label: "No"
     summary: Printing the string doesn't show any faulty pointer
-    next: deadend
+    next: /deadend
 ---
 
 One of these string pointers is probably dangling or points to a non-zero-terminated string.

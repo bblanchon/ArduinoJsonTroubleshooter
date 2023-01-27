@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Logging helped fixing the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Logging didn't help fixing the issue
-    next: deadend
+    next: /deadend
 ---
 
 Maybe seeing where the input stops will give you an idea of what's going wrong.

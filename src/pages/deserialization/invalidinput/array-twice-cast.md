@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Casting the pointer fixes the issue
-    next: done
+    next: /done
   - id: cast
     label: "No"
     summary: Casting the pointer doesn't fix the issue
-    next: deserialization/invalidinput/string-jsonlint
+    next: /deserialization/invalidinput/string-jsonlint
 ---
 
 If you must keep the two calls to [`deserializeJson()`](/v6/api/json/deserializejson/), you need to disable the zero-copy mode by passing a read-only input buffer. Casting the pointer will do the trick:

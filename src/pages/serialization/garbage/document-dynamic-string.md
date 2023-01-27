@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Removing `.c_str()` fixes the issue
-    next: done
+    next: /done
   - id: failure
     label: "No"
     summary: Removing `.c_str()` doesn't fix the issue
-    next: deadend
+    next: /deadend
 ---
 
 You can insert [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) objects in a [`JsonDocument`](/v6/api/jsondocument/), but make sure you don't store the result of [`String::c_str()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/c_str/).

@@ -3,11 +3,11 @@ choices:
   - id: success
     label: "Yes"
     summary: Upgrading solves the issue
-    next: done
+    next: /done
   - id: updraded
     label: "No"
     summary: Upgrading doesn't solves the issue
-    next: deserialization/notsupported/upgrade-duplicates
+    next: /deserialization/notsupported/upgrade-duplicates
 ---
 
 Please upgrade ArduinoJson to the latest version.  
