@@ -3,11 +3,11 @@ choices:
   - id: char-array
     label: "`char[]`"
     summary: Output type is `char[]`
-    next: output-char-array
+    next: char-array
   - id: char-ptr
     label: "`char*`"
     summary: Output type is `char*`
-    next: /deadend
+    next: char-ptr
   - id: arduino-string
     label: "`String`"
     summary: Output type is `String`
