@@ -40,6 +40,11 @@ choices:
     summary: Error says "`DynamicJsonBuffer` is a class from ArduinoJson 5"
     next: class-from-arduinojson5
 
+  - id: dynamicjsondocument-not-declared
+    label: '`DynamicJsonDocument` was not declared in this scope'
+    summary: Error says "`DynamicJsonDocument` was not declared in this scope"
+    next: jsondocument-not-declared
+
   - id: char-pointer-conversion
     label: invalid conversion from `const char*` to `char*` [-fpermissive]
     summary: Error says "invalid conversion from `const char*` to `char*` [-fpermissive]"
@@ -89,6 +94,11 @@ choices:
     label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
     summary: Error says "`StaticJsonBuffer` is a class from ArduinoJson 5"
     next: class-from-arduinojson5
+
+  - id: staticjsondocument-not-declared
+    label: '`StaticJsonDocument` was not declared in this scope'
+    summary: Error says "`StaticJsonDocument` was not declared in this scope"
+    next: jsondocument-not-declared
 
   - id: range-based-for-requires-begin
     label: this range-based `for` statement requires a suitable "begin" function and none was found
