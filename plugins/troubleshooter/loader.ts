@@ -17,7 +17,7 @@ export interface LoaderConfig {
 
 interface PageFrontmatter {
   options?: Option[]
-  needs_assistance?: boolean
+  tags?: string[] | string
 }
 
 function listFiles(folder: string) {
@@ -67,10 +67,9 @@ export class PageLoader {
     const { data: frontmatter, content }
       : { data: PageFrontmatter, content: string }
       = matter(readFileSync(filename), { excerpt: false })
-    const pageKey = this.getFileKey(filename)
     return {
       content: this.mdi.render(content),
-      needs_assistance: !!frontmatter.needs_assistance,
+      tags: typeof frontmatter.tags == "string" ? frontmatter.tags.split(/\s+/) : frontmatter.tags,
       options: frontmatter.options?.map((option) => ({
         ...option,
         next: this.resolveNext(option.next, filename),

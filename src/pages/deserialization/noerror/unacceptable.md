@@ -1,5 +1,5 @@
 ---
-needs_assistance: true
+tags: needs_assistance
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) accepted a JSON document that was clearly invalid.  

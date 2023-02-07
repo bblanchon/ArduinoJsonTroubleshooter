@@ -8,7 +8,7 @@ export interface Option {
 export interface Page {
   content: string
   options?: Option[]
-  needs_assistance: boolean
+  tags?: string[]
 }
 
 export type PageMap = { [key: string]: Page }

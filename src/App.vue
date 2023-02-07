@@ -51,7 +51,7 @@ export default {
   computed: {
     needsAssistance() {
       const currentStep = this.steps[this.steps.length - 1]
-      return currentStep.needs_assistance
+      return !!currentStep.tags?.includes("needs_assistance")
     },
     steps() {
       return getSteps(this.hash)
@@ -80,6 +80,9 @@ export default {
       this.reportCopied = true
       await sleep(2000)
       this.reportCopied = false
+    },
+    hasTag(tag) {
+      return
     }
   }
 }

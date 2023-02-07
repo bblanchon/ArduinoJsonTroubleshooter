@@ -1,5 +1,5 @@
 ---
-needs_assistance: true
+tags: needs_assistance
 ---
 
 Please click on the "Contact Support" button below and provide the following information:

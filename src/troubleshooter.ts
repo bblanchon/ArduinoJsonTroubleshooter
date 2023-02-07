@@ -20,7 +20,7 @@ interface Step {
   id: string
   options?: Option[]
   selectedOption?: Option
-  needs_assistance: boolean
+  tags?: string[]
 }
 
 function makeStep(pageKey: string, hash?: string, number?: number): Step {
