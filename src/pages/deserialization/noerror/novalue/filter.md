@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Fixing the filter solves the issue

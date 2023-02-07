@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: compiletime
     label: At compile time
     next: compiletime

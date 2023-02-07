@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: progmem
     label: "Yes"
     summary: Program uses `PROGMEM`

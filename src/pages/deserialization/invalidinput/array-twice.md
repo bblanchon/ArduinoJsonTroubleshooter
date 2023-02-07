@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes, and it fixes the issue"
     summary: Removing the second call fixes the issue

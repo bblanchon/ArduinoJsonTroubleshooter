@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: crash-with-literals
     label: "Yes"
     summary: Replacing string pointers with literals doesn't fix the crash

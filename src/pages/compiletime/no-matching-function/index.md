@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: basicjsondocument
     label: no matching function for call to `BasicJsonDocument::BasicJsonDocument()`
     summary: Error says "no matching function for call to `BasicJsonDocument::BasicJsonDocument()`"

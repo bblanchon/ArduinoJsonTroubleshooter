@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: string
     label: "Yes"
     summary: Program uses `String`

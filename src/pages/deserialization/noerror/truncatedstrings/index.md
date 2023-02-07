@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: nul
     label: "Yes"
     summary: The input contains `\u0000`

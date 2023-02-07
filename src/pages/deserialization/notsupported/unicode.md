@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_DECODE_UNICODE` solves the issue

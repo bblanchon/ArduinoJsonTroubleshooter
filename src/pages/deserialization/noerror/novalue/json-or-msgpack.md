@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: json
     label: "`deserializeJson()`"
     summary: Program calls `deserializeJson()`

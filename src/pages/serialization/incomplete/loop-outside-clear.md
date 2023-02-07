@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Calling `JsonDocument::garbageCollect()` solves the issue

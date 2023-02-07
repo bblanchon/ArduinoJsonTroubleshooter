@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: string
     label: A string (`const char*`, `String`, `std::string`...)
     summary: Input type is a string

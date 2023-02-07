@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: array
     label: "`class InvalidConversion<VariantConstRef, ArrayRef>`"
     summary: Specialization is `InvalidConversion<VariantConstRef, ArrayRef>`

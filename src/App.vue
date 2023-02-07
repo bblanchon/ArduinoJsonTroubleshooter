@@ -15,24 +15,14 @@
       </template>
     </TransitionGroup>
     <div v-if="needsAssistance">
-      <button
-        type="button"
-        class="btn btn-primary"
-        data-toggle="modal"
-        data-target="#assistance-modal"
-      >
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assistance-modal">
         Contact support
       </button>
-      <button
-        class="btn"
-        :class="{
-          'btn-outline-primary': !reportCopied,
-          'btn-success': reportCopied
-        }"
-        :disabled="reportCopied"
-        @click="copyReport"
-      >
-        {{ reportCopied ? "✓ Report copied" : "Copy troubleshooter's report" }}
+      <button class="btn" :class="{
+        'btn-outline-primary': !reportCopied,
+        'btn-success': reportCopied
+      }" :disabled="reportCopied" @click="copyReport">
+        {{ reportCopied? "✓ Report copied": "Copy troubleshooter's report" }}
       </button>
       <AssistanceModal id="assistance-modal" :report="report" />
     </div>
@@ -80,8 +70,8 @@ export default {
     }
   },
   methods: {
-    choose(choice) {
-      document.location.assign(choice.hash)
+    choose(option) {
+      document.location.assign(option.hash)
       ga("set", "page", document.location.pathname + document.location.hash)
       ga("send", "pageview")
     },

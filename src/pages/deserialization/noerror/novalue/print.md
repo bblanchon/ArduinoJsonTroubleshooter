@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: quote
     label: A quote (`"`)
     summary: Serialized document starts with a quote

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: http
     label: "Yes"
     summary: The input comes from an HTTP response

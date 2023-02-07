@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: stream
     label: A stream
     summary: The input is a stream

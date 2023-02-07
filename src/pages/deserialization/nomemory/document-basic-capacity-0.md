@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: global
     label: "Yes"
     summary: "`doc` is a global variable"

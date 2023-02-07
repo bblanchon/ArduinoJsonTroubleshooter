@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: headers-skipped
     label: "Yes"
     summary: HTTP headers are skipped

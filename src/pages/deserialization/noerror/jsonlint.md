@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: valid
     label: Document is valid
     next: jsonlint-valid

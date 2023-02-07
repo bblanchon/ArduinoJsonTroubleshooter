@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: crash
     label: The program crashes
     summary: Program crashes

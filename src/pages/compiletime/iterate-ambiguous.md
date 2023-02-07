@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Calling `as<JsonObject>()` or `as<JsonArray>()` solves the issue

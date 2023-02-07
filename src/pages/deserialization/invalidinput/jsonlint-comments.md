@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Setting ARDUINOJSON_ENABLE_COMMENTS to 1 solves the issue

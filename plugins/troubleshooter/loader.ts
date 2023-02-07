@@ -6,7 +6,7 @@ import matter from 'gray-matter'
 import { createFilter } from '@rollup/pluginutils'
 import { normalizePath } from 'vite'
 
-import { Choice, Page } from './pages'
+import { Option, Page } from './pages'
 
 
 export interface LoaderConfig {
@@ -16,7 +16,7 @@ export interface LoaderConfig {
 }
 
 interface PageFrontmatter {
-  choices?: Choice[]
+  options?: Option[]
   needs_assistance?: boolean
 }
 
@@ -71,10 +71,10 @@ export class PageLoader {
     return {
       content: this.mdi.render(content),
       needs_assistance: !!frontmatter.needs_assistance,
-      choices: frontmatter.choices?.map((choice) => ({
-        ...choice,
-        next: this.resolveNext(choice.next, filename),
-        label: this.mdi.renderInline(choice.label),
+      options: frontmatter.options?.map((option) => ({
+        ...option,
+        next: this.resolveNext(option.next, filename),
+        label: this.mdi.renderInline(option.label),
       }))
     }
   }

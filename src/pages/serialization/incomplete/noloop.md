@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: overflowed-1
     label: "`1` (or `true`)"
     summary: "`JsonDocument::overflowed()` returns `true`"

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_ENABLE_PROGMEM` to `0` solves the issue

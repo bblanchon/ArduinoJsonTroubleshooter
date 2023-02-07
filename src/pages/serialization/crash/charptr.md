@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: charptr
     label: "Yes"
     summary: Program inserts string pointers into the `JsonDocument`

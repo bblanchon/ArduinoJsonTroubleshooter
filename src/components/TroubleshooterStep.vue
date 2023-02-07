@@ -1,14 +1,10 @@
 <template>
-  <div v-if="step.choices" class="troubleshooter-step mb-4">
+  <div v-if="step.options" class="troubleshooter-step mb-4">
     <TroubleshooterStepNumber :step="step" />
     <div v-html="step.content" class="troubleshooter-step-content" />
-    <div class="troubleshooter-step-choices">
-      <TroubleshooterStepChoice
-        v-for="choice in step.choices"
-        :key="choice.hash"
-        :choice="choice"
-        @click="$emit('choose', choice)"
-      />
+    <div class="troubleshooter-step-options">
+      <TroubleshooterStepOption v-for="option in step.options" :key="option.hash" :option="option"
+        @click="$emit('choose', option)" />
     </div>
   </div>
   <div v-else v-html="step.content" class="troubleshooter-step-content" />
@@ -16,7 +12,7 @@
 
 <script>
 import { defineComponent } from "vue"
-import TroubleshooterStepChoice from "./TroubleshooterStepChoice.vue"
+import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
 import TroubleshooterStepNumber from "./TroubleshooterStepNumber.vue"
 
 export default defineComponent({
@@ -28,7 +24,7 @@ export default defineComponent({
       required: true
     }
   },
-  components: { TroubleshooterStepChoice, TroubleshooterStepNumber }
+  components: { TroubleshooterStepOption, TroubleshooterStepNumber }
 })
 </script>
 
@@ -39,7 +35,7 @@ export default defineComponent({
   display: grid;
   grid-template-areas:
     "number content"
-    "number choices";
+    "number options";
   grid-template-columns: auto 1fr;
   column-gap: 1em;
 
@@ -61,7 +57,7 @@ export default defineComponent({
   grid-area: number;
 }
 
-.troubleshooter-step-number > div {
+.troubleshooter-step-number>div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,7 +71,7 @@ export default defineComponent({
   grid-area: content;
 }
 
-.troubleshooter-step-choices {
-  grid-area: choices;
+.troubleshooter-step-options {
+  grid-area: options;
 }
 </style>

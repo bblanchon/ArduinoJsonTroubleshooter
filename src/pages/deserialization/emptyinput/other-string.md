@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: zero
     label: "`0`"
     summary: The first character is NUL

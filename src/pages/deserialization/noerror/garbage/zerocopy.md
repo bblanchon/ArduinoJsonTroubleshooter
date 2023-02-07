@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes, the input comes from a stream"
     summary: Input comes from a stream

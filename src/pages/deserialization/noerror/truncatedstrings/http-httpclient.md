@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: getstream
     label: "`getStream()`"
     summary: Response comes from `HTTPClient::getStream()`

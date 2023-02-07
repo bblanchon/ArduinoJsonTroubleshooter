@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: crash-with-char-array
     label: "Yes"
     summary: Replacing the output pointer with an array doesn't fix the crash

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: valid
     label: "Yes"
     summary: "jsonlint says the document is valid"

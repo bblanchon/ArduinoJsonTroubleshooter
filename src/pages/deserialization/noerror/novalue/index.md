@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: filter
     label: "Yes"
     summary: Program uses `DeserializationOption::Filter`

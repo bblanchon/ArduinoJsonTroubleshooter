@@ -8,10 +8,10 @@ interface PageError {
 
 function getMissingPages(pages: PageMap): PageError[] {
   return Object.entries(pages).map(([key, page]) =>
-    page.choices?.filter(choice => choice.next && !(choice.next in pages))
-      .map((choice) => ({
+    page.options?.filter(option => option.next && !(option.next in pages))
+      .map((option) => ({
         page: key,
-        message: `page \"${choice.next}\" is missing`
+        message: `page \"${option.next}\" is missing`
       })) || []
   ).flat()
 }
@@ -20,10 +20,10 @@ function getUnusedPages(pages: PageMap): PageError[] {
   const usedPages = new Set([
     "/",
     ...Object.values(pages)
-      .filter((page) => page.choices !== undefined)
-      .map((page) => page.choices!)
+      .filter((page) => page.options !== undefined)
+      .map((page) => page.options!)
       .flat()
-      .map((choice) => choice.next)
+      .map((option) => option.next)
   ])
 
   return Object.keys(pages)
@@ -38,41 +38,41 @@ function getMissingFields(pages: PageMap): PageError[] {
   const requiredFields = ["id", "label", "summary", "next"]
 
   return Object.entries(pages).map(([key, page]) =>
-    page.choices?.map((choice, index) =>
-      requiredFields.filter(field => !choice[field])
+    page.options?.map((option, index) =>
+      requiredFields.filter(field => !option[field])
         .map((field) => ({
           page: key,
-          message: `choice ${index} lacks the \"${field}\" field`
+          message: `option ${index} lacks the \"${field}\" field`
         }))
     ) || []
   ).flat(2)
 }
 
-function getDuplicateChoices(pages: PageMap): PageError[] {
+function getDuplicateOptions(pages: PageMap): PageError[] {
   const uniqueFields = ["id", "label", "summary"]
 
   return Object.entries(pages).map(([key, page]) =>
     uniqueFields.map((field) => {
-      const values = page.choices?.map((choice) => choice[field]) || []
+      const values = page.options?.map((option) => option[field]) || []
       const duplicates = values.filter(
         (val, idx) => values.indexOf(val) !== idx
       )
       return duplicates.map(
         (value) => ({
           page: key,
-          message: `duplicate choice ${field} \"${value}\"`
+          message: `duplicate option ${field} \"${value}\"`
         })
       )
     })
   ).flat(2)
 }
 
-function getInvalidChoiceIds(pages: PageMap): PageError[] {
+function getInvalidOptionIds(pages: PageMap): PageError[] {
   return Object.entries(pages).map(([key, page]) =>
-    page.choices?.filter(choice => (/[^a-z0-9\-]/.test(choice.id)))
-      .map((choice, index) => ({
+    page.options?.filter(option => (/[^a-z0-9\-]/.test(option.id)))
+      .map((option, index) => ({
         page: key,
-        message: `invalid id \"${choice.id}\" for choice ${index}`
+        message: `invalid id \"${option.id}\" for option ${index}`
       })) || []
   ).flat()
 }
@@ -82,7 +82,7 @@ export function getErrors(pages: PageMap): PageError[] {
     ...getMissingPages(pages),
     ...getUnusedPages(pages),
     ...getMissingFields(pages),
-    ...getDuplicateChoices(pages),
-    ...getInvalidChoiceIds(pages),
+    ...getDuplicateOptions(pages),
+    ...getInvalidOptionIds(pages),
   ]
 }

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Moving the `JsonDocument` inside the loop solves the issue

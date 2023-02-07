@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: nul
     label: "Yes"
     summary: One or more strings contain a NUL

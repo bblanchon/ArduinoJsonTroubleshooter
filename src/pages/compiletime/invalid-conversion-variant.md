@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Replacing `JsonVariant` with `JsonVariantConst` fixes the issue

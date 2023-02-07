@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: deserialize-yes
     label: "Yes"
     summary: Program calls `deserializeJson()`

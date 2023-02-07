@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: dynamic
     label: "`DynamicJsonDocument`"
     summary: Program uses `DynamicJsonDocument`

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: software
     label: "Yes"
     summary: Program uses `SoftwareSerial`

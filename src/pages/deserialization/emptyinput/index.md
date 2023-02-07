@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: http
     label: An HTTP response
     summary: Input comes from an HTTP response

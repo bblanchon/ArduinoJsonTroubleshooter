@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: json
     label: "Yes, `serializeJson()` produces garbage too"
     summary: "`serializeJson()` produces garbage too"

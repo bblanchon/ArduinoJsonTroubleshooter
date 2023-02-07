@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: static
     label: "Yes" 
     summary: Program uses `StaticJsonDocument`

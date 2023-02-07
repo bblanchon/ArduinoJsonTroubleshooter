@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: certificate-problem
     label: "Yes"
     summary: Calling `WiFiClientSecure::setInsecure()` solves the issue.

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
  - id: success
    label: "Yes"
    summary: Increasing the buffer size solves the issue

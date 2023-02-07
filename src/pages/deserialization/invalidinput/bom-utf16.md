@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: "`Accept: application/json;charset=utf-8` solves the issue"

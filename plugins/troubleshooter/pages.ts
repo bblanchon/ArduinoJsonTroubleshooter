@@ -1,4 +1,4 @@
-export interface Choice {
+export interface Option {
   id: string
   label: string
   summary: string
@@ -7,7 +7,7 @@ export interface Choice {
 
 export interface Page {
   content: string
-  choices?: Choice[]
+  options?: Option[]
   needs_assistance: boolean
 }
 

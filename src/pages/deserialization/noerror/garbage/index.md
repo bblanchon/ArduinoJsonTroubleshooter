@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: char-ptr
     label: "`char*` (or `char[]`)"
     summary: Input type is `char*`

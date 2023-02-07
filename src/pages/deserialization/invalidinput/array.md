@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: two-calls
     label: "Yes"
     summary: Program calls `deserializeJson()` twice

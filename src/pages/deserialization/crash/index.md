@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: before
     label: "None: program crashes before calling `deserializeJson()`"
     next: before

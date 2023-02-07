@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: loop
     label: "Yes"
     summary: "Program calls `serializeJson()` in a loop"

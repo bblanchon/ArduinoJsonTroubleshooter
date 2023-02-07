@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: char-array
     label: "`char[]`"
     summary: Output type is `char[]`

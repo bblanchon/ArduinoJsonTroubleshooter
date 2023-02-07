@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: can-uprade
     label: "Yes"
     summary: "Library can be upgraded"

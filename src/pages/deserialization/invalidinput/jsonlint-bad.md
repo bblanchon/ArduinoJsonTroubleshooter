@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: comments
     label: It contains comments
     summary: The document contains comments

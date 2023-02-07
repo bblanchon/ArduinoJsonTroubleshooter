@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: brace
     label: "An opening brace: `{`"
     next: brace

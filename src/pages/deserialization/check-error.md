@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: ok
     label: "`Ok`"
     next: noerror

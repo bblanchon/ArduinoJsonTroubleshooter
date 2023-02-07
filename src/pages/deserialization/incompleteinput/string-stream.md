@@ -1,5 +1,5 @@
 ---
-choices:
+options:
  - id: success
    label: "Yes"
    summary: Reading from stream fixes the issue

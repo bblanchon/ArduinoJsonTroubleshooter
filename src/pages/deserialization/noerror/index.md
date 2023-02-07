@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: slow
     label: It's slow
     summary: "Deserialisation is slow"

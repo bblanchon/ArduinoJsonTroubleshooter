@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: strcmp
     label: Yes, there is a call to `strcmp()`
     summary: Program calls `strcmp()`

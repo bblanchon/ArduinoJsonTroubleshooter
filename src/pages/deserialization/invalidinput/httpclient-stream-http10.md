@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: "Calling `HTTPClient::useHTTP10(true)` solves the issue"

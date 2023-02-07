@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: utf8
     label: "`239`"
     summary: Input's first byte suggests a UTF-8 BOM

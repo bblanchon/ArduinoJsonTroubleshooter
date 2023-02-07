@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: document
     label: "`JsonDocument`"
     summary: "Program calls `serializeJson(const JsonDocument&, ...)`"

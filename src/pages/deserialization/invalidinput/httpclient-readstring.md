@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: "Calling `HTTPClient::getString()` solves the issue"

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: acceptable
     label: "Yes"
     next: /done

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: httpclient
     label: "Yes, I'm using `HTTPClient`"
     summary: "Program uses `HTTPClient`"

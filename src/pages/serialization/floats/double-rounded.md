@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_USE_DOUBLE` to `0` fixes the issue

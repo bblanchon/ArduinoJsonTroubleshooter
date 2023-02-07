@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: failure
     label: "Yes"
     summary: Reducing stack usage doesn't prevent the crash

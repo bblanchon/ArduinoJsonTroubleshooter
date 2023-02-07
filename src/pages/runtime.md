@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: serialization
     label: Serialization
     next: /serialization

@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: capacity-0
     label: "`0`"
     summary: "`doc.capacity()` returns `0`"

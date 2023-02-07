@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: garbagecollect
     label: "`JsonDocument::garbageCollect()`"
     summary: Program calls `JsonDocument::garbageCollect()`

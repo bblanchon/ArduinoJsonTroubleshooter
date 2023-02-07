@@ -1,7 +1,7 @@
 /// <reference path="../plugins/troubleshooter/client.d.ts" />
 import pages from "virtual:troubleshooter"
 
-interface Choice {
+interface Option {
   id: string
   label: string
   summary: string
@@ -18,8 +18,8 @@ interface Step {
   slug: string
   hash: string
   id: string
-  choices?: Choice[]
-  selectedChoice?: Choice
+  options?: Option[]
+  selectedOption?: Option
   needs_assistance: boolean
 }
 
@@ -31,11 +31,11 @@ function makeStep(pageKey: string, hash?: string, number?: number): Step {
     slug: pageKey,
     hash: hash || "#",
     id: (hash || "#start").substring(1),
-    choices: page.choices?.map((choice) => ({
-      ...choice,
-      inputId: (hash ? hash.substring(1) + "/" : "") + choice.id,
-      hash: (hash ? hash + "/" : "#") + choice.id,
-      missing: !pages[choice.next],
+    options: page.options?.map((option) => ({
+      ...option,
+      inputId: (hash ? hash.substring(1) + "/" : "") + option.id,
+      hash: (hash ? hash + "/" : "#") + option.id,
+      missing: !pages[option.next],
       selected: false,
     }))
   }
@@ -46,17 +46,17 @@ export function getSteps(hash?: string): Step[] {
 
   if (hash) {
     let lastStep = steps[0]
-    for (let choiceId of hash.substring(1).split("/")) {
-      const choice = lastStep.choices?.find(
-        (choice) => choice.id === choiceId
+    for (let optionId of hash.substring(1).split("/")) {
+      const option = lastStep.options?.find(
+        (option) => option.id === optionId
       )
-      if (!choice) {
-        console.error(`Choice "${choiceId}" not found`)
+      if (!option) {
+        console.error(`Option "${optionId}" not found`)
         break
       }
-      choice.selected = true
-      lastStep.selectedChoice = choice
-      lastStep = makeStep(choice.next, choice.hash, lastStep.number + 1)
+      option.selected = true
+      lastStep.selectedOption = option
+      lastStep = makeStep(option.next, option.hash, lastStep.number + 1)
       if (!lastStep) break
       steps.push(lastStep)
     }
@@ -67,8 +67,8 @@ export function getSteps(hash?: string): Step[] {
 
 export function generateReport(steps: Step[]): string {
   return steps
-    .map((step) => step.selectedChoice)
-    .filter((choice) => !!choice)
-    .map((choice, index) => `${index + 1}. ${choice!.summary}`)
+    .map((step) => step.selectedOption)
+    .filter((option) => !!option)
+    .map((option, index) => `${index + 1}. ${option!.summary}`)
     .join("\n")
 }

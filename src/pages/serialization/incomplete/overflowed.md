@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Increasing the capacity of the `JsonDocument` solves the issue.

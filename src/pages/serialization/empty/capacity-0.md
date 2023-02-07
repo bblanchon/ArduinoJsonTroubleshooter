@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: basic
     label: "`BasicJsonDocument<T>`"
     summary: The document is a `BasicJsonDocument<T>`

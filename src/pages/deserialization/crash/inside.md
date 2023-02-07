@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: no-dangling-ptr
     label: "Yes"
     summary: Removing dangling pointers doesn't prevent the crash

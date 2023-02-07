@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: server-fixable
     label: "Yes"
     summary: User can modify the server

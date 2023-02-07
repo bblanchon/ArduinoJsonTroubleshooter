@@ -1,5 +1,5 @@
 ---
-choices:
+options:
   - id: success
     label: "Yes"
     summary: Passing the buffer size to `serializeJson()` fixed the issue
