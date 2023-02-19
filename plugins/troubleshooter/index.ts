@@ -53,18 +53,24 @@ export default function TroubleshooterPlugin(
     if (module) server.reloadModule(module)
   }
 
-  function generatePages(): Page[] {
-    return files.map((file) => ({
-      filename: isProduction ? undefined : file.filename,
-      content: file.content,
-      tags: file.tags,
-      options: file.options?.map((option) => ({
+  function makePage(file: PageFile): Page {
+    const page: Page = {
+      content: file.content
+    }
+    if (!isProduction) page.filename = file.filename
+    if (file.tags) page.tags = file.tags
+    if (file.options)
+      page.options = file.options.map((option) => ({
         id: option.id,
         page: files.findIndex((f) => (f.filename == option.page)),
         label: option.label,
         summary: option.summary
       }))
-    }))
+    return page
+  }
+
+  function generatePages(): Page[] {
+    return files.map(makePage)
   }
 
   return {
