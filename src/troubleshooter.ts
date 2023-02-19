@@ -5,7 +5,7 @@ interface Option {
   id: string
   label: string
   summary: string
-  next: string
+  page: number
   inputId: string
   hash: string
   missing: boolean
@@ -15,7 +15,6 @@ interface Option {
 interface Step {
   content: string
   number: number
-  slug: string
   hash: string
   id: string
   options?: Option[]
@@ -23,26 +22,25 @@ interface Step {
   tags?: string[]
 }
 
-function makeStep(pageKey: string, hash?: string, number?: number): Step {
-  const page = pages[pageKey]
+function makeStep(pageId: number, hash?: string, number?: number): Step {
+  const page = pages[pageId]
   return {
     ...page,
     number: number || 1,
-    slug: pageKey,
     hash: hash || "#",
     id: (hash || "#start").substring(1),
     options: page.options?.map((option) => ({
       ...option,
       inputId: (hash ? hash.substring(1) + "/" : "") + option.id,
       hash: (hash ? hash + "/" : "#") + option.id,
-      missing: !pages[option.next],
+      missing: !pages[option.page],
       selected: false,
     }))
   }
 }
 
 export function getSteps(hash?: string): Step[] {
-  const steps = [makeStep("/")]
+  const steps = [makeStep(0)]
 
   if (hash) {
     let lastStep = steps[0]
@@ -56,7 +54,7 @@ export function getSteps(hash?: string): Step[] {
       }
       option.selected = true
       lastStep.selectedOption = option
-      lastStep = makeStep(option.next, option.hash, lastStep.number + 1)
+      lastStep = makeStep(option.page, option.hash, lastStep.number + 1)
       if (!lastStep) break
       steps.push(lastStep)
     }

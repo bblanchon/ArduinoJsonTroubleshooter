@@ -3,11 +3,11 @@ options:
   - id: filter
     label: "Yes"
     summary: Program uses `DeserializationOption::Filter`
-    next: filter
+    page: filter.md
   - id: no-filter
     label: "No"
     summary: Program doesn't use `DeserializationOption::Filter`
-    next: print
+    page: print.md
 ---
 
 Do you use a filter (with `DeserializationOption::Filter`)?

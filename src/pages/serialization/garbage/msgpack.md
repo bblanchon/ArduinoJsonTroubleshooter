@@ -3,11 +3,11 @@ options:
   - id: json
     label: "Yes, `serializeJson()` produces garbage too"
     summary: "`serializeJson()` produces garbage too"
-    next: json
+    page: json.md
   - id: deserialize-no
     label: "No, `serializeJson()` doesn't produces garbage"
     summary: "`serializeJson()` doesn't produces garbage"
-    next: msgpack-only
+    page: msgpack-only.md
 ---
 
 [MessagePack](https://msgpack.org/) is a binary format, so if you print a document to the serial port, the result would look weird.

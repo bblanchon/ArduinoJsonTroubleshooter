@@ -3,11 +3,11 @@ options:
   - id: crash-with-literals
     label: "Yes"
     summary: Replacing string pointers with literals doesn't fix the crash
-    next: output-type
+    page: output-type/index.md
   - id: no-crash-with-literals
     label: "No"
     summary: Replacing string pointers with literals fixes the crash
-    next: charptr-print
+    page: charptr-print.md
 ---
 
 Please replace all those string pointers with literals.

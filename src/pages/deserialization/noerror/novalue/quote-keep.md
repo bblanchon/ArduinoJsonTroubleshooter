@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Calling `deserializeJson()` twice fixes the issue
-    next: /done
+    page: /done.md
   - id: call-twice
     label: "No"
     summary: Calling `deserializeJson()` twice doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 If you cannot fix the server, you can at least reverse the double serialization (stringification) to get back the original object.

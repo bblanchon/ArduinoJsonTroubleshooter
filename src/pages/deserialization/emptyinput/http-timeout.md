@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Increasing the timeout fixes the issue
-    next: /done
+    page: /done.md
   - id: timeout-increased
     label: "No"
     summary: Increasing the timeout doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) could be caused by a timeout while reading the response.

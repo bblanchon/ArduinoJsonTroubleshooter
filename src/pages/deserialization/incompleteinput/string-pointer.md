@@ -3,11 +3,11 @@ options:
  - id: success
    label: "Yes"
    summary: Increasing the buffer size solves the issue
-   next: /done
+   page: /done.md
  - id: larger-buffer
    label: "No"
    summary: Increasing the buffer size doesn't solve the issue
-   next: string-stream
+   page: string-stream.md
 ---
 
 I'll assume that your input is stored in a buffer similar to this one:

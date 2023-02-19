@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: "Using `HTTP/1.0` solves the issue"
-    next: /done
+    page: /done.md
   - id: http10
     label: "No"
     summary: "Using `HTTP/1.0` doesn't solve the issue"
-    next: inputtype
+    page: inputtype.md
 ---
 
 When you use HTTP 1.1, the server can send the response with [Chunked Transfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding).

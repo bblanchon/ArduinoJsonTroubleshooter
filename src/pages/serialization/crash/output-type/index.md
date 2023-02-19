@@ -3,19 +3,19 @@ options:
   - id: char-array
     label: "`char[]`"
     summary: Output type is `char[]`
-    next: char-array
+    page: char-array.md
   - id: char-ptr
     label: "`char*`"
     summary: Output type is `char*`
-    next: char-ptr
+    page: char-ptr.md
   - id: arduino-string
     label: "`String`"
     summary: Output type is `String`
-    next: /deadend
+    page: /deadend.md
   - id: arduino-stream
     label: "`Stream`"
     summary: Output type is `Stream`
-    next: /deadend
+    page: /deadend.md
 ---
 
 What is the type of the second argument passed to [`serializeJson()`](/v6/api/json/serializejson/)?

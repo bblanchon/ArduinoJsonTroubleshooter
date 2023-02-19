@@ -3,11 +3,11 @@ options:
   - id: no-dangling-ptr
     label: "Yes"
     summary: Removing dangling pointers doesn't prevent the crash
-    next: before
+    page: before.md
   - id: success
     label: "No"
     summary: Removing dangling pointers prevents the crash
-    next: /done
+    page: /done.md
 ---
 
 Passing a dangling pointer could cause a crash.

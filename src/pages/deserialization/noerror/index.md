@@ -3,35 +3,35 @@ options:
   - id: slow
     label: It's slow
     summary: "Deserialisation is slow"
-    next: slow
+    page: slow.md
   - id: invalid
     label: "I expected `InvalidInput` instead of `Ok`"
     summary: "`Ok` is incorrect; it should be `InvalidInput`"
-    next: firstchar
+    page: firstchar/index.md
   - id: crash
     label: My program crashes after calling `deserializeJson()`
     summary: Program crashes after calling `deserializeJson()`
-    next: ../crash/after
+    page: ../crash/after.md
   - id: empty
     label: "`JsonDocument` returns empty/null values"
     summary: Program fails to extract values from the `JsonDocument`
-    next: novalue
+    page: novalue/index.md
   - id: garbage
     label: "`JsonDocument` returns garbage"
     summary: "`JsonDocument` returns garbage"
-    next: garbage
+    page: garbage/index.md
   - id: changing-strings
     label: The strings in the `JsonDocument` change for no reason
     summary: The strings in the `JsonDocument` change for no reason
-    next: garbage
+    page: garbage/index.md
   - id: altered
     label: "`deserializeJson()` alters the content of the input"
     summary: Input buffer is modified
-    next: input-modified
+    page: input-modified.md
   - id: truncated-strings
     label: Some strings are truncated
     summary: Some strings are truncated
-    next: truncatedstrings
+    page: truncatedstrings/index.md
 ---
 
 So, what's the problem then?

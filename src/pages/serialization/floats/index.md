@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Replacing `float` with `double` fixes the issue
-    next: /done
+    page: /done.md
   - id: double
     label: "No"
     summary: Replacing `float` with `double` doesn't fix the issue
-    next: double
+    page: double.md
 ---
 
 Supposing that the JSON output looks like this:

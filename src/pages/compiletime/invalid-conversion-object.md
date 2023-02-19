@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Replacing `JsonObject` with `JsonObjectConst` fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Replacing `JsonObject` with `JsonObjectConst` doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 Somewhere in your program, there is a conversion from [`JsonVariantConst`](/v6/api/jsonvariantconst/) to [`JsonObject`](/v6/api/jsonobject/). This conversion is invalid because it would convert a *read-only* reference to a *read-write* reference.

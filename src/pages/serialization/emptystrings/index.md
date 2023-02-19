@@ -3,11 +3,11 @@ options:
   - id: deserialize-yes
     label: "Yes"
     summary: Program calls `deserializeJson()`
-    next: deserialize
+    page: deserialize.md
   - id: deserialize-no
     label: "No"
     summary: Program doesn't call `deserializeJson()`
-    next: /deadend
+    page: /deadend.md
 ---
 
 Do you call [`deserializeJson()`](/v6/api/json/deserializejson/) before calling [`serializeJson()`](/v6/api/json/serializejson/)? (with the same [`JsonDocument`](/v6/api/jsondocument/))

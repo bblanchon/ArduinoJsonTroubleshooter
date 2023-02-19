@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Passing the capacity to the constructor fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Passing the capacity to the constructor doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This is a linting error you may have in Visual Studio Code if your program contains something like this:

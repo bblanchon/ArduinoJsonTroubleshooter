@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Removing duplicates fixes the issue
-    next: /done
+    page: /done.md
   - id: duplicates-removed
     label: "No"
     summary: Removing duplicates doesn't fix the issue
-    next: unicode
+    page: unicode.md
 ---
 
 If you're still seeing `NotSupported` after upgrading the library, it means that your code is not using the upgraded library.

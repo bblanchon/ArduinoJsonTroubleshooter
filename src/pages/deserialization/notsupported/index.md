@@ -3,11 +3,11 @@ options:
   - id: can-uprade
     label: "Yes"
     summary: "Library can be upgraded"
-    next: upgrade
+    page: upgrade.md
   - id: cannot-upgrade
     label: "No"
     summary: "Library cannot be upgraded"
-    next: unicode
+    page: unicode.md
 ---
 
 [`NotSupported`](/v6/api/misc/deserializationerror/#notsupported) means that the document was valid but contained features not supported by the library.

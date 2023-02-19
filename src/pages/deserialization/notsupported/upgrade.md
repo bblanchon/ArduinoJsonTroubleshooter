@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Upgrading solves the issue
-    next: /done
+    page: /done.md
   - id: updraded
     label: "No"
     summary: Upgrading doesn't solves the issue
-    next: upgrade-duplicates
+    page: upgrade-duplicates.md
 ---
 
 Please upgrade ArduinoJson to the latest version.  

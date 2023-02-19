@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: "Calling `HTTPClient::getString()` solves the issue"
-    next: /done
+    page: /done.md
   - id: getstring
     label: "No"
     summary: "Calling `HTTPClient::getString()` doesn't solves the issue"
-    next: string-jsonlint
+    page: string-jsonlint.md
 ---
 
 You're calling the wrong function:

@@ -2,35 +2,35 @@
 options:
   - id: ok
     label: "`Ok`"
-    next: noerror
+    page: noerror/index.md
     summary: "`deserializeJson()` returns `Ok`"
   - id: emptyinput
     label: "`EmptyInput`"
-    next: emptyinput
+    page: emptyinput/index.md
     summary: "`deserializeJson()` returns `EmptyInput`"
   - id: incompleteinput
     label: "`IncompleteInput`"
-    next: incompleteinput
+    page: incompleteinput/index.md
     summary: "`deserializeJson()` returns `IncompleteInput`"
   - id: invalidinput
     label: "`InvalidInput`"
-    next: invalidinput
+    page: invalidinput/index.md
     summary: "`deserializeJson()` returns `InvalidInput`"
   - id: nomemory
     label: "`NoMemory`"
-    next: nomemory
+    page: nomemory/index.md
     summary: "`deserializeJson()` returns `NoMemory`"
   - id: notsupported
     label: "`NotSupported`"
-    next: notsupported
+    page: notsupported/index.md
     summary: "`deserializeJson()` returns `NotSupported`"
   - id: toodeep
     label: "`TooDeep`"
-    next: toodeep
+    page: toodeep.md
     summary: "`deserializeJson()` returns `TooDeep`"
   - id: crash
     label: "I can't tell because the program crashes"
-    next: crash
+    page: crash/index.md
     summary: "The program crashes"
 ---
 

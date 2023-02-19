@@ -3,15 +3,15 @@ options:
   - id: utf8
     label: "`239`"
     summary: Input's first byte suggests a UTF-8 BOM
-    next: bom-utf8
+    page: bom-utf8.md
   - id: utf16
     label: "`254` or `255`"
     summary: Input's first byte suggests a UTF-16 BOM
-    next: bom-utf16
+    page: bom-utf16.md
   - id: no-bom
     label: Something else
     summary: Input's first byte doesn't suggest a BOM
-    next: bom-none
+    page: bom-none.md
 ---
 
 We must check that the JSON document is not preceded by a [Byte Order Mark](https://en.wikipedia.org/wiki/Byte_order_mark) (BOM).

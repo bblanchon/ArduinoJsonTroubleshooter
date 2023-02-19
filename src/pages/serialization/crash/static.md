@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Switching to `DynamicJsonDocument` fixes the issue
-    next: /done
+    page: /done.md
   - id: dynamicjsondocument-tried
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't fix the issue
-    next: progmem
+    page: progmem.md
 ---
 
 Because a [`StaticJsonDocument`](/v6/api/staticjsondocument/) resides on the stack, it may cause a [stack-overflow](https://en.wikipedia.org/wiki/Stack_buffer_overflow).

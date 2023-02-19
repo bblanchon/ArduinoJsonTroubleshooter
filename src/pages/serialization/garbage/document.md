@@ -3,11 +3,11 @@ options:
   - id: dynamic
     label: "`DynamicJsonDocument`"
     summary: Program uses `DynamicJsonDocument`
-    next: document-dynamic
+    page: document-dynamic.md
   - id: static
     label: "`StaticJsonDocument`"
     summary:  Program uses `StaticJsonDocument`
-    next: document-static
+    page: document-static.md
 ---
 
 Which kind of [`JsonDocument`](/v6/api/jsondocument/) do you use?

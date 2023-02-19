@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Passing the buffer size to `serializeJson()` fixed the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Passing the buffer size to `serializeJson()` didn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error occurs when you pass a `char*` to [`serializeJson()`](/v6/api/json/serializejson/) but forget to pass the third argument.

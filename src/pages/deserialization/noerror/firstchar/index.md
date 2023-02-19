@@ -2,19 +2,19 @@
 options:
   - id: brace
     label: "An opening brace: `{`"
-    next: brace
+    page: brace.md
     summary: The first character is `{`
   - id: bracket
     label: "An opening bracket: `[`"
-    next: bracket
+    page: bracket.md
     summary: The first character is `[`
   - id: quote
     label: "A quote: `\"`"
-    next: quote
+    page: quote.md
     summary: The first character is `"`
   - id: other
     label: None of the above
-    next: ../unacceptable
+    page: ../unacceptable.md
     summary: The first character is neither `{`, nor `[`, nor `"`
 ---
 

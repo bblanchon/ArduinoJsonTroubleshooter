@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: It's the "Most vexing parse"
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: It's not the "Most vexing parse"
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error happens when you write the following:

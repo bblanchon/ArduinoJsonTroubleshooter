@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Flushing the serial buffer fixes the issue
-    next: /done
+    page: /done.md
   - id: flush
     label: "No"
     summary: Flushing the serial buffer doesn't fix the issue
-    next: serial-voltage
+    page: serial-voltage.md
 ---    
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) may return [`InvalidInput`](/v6/api/misc/deserializationerror/#invalidinput) because it starts reading the input mid-stream.

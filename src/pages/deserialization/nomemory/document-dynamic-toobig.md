@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Reducing memory usage fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Reducing memory usage doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 --- 
 
 Well, that's very bad news. It seems that your microcontroller doesn't have enough RAM to hold the JSON document.

@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Using an integer or switching to an object fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Neither using an integer nor switching to an object fixes the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error occurs when you pass a string to [`JsonArray::operator[]`](/v6/api/jsonarray/subscript/); i.e., when you use an array like an object.

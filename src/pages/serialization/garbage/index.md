@@ -3,11 +3,11 @@ options:
   - id: json
     label: "`serializeJson()` (or `serializeJsonPretty()`)"
     summary: "`serializeJson()` produces garbage"
-    next: json
+    page: json.md
   - id: msg
     label: "`serializeMsgPack()`"
     summary: "`serializeMsgPack()` produces garbage"
-    next: msgpack
+    page: msgpack.md
 ---
 
 What function produces the garbage?

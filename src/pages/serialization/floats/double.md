@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Rounding the value fixes the issue
-    next: /done
+    page: /done.md
   - id: double
     label: "No"
     summary: Rounding the value doesn't fix the issue
-    next: double-rounded
+    page: double-rounded.md
 ---
 
 Please add the following function somewhere in your program:

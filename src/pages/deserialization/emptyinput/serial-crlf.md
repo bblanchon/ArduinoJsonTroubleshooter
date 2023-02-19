@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Removing CRLF fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Removing CRLF doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) also returns [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) when the input contains only spaces. 

@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: The file was the problem
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: The file is not the problem
-    next: /deadend
+    page: /deadend.md
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) in the context of a file usually means:

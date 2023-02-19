@@ -3,11 +3,11 @@ options:
   - id: two-calls
     label: "Yes"
     summary: Program calls `deserializeJson()` twice
-    next: array-twice
+    page: array-twice.md
   - id: one-call
     label: "No"
     summary: Program doesn't call `deserializeJson()` twice
-    next: string-jsonlint
+    page: string-jsonlint.md
 ---
 
 Did you call [`deserializeJson()`](/v6/api/json/deserializejson/) twice with the same input buffer?

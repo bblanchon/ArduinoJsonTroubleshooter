@@ -2,13 +2,12 @@ export interface Option {
   id: string
   label: string
   summary: string
-  next: string
+  page: number
 }
 
 export interface Page {
+  filename?: string
   content: string
   options?: Option[]
   tags?: string[]
 }
-
-export type PageMap = { [key: string]: Page }

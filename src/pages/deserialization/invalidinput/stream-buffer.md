@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Adding a buffer solves the issue
-    next: /done
+    page: /done.md
   - id: buffer
     label: "No"
     summary: Adding a buffer doesn't solve the issue
-    next: stream-bom
+    page: stream-bom.md
 ---
 
 Sometimes, the input is invalid because some bytes were dropped when receiving the document.

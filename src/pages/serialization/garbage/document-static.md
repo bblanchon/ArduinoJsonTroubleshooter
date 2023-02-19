@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Switching to `DynamicJsonDocument` fixes the issue
-    next: /done
+    page: /done.md
   - id: dynamic
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't fix the issue
-    next: document-dynamic
+    page: document-dynamic.md
 ---
 
 [`StaticJsonDocument`](/v6/api/staticjsondocument/) stores its memory pool in the stack.

@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_DECODE_UNICODE` solves the issue
-    next: /done
+    page: /done.md
   - id: decode-unicode-set
     label: "No"
     summary: Defining `ARDUINOJSON_DECODE_UNICODE` doesn't solve the issue
-    next: msgpack
+    page: msgpack.md
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) returns [`NotSupported`](/v6/api/misc/deserializationerror/#notsupported) when is read an UTF-16 escape sequence but support is disabled.

@@ -3,19 +3,19 @@ options:
   - id: http
     label: An HTTP response
     summary: Input comes from an HTTP response
-    next: http-redirect
+    page: http-redirect.md
   - id: file
     label: A file
     summary: Input comes from a file
-    next: file
+    page: file.md
   - id: serial
     label: A serial port
     summary: Input comes from a serial port
-    next: serial-timeout
+    page: serial-timeout.md
   - id: other
     label: Something else
     summary: Input comes neither from an HTTP response, nor a file, nor a serial port
-    next: other
+    page: other.md
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) means that the input was empty or contained only spaces or comments.

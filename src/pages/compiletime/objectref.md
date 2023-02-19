@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Replacing `JsonObject&` with `JsonObject` fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Replacing `JsonObject&` with `JsonObject` doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 

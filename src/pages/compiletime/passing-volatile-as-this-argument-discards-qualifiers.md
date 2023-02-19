@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Using a queue solves the issue.
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Cannot use a queue.
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error occurs because you declared a `volatile` variable, but the member function you're trying to call is not qualified as `volatile`. In other words, the function is not meant to be called from a `volatile` instance.

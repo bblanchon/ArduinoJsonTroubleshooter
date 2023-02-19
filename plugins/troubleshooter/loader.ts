@@ -1,13 +1,10 @@
-import path from 'node:path'
-import { readFileSync, readdirSync } from 'node:fs'
+import path from "node:path"
+import { readFileSync, readdirSync } from "node:fs"
 
-import MarkdownIt from 'markdown-it'
-import matter from 'gray-matter'
-import { createFilter } from '@rollup/pluginutils'
-import { normalizePath } from 'vite'
-
-import { Option, Page } from './pages'
-
+import MarkdownIt from "markdown-it"
+import matter from "gray-matter"
+import { createFilter } from "@rollup/pluginutils"
+import { normalizePath } from "vite"
 
 export interface LoaderConfig {
   folder?: string
@@ -15,22 +12,32 @@ export interface LoaderConfig {
   markdownItUses?: [MarkdownIt.PluginWithOptions, any][]
 }
 
+interface PageFileOption {
+  id: string
+  label: string
+  summary: string
+  page: string
+}
+
 interface PageFrontmatter {
-  options?: Option[]
+  options?: PageFileOption[]
   tags?: string[] | string
+}
+
+export interface PageFile {
+  filename: string
+  content: string
+  options?: PageFileOption[]
+  tags?: string[]
 }
 
 function listFiles(folder: string) {
   const files: string[] = []
-  readdirSync(folder, { withFileTypes: true }).forEach(
-    (entry) => {
-      const filename = path.join(folder, entry.name)
-      if (entry.isDirectory())
-        files.push(...listFiles(filename))
-      else
-        files.push(filename)
-    }
-  )
+  readdirSync(folder, { withFileTypes: true }).forEach((entry) => {
+    const filename = path.join(folder, entry.name)
+    if (entry.isDirectory()) files.push(...listFiles(filename))
+    else files.push(filename)
+  })
   return files
 }
 
@@ -46,39 +53,54 @@ export class PageLoader {
     this.checkFilename = createFilter(filenamePattern)
 
     this.mdi = MarkdownIt(config.markdownItOptions || {})
-    config.markdownItUses?.forEach(
-      ([plugin, options]) => this.mdi.use(plugin, options)
+    config.markdownItUses?.forEach(([plugin, options]) =>
+      this.mdi.use(plugin, options)
     )
   }
 
-  getFileKey(filename: string) {
-    return ("/" + normalizePath(path
-      .relative(this.folder, filename)))
-      .replace(/.md$/, '')
-      .replace(/\/index$/, '') || "/"
+  getFullPath(filename: string): string {
+    return path.resolve(this.folder, filename)
   }
 
-  resolveNext(next: string, from: string) {
-    from = normalizePath(path.relative(this.folder, from))
-    return new URL(next, `foo://bar/${from}`).pathname
+  resolve(folder: string, filename: string): string {
+    if (filename.startsWith("/")) folder = this.folder
+    return path.join(folder, filename)
   }
 
-  loadFile(filename: string): Page {
-    const { data: frontmatter, content }
-      : { data: PageFrontmatter, content: string }
-      = matter(readFileSync(filename), { excerpt: false })
+  normalizeFilename(filename) {
+    return normalizePath(path.relative(this.folder, filename))
+  }
+
+  loadFile(filename: string): PageFile {
+    const {
+      data: frontmatter,
+      content
+    }: { data: PageFrontmatter; content: string } = matter(
+      readFileSync(filename),
+      { excerpt: false }
+    )
+    const folder = path.dirname(filename)
     return {
+      filename: this.normalizeFilename(filename),
       content: this.mdi.render(content),
-      tags: typeof frontmatter.tags == "string" ? frontmatter.tags.split(/\s+/) : frontmatter.tags,
+      tags:
+        typeof frontmatter.tags == "string"
+          ? frontmatter.tags.split(/\s+/)
+          : frontmatter.tags,
       options: frontmatter.options?.map((option) => ({
         ...option,
-        next: this.resolveNext(option.next, filename),
-        label: this.mdi.renderInline(option.label),
+        page: this.normalizeFilename(this.resolve(folder, option.page)),
+        label: this.mdi.renderInline(option.label)
       }))
     }
   }
 
   listFiles() {
-    return listFiles(this.folder)
+    // make sure /index.md is first
+    return listFiles(this.folder).sort((a, b) => {
+      a = a.replace(/\bindex.md$/, "")
+      b = b.replace(/\bindex.md$/, "")
+      return a.localeCompare(b)
+    })
   }
 }

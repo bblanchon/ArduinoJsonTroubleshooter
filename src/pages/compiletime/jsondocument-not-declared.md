@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Including `ArduinoJson.h` fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Including `ArduinoJson.h` doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 You probably forgot to include the library header.

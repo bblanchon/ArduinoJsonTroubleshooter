@@ -3,11 +3,11 @@ options:
   - id: capacity-0
     label: "`0`"
     summary: "`doc.capacity()` returns `0`"
-    next: static-nomemory-capacity-0
+    page: static-nomemory-capacity-0.md
   - id: capacity-ok
     label: The value passed to the constructor of `DynamicJsonDocument`
     summary: "`doc.capacity()` returns the right value"
-    next: static-nomemory-capacity-ok
+    page: static-nomemory-capacity-ok.md
 ---
 
 It looks like the allocation failed.

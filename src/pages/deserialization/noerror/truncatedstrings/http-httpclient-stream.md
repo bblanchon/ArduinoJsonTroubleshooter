@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: "Calling `HTTPClient::useHTTP10(true)` solves the issue"
-    next: /done
+    page: /done.md
   - id: http10
     label:  "No"
     summary: "Calling `HTTPClient::useHTTP10(true)` doesn't solve the issue"
-    next: /deadend
+    page: /deadend.md
 ---
 
 When you call `HTTPClient::getStream()`, you bypass the part that handles [Chunked Transfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding).

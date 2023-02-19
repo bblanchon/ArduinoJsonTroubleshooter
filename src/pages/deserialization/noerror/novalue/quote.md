@@ -3,11 +3,11 @@ options:
   - id: server-fixable
     label: "Yes"
     summary: User can modify the server
-    next: quote-server
+    page: quote-server.md
   - id: server-unfixable
     label: "No"
     summary: User cannot modify the server
-    next: quote-keep
+    page: quote-keep.md
 ---
 
 If you see a double-quote at the beginning of the JSON input, it means that the whole document is neither an object or an array; it's a string. This happens when the input was incorrectly generated, by serializing (stringifying) to JSON twice.

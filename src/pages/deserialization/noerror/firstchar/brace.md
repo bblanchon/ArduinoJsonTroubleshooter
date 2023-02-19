@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Garbage characters follow the input
-    next: /done
+    page: /done.md
   - id: lint
     label: "No"
     summary: No garbage characters follow the input
-    next: ../jsonlint
+    page: ../jsonlint.md
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) stops reading as soon as the JSON document ends.

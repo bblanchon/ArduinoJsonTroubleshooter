@@ -2,11 +2,11 @@
 options:
   - id: serialization
     label: Serialization
-    next: /serialization
+    page: /serialization/index.md
     summary: The issue concerns serialization
   - id: deserialization
     label: Deserialization
-    next: /deserialization
+    page: /deserialization/index.md
     summary: The issue concerns deserialization
 ---
 

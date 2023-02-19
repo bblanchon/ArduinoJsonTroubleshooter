@@ -3,11 +3,11 @@ options:
   - id: headers-skipped
     label: "Yes"
     summary: HTTP headers are skipped
-    next: http-manual-http10
+    page: http-manual-http10.md
   - id: headers-not-skipped
     label: "No"
     summary: HTTP headers are not skipped
-    next: http-manual-headers
+    page: http-manual-headers.md
 ---
 
 Before calling [`deserializeJson()`](/v6/api/json/deserializejson/), did you skip the HTTP headers?

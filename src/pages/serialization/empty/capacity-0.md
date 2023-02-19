@@ -3,15 +3,15 @@ options:
   - id: basic
     label: "`BasicJsonDocument<T>`"
     summary: The document is a `BasicJsonDocument<T>`
-    next: capacity-0-basic
+    page: capacity-0-basic.md
   - id: dynamic
     label: "`DynamicJsonDocument`"
     summary: The document is a `DynamicJsonDocument`
-    next: capacity-0-oom
+    page: capacity-0-oom.md
   - id: static
     label: "`StaticJsonDocument`"
     summary: The document is a `StaticJsonDocument`
-    next: /deadend
+    page: /deadend.md
 --- 
 
 What kind of [`JsonDocument`](/v6/api/jsondocument/) do you use?

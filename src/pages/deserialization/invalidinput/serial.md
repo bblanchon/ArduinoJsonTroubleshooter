@@ -3,11 +3,11 @@ options:
   - id: software
     label: "Yes"
     summary: Program uses `SoftwareSerial`
-    next: serial-software
+    page: serial-software.md
   - id: hardware
     label: "No"
     summary: Program doesn't use `SoftwareSerial`
-    next: serial-flush
+    page: serial-flush.md
 ---    
 
 Are you using [`SoftwareSerial`](https://www.arduino.cc/en/Reference/SoftwareSerial)?

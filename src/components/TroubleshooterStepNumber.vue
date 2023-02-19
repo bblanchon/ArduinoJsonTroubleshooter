@@ -1,8 +1,8 @@
 <template>
-  <h2 class="troubleshooter-step-number" :title="debug && step.slug">
+  <h2 class="troubleshooter-step-number" :title="step.filename">
     <div class="bg-secondary text-white rounded-circle">
       {{ step.number }}
-      <span v-if="debug" class="sr-only">: {{ step.slug }}</span>
+      <span v-if="debug" class="sr-only">: {{ step.filename }}</span>
     </div>
   </h2>
 </template>
@@ -18,5 +18,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

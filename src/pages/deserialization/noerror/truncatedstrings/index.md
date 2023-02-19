@@ -3,11 +3,11 @@ options:
   - id: nul
     label: "Yes"
     summary: The input contains `\u0000`
-    next: /nul-not-supported
+    page: /nul-not-supported.md
   - id: no-nul
     label: "No"
     summary: The input doesn't contain `\u0000`
-    next: input
+    page: input.md
 ---
 
 Does the JSON input contain the Unicode character `\u0000`?

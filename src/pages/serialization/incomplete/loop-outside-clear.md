@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Calling `JsonDocument::garbageCollect()` solves the issue
-    next: /done
+    page: /done.md
   - id: gc
     label: "No"
     summary: Calling `JsonDocument::garbageCollect()` doesn't solve the issue
-    next: noloop
+    page: noloop.md
 ---
 
 Please replace the call to [`JsonDocument::clear()`](/v6/api/jsondocument/clear/) with [`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/).

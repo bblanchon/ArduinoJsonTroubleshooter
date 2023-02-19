@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Replacing `char` with `int8_t` fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Replacing `char` with `int8_t` doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error happens when you write the following:

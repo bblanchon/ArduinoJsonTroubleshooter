@@ -3,15 +3,15 @@ options:
   - id: array
     label: "`class InvalidConversion<VariantConstRef, ArrayRef>`"
     summary: Specialization is `InvalidConversion<VariantConstRef, ArrayRef>`
-    next: invalid-conversion-array
+    page: invalid-conversion-array.md
   - id: object
     label: "`class InvalidConversion<VariantConstRef, ObjectRef>`"
     summary: Specialization is `InvalidConversion<VariantConstRef, ObjectRef>`
-    next: invalid-conversion-object
+    page: invalid-conversion-object.md
   - id: variant
     label: "`class InvalidConversion<VariantConstRef, VariantRef>`"
     summary: Specialization is `InvalidConversion<VariantConstRef, VariantRef>`
-    next: invalid-conversion-variant
+    page: invalid-conversion-variant.md
 ---
 
 Assuming we removed the namespace `ArduinoJson6XXX` from the error message, what type is incomplete?

@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Fixing the server fixes the issue
-    next: /done
+    page: /done.md
   - id: server-ok
     label: "No"
     summary: Fixing the server doesn't fix the issue
-    next: quote-keep
+    page: quote-keep.md
 ---
 
 In the server implementation, please look at the view that returns the faulty JSON.

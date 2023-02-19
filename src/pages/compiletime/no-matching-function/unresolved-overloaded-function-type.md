@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Adding the parentheses fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Adding the parentheses doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 We typically see this error when your program does somethink like this:

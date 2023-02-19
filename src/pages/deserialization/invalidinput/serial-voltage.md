@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: The issue is a voltage mismatch
-    next: /done
+    page: /done.md
   - id: voltage-ok
     label: "No"
     summary: The issue is not a voltage mismatch
-    next: serial-rate
+    page: serial-rate.md
 ---
 
 Not all microcontrollers use the same voltage for the serial port.

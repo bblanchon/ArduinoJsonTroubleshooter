@@ -3,11 +3,11 @@ options:
   - id: progmem
     label: "Yes"
     summary: Program uses `PROGMEM`
-    next: progmem-cast
+    page: progmem-cast.md
   - id: no-progmem
     label: "No"
     summary: Program doesn't use `PROGMEM`
-    next: charptr
+    page: charptr.md
 ---
 
 Do you use `PROGMEM` (Flash memory) in your program?

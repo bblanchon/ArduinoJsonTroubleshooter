@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Converting the value fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Converting the value doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error occurs when you try to insert an unsupported value type in a [`JsonDocument`](/v6/api/jsondocument/).

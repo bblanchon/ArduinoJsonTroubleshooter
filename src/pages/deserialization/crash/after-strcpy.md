@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Providing a non-null default solves the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Providing a non-null default doesn't solve the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 As per the standard, the behavior of [`strcpy()`](https://en.cppreference.com/w/c/string/byte/strcpy) (and [`strlcpy()`](https://en.wikibooks.org/wiki/C_Programming/C_Reference/nonstandard/strlcpy)) is undefined if one of the pointers is null.

@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Changing the Assistant settings solves the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Changing the Assistant settings doesn't solve the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 I'm pretty confident the Assistant computes the right capacity; however, some settings can affect the result:

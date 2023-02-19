@@ -3,15 +3,15 @@ options:
   - id: success
     label: "Yes"
     summary: Reducing baud rate fixes the issue
-    next: /done
+    page: /done.md
   - id: better
     label: Somehow
     summary: Reducing baud rate improves the situation
-    next: serial-cable
+    page: serial-cable.md
   - id: not-better
     label: "No"
     summary: Reducing baud rate doesn't fix the issue
-    next: serial-jsonlint
+    page: serial-jsonlint.md
 ---
 
 Any kind of communication is subject to errors: sometimes you send a `1` and receive a `0`.

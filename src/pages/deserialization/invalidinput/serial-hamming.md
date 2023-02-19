@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Error-correction codes fix the issue
-    next: /done
+    page: /done.md
   - id: ecc
     label: "No"
     summary: Error-correction codes doesn't fix the issue
-    next: serial-jsonlint
+    page: serial-jsonlint.md
 ---
 
 [Error-correction codes (ECC)](https://en.wikipedia.org/wiki/Error_correction_code) are a way of transmitting the data with redundant information that allows the receiver to fix most of the errors.

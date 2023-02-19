@@ -3,11 +3,11 @@ options:
   - id: zero
     label: "`0`"
     summary: The first character is NUL
-    next: other-nul
+    page: other-nul.md
   - id: non-zero
     label: Something else
     summary: The first character is not NUL
-    next: /deadend
+    page: /deadend.md
 ---
 
 Please print the ASCII code for the first character, like so:

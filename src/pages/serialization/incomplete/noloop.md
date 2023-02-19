@@ -3,11 +3,11 @@ options:
   - id: overflowed-1
     label: "`1` (or `true`)"
     summary: "`JsonDocument::overflowed()` returns `true`"
-    next: overflowed
+    page: overflowed.md
   - id: overflowed-0
     label: "`0` (or `false`)"
     summary: "`JsonDocument::overflowed()` returns `false`"
-    next: nul-char
+    page: nul-char.md
 ---
 
 Please print the value of [`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/), like so:

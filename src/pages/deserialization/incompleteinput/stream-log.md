@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Logging helped fixing the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Logging didn't help fixing the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 Maybe seeing where the input stops will give you an idea of what's going wrong.

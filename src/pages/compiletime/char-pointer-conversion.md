@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Changing the pointer type fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Changing the pointer type doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error occurs when you try to store a pointer of type `const char*` into a variable of type `char*`, like so:

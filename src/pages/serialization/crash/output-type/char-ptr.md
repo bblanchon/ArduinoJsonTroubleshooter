@@ -3,11 +3,11 @@ options:
   - id: crash-with-char-array
     label: "Yes"
     summary: Replacing the output pointer with an array doesn't fix the crash
-    next: /deadend
+    page: /deadend.md
   - id: no-crash-with-char-array
     label: "No"
     summary: Replacing the output pointer with an array fixes the crash
-    next: /done
+    page: /done.md
 ---
 
 I think the output pointer is dangling.

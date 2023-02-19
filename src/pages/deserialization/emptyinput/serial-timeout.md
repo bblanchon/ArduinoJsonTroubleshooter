@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Adding a wait loop fixes the issue
-    next: /done
+    page: /done.md
   - id: available
     label: "No"
     summary:  Adding a wait loop doesn't fix the issue
-    next: serial-crlf
+    page: serial-crlf.md
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) can be caused by a timeout while waiting for the input.

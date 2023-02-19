@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Printing the string reveals the faulty pointer
-    next: /done
+    page: /done.md
   - id: no-faulty-pointer
     label: "No"
     summary: Printing the string doesn't show any faulty pointer
-    next: /deadend
+    page: /deadend.md
 ---
 
 One of these string pointers is probably dangling or points to a non-zero-terminated string.

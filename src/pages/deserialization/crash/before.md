@@ -3,11 +3,11 @@ options:
   - id: static
     label: "Yes" 
     summary: Program uses `StaticJsonDocument`
-    next: static
+    page: static.md
   - id: no-static
     label: "No"
     summary: Program doesn't use `StaticJsonDocument`
-    next: dynamic
+    page: dynamic.md
 ---
 
 A stack-overflow could cause the crash.

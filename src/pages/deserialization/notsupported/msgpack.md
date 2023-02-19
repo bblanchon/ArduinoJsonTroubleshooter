@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Upgrading solve the issue
-    next: /done
+    page: /done.md
   - id: upgraded
     label: "No"
     summary: Upgrading doesn't solve the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 So, I guess that you're not using [`deserializeJson()`](/v6/api/json/deserializejson/) but [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack/), right?

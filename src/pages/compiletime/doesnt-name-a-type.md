@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Moving statement to `setup()` fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Moving statement to `setup()` doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error usually occurs when you write statements at the global scope, which isn't possible in C++.

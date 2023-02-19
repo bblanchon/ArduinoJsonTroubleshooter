@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Setting `ARDUINOJSON_ENABLE_PROGMEM` to `0` fixes the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Setting `ARDUINOJSON_ENABLE_PROGMEM` to `0` doesn't fix the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 

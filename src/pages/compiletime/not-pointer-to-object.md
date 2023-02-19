@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_ENABLE_PROGMEM` to `0` solves the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Defining `ARDUINOJSON_ENABLE_PROGMEM` to `0` doesn't solve the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This error comes from a bug in the [Arduino Core API](https://github.com/arduino/ArduinoCore-API) (or `Arduino.h`, if you prefer).

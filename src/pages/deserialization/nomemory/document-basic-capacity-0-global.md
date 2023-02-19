@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Making `doc` local fixes the issue.
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Making `doc` local doesn't fix the issue.
-    next: /deadend
+    page: /deadend.md
 ---
 
 `doc.capacity()` returns `0`, which means `allocate()` returned `NULL`.

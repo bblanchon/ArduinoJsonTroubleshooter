@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Fixing the filter solves the issue
-    next: /done
+    page: /done.md
   - id: filter-ok
     label: "No"
     summary: Fixing the filter doesn't solve the issue
-    next: print
+    page: print.md
 ---
 
 

@@ -3,11 +3,11 @@ options:
   - id: dynamicjsondocument
     label: "`DynamicJsonDocument`"
     summary: Program uses `DynamicJsonDocument`
-    next: progmem
+    page: progmem.md
   - id: staticjsondocument
     label: "`StaticJsonDocument`"
     summary: Program uses `StaticJsonDocument`
-    next: static
+    page: static.md
 ---
 
 Do you use [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) or [`StaticJsonDocument`](/v6/api/staticjsondocument/)?

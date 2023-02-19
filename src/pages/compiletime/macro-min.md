@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Defining `ARDUINOJSON_ENABLE_STD_STRING` and `ARDUINOJSON_ENABLE_STD_STREAM` to `0` solves the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Defining `ARDUINOJSON_ENABLE_STD_STRING` and `ARDUINOJSON_ENABLE_STD_STREAM` to `0` doesn't solve the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 This is a bug in some Arduino cores, most notably the one for [SAMD21](https://en.wikipedia.org/wiki/Atmel_ARM-based_processors#SAM_D).

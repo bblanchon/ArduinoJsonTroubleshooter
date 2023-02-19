@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: The input was incorrect
-    next: /done
+    page: /done.md
   - id: not-garbage
     label: "No"
     summary: The input is correct
-    next: /deadend
+    page: /deadend.md
 ---
 
 It seems that your program fed [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack/) with garbage input.

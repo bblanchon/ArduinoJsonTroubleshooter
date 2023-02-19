@@ -3,11 +3,11 @@ options:
   - id: string
     label: A string (`const char*`, `String`, `std::string`...)
     summary: Input type is a string
-    next: other-string
+    page: other-string.md
   - id: stream
     label: A stream (`Serial`, `WiFiClient`, `File`...)
     summary: Input type is a stream
-    next: other-stream
+    page: other-stream.md
 ---
 
 The input is probably starting with a NUL character.

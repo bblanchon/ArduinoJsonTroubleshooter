@@ -2,11 +2,11 @@
 options:
   - id: valid
     label: Document is valid
-    next: jsonlint-valid
+    page: jsonlint-valid.md
     summary: jsonlint says the document is valid
   - id: invalid
     label: Document is invalid
-    next: jsonlint-invalid
+    page: jsonlint-invalid.md
     summary: jsonlint says the document is invalid
 ---
 

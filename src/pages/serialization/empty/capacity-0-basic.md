@@ -3,11 +3,11 @@ options:
   - id: global
     label: "Yes"
     summary: "`doc` is a global variable"
-    next: capacity-0-basic-global
+    page: capacity-0-basic-global.md
   - id: local
     label: "No"
     summary: "`doc` is not a global variable"
-    next: capacity-0-oom
+    page: capacity-0-oom.md
 --- 
 
 Is `doc` a global variable?

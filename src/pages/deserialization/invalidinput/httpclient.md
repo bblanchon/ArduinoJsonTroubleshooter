@@ -3,15 +3,15 @@ options:
   - id: getstream
     label: "`getStream()`"
     summary: Response comes from `HTTPClient::getStream()`
-    next: httpclient-stream
+    page: httpclient-stream.md
   - id: getstring
     label: "`getString()`"
     summary: Response comes from `HTTPClient::getString()`
-    next: string-jsonlint
+    page: string-jsonlint.md
   - id: readstring
     label: "`readString()`"
     summary: Response comes from `HTTPClient::readString()`
-    next: httpclient-readstring
+    page: httpclient-readstring.md
 ---
 
 Which function of `HTTPClient` do you call to get the response?

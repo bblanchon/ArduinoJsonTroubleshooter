@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Increasing serial buffer size solves the issue
-    next: /done
+    page: /done.md
   - id: larger-buffer
     label: "No"
     summary: Increasing serial buffer size doesn't solves the issue
-    next: stream-bom
+    page: stream-bom.md
 ---
 
 Sometimes, the input is invalid because some bytes were dropped when receiving the document.

@@ -4,11 +4,11 @@ options:
   - id: valid
     label: "Yes"
     summary: "`jsonlint` says the document is valid"
-    next: file-bom
+    page: file-bom.md
   - id: invalid
     label: "No"
     summary: "`jsonlint` says the document is invalid"
-    next: jsonlint-bad
+    page: jsonlint-bad.md
 ---
 
 We need to make sure that the JSON document is valid.

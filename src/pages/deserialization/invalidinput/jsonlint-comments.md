@@ -3,11 +3,11 @@ options:
   - id: success
     label: "Yes"
     summary: Setting ARDUINOJSON_ENABLE_COMMENTS to 1 solves the issue
-    next: /done
+    page: /done.md
   - id: failure
     label: "No"
     summary: Setting ARDUINOJSON_ENABLE_COMMENTS to 1 doesn't solve the issue
-    next: /deadend
+    page: /deadend.md
 ---
 
 [`deserializeJson()`](/v6/api/json/deserializejson/) can read JSON documents that contain comments, but the support is disabled by default to reduce the footprint of the library.
