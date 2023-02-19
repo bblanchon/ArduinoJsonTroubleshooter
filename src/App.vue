@@ -17,12 +17,11 @@
     <div v-if="needsAssistance">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assistance-modal">
         Contact support
-      </button>
-      <button class="btn" :class="{
+      </button> <button class="btn" :class="{
         'btn-outline-primary': !reportCopied,
         'btn-success': reportCopied
       }" :disabled="reportCopied" @click="copyReport">
-        {{ reportCopied? "✓ Report copied": "Copy troubleshooter's report" }}
+        {{ reportCopied ? "✓ Report copied" : "Copy troubleshooter's report" }}
       </button>
       <AssistanceModal id="assistance-modal" :report="report" />
     </div>
