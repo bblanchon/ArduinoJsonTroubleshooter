@@ -15,6 +15,11 @@ options:
     summary: 'Error says "`begin`: no matching overloaded function found"'
     page: iterate-ambiguous.md
 
+  - id: error-constants
+    label: '`bits/error_constants.h`: No such file or directory'
+    summary: 'Error says "`bits/error_constants.h`: No such file or directory'
+    page: path-too-long.md
+
   - id: print-ambiguous
     label: call of overloaded `print(...)` is ambiguous
     summary: Error says "call of overloaded `print(...)` is ambiguous"
