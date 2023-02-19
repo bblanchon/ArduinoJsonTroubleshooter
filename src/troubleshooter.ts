@@ -27,9 +27,9 @@ function makeStep(pageId: number, hash?: string, number?: number): Step {
     ...page,
     number: number || 1,
     hash: hash || "#",
-    options: page.options?.map((option) => ({
+    options: page.options?.map((option, idx) => ({
       ...option,
-      inputId: (hash ? hash.substring(1) + "/" : "") + option.id,
+      inputId: `option-${pageId}-${idx}`,
       hash: (hash ? hash + "/" : "#") + option.id,
       missing: !pages[option.page],
       selected: false,
