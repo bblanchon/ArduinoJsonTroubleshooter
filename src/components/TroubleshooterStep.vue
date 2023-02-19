@@ -2,7 +2,7 @@
   <div v-if="step.options" class="troubleshooter-step mb-4">
     <h2 class="small">
       <div class="troubleshooter-step-number">
-        <div class="bg-secondary text-white rounded-circle">
+        <div class="text-white rounded-circle" :class="active ? 'bg-primary' : 'bg-secondary'">
           {{ step.number }}
         </div>
       </div>
