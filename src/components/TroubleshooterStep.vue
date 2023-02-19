@@ -37,8 +37,11 @@ export default defineComponent({
     }
   },
   components: { TroubleshooterStepOption },
-  mounted() {
-    if (this.active) this.$el.scrollIntoView({ behavior: "smooth" })
+  async mounted() {
+    const { top, bottom } = this.$el.getBoundingClientRect();
+    const minVisibleHeight = 50
+    const isVisible = top + minVisibleHeight < window.innerHeight;
+    if (!isVisible) this.$el.scrollIntoView({ behavior: "smooth" })
   }
 })
 </script>
