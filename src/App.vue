@@ -71,9 +71,6 @@ export default {
       await sleep(2000)
       this.reportCopied = false
     },
-    hasTag(tag) {
-      return
-    }
   }
 }
 </script>
