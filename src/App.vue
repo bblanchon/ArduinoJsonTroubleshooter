@@ -9,11 +9,9 @@
       </p>
       <p>Ready? Here we go!</p>
     </div>
-    <TransitionGroup name="fade" mode="out-in">
-      <template v-for="step, idx in steps" :key="step.hash">
-        <TroubleshooterStep :step="step" @choose="choose" :active="idx == steps.length - 1" />
-      </template>
-    </TransitionGroup>
+    <Transition v-for="step, idx in steps" :key="idx" name="fade" mode="out-in">
+      <TroubleshooterStep :key="step.hash" :step="step" @choose="choose" :active="idx == steps.length - 1" />
+    </Transition>
     <div v-if="needsAssistance">
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assistance-modal">
         Contact support
