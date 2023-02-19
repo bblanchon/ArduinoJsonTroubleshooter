@@ -30,9 +30,16 @@ export default defineComponent({
     step: {
       type: Object,
       required: true
+    },
+    active: {
+      type: Boolean,
+      default: false
     }
   },
-  components: { TroubleshooterStepOption }
+  components: { TroubleshooterStepOption },
+  mounted() {
+    if (this.active) this.$el.scrollIntoView({ behavior: "smooth" })
+  }
 })
 </script>
 

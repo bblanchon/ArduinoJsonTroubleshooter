@@ -10,8 +10,8 @@
       <p>Ready? Here we go!</p>
     </div>
     <TransitionGroup name="fade" mode="out-in">
-      <template v-for="step in steps" :key="step.hash">
-        <TroubleshooterStep :id="step.id" :step="step" @choose="choose" />
+      <template v-for="step, idx in steps" :key="step.hash">
+        <TroubleshooterStep :step="step" @choose="choose" :active="idx == steps.length - 1" />
       </template>
     </TransitionGroup>
     <div v-if="needsAssistance">
@@ -57,15 +57,6 @@ export default {
     },
     report() {
       return generateReport(this.steps)
-    }
-  },
-  watch: {
-    async hash(hash) {
-      const id = hash.substring(1)
-      await sleep(300)
-      const elm = document.getElementById(id)
-      if (elm) elm.scrollIntoView({ behavior: "smooth" })
-      else console.error(`Element with id "${id}" not found`)
     }
   },
   methods: {

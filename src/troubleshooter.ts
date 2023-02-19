@@ -16,7 +16,6 @@ interface Step {
   content: string
   number: number
   hash: string
-  id: string
   options?: Option[]
   selectedOption?: Option
   tags?: string[]
@@ -28,7 +27,6 @@ function makeStep(pageId: number, hash?: string, number?: number): Step {
     ...page,
     number: number || 1,
     hash: hash || "#",
-    id: (hash || "#start").substring(1),
     options: page.options?.map((option) => ({
       ...option,
       inputId: (hash ? hash.substring(1) + "/" : "") + option.id,
