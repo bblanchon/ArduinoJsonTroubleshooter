@@ -1,7 +1,16 @@
 <template>
   <div v-if="step.options" class="troubleshooter-step mb-4">
-    <TroubleshooterStepNumber :step="step" />
-    <div v-html="step.content" class="troubleshooter-step-content" />
+    <h2 class="small">
+      <div class="troubleshooter-step-number">
+        <div class="bg-secondary text-white rounded-circle">
+          {{ step.number }}
+        </div>
+      </div>
+      <span v-if="debug" class="text-muted text-monospace">
+        {{ step.filename }}
+      </span>
+    </h2>
+    <div class="troubleshooter-step-content" v-html="step.content"></div>
     <div class="troubleshooter-step-options">
       <TroubleshooterStepOption v-for="option in step.options" :key="option.hash" :option="option"
         @click="$emit('choose', option)" />
@@ -13,7 +22,6 @@
 <script>
 import { defineComponent } from "vue"
 import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
-import TroubleshooterStepNumber from "./TroubleshooterStepNumber.vue"
 
 export default defineComponent({
   inject: ["debug"],
@@ -24,7 +32,7 @@ export default defineComponent({
       required: true
     }
   },
-  components: { TroubleshooterStepOption, TroubleshooterStepNumber }
+  components: { TroubleshooterStepOption }
 })
 </script>
 
@@ -32,12 +40,8 @@ export default defineComponent({
 @import "../assets/highlight.scss";
 
 .troubleshooter-step {
-  display: grid;
-  grid-template-areas:
-    "number content"
-    "number options";
-  grid-template-columns: auto 1fr;
-  column-gap: 1em;
+  position: relative;
+  padding-left: 3.5em;
 
   pre {
     background: #eeeeee;
@@ -54,10 +58,11 @@ export default defineComponent({
 }
 
 .troubleshooter-step-number {
-  grid-area: number;
+  position: absolute;
+  left: 0px;
 }
 
-.troubleshooter-step-number>div {
+.troubleshooter-step-number>* {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,13 +70,5 @@ export default defineComponent({
   font-weight: normal;
   width: 1.7em;
   height: 1.7em;
-}
-
-.troubleshooter-step-content {
-  grid-area: content;
-}
-
-.troubleshooter-step-options {
-  grid-area: options;
 }
 </style>
