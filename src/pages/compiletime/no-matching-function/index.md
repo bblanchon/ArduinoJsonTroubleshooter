@@ -29,6 +29,11 @@ options:
     label: no matching function for call to `...as<char*>() const`
     summary: Error says "no matching function for call to `...as<char*>()` const"
     page: as-char-ptr.md
+  
+  - id: is-char-ptr
+    label: no matching function for call to `...is<char*>() const`
+    summary: Error says "no matching function for call to `...is<char*>()` const"
+    page: is-char-ptr.md
 
   - id: not-in-list
     label: None of the above
