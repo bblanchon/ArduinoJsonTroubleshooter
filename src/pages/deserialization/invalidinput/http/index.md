@@ -3,15 +3,15 @@ options:
   - id: httpclient
     label: "Yes, I'm using `HTTPClient`"
     summary: "Program uses `HTTPClient`"
-    page: httpclient.md
+    page: httpclient/index.md
   - id: http-library
     label: "Yes, but it's not `HTTPClient`"
     summary: Program uses an unknown HTTP library
-    page: http-library.md
+    page: other-library.md
   - id: no-library
     label: "No"
     summary: Program doesn't use an HTTP library
-    page: http-manual.md
+    page: no-library/index.md
 ---
 
 Do you use an HTTP library?

@@ -7,11 +7,11 @@ options:
   - id: warning
     label: Yes, but there is a compiler warning about `client.find()`
     summary: Skipping HTTP headers solves the issue, but there is a warning
-    page: http-manual-headers-warning.md
+    page: headers-warning.md
   - id: header-skipped
     label: "No"
     summary: Skipping HTTP headers doesn't solve the issue
-    page: http-manual-http10.md
+    page: http10.md
 ---
 
 Just like the HTTP request, the response contains some headers, followed by an empty line, and then followed by the body.

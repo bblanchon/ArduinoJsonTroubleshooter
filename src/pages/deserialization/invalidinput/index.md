@@ -3,7 +3,7 @@ options:
   - id: http
     label: An HTTP response
     summary: Input comes from HTTP
-    page: http.md
+    page: http/index.md
   - id: serial
     label: A serial port
     summary: Input comes from a serial port
