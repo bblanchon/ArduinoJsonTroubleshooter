@@ -7,19 +7,12 @@ options:
   - id: filter-ok
     label: "No"
     summary: Fixing the filter doesn't solve the issue
-    page: print.md
+    page: ../print.md
 ---
 
+Maybe the filter excludes the part that it should keep. Let's verify that it's doing its job correctly.
 
-Maybe the filter excludes the part that it should keep. Let's verify that it's doing its job correctly:
-
-Please print the filter to the serial port like so:
-
-```c++
-serializeJsonPretty(filter, Serial);
-```
-
-Then, open the [ArduinoJson Assistant](/v6/assistant/):
+Open the [ArduinoJson Assistant](/v6/assistant/):
 
 * in step 1: choose "Deserialize and filter"
 * in step 2:
