@@ -460,7 +460,7 @@ These numbers might seem high, but huge part of the stack is already consumed by
 <p>Please, make sure that the file is opened in &quot;read&quot; mode and try to print the content to make sure it's not empty.</p>
 <p>You can find an example using the SD library in <a href="/v6/example/config/">JsonConfigFile.ino</a> and one using SPIFFS in <a href="/book/">Mastering ArduinoJson</a>.</p>
 <p>Did this sole your issue?</p>
-`,options:[{id:"success",page:160,label:"Yes",summary:"The file was the problem"},{id:"failure",page:34,label:"No",summary:"The file is not the problem"}]},{content:`<p>We tryed everything we could on the client side, so I'm starting to suspect an issue with the server.</p>
+`,options:[{id:"success",page:160,label:"Yes",summary:"The file was the problem"},{id:"failure",page:34,label:"No",summary:"The file is not the problem"}]},{content:`<p>We tried everything we could on the client side, so I'm starting to suspect an issue with the server.</p>
 <p>Please try to perform the same HTTP request from your computer.
 For example, you can use <a href="https://curl.se/">cURL</a>, <a href="https://httpie.io/">HTTPie</a>, <a href="https://paw.cloud/">Paw</a>, <a href="https://www.postman.com/">Postman</a>, or <a href="https://www.thunderclient.com/">ThunderClient</a>.</p>
 <p>Hopefully, this will help you solve your issue.</p>
