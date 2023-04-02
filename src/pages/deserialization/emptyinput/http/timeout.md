@@ -7,7 +7,7 @@ options:
   - id: timeout-increased
     label: "No"
     summary: Increasing the timeout doesn't fix the issue
-    page: /deadend.md
+    page: curl.md
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) could be caused by a timeout while reading the response.

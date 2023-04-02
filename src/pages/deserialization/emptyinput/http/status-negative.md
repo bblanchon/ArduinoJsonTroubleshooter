@@ -3,14 +3,16 @@ options:
   - id: certificate-problem
     label: "Yes"
     summary: Calling `WiFiClientSecure::setInsecure()` solves the issue.
-    page: certificate-insecure.md
+    page: insecure-works.md
   - id: certificate-ok
     label: "No"
     summary: Calling `WiFiClientSecure::setInsecure()` doesn't solve the issue.
-    page: timeout.md
+    page: insecure-fails.md
 ---
 
-With HTTPS, [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) can be due to an error during the validation of the certificate.
+A negative number indicates an error on the client side.
+
+With HTTPS, connection failures are often due to the certificate validation.
 
 Please try to disable certificate validation by calling [`WiFiClientSecure::setInsecure()`](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/bearssl-client-secure-class.html#setinsecure) before starting the HTTP request.
 

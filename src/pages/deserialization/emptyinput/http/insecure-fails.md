@@ -2,7 +2,7 @@
 tags: needs_assistance
 ---
 
-A negative number indicates an error on the client side.
+As I said, a negative status number indicates an error on the client side.
 
 Here are the possible values that I'm aware of:
 

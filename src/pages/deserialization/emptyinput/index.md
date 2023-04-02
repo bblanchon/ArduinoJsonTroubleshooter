@@ -3,7 +3,7 @@ options:
   - id: http
     label: An HTTP response
     summary: Input comes from an HTTP response
-    page: http/redirect.md
+    page: http/status.md
   - id: file
     label: A file
     summary: Input comes from a file
