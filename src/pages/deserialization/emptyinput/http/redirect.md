@@ -7,7 +7,7 @@ options:
   - id: no-redirection
     label: "No"
     summary: It's not a redirection
-    page: http-certificate.md
+    page: certificate.md
 ---
 
 [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) in the context of an HTTP response usually means that the server returns a [redirection code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections) (like [301 Moved Permanently](https://en.wikipedia.org/wiki/HTTP_301) or [302 Found](https://en.wikipedia.org/wiki/HTTP_302)), but the client doesn't follow the redirection.
