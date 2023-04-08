@@ -10,17 +10,17 @@ options:
     summary: "`deserializeJson()` should not let this error pass"
 ---
 
-> ArduinoJson isn't very picky about the input: its implementation favors code size and speed over strict conformance.
-> After all, size and speed are what matter the most for embedded software, right?
-> 
-> This means that ArduinoJson's parser may accept documents that would be rejected by other parsers.
-> 
-> For example, [`deserializeJson()`](/v6/api/json/deserializejson/) tolerates the following substitutions:
-> 
-> * `'hello'` instead of `"hello"` (single quotes)
-> * `nULL` or `n0n3` instead if `null` (only checks first character and length)
-> * `tRUE` or `t0t0` instead of `true` (ditto)
-> * `fALSE` or `fAkk3` instead of `false` (ditto)
+ArduinoJson isn't very picky about the input: its implementation favors code size and speed over strict conformance.
+After all, size and speed are what matter the most for embedded software, right?
+
+This means that ArduinoJson's parser may accept documents that would be rejected by other parsers.
+
+For example, [`deserializeJson()`](/v6/api/json/deserializejson/) tolerates the following substitutions:
+
+* `'hello'` instead of `"hello"` (single quotes)
+* `nULL` or `n0n3` instead if `null` (only checks first character and length)
+* `tRUE` or `t0t0` instead of `true` (ditto)
+* `fALSE` or `fAkk3` instead of `false` (ditto)
 
 It also ignores the follwing UTF-8 errors:
 

@@ -59,6 +59,16 @@ export default defineComponent({
     border-radius: 0.25rem;
     margin-bottom: 1rem;
   }
+
+  blockquote {
+    border-left: 4px solid #ddd;
+    padding: 0 0.8rem;
+    color: #6c757d;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .code-wrap {
