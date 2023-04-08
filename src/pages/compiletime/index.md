@@ -1,5 +1,10 @@
 ---
 options:
+  - id: requires-cpp-compiler
+    label: ArduinoJson requires a C++ compiler...
+    summary: Error says "ArduinoJson requires a C++ compiler..."
+    page: requires-cpp-compiler.md
+
   - id: assignment-of-read-only-location
     label: assignment of read-only location
     summary: Error says "assignment of read-only location"
