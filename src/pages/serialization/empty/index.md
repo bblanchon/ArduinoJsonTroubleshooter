@@ -7,7 +7,7 @@ options:
   - id: capacity-ok
     label: "a positive integer"
     summary: "`doc.capacity()` looks good"
-    page: /deadend.md
+    page: overflowed.md
 ---
 
 Please print the capacity of the [`JsonDocument`](/v6/api/jsondocument/) to the serial port, like so:
