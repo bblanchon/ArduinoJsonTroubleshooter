@@ -10,14 +10,14 @@
   "devDependencies": {
     "@rollup/pluginutils": "^5.0.2",
     "@types/markdown-it": "^12.2.3",
-    "@types/node": "^20.2.5",
+    "@types/node": "^20.3.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.1",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-highlightjs": "^4.0.1",
     "markdown-it-replace-link": "^1.2.0",
-    "sass": "^1.62.1",
+    "sass": "^1.63.4",
     "vite": "^4.3.9",
     "vue": "^3.3.4"
   }
