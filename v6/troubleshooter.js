@@ -994,7 +994,12 @@ In your case, it will read the input until it reaches the matching <code>}</code
 <pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;key&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;value&quot;</span><span class="hljs-punctuation">}</span>GARBAGE
 </code></pre>
 <p>Here, <a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a> reads the JSON object <code>{&quot;key&quot;:&quot;value&quot;}</code> and returns <code>Ok</code> ignoring the <code>GARBAGE</code> part.</p>
-<p>This feature enables <a href="/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks">deserializing in chunks</a> and allows non-zero-terminated input strings.</p>
+<p>This feature enables:</p>
+<ol>
+<li><a href="/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks">deserializing in chunks</a>,</li>
+<li>parsing <a href="https://en.wikipedia.org/wiki/JSON_streaming">JSON Streams</a>,</li>
+<li>reading from non-zero-terminated input strings.</li>
+</ol>
 <p>Did this solve your issue?</p>
 `,options:[{id:"success",page:162,label:"Yes",summary:"Garbage characters follow the input"},{id:"lint",page:127,label:"No",summary:"No garbage characters follow the input"}]},{content:`<p><a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a> stops reading as soon as the JSON document ends.
 In your case, it will read the input until it reaches the matching <code>]</code> and ignore any remaining characters.</p>
@@ -1002,7 +1007,12 @@ In your case, it will read the input until it reaches the matching <code>]</code
 <pre><code class="hljs language-json"><span class="hljs-punctuation">[</span><span class="hljs-number">1</span><span class="hljs-punctuation">,</span><span class="hljs-number">2</span><span class="hljs-punctuation">,</span><span class="hljs-number">3</span><span class="hljs-punctuation">]</span>GARBAGE
 </code></pre>
 <p>Here, <a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a> reads the JSON array <code>[1,2,3]</code> and returns <code>Ok</code> ignoring the <code>GARBAGE</code> part.</p>
-<p>This feature enables <a href="/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks">deserializing in chunks</a> and allows non-zero-terminated input strings.</p>
+<p>This feature enables:</p>
+<ol>
+<li><a href="/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks">deserializing in chunks</a>,</li>
+<li>parsing <a href="https://en.wikipedia.org/wiki/JSON_streaming">JSON Streams</a>,</li>
+<li>reading from non-zero-terminated input strings.</li>
+</ol>
 <p>Did this solve your issue?</p>
 `,options:[{id:"success",page:162,label:"Yes",summary:"Garbage characters follow the input"},{id:"lint",page:127,label:"No",summary:"No garbage characters follow the input"}]},{content:`<p><a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a> stops reading as soon as the JSON document ends.
 In your case, it will read the input until it reaches the matching <code>&quot;</code> and ignore any remaining characters.</p>
@@ -1010,7 +1020,12 @@ In your case, it will read the input until it reaches the matching <code>&quot;<
 <pre><code class="hljs language-json"><span class="hljs-string">&quot;hello&quot;</span>GARBAGE
 </code></pre>
 <p>Here, <a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a> reads the JSON string <code>&quot;hello&quot;</code> and returns <code>Ok</code> ignoring the <code>GARBAGE</code> part.</p>
-<p>This feature enables <a href="/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks">deserializing in chunks</a> and allows non-zero-terminated input strings.</p>
+<p>This feature enables:</p>
+<ol>
+<li><a href="/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks">deserializing in chunks</a>,</li>
+<li>parsing <a href="https://en.wikipedia.org/wiki/JSON_streaming">JSON Streams</a>,</li>
+<li>reading from non-zero-terminated input strings.</li>
+</ol>
 <p>Did this solve your issue?</p>
 `,options:[{id:"success",page:162,label:"Yes",summary:"Garbage characters follow the input"},{id:"lint",page:127,label:"No",summary:"No garbage characters follow the input"}]},{content:`<p>What is the type of the second argument passed to <a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a>?</p>
 `,options:[{id:"char-ptr",page:123,label:"<code>char*</code> (or <code>char[]</code>)",summary:"Input type is `char*`"},{id:"const-char-ptr",page:35,label:"<code>const char*</code>",summary:"Input type is `const char*`"},{id:"string",page:35,label:"<code>String</code> (or <code>std::string</code>)",summary:"Input type is `String`"},{id:"stream",page:35,label:"<code>Stream</code> (or <code>std::istream)</code>",summary:"Input type is `Stream`"}]},{content:`<p>The easiest solution is to disable the zero-copy mode by passing a read-only input buffer. Casting the pointer will do the trick:</p>
