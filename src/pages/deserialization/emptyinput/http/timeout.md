@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing the timeout fixes the issue
     page: /done.md
-  - id: timeout-increased
+  timeout-increased:
     label: "No"
     summary: Increasing the timeout doesn't fix the issue
     page: curl.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `strcmp()` with `==` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `strcmp()` with `==` doesn't solve the issue
     page: /deadend.md

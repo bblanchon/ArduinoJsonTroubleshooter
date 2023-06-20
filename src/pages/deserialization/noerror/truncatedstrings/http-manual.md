@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: "Using `HTTP/1.0` solves the issue"
     page: /done.md
-  - id: http10
+  http10:
     label: "No"
     summary: "Using `HTTP/1.0` doesn't solve the issue"
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Flushing the serial buffer fixes the issue
     page: /done.md
-  - id: flush
+  flush:
     label: "No"
     summary: Flushing the serial buffer doesn't fix the issue
     page: serial-voltage.md

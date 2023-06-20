@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Adding a wait loop fixes the issue
     page: /done.md
-  - id: available
+  available:
     label: "No"
     summary:  Adding a wait loop doesn't fix the issue
     page: serial-crlf.md

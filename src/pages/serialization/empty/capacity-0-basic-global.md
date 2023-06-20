@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Making `doc` local fixes the issue.
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Making `doc` local doesn't fix the issue.
     page: /deadend.md

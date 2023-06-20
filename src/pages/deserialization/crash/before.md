@@ -1,10 +1,10 @@
 ---
 options:
-  - id: static
+  static:
     label: "Yes" 
     summary: Program uses `StaticJsonDocument`
     page: static.md
-  - id: no-static
+  no-static:
     label: "No"
     summary: Program doesn't use `StaticJsonDocument`
     page: dynamic.md

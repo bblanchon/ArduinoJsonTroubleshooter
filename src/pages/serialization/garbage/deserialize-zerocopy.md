@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Casting the pointer fixes the issue
     page: /done.md
-  - id: casting-fails
+  casting-fails:
     label: "No"
     summary: Casting the pointer doesn't fix the issue
     page: serialize.md

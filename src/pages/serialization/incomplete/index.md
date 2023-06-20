@@ -1,10 +1,10 @@
 ---
 options:
-  - id: loop
+  loop:
     label: "Yes"
     summary: "Program calls `serializeJson()` in a loop"
     page: loop.md
-  - id: no-loop
+  no-loop:
     label: "No"
     summary: "Program doesn't call `serializeJson()` in a loop"
     page: noloop.md

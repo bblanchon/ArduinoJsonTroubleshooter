@@ -1,10 +1,10 @@
 ---
 options:
-  - id: capacity-0
+  capacity-0:
     label: "`0`"
     summary: "`doc.capacity()` returns `0`"
     page: static-nomemory-capacity-0.md
-  - id: capacity-ok
+  capacity-ok:
     label: The value passed to the constructor of `DynamicJsonDocument`
     summary: "`doc.capacity()` returns the right value"
     page: static-nomemory-capacity-ok.md

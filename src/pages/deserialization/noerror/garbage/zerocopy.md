@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes, the input comes from a stream"
     summary: Input comes from a stream
     page: zerocopy-stream.md
-  - id: cast
+  cast:
     label: "No, it doesn't"
     summary: Input doesn't come from a stream
     page: zerocopy-cast.md

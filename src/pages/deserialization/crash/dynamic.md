@@ -1,10 +1,10 @@
 ---
 options:
-  - id: failure
+  failure:
     label: "Yes"
     summary: Reducing stack usage doesn't prevent the crash
     page: /deadend.md
-  - id: success
+  success:
     label: "No"
     summary: Reducing stack usage prevents the crash
     page: /done.md

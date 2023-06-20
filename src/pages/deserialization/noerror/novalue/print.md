@@ -1,18 +1,18 @@
 ---
 options:
-  - id: quote
+  quote:
     label: A quote (`"`)
     summary: Serialized document starts with a quote
     page: quote.md
-  - id: bracket
+  bracket:
     label: A square bracket (`[`)
     summary: Serialized document starts with a square bracket
     page: confusion.md
-  - id: brace
+  brace:
     label: A curly brace (`{`)
     summary: Serialized document starts with a curly brace
     page: confusion.md
-  - id: not-in-list
+  not-in-list:
     label: None of the above
     summary: Serialized document starts with neither a quote, a bracket, nor a brace.
     page: json-or-msgpack.md

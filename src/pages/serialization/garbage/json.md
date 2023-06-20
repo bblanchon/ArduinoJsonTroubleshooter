@@ -1,10 +1,10 @@
 ---
 options:
-  - id: deserialize-yes
+  deserialize-yes:
     label: "Yes"
     summary: Program calls `deserializeJson()`
     page: deserialize.md
-  - id: deserialize-no
+  deserialize-no:
     label: "No"
     summary: Program doesn't call `deserializeJson()`
     page: serialize.md

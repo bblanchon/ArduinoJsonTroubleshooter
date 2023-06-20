@@ -1,14 +1,14 @@
 ---
 options:
-  - id: redirect
+  redirect:
     label: "`300` to `399`"
     summary: The status code indicates a redirection
     page: redirect.md
-  - id: negative
+  negative:
     label: A negative number
     summary: The status code is negative
     page: status-negative.md
-  - id: status-ok
+  status-ok:
     label: None of the above
     summary: The status code is not in the list
     page: timeout.md

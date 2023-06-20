@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Upgrading the cables solves the issue
     page: /done.md
-  - id: improved
+  improved:
     label: Somehow
     summary: Upgrading the cables improves the situation
     page: serial-hamming.md
-  - id: no-improvment
+  no-improvment:
     label: "No"
     summary: Upgrading the cables doesn't solve the issue
     page: serial-jsonlint.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Following the redirection fixes the issue
     page: /done.md
-  - id: follow
+  follow:
     label: "No"
     summary: Following the redirection doesn't fix the issue
     page: timeout.md

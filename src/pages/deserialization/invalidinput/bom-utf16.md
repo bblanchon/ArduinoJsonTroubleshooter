@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: "`Accept: application/json;charset=utf-8` solves the issue"
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: "`Accept: application/json;charset=utf-8` doesn't solve the issue"
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: The input was incorrect
     page: /done.md
-  - id: not-garbage
+  not-garbage:
     label: "No"
     summary: The input is correct
     page: /deadend.md

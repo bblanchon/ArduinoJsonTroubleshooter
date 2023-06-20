@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing the capacity of the `JsonDocument` fixes the issue
     page: /done.md
-  - id: increased-capacity
+  increased-capacity:
     label: "No"
     summary: Increasing the capacity of the `JsonDocument` doesn't fix the issue
     page: document.md

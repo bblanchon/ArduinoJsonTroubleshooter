@@ -1,10 +1,10 @@
 ---
 options:
-  - id: json
+  json:
     label: "Yes, `serializeJson()` produces garbage too"
     summary: "`serializeJson()` produces garbage too"
     page: json.md
-  - id: deserialize-no
+  deserialize-no:
     label: "No, `serializeJson()` doesn't produces garbage"
     summary: "`serializeJson()` doesn't produces garbage"
     page: msgpack-only.md

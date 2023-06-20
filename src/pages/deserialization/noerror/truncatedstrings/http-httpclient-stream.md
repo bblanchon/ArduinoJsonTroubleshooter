@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: "Calling `HTTPClient::useHTTP10(true)` solves the issue"
     page: /done.md
-  - id: http10
+  http10:
     label:  "No"
     summary: "Calling `HTTPClient::useHTTP10(true)` doesn't solve the issue"
     page: /deadend.md

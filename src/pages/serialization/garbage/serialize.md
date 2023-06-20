@@ -1,18 +1,18 @@
 ---
 options:
-  - id: document
+  document:
     label: "`JsonDocument`"
     summary: "Program calls `serializeJson(const JsonDocument&, ...)`"
     page: document.md
-  - id: array
+  array:
     label: "`JsonArray` (or `JsonArrayConst`)"
     summary: "Program calls `serializeJson(JsonArrayConst, ...)`"
     page: jsonarray.md
-  - id: object
+  object:
     label: "`JsonObject` (or `JsonObjectConst`)"
     summary: "Program calls `serializeJson(JsonObjectConst, ...)`"
     page: jsonobject.md
-  - id: variant
+  variant:
     label: "`JsonVariant` (or `JsonVariantConst`)"
     summary: "Program calls `serializeJson(JsonVariantConst, ...)`"
     page: jsonvariant.md

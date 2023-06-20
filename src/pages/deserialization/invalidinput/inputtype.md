@@ -1,10 +1,10 @@
 ---
 options:
-  - id: stream
+  stream:
     label: A stream
     summary: The input is a stream
     page: stream-bom.md
-  - id: string
+  string:
     label: A string
     summary: The input is a string
     page: string-bom.md

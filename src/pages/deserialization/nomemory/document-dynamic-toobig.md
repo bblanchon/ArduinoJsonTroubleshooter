@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Reducing memory usage fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Reducing memory usage doesn't fix the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: It's the "Most vexing parse"
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: It's not the "Most vexing parse"
     page: /deadend.md

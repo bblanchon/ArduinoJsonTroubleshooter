@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Switching to `DynamicJsonDocument` fixes the issue
     page: /done.md
-  - id: dynamic
+  dynamic:
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't fix the issue
     page: document-dynamic.md

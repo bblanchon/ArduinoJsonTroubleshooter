@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `char` with `int8_t` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `char` with `int8_t` doesn't fix the issue
     page: /deadend.md

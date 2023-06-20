@@ -20,7 +20,7 @@ interface PageFileOption {
 }
 
 interface PageFrontmatter {
-  options?: PageFileOption[]
+  options?: { [id: string]: PageFileOption; }
   tags?: string[] | string
 }
 
@@ -87,8 +87,9 @@ export class PageLoader {
         typeof frontmatter.tags == "string"
           ? frontmatter.tags.split(/\s+/)
           : frontmatter.tags,
-      options: frontmatter.options?.map((option) => ({
+      options: frontmatter.options && Object.entries(frontmatter.options).map(([id, option]) => ({
         ...option,
+        id,
         page: this.normalizeFilename(this.resolve(folder, option.page)),
         label: this.mdi.renderInline(option.label)
       }))

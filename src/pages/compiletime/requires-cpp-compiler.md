@@ -1,11 +1,11 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Changing the file extension to `.cpp` fixes the error
     page: /done.md
 
-  - id: failure
+  failure:
     label: "No"
     summary: Changing the file extension to `.cpp` doesn't fix the error
     page: /deadend.md

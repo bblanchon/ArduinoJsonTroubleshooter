@@ -1,14 +1,14 @@
 ---
 options:
-  - id: basic
+  basic:
     label: "`BasicJsonDocument<T>`"
     summary: The document is a `BasicJsonDocument<T>`
     page: capacity-0-basic.md
-  - id: dynamic
+  dynamic:
     label: "`DynamicJsonDocument`"
     summary: The document is a `DynamicJsonDocument`
     page: capacity-0-oom.md
-  - id: static
+  static:
     label: "`StaticJsonDocument`"
     summary: The document is a `StaticJsonDocument`
     page: /deadend.md

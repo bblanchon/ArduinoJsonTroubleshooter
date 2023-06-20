@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Changing the pointer type fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Changing the pointer type doesn't fix the issue
     page: /deadend.md

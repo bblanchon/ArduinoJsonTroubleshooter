@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: "Calling `HTTPClient::getString()` solves the issue"
     page: /done.md
-  - id: getstring
+  getstring:
     label: "No"
     summary: "Calling `HTTPClient::getString()` doesn't solves the issue"
     page: /deserialization/invalidinput/string-jsonlint.md

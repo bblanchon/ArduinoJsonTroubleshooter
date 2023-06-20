@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Changing the Assistant settings solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Changing the Assistant settings doesn't solve the issue
     page: /deadend.md

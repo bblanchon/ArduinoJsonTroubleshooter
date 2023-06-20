@@ -1,10 +1,10 @@
 ---
 options:
-  - id: json
+  json:
     label: "`deserializeJson()`"
     summary: Program calls `deserializeJson()`
     page: /deadend.md
-  - id: msgpack
+  msgpack:
     label: "`deserializeMsgPack()`"
     summary: Program calls `deserializeMsgPack()`
     page: msgpack.md

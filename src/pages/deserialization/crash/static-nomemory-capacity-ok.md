@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing the capacity fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Increasing the capacity doesn't fix the issue
     page: /deadend.md

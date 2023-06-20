@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Using a reference solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Using a reference doesn't solve the issue
     page: /deadend.md

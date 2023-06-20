@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Issue is a confusion between array and object
     page: /done.md
-  - id: array-object
+  array-object:
     label: "No"
     summary: Issue is not a confusion between array and object
     page: /deadend.md

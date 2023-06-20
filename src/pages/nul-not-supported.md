@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Using `JsonString` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Using `JsonString` doesn't solves the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Passing the stream to `deserializeJson()` fixes the issue
     page: /done.md
-  - id: cast
+  cast:
     label: "No"
     summary: Passing the stream to `deserializeJson()` doesn't fix the issue
     page: /deadend.md

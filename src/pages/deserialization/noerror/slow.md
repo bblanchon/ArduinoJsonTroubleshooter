@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: "`ReadBufferingStream` solves the issue"
     page: /done.md
-  - id: buffered
+  buffered:
     label: "No"
     summary: "`ReadBufferingStream` doesn't solve the issue"
     page: /deadend.md

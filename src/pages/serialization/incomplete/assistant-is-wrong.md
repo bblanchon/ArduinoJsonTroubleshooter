@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Reconfiguring the ArduinoJson Assistant solves the issue
     page: /done.md
-  - id: still-wrong
+  still-wrong:
     label: "No"
     summary: Reconfiguring the ArduinoJson Assistant doesn't solve the issue.
     page: /deadend.md

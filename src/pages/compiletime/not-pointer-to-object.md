@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Defining `ARDUINOJSON_ENABLE_PROGMEM` to `0` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Defining `ARDUINOJSON_ENABLE_PROGMEM` to `0` doesn't solve the issue
     page: /deadend.md

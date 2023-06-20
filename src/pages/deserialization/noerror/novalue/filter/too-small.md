@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing the filter's capacity fixes the issue
     page: /done.md
-  - id: size-increased
+  size-increased:
     label: "No"
     summary: Increasing the filter's capacity doesn't fix the issue
     page: assistant.md

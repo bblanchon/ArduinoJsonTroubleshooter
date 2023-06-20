@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Rounding the value fixes the issue
     page: /done.md
-  - id: double
+  double:
     label: "No"
     summary: Rounding the value doesn't fix the issue
     page: double-rounded.md

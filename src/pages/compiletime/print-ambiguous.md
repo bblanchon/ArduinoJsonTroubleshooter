@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Casting the value or using `serializeJson()` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Neither casting the value nor using `serializeJson()` solves the issue
     page: /deadend.md

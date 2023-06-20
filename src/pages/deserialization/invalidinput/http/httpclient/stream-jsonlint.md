@@ -1,10 +1,10 @@
 ---
 options:
-  - id: valid
+  valid:
     label: "Yes"
     summary: "jsonlint says the document is valid"
     page: /deserialization/invalidinput/stream-bom.md
-  - id: invalid
+  invalid:
     label: "No"
     summary: "jsonlint says the document is invalid"
     page: /deserialization/invalidinput/jsonlint-bad.md

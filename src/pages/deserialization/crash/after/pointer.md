@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing pointer with a `String` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing pointer with a `String` doesn't solve the issue
     page: /deadend.md

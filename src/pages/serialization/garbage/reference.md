@@ -1,14 +1,14 @@
 ---
 options:
-  - id: garbagecollect
+  garbagecollect:
     label: "`JsonDocument::garbageCollect()`"
     summary: Program calls `JsonDocument::garbageCollect()`
     page: reference-garbagecollect.md
-  - id: shrinktofit
+  shrinktofit:
     label: "`JsonDocument::shrinkToFit()`"
     summary: Program calls `JsonDocument::shrinkToFit()`
     page: reference-shrinktofit.md
-  - id: none
+  none:
     label: "No"
     summary: Program doesn't call an invalidating function
     page: document.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: json
+  json:
     label: "`serializeJson()` (or `serializeJsonPretty()`)"
     summary: "`serializeJson()` produces garbage"
     page: json.md
-  - id: msg
+  msg:
     label: "`serializeMsgPack()`"
     summary: "`serializeMsgPack()` produces garbage"
     page: msgpack.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Upgrading fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Upgrading doesn't fix the issue
     page: /deadend.md

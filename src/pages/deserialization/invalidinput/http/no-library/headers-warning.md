@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Using a `char[]` fixes the warning
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Using a `char[]` doesn't fix the warning
     page: /deadend.md

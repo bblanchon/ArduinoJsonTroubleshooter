@@ -1,10 +1,10 @@
 ---
 options:
-  - id: charptr
+  charptr:
     label: "Yes"
     summary: Program inserts string pointers into the `JsonDocument`
     page: charptr-comment.md
-  - id: no-charptr
+  no-charptr:
     label: "No"
     summary: Program doesn't insert string pointers into the `JsonDocument`
     page: output-type/index.md

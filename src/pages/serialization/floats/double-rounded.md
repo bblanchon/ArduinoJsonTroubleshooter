@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Defining `ARDUINOJSON_USE_DOUBLE` to `0` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Defining `ARDUINOJSON_USE_DOUBLE` to `0` doesn't fix the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `JsonVariant` with `JsonVariantConst` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `JsonVariant` with `JsonVariantConst` doesn't fix the issue
     page: /deadend.md

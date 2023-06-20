@@ -1,10 +1,10 @@
 ---
 options:
-  - id: zero
+  zero:
     label: "`0`"
     summary: The first character is NUL
     page: other-nul.md
-  - id: non-zero
+  non-zero:
     label: Something else
     summary: The first character is not NUL
     page: /deadend.md

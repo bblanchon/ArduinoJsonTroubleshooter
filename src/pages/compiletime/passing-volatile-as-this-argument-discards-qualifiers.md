@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Using a queue solves the issue.
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Cannot use a queue.
     page: /deadend.md

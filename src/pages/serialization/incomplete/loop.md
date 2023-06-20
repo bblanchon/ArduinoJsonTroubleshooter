@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Moving the `JsonDocument` inside the loop solves the issue
     page: /done.md
-  - id: inside
+  inside:
     label: "No"
     summary: Moving the `JsonDocument` inside the loop doesn't solve the issue
     page: noloop.md
-  - id: outside
+  outside:
     label: "I cannot move the declaration inside the loop"
     summary: The `JsonDocument` cannot be moved inside the loop
     page: loop-outside.md

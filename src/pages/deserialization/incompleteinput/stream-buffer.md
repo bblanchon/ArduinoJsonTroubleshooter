@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Adding a buffer solves the issue
     page: /done.md
-  - id: same-with-buffer
+  same-with-buffer:
     label: "No"
     summary: Adding a buffer doesn't solve the issue
     page: stream-log.md

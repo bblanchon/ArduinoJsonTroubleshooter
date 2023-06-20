@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Calling `JsonDocument::garbageCollect()` solves the issue
     page: /done.md
-  - id: gc
+  gc:
     label: "No"
     summary: Calling `JsonDocument::garbageCollect()` doesn't solve the issue
     page: noloop.md

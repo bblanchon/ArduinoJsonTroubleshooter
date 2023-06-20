@@ -1,10 +1,10 @@
 ---
 options:
-  - id: dynamic
+  dynamic:
     label: "`DynamicJsonDocument`"
     summary: Program uses `DynamicJsonDocument`
     page: document-dynamic.md
-  - id: static
+  static:
     label: "`StaticJsonDocument`"
     summary:  Program uses `StaticJsonDocument`
     page: document-static.md

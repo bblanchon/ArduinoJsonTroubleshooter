@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Passing the buffer size to `serializeJson()` fixed the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Passing the buffer size to `serializeJson()` didn't fix the issue
     page: /deadend.md

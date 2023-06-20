@@ -1,10 +1,10 @@
 ---
 options:
-  - id: two-calls
+  two-calls:
     label: "Yes"
     summary: Program calls `deserializeJson()` twice
     page: array-twice.md
-  - id: one-call
+  one-call:
     label: "No"
     summary: Program doesn't call `deserializeJson()` twice
     page: string-jsonlint.md

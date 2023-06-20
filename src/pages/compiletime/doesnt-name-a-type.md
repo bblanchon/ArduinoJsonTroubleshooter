@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Moving statement to `setup()` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Moving statement to `setup()` doesn't fix the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Casting the pointer solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Casting the pointer doesn't solve the issue
     page: /deadend.md

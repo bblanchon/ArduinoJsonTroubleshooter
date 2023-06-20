@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Removing duplicates fixes the issue
     page: /done.md
-  - id: duplicates-removed
+  duplicates-removed:
     label: "No"
     summary: Removing duplicates doesn't fix the issue
     page: unicode.md

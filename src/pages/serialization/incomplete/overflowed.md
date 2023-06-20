@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing the capacity of the `JsonDocument` solves the issue.
     page: /done.md
-  - id: assistant-is-wrong
+  assistant-is-wrong:
     label: Yes, but the required capacity is greater than what the ArduinJson Assistant says.
     summary: The required capacity is greater than what the ArduinJson Assistant says.
     page: assistant-is-wrong.md
-  - id: capacity-increased
+  capacity-increased:
     label: "No"
     summary: Increasing the capacity of the `JsonDocument` doesn't solve the issue.
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: capacity-0
+  capacity-0:
     label: "`0`"
     summary: "`doc.capacity()` returns `0`"
     page: capacity-0.md
-  - id: capacity-ok
+  capacity-ok:
     label: "a positive integer"
     summary: "`doc.capacity()` looks good"
     page: overflowed.md

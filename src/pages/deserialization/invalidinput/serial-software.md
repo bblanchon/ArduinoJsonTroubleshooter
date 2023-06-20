@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Removing `SoftwareSerial` solves the issue
     page: /done.md
-  - id: removed
+  removed:
     label: "No"
     summary: Removing `SoftwareSerial` doesn't solve the issue
     page: serial-voltage.md

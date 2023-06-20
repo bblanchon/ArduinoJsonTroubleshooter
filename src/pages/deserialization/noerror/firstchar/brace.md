@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Garbage characters follow the input
     page: /done.md
-  - id: lint
+  lint:
     label: "No"
     summary: No garbage characters follow the input
     page: ../jsonlint.md

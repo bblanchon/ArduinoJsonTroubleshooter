@@ -1,22 +1,22 @@
 ---
 options:
-  - id: strcmp
+  strcmp:
     label: Yes, there is a call to `strcmp()`
     summary: Program calls `strcmp()`
     page: strcmp.md
-  - id: strcpy
+  strcpy:
     label: Yes, there is a call to `strcpy()`
     summary: Program calls `strcpy()`
     page: strcpy.md
-  - id: printf
+  printf:
     label: Yes, there is a call to `printf()`, `sprintf()`, or `snprintf()`
     summary: Program calls `printf()`, `sprintf()`, or `snprintf()`
     page: printf.md
-  - id: success
+  success:
     label: Yes, I found the issue
     summary: Program dereferences a null pointer
     page: /done.md
-  - id: no-usual-suspect
+  no-usual-suspect:
     label: "No"
     summary: Program calls neither `strcmp()`, nor `strcpy()`, not `printf()`
     page: pointer.md

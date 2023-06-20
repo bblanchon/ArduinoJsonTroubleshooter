@@ -1,10 +1,10 @@
 ---
 options:
-  - id: crash-with-literals
+  crash-with-literals:
     label: "Yes"
     summary: Replacing string pointers with literals doesn't fix the crash
     page: output-type/index.md
-  - id: no-crash-with-literals
+  no-crash-with-literals:
     label: "No"
     summary: Replacing string pointers with literals fixes the crash
     page: charptr-print.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Extending the lifetime of the `JsonDocument` solves the issue
     page: /done.md
-  - id: not-destroyed
+  not-destroyed:
     label: "No"
     summary: Extending the lifetime of the `JsonDocument` doesn't solve the issue
     page: reference.md

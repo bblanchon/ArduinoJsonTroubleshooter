@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes" 
     summary: Switching to `DynamicJsonDocument` prevents the crash
     page: /done.md
-  - id: nomemory
+  nomemory:
     label: "Yes, but now `deserializeJson()` returns `NoMemory`" 
     summary: Switching to `DynamicJsonDocument` produces `NoMemory`
     page: static-nomemory.md
-  - id: dynamicjsondocument-too
+  dynamicjsondocument-too:
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't prevent the crash
     page: dynamic.md

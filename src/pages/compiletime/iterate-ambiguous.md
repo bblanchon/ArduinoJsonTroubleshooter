@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Calling `as<JsonObject>()` or `as<JsonArray>()` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary:  Calling `as<JsonObject>()` or `as<JsonArray>()` doesn't solve the issue
     page: /deadend.md

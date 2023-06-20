@@ -1,10 +1,10 @@
 ---
 options:
-  - id: acceptable
+  acceptable:
     label: "Yes"
     page: /done.md
     summary: "`deserializeJson()` tolerates the error, and that's OK"
-  - id: unacceptable
+  unacceptable:
     label: "No"
     page: unacceptable.md
     summary: "`deserializeJson()` should not let this error pass"

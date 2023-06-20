@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `char*` with `const char*` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `char*` with `const char*` doesn't fix the issue
     page: /deadend.md

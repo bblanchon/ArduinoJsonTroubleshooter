@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Defining `ARDUINOJSON_DECODE_UNICODE` solves the issue
     page: /done.md
-  - id: decode-unicode-set
+  decode-unicode-set:
     label: "No"
     summary: Defining `ARDUINOJSON_DECODE_UNICODE` doesn't solve the issue
     page: msgpack.md

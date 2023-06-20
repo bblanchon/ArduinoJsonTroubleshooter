@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `float` with `double` fixes the issue
     page: /done.md
-  - id: double
+  double:
     label: "No"
     summary: Replacing `float` with `double` doesn't fix the issue
     page: double.md

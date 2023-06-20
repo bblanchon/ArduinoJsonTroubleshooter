@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes, and it fixes the issue"
     summary: Removing the second call fixes the issue
     page: /done.md
-  - id: second-removed
+  second-removed:
     label: "Yes, but it doesn't fix the issue"
     summary: Removing the second call doesn't fix the issue
     page: string-jsonlint.md
-  - id: cannot-remove
+  cannot-remove:
     label: "No"
     summary: The second call cannot be removed
     page: array-twice-cast.md

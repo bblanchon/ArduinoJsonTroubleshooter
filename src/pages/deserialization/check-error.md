@@ -1,34 +1,34 @@
 ---
 options:
-  - id: ok
+  ok:
     label: "`Ok`"
     page: noerror/index.md
     summary: "`deserializeJson()` returns `Ok`"
-  - id: emptyinput
+  emptyinput:
     label: "`EmptyInput`"
     page: emptyinput/index.md
     summary: "`deserializeJson()` returns `EmptyInput`"
-  - id: incompleteinput
+  incompleteinput:
     label: "`IncompleteInput`"
     page: incompleteinput/index.md
     summary: "`deserializeJson()` returns `IncompleteInput`"
-  - id: invalidinput
+  invalidinput:
     label: "`InvalidInput`"
     page: invalidinput/index.md
     summary: "`deserializeJson()` returns `InvalidInput`"
-  - id: nomemory
+  nomemory:
     label: "`NoMemory`"
     page: nomemory/index.md
     summary: "`deserializeJson()` returns `NoMemory`"
-  - id: notsupported
+  notsupported:
     label: "`NotSupported`"
     page: notsupported/index.md
     summary: "`deserializeJson()` returns `NotSupported`"
-  - id: toodeep
+  toodeep:
     label: "`TooDeep`"
     page: toodeep.md
     summary: "`deserializeJson()` returns `TooDeep`"
-  - id: crash
+  crash:
     label: "I can't tell because the program crashes"
     page: crash/index.md
     summary: "The program crashes"

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Removing `.c_str()` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Removing `.c_str()` doesn't fix the issue
     page: /deadend.md

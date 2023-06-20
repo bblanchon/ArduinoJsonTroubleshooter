@@ -1,11 +1,11 @@
 ---
 summary: 
 options:
-  - id: valid
+  valid:
     label: "Yes"
     summary: "`jsonlint` says the document is valid"
     page: string-bom.md
-  - id: invalid
+  invalid:
     label: "No"
     summary: "`jsonlint` says the document is invalid"
     page: jsonlint-bad.md

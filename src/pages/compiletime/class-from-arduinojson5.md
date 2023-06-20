@@ -1,10 +1,10 @@
 ---
 options:
-  - id: upgrade
+  upgrade:
     label: I'd like to upgrade to ArduinoJson 6
     summary: User prefers upgrading to ArduinoJson 6
     page: class-from-arduinojson5-upgrade.md
-  - id: keep-v5
+  keep-v5:
     label: I prefer not touching the program
     summary: User prefers keeping ArduinoJson 5
     page: class-from-arduinojson5-keep.md

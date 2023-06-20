@@ -1,14 +1,14 @@
 ---
 options:
-  - id: stream
+  stream:
     label: A stream
     summary: Input comes from a stream
     page: stream-timeout.md
-  - id: string
+  string:
     label: A string object (like `String`)
     summary: Input comes from a string object
     page: string-object.md
-  - id: pointer
+  pointer:
     label: A pointer (like `char*` or `const char*`)
     summary: Input comes from a pointer
     page: string-pointer.md

@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Calling `JsonDocument::clear()` solves the issue
     page: /done.md
-  - id: clear
+  clear:
     label: "No"
     summary: Calling `JsonDocument::clear()` doesn't solve the issue
     page: noloop.md
-  - id: missing
+  missing:
     label: "Yes, but now some values are missing"
     summary: Calling `JsonDocument::clear()` solves the issue but removes other values
     page: loop-outside-clear.md

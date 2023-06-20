@@ -1,14 +1,14 @@
 ---
 options:
-  - id: ok
+  ok:
     label: "`200`"
     summary: The status code is `200`
     page: read-method.md
-  - id: positive
+  positive:
     label: A positive number (but not `200`)
     summary: The status code is positive 
     page: status-positive.md
-  - id: negative
+  negative:
     label: A negative number
     summary: The status code is negative
     page: status-negative.md

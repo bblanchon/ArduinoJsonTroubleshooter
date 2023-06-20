@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Removing CRLF fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Removing CRLF doesn't fix the issue
     page: /deadend.md

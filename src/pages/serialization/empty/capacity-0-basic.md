@@ -1,10 +1,10 @@
 ---
 options:
-  - id: global
+  global:
     label: "Yes"
     summary: "`doc` is a global variable"
     page: capacity-0-basic-global.md
-  - id: local
+  local:
     label: "No"
     summary: "`doc` is not a global variable"
     page: capacity-0-oom.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: nul
+  nul:
     label: "Yes"
     summary: The input contains `\u0000`
     page: /nul-not-supported.md
-  - id: no-nul
+  no-nul:
     label: "No"
     summary: The input doesn't contain `\u0000`
     page: input.md

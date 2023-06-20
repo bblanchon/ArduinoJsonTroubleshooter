@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Switching to `String` solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Switching to `String` doesn't solve the issue
     page: /deadend.md

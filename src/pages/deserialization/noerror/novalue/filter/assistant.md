@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Fixing the filter solves the issue
     page: /done.md
-  - id: filter-ok
+  filter-ok:
     label: "No"
     summary: Fixing the filter doesn't solve the issue
     page: ../print.md

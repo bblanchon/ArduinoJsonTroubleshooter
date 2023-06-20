@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: The file was the problem
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: The file is not the problem
     page: /deadend.md

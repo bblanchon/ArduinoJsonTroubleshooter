@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Skipping the first 3 bytes solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Skipping the first 3 bytes doesn't solve the issue
     page: /deadend.md

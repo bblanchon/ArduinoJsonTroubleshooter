@@ -1,10 +1,10 @@
 ---
 options:
-  - id: string
+  string:
     label: A string (`const char*`, `String`, `std::string`...)
     summary: Input type is a string
     page: other-string.md
-  - id: stream
+  stream:
     label: A stream (`Serial`, `WiFiClient`, `File`...)
     summary: Input type is a stream
     page: other-stream.md

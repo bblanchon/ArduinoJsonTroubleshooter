@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: The issue is a voltage mismatch
     page: /done.md
-  - id: voltage-ok
+  voltage-ok:
     label: "No"
     summary: The issue is not a voltage mismatch
     page: serial-rate.md

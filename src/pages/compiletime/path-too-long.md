@@ -1,11 +1,11 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Shortening the path fixes the issue
     page: /done.md
 
-  - id: failure
+  failure:
     label: "No"
     summary: Shortening the path doesn't fix the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Adding the parentheses fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Adding the parentheses doesn't fix the issue
     page: /deadend.md

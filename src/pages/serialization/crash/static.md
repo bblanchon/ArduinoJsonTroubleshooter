@@ -1,10 +1,10 @@
 ---
 options: 
-  - id: success
+  success:
     label: "Yes"
     summary: Switching to `DynamicJsonDocument` fixes the issue
     page: /done.md
-  - id: dynamicjsondocument-tried
+  dynamicjsondocument-tried:
     label: "No"
     summary: Switching to `DynamicJsonDocument` doesn't fix the issue
     page: progmem.md

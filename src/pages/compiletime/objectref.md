@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `JsonObject&` with `JsonObject` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `JsonObject&` with `JsonObject` doesn't fix the issue
     page: /deadend.md

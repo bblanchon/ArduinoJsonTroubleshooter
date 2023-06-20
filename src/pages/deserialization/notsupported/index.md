@@ -1,10 +1,10 @@
 ---
 options:
-  - id: can-uprade
+  can-uprade:
     label: "Yes"
     summary: "Library can be upgraded"
     page: upgrade.md
-  - id: cannot-upgrade
+  cannot-upgrade:
     label: "No"
     summary: "Library cannot be upgraded"
     page: unicode.md

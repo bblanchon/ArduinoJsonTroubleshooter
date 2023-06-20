@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Error-correction codes fix the issue
     page: /done.md
-  - id: ecc
+  ecc:
     label: "No"
     summary: Error-correction codes doesn't fix the issue
     page: serial-jsonlint.md

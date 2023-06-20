@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Upgrading solves the issue
     page: /done.md
-  - id: updraded
+  updraded:
     label: "No"
     summary: Upgrading doesn't solves the issue
     page: upgrade-duplicates.md

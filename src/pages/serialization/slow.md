@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Adding `WriteBufferingStream` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Adding `WriteBufferingStream` doesn't fix the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: nul
+  nul:
     label: "Yes"
     summary: One or more strings contain a NUL
     page: /nul-not-supported.md
-  - id: no-nul
+  no-nul:
     label: "No"
     summary: No string contains a NUL
     page: /deadend.md

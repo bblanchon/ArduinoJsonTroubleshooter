@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing the limit fixes the issue
     page: /done.md
-  - id: limit-increased
+  limit-increased:
     label: "No"
     summary: Increasing the limit doesn't fix the issue
     page: /deadend.md

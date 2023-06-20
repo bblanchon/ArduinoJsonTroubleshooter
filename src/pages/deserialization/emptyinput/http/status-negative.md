@@ -1,10 +1,10 @@
 ---
 options:
-  - id: certificate-problem
+  certificate-problem:
     label: "Yes"
     summary: Calling `WiFiClientSecure::setInsecure()` solves the issue.
     page: insecure-works.md
-  - id: certificate-ok
+  certificate-ok:
     label: "No"
     summary: Calling `WiFiClientSecure::setInsecure()` doesn't solve the issue.
     page: insecure-fails.md

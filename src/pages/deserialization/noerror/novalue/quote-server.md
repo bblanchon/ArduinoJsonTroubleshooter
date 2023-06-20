@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Fixing the server fixes the issue
     page: /done.md
-  - id: server-ok
+  server-ok:
     label: "No"
     summary: Fixing the server doesn't fix the issue
     page: quote-keep.md

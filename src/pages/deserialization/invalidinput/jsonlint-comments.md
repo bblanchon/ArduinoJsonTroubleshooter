@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Setting ARDUINOJSON_ENABLE_COMMENTS to 1 solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Setting ARDUINOJSON_ENABLE_COMMENTS to 1 doesn't solve the issue
     page: /deadend.md

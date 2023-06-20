@@ -1,10 +1,10 @@
 ---
 options:
-  - id: valid
+  valid:
     label: Document is valid
     page: jsonlint-valid.md
     summary: jsonlint says the document is valid
-  - id: invalid
+  invalid:
     label: Document is invalid
     page: jsonlint-invalid.md
     summary: jsonlint says the document is invalid

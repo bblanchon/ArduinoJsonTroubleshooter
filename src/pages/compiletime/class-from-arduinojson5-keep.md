@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Downloading ArduinoJson 5 fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Downloading ArduinoJson 5 doesn't fix the issue
     page: /deadend.md

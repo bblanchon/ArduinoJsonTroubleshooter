@@ -1,10 +1,10 @@
 ---
 options:
-  - id: size-ok
+  size-ok:
     label: "Yes"
     summary: The filter looks correct
     page: assistant.md
-  - id: too-small
+  too-small:
     label: No, some values are missing
     summary: The filter lacks some values
     page: too-small.md

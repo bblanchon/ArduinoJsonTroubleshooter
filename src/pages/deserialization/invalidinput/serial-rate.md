@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Reducing baud rate fixes the issue
     page: /done.md
-  - id: better
+  better:
     label: Somehow
     summary: Reducing baud rate improves the situation
     page: serial-cable.md
-  - id: not-better
+  not-better:
     label: "No"
     summary: Reducing baud rate doesn't fix the issue
     page: serial-jsonlint.md

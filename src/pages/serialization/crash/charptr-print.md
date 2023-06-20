@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Printing the string reveals the faulty pointer
     page: /done.md
-  - id: no-faulty-pointer
+  no-faulty-pointer:
     label: "No"
     summary: Printing the string doesn't show any faulty pointer
     page: /deadend.md

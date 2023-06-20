@@ -1,14 +1,14 @@
 ---
 options:
-  - id: basic
+  basic:
     label: "`BasicJsonDocument<T>`"
     summary: The document is a `BasicJsonDocument<T>`
     page: document-basic.md
-  - id: dynamicjsondocument
+  dynamicjsondocument:
     label: "`DynamicJsonDocument`"
     summary: The `JsonDocument` is a `DynamicJsonDocument`
     page: document-dynamic.md
-  - id: staticjsondocument
+  staticjsondocument:
     label: "`StaticJsonDocument`"
     summary: The `JsonDocument` is a `StaticJsonDocument`
     page: assistant-settings.md

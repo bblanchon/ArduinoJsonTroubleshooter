@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `JsonObject` with `JsonObjectConst` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `JsonObject` with `JsonObjectConst` doesn't fix the issue
     page: /deadend.md

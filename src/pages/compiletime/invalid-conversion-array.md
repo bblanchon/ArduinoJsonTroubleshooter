@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Replacing `JsonArray` with `JsonArrayConst` fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Replacing `JsonArray` with `JsonArrayConst` doesn't fix the issue
     page: /deadend.md

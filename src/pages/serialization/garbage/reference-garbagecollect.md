@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Reassigning references fixes the issue
     page: /done.md
-  - id: reassigned
+  reassigned:
     label: "No"
     summary: Reassigning references doesn't fix the issue
     page: document.md

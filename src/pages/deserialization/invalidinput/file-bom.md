@@ -1,14 +1,14 @@
 ---
 options:
-  - id: utf8
+  utf8:
     label: "`239`"
     summary: Input's first byte suggests a UTF-8 BOM
     page: bom-utf8.md
-  - id: utf16
+  utf16:
     label: "`254` or `255`"
     summary: Input's first byte suggests a UTF-16 BOM
     page: bom-utf16.md
-  - id: no-bom
+  no-bom:
     label: Something else
     summary: Input's first byte doesn't suggest a BOM
     page: bom-none.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: getstream
+  getstream:
     label: "`getStream()`"
     summary: Response comes from `HTTPClient::getStream()`
     page: http-httpclient-stream.md
-  - id: getstring
+  getstring:
     label: "`getString()`"
     summary: Response comes from `HTTPClient::getString()`
     page: /deadend.md

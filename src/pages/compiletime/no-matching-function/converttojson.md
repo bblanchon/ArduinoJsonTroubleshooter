@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Converting the value fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Converting the value doesn't fix the issue
     page: /deadend.md

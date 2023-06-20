@@ -1,10 +1,10 @@
 ---
 options:
-  - id: string
+  string:
     label: "Yes"
     summary: Program uses `String`
     page: document-dynamic-string.md
-  - id: no-string
+  no-string:
     label: "No"
     summary: Program doesn't use `String`
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Inreasing the timeout solves the issue
     page: /done.md
-  - id: timeout-increased
+  timeout-increased:
     label: "No"
     summary: Inreasing the timeout doesn't solve the issue
     page: stream-buffer.md

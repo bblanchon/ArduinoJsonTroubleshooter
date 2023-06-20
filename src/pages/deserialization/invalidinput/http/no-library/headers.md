@@ -1,14 +1,14 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Skipping HTTP headers solves the issue
     page: /done.md
-  - id: warning
+  warning:
     label: Yes, but there is a compiler warning about `client.find()`
     summary: Skipping HTTP headers solves the issue, but there is a warning
     page: headers-warning.md
-  - id: header-skipped
+  header-skipped:
     label: "No"
     summary: Skipping HTTP headers doesn't solve the issue
     page: http10.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: server-fixable
+  server-fixable:
     label: "Yes"
     summary: User can modify the server
     page: quote-server.md
-  - id: server-unfixable
+  server-unfixable:
     label: "No"
     summary: User cannot modify the server
     page: quote-keep.md

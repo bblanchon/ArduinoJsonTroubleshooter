@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Logging helped fixing the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Logging didn't help fixing the issue
     page: /deadend.md

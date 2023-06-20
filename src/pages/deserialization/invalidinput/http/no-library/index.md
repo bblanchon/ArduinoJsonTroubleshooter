@@ -1,10 +1,10 @@
 ---
 options:
-  - id: headers-skipped
+  headers-skipped:
     label: "Yes"
     summary: HTTP headers are skipped
     page: http10.md
-  - id: headers-not-skipped
+  headers-not-skipped:
     label: "No"
     summary: HTTP headers are not skipped
     page: headers.md

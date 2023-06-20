@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Increasing serial buffer size solves the issue
     page: /done.md
-  - id: larger-buffer
+  larger-buffer:
     label: "No"
     summary: Increasing serial buffer size doesn't solves the issue
     page: stream-bom.md

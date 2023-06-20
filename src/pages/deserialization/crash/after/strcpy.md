@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Providing a non-null default solves the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Providing a non-null default doesn't solve the issue
     page: /deadend.md

@@ -1,10 +1,10 @@
 ---
 options:
-  - id: no-dangling-ptr
+  no-dangling-ptr:
     label: "Yes"
     summary: Removing dangling pointers doesn't prevent the crash
     page: before.md
-  - id: success
+  success:
     label: "No"
     summary: Removing dangling pointers prevents the crash
     page: /done.md

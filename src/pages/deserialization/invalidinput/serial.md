@@ -1,10 +1,10 @@
 ---
 options:
-  - id: software
+  software:
     label: "Yes"
     summary: Program uses `SoftwareSerial`
     page: serial-software.md
-  - id: hardware
+  hardware:
     label: "No"
     summary: Program doesn't use `SoftwareSerial`
     page: serial-flush.md

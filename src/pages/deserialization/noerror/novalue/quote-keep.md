@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Calling `deserializeJson()` twice fixes the issue
     page: /done.md
-  - id: call-twice
+  call-twice:
     label: "No"
     summary: Calling `deserializeJson()` twice doesn't fix the issue
     page: /deadend.md

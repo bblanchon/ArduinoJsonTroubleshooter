@@ -1,10 +1,10 @@
 ---
 options:
-  - id: success
+  success:
     label: "Yes"
     summary: Using an integer or switching to an object fixes the issue
     page: /done.md
-  - id: failure
+  failure:
     label: "No"
     summary: Neither using an integer nor switching to an object fixes the issue
     page: /deadend.md

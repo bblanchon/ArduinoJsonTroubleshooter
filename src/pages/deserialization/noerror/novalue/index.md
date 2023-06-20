@@ -1,10 +1,10 @@
 ---
 options:
-  - id: filter
+  filter:
     label: "Yes"
     summary: Program uses `DeserializationOption::Filter`
     page: filter/print.md
-  - id: no-filter
+  no-filter:
     label: "No"
     summary: Program doesn't use `DeserializationOption::Filter`
     page: print.md

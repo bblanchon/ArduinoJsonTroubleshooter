@@ -1,10 +1,10 @@
 ---
 options:
-  - id: progmem
+  progmem:
     label: "Yes"
     summary: Program uses `PROGMEM`
     page: progmem-cast.md
-  - id: no-progmem
+  no-progmem:
     label: "No"
     summary: Program doesn't use `PROGMEM`
     page: charptr.md

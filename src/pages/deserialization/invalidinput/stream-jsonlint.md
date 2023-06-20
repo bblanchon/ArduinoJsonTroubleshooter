@@ -1,11 +1,11 @@
 ---
 summary: 
 options:
-  - id: valid
+  valid:
     label: "Yes"
     summary: "`jsonlint` says the document is valid"
     page: stream-buffer.md
-  - id: invalid
+  invalid:
     label: "No"
     summary: "`jsonlint` says the document is invalid"
     page: jsonlint-bad.md
