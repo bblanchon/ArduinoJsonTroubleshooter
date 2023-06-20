@@ -10,8 +10,6 @@ options:
     page: /deadend.md
 ---
 
-You probably forgot to include the library header.
-
 Please add the following line at the top of your program:
 
 ```c++

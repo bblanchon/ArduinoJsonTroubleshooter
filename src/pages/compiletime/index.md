@@ -53,7 +53,7 @@ options:
   dynamicjsondocument-not-declared:
     label: '`DynamicJsonDocument` was not declared in this scope'
     summary: Error says "`DynamicJsonDocument` was not declared in this scope"
-    page: jsondocument-not-declared.md
+    page: not-declared-in-this-scope/index.md
 
   char-pointer-conversion:
     label: invalid conversion from `const char*` to `char*` [-fpermissive]
@@ -108,7 +108,7 @@ options:
   staticjsondocument-not-declared:
     label: '`StaticJsonDocument` was not declared in this scope'
     summary: Error says "`StaticJsonDocument` was not declared in this scope"
-    page: jsondocument-not-declared.md
+    page: not-declared-in-this-scope/index.md
 
   range-based-for-requires-begin:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
