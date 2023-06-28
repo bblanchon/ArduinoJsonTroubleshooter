@@ -13,7 +13,7 @@ options:
 Supposing that the JSON output looks like this:
 
 ```json
-{"value":23.79999924}
+{"value":24.79999924}
 ```
 
 I'm assuming you expect it to look like that:
