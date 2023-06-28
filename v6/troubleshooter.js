@@ -1409,7 +1409,7 @@ Usually, this produces grabage in the output, but it can sometimes produce empty
 <p>Did this solve your issue?</p>
 `,options:[{id:"success",page:164,label:"Yes",summary:"Casting the pointer fixes the issue"},{id:"casting-fails",page:37,label:"No",summary:"Casting the pointer doesn't fix the issue"}]},{content:`<p>What's the type of the second argument passed to <a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a>?</p>
 `,options:[{id:"char-ptr",page:185,label:"<code>char*</code> (or <code>char[]</code>)",summary:"Input type is `char*`"},{id:"const-char-ptr",page:37,label:"<code>const char*</code>",summary:"Input type is `const char*`"},{id:"string",page:37,label:"<code>String</code> (or <code>std::string</code>)",summary:"Input type is `String`"},{id:"stream",page:37,label:"<code>Stream</code> (or <code>std::istream)</code>",summary:"Input type is `Stream`"}]},{content:`<p>Supposing that the JSON output looks like this:</p>
-<pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">23.79999924</span><span class="hljs-punctuation">}</span>
+<pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">24.79999924</span><span class="hljs-punctuation">}</span>
 </code></pre>
 <p>I'm assuming you expect it to look like that:</p>
 <pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;value&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">24.8</span><span class="hljs-punctuation">}</span>
