@@ -2,21 +2,21 @@
   "ArduinoJson 6: utility function": {
     "scope": "markdown",
     "prefix": "aju6",
-    "body": "[`${1:function}`](/v6/api/${2:misc}/${1/(.*)\\(\\)$/${1:/downcase}/}/)"
+    "body": "[`${1|copyArray(),deserializeJson(),deserializeMsgPack(),measureJson(),measureJsonPretty(),measureMsgPack(),serialized(),serializeJson(),serializeJsonPretty(),serializeMsgPack()|}`](/v6/api/${2|misc,json,msgpack|}/${1/(.*)\\(\\)$/${1:/downcase}/}/)"
   },
   "ArduinoJson 6: member function": {
     "scope": "markdown",
     "prefix": "ajm6",
-    "body": "[`${1:Class}::${2:method}()`](/v6/api/${1/(.*)/${1:/downcase}/}/${2/(.*)<.*>$/${1:/downcase}/}/)"
+    "body": "[`${1|BasicJsonDocument,DynamicJsonDocument,JsonArray,JsonArrayConst,JsonDocument,JsonObject,JsonObjectConst,JsonString,JsonVariant,JsonVariantConst|}::${2:method}()`](/v6/api/${1/(.*)/${1:/downcase}/}/${2/(.*)<.*>$/${1:/downcase}/}/)"
   },
   "ArduinoJson 6: class": {
     "scope": "markdown",
     "prefix": "ajc6",
-    "body": "[`${1:Class}`](/v6/api/${1/(.+)/${1:/downcase}/g}/)"
+    "body": "[`${1|BasicJsonDocument,DynamicJsonDocument,JsonArray,JsonArrayConst,JsonDocument,JsonObject,JsonObjectConst,JsonString,JsonVariant,JsonVariantConst|}`](/v6/api/${1/(.+)/${1:/downcase}/g}/)"
   },
   "ArduinoJson 6: error": {
     "scope": "markdown",
     "prefix": "err6",
-    "body": "[`${1:ErrorCode}`](/v6/api/misc/deserializationerror/#${1/(.+)/${1:/downcase}/g})"
+    "body": "[`${1|Ok,EmptyInput,IncompleteInput,InvalidInput,NoMemory,NotSupported,TooDeep|}`](/v6/api/misc/deserializationerror/#${1/(.+)/${1:/downcase}/g})"
   },
 }
