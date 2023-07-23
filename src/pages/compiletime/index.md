@@ -35,6 +35,11 @@ options:
     summary: Error says "cannot bind non-const lvalue reference of type `ArduinoJson::JsonObject&` ..."
     page: objectref.md
 
+  class-has-no-member-named-read:
+    label: "`class Xxx` has no member named `read`"
+    summary: Error says "`class Xxx` has no member named `read`"
+    page: no-member-named-read.md
+
   pointer-to-object:
     label: '`const void*` is not a pointer-to-object type'
     summary: Error says "`const void*` is not a pointer-to-object type"
@@ -109,6 +114,11 @@ options:
     label: '`StaticJsonDocument` was not declared in this scope'
     summary: Error says "`StaticJsonDocument` was not declared in this scope"
     page: not-declared-in-this-scope/index.md
+
+  struct-has-no-member-named-read:
+    label: "`struct Xxx` has no member named `read`"
+    summary: Error says "`struct Xxx` has no member named `read`"
+    page: no-member-named-read.md
 
   range-based-for-requires-begin:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
