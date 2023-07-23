@@ -258,7 +258,7 @@ For example:</p>
 }
 </code></pre>
 <p>You'll get a long compiler output that includes this error:</p>
-<pre><code class="hljs language-text">ArduinoJson/Deserialization/Reader.hpp:21:21: error: &#x27;const class Input&#x27; has no member named &#x27;read&#x27;
+<pre><code class="hljs language-text">ArduinoJson/Deserialization/Reader.hpp:21:21: error: &#x27;class Input&#x27; has no member named &#x27;read&#x27;
      return source_-&gt;read();  // Error here? You passed an unsupported input type
 </code></pre>
 <p>Please double-check that you called <a href="/v6/api/json/deserializejson/"><code>deserializeJson()</code></a> with the right arguments.</p>
