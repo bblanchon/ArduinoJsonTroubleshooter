@@ -3,7 +3,7 @@
 
 This confirms that the problem comes from the certificate validation.
 
-Disabling certificate validation might represent a risk, though, because your program cannot guarantee the remote server's identity. 
+Disabling certificate validation might represent a risk, though, because your program cannot guarantee the remote server's identity.
 Sometimes this is acceptable, but in most cases, you should select an appropriate certificate validation strategy by calling [`setKnownKey()`](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/bearssl-client-secure-class.html#setknownkey-const-bearssl-publickey-pk), [`setFingerprint()`](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/bearssl-client-secure-class.html#setfingerprint-const-uint8-t-fp-20-setfingerprint-const-char-fpstr), or [`WiFiClientSecure::setTrustAnchors()`](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/bearssl-client-secure-class.html#settrustanchors-bearssl-x509list-ta).
 
 Anyway, I'm glad I could help.  

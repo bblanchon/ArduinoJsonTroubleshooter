@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-[`deserializeJson()`](/v6/api/json/deserializejson/) also returns [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) when the input contains only spaces. 
+[`deserializeJson()`](/v6/api/json/deserializejson/) also returns [`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) when the input contains only spaces.
 
 For example, this can happen when you call [`deserializeJson()`](/v6/api/json/deserializejson/) repeatedly and there are spaces (or line breaks) between the documents. Suppose you use the following program to parse JSON input from the serial port:
 

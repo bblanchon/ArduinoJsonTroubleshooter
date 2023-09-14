@@ -42,7 +42,7 @@ doc[F("the answer")] = 42;
 
 There is one drawback with the `F()`, though: it doesn't perform [string interning](https://cpp4arduino.com/2018/10/23/what-is-string-interning.html).
 This means that every call to the macro creates a new string in the program memory, even if the same string was already present.
-So, be careful with this macro; otherwise, you'll end up with multiple copies of the same string, and the program will be bigger than it should. 
+So, be careful with this macro; otherwise, you'll end up with multiple copies of the same string, and the program will be bigger than it should.
 If you need to use the Flash string in several places, you better define a variable, like so:
 
 ```c++

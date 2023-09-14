@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-`239` is the first by of the UTF-8 [Byte Order Mark](https://en.wikipedia.org/wiki/Byte_order_mark) (BOM).   
+`239` is the first by of the UTF-8 [Byte Order Mark](https://en.wikipedia.org/wiki/Byte_order_mark) (BOM).
 
 ArduinoJson doesn't skip the BOM, you need to do it in your program by adding the following lines **before** calling [`deserializeJson()`](/v6/api/json/deserializejson/):
 

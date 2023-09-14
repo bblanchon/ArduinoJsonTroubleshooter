@@ -71,12 +71,6 @@ export default defineComponent({
   }
 }
 
-.code-wrap {
-  pre {
-    white-space: normal;
-  }
-}
-
 .troubleshooter-step-number {
   position: absolute;
   left: 0px;
