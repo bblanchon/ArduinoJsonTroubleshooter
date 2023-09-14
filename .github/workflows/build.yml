@@ -19,8 +19,7 @@ jobs:
           name: arduinojson-troubleshooter
           path: dist/
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/6.x'
+        if: github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          target-folder: v6
