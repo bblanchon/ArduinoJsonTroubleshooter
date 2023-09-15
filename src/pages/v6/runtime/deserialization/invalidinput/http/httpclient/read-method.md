@@ -7,7 +7,7 @@ options:
   getstring:
     label: "`getString()`"
     summary: Response comes from `HTTPClient::getString()`
-    page: /v6/deserialization/invalidinput/string-jsonlint.md
+    page: /v6/runtime/deserialization/invalidinput/string-jsonlint.md
   readstring:
     label: "`readString()`"
     summary: Response comes from `HTTPClient::readString()`

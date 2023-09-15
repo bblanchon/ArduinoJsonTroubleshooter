@@ -7,7 +7,7 @@ options:
   http10:
     label: "No"
     summary: "Using `HTTP/1.0` doesn't solve the issue"
-    page: /v6/deserialization/invalidinput/inputtype.md
+    page: /v6/runtime/deserialization/invalidinput/inputtype.md
 ---
 
 When you use HTTP 1.1, the server can send the response with [Chunked Transfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding).

@@ -3,7 +3,7 @@ options:
   nul:
     label: "Yes"
     summary: The input contains `\u0000`
-    page: /v6/nul-not-supported.md
+    page: /v6/runtime/nul-not-supported.md
   no-nul:
     label: "No"
     summary: The input doesn't contain `\u0000`

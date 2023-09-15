@@ -6,7 +6,7 @@ options:
     summary: The issue happens at compile time
   runtime:
     label: At run time
-    page: runtime.md
+    page: runtime/index.md
     summary: The issue happens at run time
 ---
 
