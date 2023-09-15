@@ -14,8 +14,7 @@
 .hljs-built_in,
 .hljs-literal,
 .hljs-bullet,
-.hljs-code,
-.hljs-addition {
+.hljs-code {
   color: #d35400;
 }
 
@@ -31,8 +30,7 @@
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
+.hljs-template-tag {
   color: #00979d;
 }
 
@@ -63,4 +61,33 @@
 
 .hljs-number {
   color: #8a7b52;
+}
+
+.hljs-addition {
+  background-color: #d4edda;
+
+  &::after {
+    content: "✅";
+    position: absolute;
+    top: 1px;
+    left: -6px;
+  }
+}
+
+.hljs-deletion {
+  background-color: #fae3d4;
+
+  &::after {
+    content: "⛔";
+    position: absolute;
+    top: 1px;
+    left: -6px;
+  }
+}
+
+
+.hljs-addition, .hljs-deletion {
+  display: inline-block;
+  width: 100%;
+  position: relative;
 }
