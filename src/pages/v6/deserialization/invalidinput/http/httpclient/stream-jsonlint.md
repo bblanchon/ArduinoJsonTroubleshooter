@@ -3,11 +3,11 @@ options:
   valid:
     label: "Yes"
     summary: "jsonlint says the document is valid"
-    page: /deserialization/invalidinput/stream-bom.md
+    page: /v6/deserialization/invalidinput/stream-bom.md
   invalid:
     label: "No"
     summary: "jsonlint says the document is invalid"
-    page: /deserialization/invalidinput/jsonlint-bad.md
+    page: /v6/deserialization/invalidinput/jsonlint-bad.md
 ---
 
 We need to make sure that the JSON document is valid.

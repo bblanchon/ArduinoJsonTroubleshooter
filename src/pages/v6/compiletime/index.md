@@ -124,11 +124,10 @@ options:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
     summary: Error says "this range-based `for` statement requires a suitable "begin" function and none was found"
     page: iterate-ambiguous.md
-
   not-in-list:
     label: None of the above
     summary:  The error is not in the list
-    page: unknown-error.md
+    page: /unknown-error.md
 ---
 
 Please look at the **first** error in the compiler output, and tell me what it is...
