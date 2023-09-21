@@ -4,6 +4,10 @@ options:
     label: Some parts are missing
     page: incomplete/index.md
     summary: Some parts are missing
+  garbage:
+    label: The output contains garbage
+    page: garbage/jsonbuffer.md
+    summary: The output contains garbage
   slow:
     label: It's slow
     page: slow.md
