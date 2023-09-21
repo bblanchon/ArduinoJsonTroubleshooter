@@ -12,6 +12,10 @@ options:
     label: Parsing succeeds but I can't read the values
     page: parsing-succeeds-but-i-cant-read-the-values.md
     summary: Parsing succeeds but program can't read the values
+  input-modified:
+    label: The input is modified
+    page: input-modified/index.md
+    summary: The input is modified
   other:
     label: None of the above
     page: /deadend.md
