@@ -60,6 +60,11 @@ options:
     summary: Error says "`DynamicJsonDocument` was not declared in this scope"
     page: not-declared-in-this-scope/index.md
 
+  expected-identifier-before-string-constant:
+    label: 'expected identifier before string constant'
+    summary: Error says "expected identifier before string constant"
+    page: expected-identifier-before-string-constant.md
+
   char-pointer-conversion:
     label: invalid conversion from `const char*` to `char*` [-fpermissive]
     summary: Error says "invalid conversion from `const char*` to `char*` [-fpermissive]"
@@ -124,6 +129,7 @@ options:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
     summary: Error says "this range-based `for` statement requires a suitable "begin" function and none was found"
     page: iterate-ambiguous.md
+
   not-in-list:
     label: None of the above
     summary:  The error is not in the list
