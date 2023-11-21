@@ -60,6 +60,11 @@ options:
     summary: Error says "`DynamicJsonDocument` was not declared in this scope"
     page: not-declared-in-this-scope/index.md
 
+  expected-identifier-before-numeric-constant:
+    label: 'expected identifier before numeric constant'
+    summary: Error says "expected identifier before numeric constant"
+    page: expected-identifier-before-numeric-constant.md
+
   expected-identifier-before-string-constant:
     label: 'expected identifier before string constant'
     summary: Error says "expected identifier before string constant"
