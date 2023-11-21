@@ -9,16 +9,16 @@
   },
   "devDependencies": {
     "@rollup/pluginutils": "^5.0.5",
-    "@types/markdown-it": "^13.0.2",
-    "@types/node": "^20.8.5",
-    "@vitejs/plugin-vue": "^4.4.0",
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.9.3",
+    "@vitejs/plugin-vue": "^4.5.0",
     "gray-matter": "^4.0.3",
     "markdown-it": "^13.0.2",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-highlightjs": "^4.0.1",
     "markdown-it-replace-link": "^1.2.0",
-    "sass": "^1.69.3",
-    "vite": "^4.4.11",
-    "vue": "^3.3.4"
+    "sass": "^1.69.5",
+    "vite": "^5.0.2",
+    "vue": "^3.3.8"
   }
 }
