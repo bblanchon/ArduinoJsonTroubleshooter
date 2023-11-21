@@ -6,11 +6,13 @@ import mdiAttrs from "markdown-it-attrs"
 import mdiHljs from "markdown-it-highlightjs"
 import mdiReplaceLink from "markdown-it-replace-link"
 import hljs from "highlight.js/lib/core"
+import cpp from 'highlight.js/lib/languages/cpp';
+import json from 'highlight.js/lib/languages/json';
 
 import TroubleshooterPlugin from "./plugins/troubleshooter"
 
-hljs.registerLanguage("cpp", require("highlight.js/lib/languages/cpp"))
-hljs.registerLanguage("json", require("highlight.js/lib/languages/json"))
+hljs.registerLanguage('cpp', cpp);
+hljs.registerLanguage('json', json);
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
