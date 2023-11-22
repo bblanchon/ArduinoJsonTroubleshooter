@@ -1,15 +1,15 @@
 ---
 options:
   upgrade:
-    label: I'd like to upgrade to ArduinoJson 6
-    summary: User prefers upgrading to ArduinoJson 6
-    page: upgrade.md
+    label: My program uses ArduinoJson directly
+    summary: Program uses ArduinoJson directly
+    page: direct.md
   keep-v5:
-    label: I prefer not touching the program
-    summary: User prefers keeping ArduinoJson 5
-    page: keep.md
+    label: My program uses a library that depends on ArduinoJson
+    summary: Program uses a library that depends on ArduinoJson
+    page: library.md
 ---
 
 This error occurs when you try to use ArduinoJson 6 with a program written for ArduinoJson 5.
 
-Can you upgrade the program or do you prefer keeping it as it is?
+Is your program directly using ArduinoJson, or is it using a library that depends on ArduinoJson?
