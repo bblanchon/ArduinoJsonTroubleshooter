@@ -53,7 +53,7 @@ options:
   dynamicjsonbuffer:
     label: '`DynamicJsonBuffer` is a class from ArduinoJson 5'
     summary: Error says "`DynamicJsonBuffer` is a class from ArduinoJson 5"
-    page: class-from-arduinojson5.md
+    page: class-from-arduinojson5/index.md
 
   dynamicjsondocument-not-declared:
     label: '`DynamicJsonDocument` was not declared in this scope'
@@ -123,7 +123,7 @@ options:
   staticjsonbuffer:
     label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
     summary: Error says "`StaticJsonBuffer` is a class from ArduinoJson 5"
-    page: class-from-arduinojson5.md
+    page: class-from-arduinojson5/index.md
 
   staticjsondocument-not-declared:
     label: '`StaticJsonDocument` was not declared in this scope'
