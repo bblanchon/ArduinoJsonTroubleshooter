@@ -16,6 +16,10 @@ options:
     label: "`JsonDocument` returns empty/null values"
     summary: Program fails to extract values from the `JsonDocument`
     page: novalue/index.md
+  missing:
+    label: Some values are missing
+    summary: Some values are missing
+    page: missing/index.md
   garbage:
     label: "`JsonDocument` returns garbage"
     summary: "`JsonDocument` returns garbage"

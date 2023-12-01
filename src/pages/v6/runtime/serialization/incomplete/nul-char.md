@@ -7,7 +7,7 @@ options:
   no-nul:
     label: "No"
     summary: No string contains a NUL
-    page: /deadend.md
+    page: large-document.md
 ---
 
 Does one of the strings in the [`JsonDocument`](/v6/api/jsondocument/) contains a NUL (i.e.,  ASCII code 0, or `\u0000`)?
