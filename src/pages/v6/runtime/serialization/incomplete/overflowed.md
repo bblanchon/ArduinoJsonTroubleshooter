@@ -11,7 +11,7 @@ options:
   capacity-increased:
     label: "No"
     summary: Increasing the capacity of the `JsonDocument` doesn't solve the issue.
-    page: /deadend.md
+    page: check-capacity.md
 ---
 
 [`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/) returns `true` when you try to insert a value in the [`JsonDocument`](/v6/api/jsondocument/), but there isn't enough room to store it.
