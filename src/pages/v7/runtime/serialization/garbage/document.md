@@ -1,13 +1,13 @@
 ---
 options:
-  dynamic:
-    label: "`DynamicJsonDocument`"
-    summary: Program uses `DynamicJsonDocument`
-    page: document-dynamic.md
-  static:
-    label: "`StaticJsonDocument`"
-    summary:  Program uses `StaticJsonDocument`
-    page: document-static.md
+  string:
+    label: "Yes"
+    summary: Program uses `String`
+    page: document-string.md
+  no-string:
+    label: "No"
+    summary: Program doesn't use `String`
+    page: /deadend.md
 ---
 
-Which kind of [`JsonDocument`](/v7/api/jsondocument/) do you use?
+Do you use [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) in your program?

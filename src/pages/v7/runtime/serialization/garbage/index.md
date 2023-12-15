@@ -10,4 +10,4 @@ options:
     page: msgpack.md
 ---
 
-What function produces the garbage?
+Which function produces the garbage?

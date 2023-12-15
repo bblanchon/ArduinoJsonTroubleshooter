@@ -7,7 +7,7 @@ options:
   not-destroyed:
     label: "No"
     summary: Extending the lifetime of the `JsonDocument` doesn't solve the issue
-    page: reference.md
+    page: document.md
 ---
 
 [`JsonArray`](/v7/api/jsonarray/) doesn't contain any data: it is a reference to an object stored in the [`JsonDocument`](/v7/api/jsondocument/). It becomes invalid as soon as the [`JsonDocument`](/v7/api/jsondocument/) is destroyed; this could explain the garbage you see in the output.
@@ -17,7 +17,7 @@ For example, here is a function that creates a dangling [`JsonArray`](/v7/api/js
 ```c++
 // DON'T DO THAT!!!  💀
 JsonArray createArray() {
-  StaticJsonDocument<200> doc;
+  JsonDocument doc;
   JsonArray arr = doc.to<JsonArray>();
   arr.add("hello");
   arr.add("world");
@@ -27,17 +27,16 @@ JsonArray createArray() {
 
 The [`JsonArray`](/v7/api/jsonarray/) returned by this function points to a destructed [`JsonDocument`](/v7/api/jsondocument/), and therefore is likely to produce garbage or crash the program.
 
-The best way to fix this function is to pass the [`JsonDocument`](/v7/api/jsondocument/) as an argument:
+The best way to fix this function is to return the [`JsonDocument`](/v7/api/jsondocument/):
 
 ```c++
-JsonArray createArray(JsonDocument& doc) {
+JsonDocument createArray() {
+  JsonDocument doc;
   JsonArray arr = doc.to<JsonArray>();
   arr.add("hello");
   arr.add("world");
-  return arr;
+  return doc;
 }
 ```
-
-This way, you can keep the [`JsonDocument`](/v7/api/jsondocument/) alive when you call [`serializeJson()`](/v7/api/json/serializejson/)
 
 Did this solve your issue?

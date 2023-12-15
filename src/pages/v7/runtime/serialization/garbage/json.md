@@ -1,13 +1,21 @@
 ---
 options:
-  deserialize-yes:
-    label: "Yes"
-    summary: Program calls `deserializeJson()`
-    page: deserialize.md
-  deserialize-no:
-    label: "No"
-    summary: Program doesn't call `deserializeJson()`
-    page: serialize.md
+  document:
+    label: "`JsonDocument`"
+    summary: "Program calls `serializeJson(const JsonDocument&, ...)`"
+    page: document.md
+  array:
+    label: "`JsonArray` (or `JsonArrayConst`)"
+    summary: "Program calls `serializeJson(JsonArrayConst, ...)`"
+    page: jsonarray.md
+  object:
+    label: "`JsonObject` (or `JsonObjectConst`)"
+    summary: "Program calls `serializeJson(JsonObjectConst, ...)`"
+    page: jsonobject.md
+  variant:
+    label: "`JsonVariant` (or `JsonVariantConst`)"
+    summary: "Program calls `serializeJson(JsonVariantConst, ...)`"
+    page: jsonvariant.md
 ---
 
-Do you call [`deserializeJson()`](/v7/api/json/deserializejson/) before calling [`serializeJson()`](/v7/api/json/serializejson/)? (with the same [`JsonDocument`](/v7/api/jsondocument/))
+What is the type of the first argument passed to [`serializeJson()`](/v7/api/json/serializejson/)?

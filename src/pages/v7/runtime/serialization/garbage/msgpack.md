@@ -15,7 +15,7 @@ options:
 For example, the following program:
 
 ```c++
-StaticJsonDocument<256> doc;
+JsonDocument doc;
 doc["val"] = 42;
 serializeMsgPack(doc, Serial);
 ```
