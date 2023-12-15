@@ -42,7 +42,7 @@ array[0] = "value";
 
 ```c++
 StaticJsonDocument<128> doc;
-JsonArray obj = doc.createNestedObject("obj");
+JsonObject obj = doc.createNestedObject("obj");
 obj["key"] = "value";
 ```
 
