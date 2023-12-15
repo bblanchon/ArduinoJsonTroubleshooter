@@ -22,6 +22,6 @@ Indeed, [`JsonVariant`](/v7/api/jsonvariant/) returns a `const char*`, not a `ch
 const char* eventName = doc["event"];
 ```
 
-There are other similar situations where this error can occur. For more information, please read [invalid conversion from 'const char*' to 'char*' [-fpermissive]](/v7/error/invalid-conversion-from-const-char-to-char/).
+There are other similar situations where this error can occur.
 
 Did this solve your issue?

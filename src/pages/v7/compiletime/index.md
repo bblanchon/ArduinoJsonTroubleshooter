@@ -55,11 +55,6 @@ options:
     summary: Error says "`DynamicJsonBuffer` is a class from ArduinoJson 5"
     page: class-from-arduinojson5/index.md
 
-  expected-identifier-before-numeric-constant:
-    label: 'expected identifier before numeric constant'
-    summary: Error says "expected identifier before numeric constant"
-    page: expected-identifier-before-numeric-constant.md
-
   expected-identifier-before-string-constant:
     label: 'expected identifier before string constant'
     summary: Error says "expected identifier before string constant"
@@ -73,7 +68,7 @@ options:
   invalid-conversion:
     label: invalid use of incomplete type `class InvalidConversion<...>`
     summary: Error says "invalid use of incomplete type `class InvalidConversion<...>`"
-    page: invalid-conversion.md
+    page: invalid-conversion/index.md
 
   jsondocument-not-declared:
     label: '`JsonDocument` was not declared in this scope'
