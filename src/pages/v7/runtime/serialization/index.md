@@ -16,10 +16,6 @@ options:
     label: The output contains garbage
     summary: Output contains garbage
     page: garbage/index.md
-  empty-strings:
-    label: The output contains empty strings
-    summary: Output contains empty strings
-    page: emptystrings/index.md
   "null":
     label: The output contains `null`
     summary: Output contains null
