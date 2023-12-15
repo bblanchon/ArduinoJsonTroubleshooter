@@ -55,11 +55,6 @@ options:
     summary: Error says "`DynamicJsonBuffer` is a class from ArduinoJson 5"
     page: class-from-arduinojson5/index.md
 
-  dynamicjsondocument-not-declared:
-    label: '`DynamicJsonDocument` was not declared in this scope'
-    summary: Error says "`DynamicJsonDocument` was not declared in this scope"
-    page: not-declared-in-this-scope/index.md
-
   expected-identifier-before-numeric-constant:
     label: 'expected identifier before numeric constant'
     summary: Error says "expected identifier before numeric constant"
@@ -79,6 +74,11 @@ options:
     label: invalid use of incomplete type `class InvalidConversion<...>`
     summary: Error says "invalid use of incomplete type `class InvalidConversion<...>`"
     page: invalid-conversion.md
+
+  jsondocument-not-declared:
+    label: '`JsonDocument` was not declared in this scope'
+    summary: Error says "`JsonDocument` was not declared in this scope"
+    page: /v6/compiletime/not-declared-in-this-scope/no-arduinojson.md
 
   jsondocument-copy:
     label: '`JsonDocument::JsonDocument(const JsonDocument&)` is private'
@@ -124,11 +124,6 @@ options:
     label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
     summary: Error says "`StaticJsonBuffer` is a class from ArduinoJson 5"
     page: class-from-arduinojson5/index.md
-
-  staticjsondocument-not-declared:
-    label: '`StaticJsonDocument` was not declared in this scope'
-    summary: Error says "`StaticJsonDocument` was not declared in this scope"
-    page: not-declared-in-this-scope/index.md
 
   struct-has-no-member-named-read:
     label: "`struct Xxx` has no member named `read`"
