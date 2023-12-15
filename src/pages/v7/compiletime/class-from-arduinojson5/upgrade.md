@@ -11,6 +11,6 @@ options:
 ---
 
 Upgrading from v5 to v7 isn't trivial but isn't complicated either.  
-Please follow the [upgrade instructions](/v7/doc/upgrade/).
+Please follow the [upgrade instructions](/v7/how-to/upgrade-from-v5/).
 
 Did this solve your issue?

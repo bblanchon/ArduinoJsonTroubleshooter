@@ -23,7 +23,7 @@ options:
   error-constants:
     label: '`bits/error_constants.h`: No such file or directory'
     summary: 'Error says "`bits/error_constants.h`: No such file or directory'
-    page: path-too-long.md
+    page: /v6/compiletime/path-too-long.md
 
   print-ambiguous:
     label: call of overloaded `print(...)` is ambiguous

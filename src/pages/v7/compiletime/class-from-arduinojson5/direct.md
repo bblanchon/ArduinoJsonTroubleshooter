@@ -1,8 +1,8 @@
 ---
 options:
   upgrade:
-    label: I'd like to upgrade to ArduinoJson 6
-    summary: User prefers upgrading to ArduinoJson 6
+    label: I'd like to upgrade to ArduinoJson 7
+    summary: User prefers upgrading to ArduinoJson 7
     page: upgrade.md
   keep-v5:
     label: I prefer not touching the program

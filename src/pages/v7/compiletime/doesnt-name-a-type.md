@@ -19,7 +19,7 @@ The entry point for a regular C++ program is the `main()` function, but in an Ar
 For example, if your program is like this:
 
 ```c++
-StaticJsonDocument<200> doc;
+JsonDocument doc;
 doc["hello"] = "world";
 serializeJson(doc, Serial);
 ```
@@ -28,7 +28,7 @@ serializeJson(doc, Serial);
 
 ```c++
 void setup() {
-  StaticJsonDocument<200> doc;
+  JsonDocument doc;
   doc["hello"] = "world";
   serializeJson(doc, Serial);
 }

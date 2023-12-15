@@ -25,6 +25,4 @@ You can easily workaround this problem by explicitly casting the [`JsonVariant`]
 name = doc["name"].as<String>();
 ```
 
-Please see [error: ambiguous overload for 'operator=' (operand types are 'String' and ...)](/v7/error/ambiguous-overload-for-operator-equal/) for details.
-
 Did this solve your issue?

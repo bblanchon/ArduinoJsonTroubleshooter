@@ -20,7 +20,7 @@ class Input {
 };
 
 void parseInput(Input input) {
-  StaticJsonDocument<200> doc;
+  JsonDocument doc;
   deserializeJson(doc, input);
   // ...
 }
@@ -29,8 +29,8 @@ void parseInput(Input input) {
 You'll get a long compiler output that includes this error:
 
 ```text
-ArduinoJson/Deserialization/Reader.hpp:21:21: error: 'class Input' has no member named 'read'
-     return source_->read();  // Error here? You passed an unsupported input type
+ArduinoJson/Deserialization/Reader.hpp:22:21: error: 'class Input' has no member named 'read'
+     return source_->read();  // Error here? See https://arduinojson.org/v7/invalid-input/
 ```
 
 Please double-check that you called [`deserializeJson()`](/v7/api/json/deserializejson/) with the right arguments.

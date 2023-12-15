@@ -20,7 +20,7 @@ JsonObject& obj = doc["key"].as<JsonObject>();
 This line produces the following compilation error:
 
 ```text
-cannot bind non-const lvalue reference of type 'ArduinoJson::JsonObject&' {aka 'ArduinoJson6185_91::ObjectRef&'} to an rvalue of type 'ArduinoJson6185_91::enable_if<true, ArduinJson6185_91::ObjectRef>::type' {aka 'ArduinoJson6185_91::ObjectRef'}
+error: cannot bind non-const lvalue reference of type 'ArduinoJson::V700L1::JsonObject&' to an rvalue of type 'ArduinoJson::V700L1::detail::enable_if<true, ArduinoJson::V700L1::JsonObject>::type {aka ArduinoJson::V700L1::JsonObject}'
 ```
 
 In other words, "cannot assign `JsonObject` to `JsonObject&`".

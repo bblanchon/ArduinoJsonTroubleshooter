@@ -24,6 +24,4 @@ Serial.print(doc["event"].as<const char*>());
 serializeJson(doc["event"], Serial);
 ```
 
-You can find more information on this error here: [call of overloaded 'println(...)' is ambiguous](/v7/error/call-of-overloaded-println-is-ambiguous/)
-
 Did this solve your issue?
