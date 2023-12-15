@@ -75,26 +75,6 @@ options:
     summary: Error says "`JsonDocument` was not declared in this scope"
     page: /v6/compiletime/not-declared-in-this-scope/no-arduinojson.md
 
-  jsondocument-copy:
-    label: '`JsonDocument::JsonDocument(const JsonDocument&)` is private'
-    summary: 'Error says "`JsonDocument::JsonDocument(const JsonDocument&)` is private"'
-    page: jsondocument-private.md
-
-  jsondocument-constructor:
-    label: '`JsonDocument::JsonDocument()` is protected within this context'
-    summary: Error says "`JsonDocument::JsonDocument()` is protected within this context"
-    page: jsondocument-protected.md
-
-  macro-min:
-    label: macro `min` passed 3 arguments, but takes just 2
-    summary: Error says "macro `min` passed 3 arguments, but takes just 2"
-    page: macro-min.md
-
-  basicjsondocument-default-constructor:
-    label: no default constructor exists for class `BasicJsonDocument`
-    summary: Error says "no default constructor exists for class `BasicJsonDocument`"
-    page: basicjsondocument-default-constructor.md
-
   no-matching-function:
     label: no matching function for call to ...
     summary: Error says "no matching function for call to ..."

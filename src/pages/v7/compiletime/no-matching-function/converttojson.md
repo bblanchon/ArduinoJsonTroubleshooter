@@ -17,6 +17,4 @@ To fix this error, you must either:
 * change the type of value to a supported one (`const char*`, `int`, `float`, etc.)
 * write a [custom converter](/news/2021/05/04/version-6-18-0/) for this type
 
-For more information, see [error: no matching function for call to 'convertToJson(...)'](/v7/error/no-matching-function-for-call-to-converttojson/).
-
 Did this solve your issue?
