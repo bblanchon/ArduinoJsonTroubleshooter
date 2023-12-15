@@ -7,7 +7,7 @@ options:
   empty:
     label: The output is empty (e.g. `{}`, `[]`, or `null`)
     summary: Output is empty
-    page: empty/index.md
+    page: empty.md
   incomplete:
     label: The output is incomplete
     summary: Output is incomplete

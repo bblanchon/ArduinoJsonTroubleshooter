@@ -10,9 +10,7 @@ options:
     page: /deadend.md
 ---
 
-First, ArduinoJson only supports NUL characters since [version 6.19](/news/2022/01/08/arduinojson-6-19-0/), so make sure you are up-to-date.
-
-Next, the Arduino [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) class doesn't support NUL characters, so you have to use another string type, like [`JsonString`](/v7/api/jsonstring/), like this:
+The Arduino [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) class doesn't support NUL characters, so you have to use another string type, like [`JsonString`](/v7/api/jsonstring/), like this:
 
 ```c++
 JsonString myString = doc["myString"];

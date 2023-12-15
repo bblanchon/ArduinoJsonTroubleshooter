@@ -1,13 +1,19 @@
 ---
 options:
-  loop:
-    label: "Yes"
-    summary: "Program calls `serializeJson()` in a loop"
-    page: loop.md
-  no-loop:
-    label: "No"
-    summary: "Program doesn't call `serializeJson()` in a loop"
-    page: noloop.md
+  overflowed-1:
+    label: "`1` (or `true`)"
+    summary: "`JsonDocument::overflowed()` returns `true`"
+    page: overflowed.md
+  overflowed-0:
+    label: "`0` (or `false`)"
+    summary: "`JsonDocument::overflowed()` returns `false`"
+    page: nul-char.md
 ---
 
-Does your program call [`serializeJson()`](/v7/api/json/serializejson/) in a loop?
+Please print the value of [`JsonDocument::overflowed()`](/v7/api/jsondocument/overflowed/), like so:
+
+```c++
+Serial.println(doc.overflowed());
+```
+
+What value does it print?
