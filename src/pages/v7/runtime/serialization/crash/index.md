@@ -1,13 +1,13 @@
 ---
 options:
-  dynamicjsondocument:
-    label: "`DynamicJsonDocument`"
-    summary: Program uses `DynamicJsonDocument`
+  progmem:
+    label: "Yes"
+    summary: Program uses `PROGMEM`
     page: progmem.md
-  staticjsondocument:
-    label: "`StaticJsonDocument`"
-    summary: Program uses `StaticJsonDocument`
-    page: static.md
+  no-progmem:
+    label: "No"
+    summary: Program doesn't use `PROGMEM`
+    page: charptr.md
 ---
 
-Do you use [`DynamicJsonDocument`](/v7/api/dynamicjsondocument/) or [`StaticJsonDocument`](/v7/api/staticjsondocument/)?
+Do you use `PROGMEM` (Flash memory) in your program?
