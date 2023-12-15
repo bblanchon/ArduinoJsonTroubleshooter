@@ -10,6 +10,6 @@ options:
     page: library.md
 ---
 
-This error occurs when you try to use ArduinoJson 6 with a program written for ArduinoJson 5.
+This error occurs when you try to use ArduinoJson 7 with a program written for ArduinoJson 5.
 
 Is your program directly using ArduinoJson, or is it using a library that depends on ArduinoJson?
