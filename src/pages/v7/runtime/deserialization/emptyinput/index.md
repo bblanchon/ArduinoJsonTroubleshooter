@@ -15,7 +15,7 @@ options:
   other:
     label: Something else
     summary: Input comes neither from an HTTP response, nor a file, nor a serial port
-    page: other.md
+    page: /v6/runtime/deserialization/emptyinput/other.md
 ---
 
 [`EmptyInput`](/v7/api/misc/deserializationerror/#emptyinput) means that the input was empty or contained only spaces or comments.
