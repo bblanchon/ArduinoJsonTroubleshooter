@@ -3,33 +3,19 @@ options:
   acceptable:
     label: "Yes"
     page: /done.md
-    summary: "`deserializeJson()` tolerates the error, and that's OK"
+    summary: The document contains invalid UTF-16 sequences
   unacceptable:
     label: "No"
     page: unacceptable.md
-    summary: "`deserializeJson()` should not let this error pass"
+    summary: The document doesn't contain invalid UTF-16 sequences
 ---
 
-ArduinoJson isn't very picky about the input: its implementation favors code size and speed over strict conformance.
-After all, size and speed are what matter the most for embedded software, right?
-
-This means that ArduinoJson's parser may accept documents that would be rejected by other parsers.
-
-For example, [`deserializeJson()`](/v7/api/json/deserializejson/) tolerates the following substitutions:
-
-* `'hello'` instead of `"hello"` (single quotes)
-* `nULL` or `n0n3` instead if `null` (only checks first character and length)
-* `tRUE` or `t0t0` instead of `true` (ditto)
-* `fALSE` or `fAkk3` instead of `false` (ditto)
-
-It also ignores the follwing UTF-8 errors:
+ArduinoJson ignores the following errors in UTF-16 sequences:
 
 * `"\ud83d"` (a leading surrogate without a trailing surrogate)
 * `"\udda4"` (a trailing surrogate without a leading surrogate)
 * `"\ud83d\ud83d"` (two leading surrogates)
 
-Lastly, it supports C++-style comments when [ARDUINOSJSON_ENABLE_COMMENTS](/v7/api/config/enable_comments/) is set to `1`.
-
-As a result, you cannot use [`deserializeJson`](/v7/api/json/deserializejson/) as a JSON validator because you'd get many false-negatives.
+This is a known limitation of the parser, and it's not going to change in the future.
 
 Did this solve your issue?

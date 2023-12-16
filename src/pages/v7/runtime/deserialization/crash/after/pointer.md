@@ -21,7 +21,7 @@ const char* username;
 
 void loadConfig() {
   File file = SD.open(filename);
-  StaticJsonDocument<512> doc;
+  JsonDocument doc;
   deserializeJson(doc, file);
   username = doc["username"];  // ⚠️ stores the pointer
   file.close();
@@ -43,7 +43,7 @@ String username;
 
 void loadConfig() {
   File file = SD.open(filename);
-  StaticJsonDocument<512> doc;
+  JsonDocument doc;
   deserializeJson(doc, file);
   username = doc["username"];  // ✅ stores a copy
   file.close();

@@ -23,7 +23,7 @@ Here, [`deserializeJson()`](/v6/api/json/deserializejson/) reads the JSON string
 
 This feature enables:
 
-1. [deserializing in chunks](/v6/how-to/deserialize-a-very-large-document/#deserialization/in-chunks),
+1. [deserializing in chunks](/v6/how-to/deserialize-a-very-large-document/#deserialization-in-chunks),
 2. parsing [JSON Streams](https://en.wikipedia.org/wiki/JSON_streaming),
 3. reading from non-zero-terminated input strings.
 
