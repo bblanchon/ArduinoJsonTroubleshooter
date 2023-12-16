@@ -10,4 +10,4 @@ options:
     page: string-jsonlint.md
 ---
 
-Did you call [`deserializeJson()`](/v6/api/json/deserializejson/) twice with the same input buffer?
+Did you call `deserializeJson()` twice with the same input buffer?

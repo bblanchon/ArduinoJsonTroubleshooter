@@ -2,7 +2,7 @@
 tags: needs_assistance
 ---
 
-So, the JSON document is valid and not preceded by anything; yet, [`deserializeJson()`](/v6/api/json/deserializejson/) returns [`InvalidInput`](/v6/api/misc/deserializationerror/#invalidinput).
+So, the JSON document is valid and not preceded by anything; yet, `deserializeJson()` returns `InvalidInput`.
 
 Well... I'm out of idea :-(
   

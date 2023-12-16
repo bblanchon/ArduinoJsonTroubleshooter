@@ -10,7 +10,7 @@ options:
     page: string-jsonlint.md
 ---
 
-If you must keep the two calls to [`deserializeJson()`](/v6/api/json/deserializejson/), you need to disable the zero-copy mode by passing a read-only input buffer. Casting the pointer will do the trick:
+If you must keep the two calls to `deserializeJson()`, you need to disable the zero-copy mode by passing a read-only input buffer. Casting the pointer will do the trick:
 
 ```c++
 // replace this:

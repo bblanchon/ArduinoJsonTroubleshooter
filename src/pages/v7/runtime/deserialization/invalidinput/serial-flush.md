@@ -7,7 +7,7 @@ options:
   flush:
     label: "No"
     summary: Flushing the serial buffer doesn't fix the issue
-    page: serial-voltage.md
+    page: /v6/runtime/deserialization/invalidinput/serial-voltage.md
 ---    
 
 [`deserializeJson()`](/v7/api/json/deserializejson/) may return [`InvalidInput`](/v7/api/misc/deserializationerror/#invalidinput) because it starts reading the input mid-stream.
@@ -17,13 +17,16 @@ For example, it can happen if your program calls [`deserializeJson()`](/v7/api/j
 ```c++
 void loop() {
   if (Serial1.available()) {
-    StaticJsonDocument<64> doc;
+    JsonDocument doc;
     DeserializationError err = deserializeJson(doc, Serial1);
 
     if (err) {
       Serial.println(err.c_str());
       return;
     }
+
+    // ...
+  }
 }
 ```
 
@@ -34,7 +37,7 @@ The solution is to flush the serial buffer any time an error is detected:
 ```c++
 void loop() {
   if (Serial1.available()) {
-    StaticJsonDocument<64> doc;
+    JsonDocument doc;
     DeserializationError err = deserializeJson(doc, Serial1);
 
     if (err) {
@@ -45,6 +48,10 @@ void loop() {
 
       return;
     }
+
+    // ...
+
+  }
 }
 ```
 
