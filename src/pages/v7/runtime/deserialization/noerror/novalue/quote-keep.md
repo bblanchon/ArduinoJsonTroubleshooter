@@ -15,7 +15,7 @@ If you cannot fix the server, you can at least reverse the double serialization 
 To do this, you must call [`deserializeJson()`](/v7/api/json/deserializejson/) twice, like so:
 
 ```c++
-StaticJsonDocument<512> doc1, doc2;
+JsonDocument doc1, doc2;
 deserializeJson(doc1, input);
 deserializeJson(doc2, doc1.as<const char*>());
 String value = doc2["hello"];
@@ -26,7 +26,7 @@ The cleanest way to do this is to wrap the double deserialization in a function,
 
 ```c++
 DeserilizationError deserializeJsonTwice(JsonDocument& doc, Stream& input) {
-  StaticJsonDocument<512> tmp;
+  JsonDocument tmp;
   DeserializationError err = deserializeJson(tmp, input);
   if (err) return err;
   return deserializeJson(doc, tmp.as<const char*>());

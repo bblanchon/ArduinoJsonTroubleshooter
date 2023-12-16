@@ -24,6 +24,8 @@ instead of
 const char* temperature = doc["list"][0]["main"]["temp"];
 ```
 
-You can find other examples in [deserializeJson() succeeds but I cannot read any value](/v7/issues/cannot-get-values/), but the simplest solution is to use the [ArduinoJson Assistant](/v7/assistant/) because the last step shows how to extract the values.
+They are many variations on this problem and I cannot list them all.
+
+The simplest solution is to use the [ArduinoJson Assistant](/v7/assistant/) because the last step shows how to extract the values.
 
 Did this solve your issue?
