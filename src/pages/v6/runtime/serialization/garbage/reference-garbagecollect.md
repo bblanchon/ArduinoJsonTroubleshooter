@@ -10,7 +10,7 @@ options:
     page: document.md
 ---
 
-[`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/) invalidates all previously acquired [`JsonArray`](/v6/api/jsonarray/), [`JsonObject`](/v6/api/jsonobject/), and [`JsonVariant`](/v6/api/jsonvariant/).
+[`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/) invalidates all previously acquired `JsonArray`, `JsonObject`, and `JsonVariant`.
 
 After you call it, make sure to reassign  every references, like so:
 

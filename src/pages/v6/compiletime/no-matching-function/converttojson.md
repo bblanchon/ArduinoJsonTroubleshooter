@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-This error occurs when you try to insert an unsupported value type in a [`JsonDocument`](/v6/api/jsondocument/).
+This error occurs when you try to insert an unsupported value type in a `JsonDocument`.
 
 To fix this error, you must either:
 

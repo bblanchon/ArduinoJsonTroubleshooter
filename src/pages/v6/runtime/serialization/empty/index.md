@@ -10,7 +10,7 @@ options:
     page: overflowed.md
 ---
 
-Please print the capacity of the [`JsonDocument`](/v6/api/jsondocument/) to the serial port, like so:
+Please print the capacity of the `JsonDocument` to the serial port, like so:
 
 ```c++
 Serial.println(doc.capacity());

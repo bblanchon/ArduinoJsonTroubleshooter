@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-This error occurs when you pass a `char*` to [`serializeJson()`](/v6/api/json/serializejson/) but forget to pass the third argument.
+This error occurs when you pass a `char*` to `serializeJson()` but forget to pass the third argument.
 For example:
 
 ```c++
@@ -23,6 +23,6 @@ To fix this error, you must pass the size of the destination buffer as the third
 serializeJson(doc, ptr, size);  // OK
 ```
 
-In the examples, you may have seen that I didn't use the size argument; that's because the second argument was not a `char*` but a `char[N]`, and [`serializeJson()`](/v6/api/json/serializejson/) was able to infer the value of `N` from the type.
+In the examples, you may have seen that I didn't use the size argument; that's because the second argument was not a `char*` but a `char[N]`, and `serializeJson()` was able to infer the value of `N` from the type.
 
 Did this solve your issue?

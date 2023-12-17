@@ -3,7 +3,7 @@ options:
   requires-cpp-compiler:
     label: ArduinoJson requires a C++ compiler...
     summary: Error says "ArduinoJson requires a C++ compiler..."
-    page: requires-cpp-compiler.md
+    page: /v6/compiletime/requires-cpp-compiler.md
 
   assignment-of-read-only-location:
     label: assignment of read-only location
@@ -13,12 +13,12 @@ options:
   ambiguous-string-assign:
     label: ambiguous overload for `operator=` (operand types are `String` and ...)
     summary: Error says "ambiguous overload for `operator=` (operand types are `String` and ...)"
-    page: ambiguous-string-assign.md
+    page: /v6/compiletime/ambiguous-string-assign.md
 
   begin-not-found:
     label: '`begin`: no matching overloaded function found'
     summary: 'Error says "`begin`: no matching overloaded function found"'
-    page: iterate-ambiguous.md
+    page: /v6/compiletime/iterate-ambiguous.md
 
   error-constants:
     label: '`bits/error_constants.h`: No such file or directory'
@@ -28,12 +28,12 @@ options:
   print-ambiguous:
     label: call of overloaded `print(...)` is ambiguous
     summary: Error says "call of overloaded `print(...)` is ambiguous"
-    page: print-ambiguous.md
+    page: /v6/compiletime/print-ambiguous.md
 
   cannot-bind-object-ref:
     label: cannot bind non-const lvalue reference of type `ArduinoJson::JsonObject&` ...
     summary: Error says "cannot bind non-const lvalue reference of type `ArduinoJson::JsonObject&` ..."
-    page: objectref.md
+    page: /v6/compiletime/objectref.md
 
   class-has-no-member-named-read:
     label: "`class Xxx` has no member named `read`"
@@ -43,7 +43,7 @@ options:
   pointer-to-object:
     label: '`const void*` is not a pointer-to-object type'
     summary: Error says "`const void*` is not a pointer-to-object type"
-    page: not-pointer-to-object.md
+    page: /v6/compiletime/not-pointer-to-object.md
 
   doesnt-name-a-type:
     label: '`doc` does not name a type'
@@ -58,17 +58,17 @@ options:
   expected-identifier-before-string-constant:
     label: 'expected identifier before string constant'
     summary: Error says "expected identifier before string constant"
-    page: expected-identifier-before-string-constant.md
+    page: /v6/compiletime/expected-identifier-before-string-constant.md
 
   char-pointer-conversion:
     label: invalid conversion from `const char*` to `char*` [-fpermissive]
     summary: Error says "invalid conversion from `const char*` to `char*` [-fpermissive]"
-    page: char-pointer-conversion.md
+    page: /v6/compiletime/char-pointer-conversion.md
 
   invalid-conversion:
     label: invalid use of incomplete type `class InvalidConversion<...>`
     summary: Error says "invalid use of incomplete type `class InvalidConversion<...>`"
-    page: invalid-conversion/index.md
+    page: /v6/compiletime/invalid-conversion/index.md
 
   jsondocument-not-declared:
     label: '`JsonDocument` was not declared in this scope'

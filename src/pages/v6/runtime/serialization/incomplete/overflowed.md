@@ -14,9 +14,9 @@ options:
     page: check-capacity.md
 ---
 
-[`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/) returns `true` when you try to insert a value in the [`JsonDocument`](/v6/api/jsondocument/), but there isn't enough room to store it.
+[`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/) returns `true` when you try to insert a value in the `JsonDocument`, but there isn't enough room to store it.
 
-The solution is to increase the capacity of the [`JsonDocument`](/v6/api/jsondocument/).  
+The solution is to increase the capacity of the `JsonDocument`.  
 As usual, use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your project.
 
 Did this solve your issue?

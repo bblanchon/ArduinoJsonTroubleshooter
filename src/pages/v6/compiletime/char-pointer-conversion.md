@@ -16,7 +16,7 @@ This error occurs when you try to store a pointer of type `const char*` into a v
 char* eventName = doc["event"];
 ```
 
-Indeed, [`JsonVariant`](/v6/api/jsonvariant/) returns a `const char*`, not a `char*`. You must change the type of the pointer, like so:
+Indeed, `JsonVariant` returns a `const char*`, not a `char*`. You must change the type of the pointer, like so:
 
 ```c++
 const char* eventName = doc["event"];

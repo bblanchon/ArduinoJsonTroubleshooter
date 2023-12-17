@@ -26,7 +26,7 @@ cannot bind non-const lvalue reference of type 'ArduinoJson::JsonObject&' {aka '
 In other words, "cannot assign `JsonObject` to `JsonObject&`".
 The compiler refuses to save a reference to a temporary variable because the reference would inevitably dangle.
 
-To fix this issue, you must remove the ampersand (`&`) after [`JsonObject`](/v6/api/jsonobject/), like so:
+To fix this issue, you must remove the ampersand (`&`) after `JsonObject`, like so:
 
 ```c++
 JsonObject obj = doc["key"].as<JsonObject>();

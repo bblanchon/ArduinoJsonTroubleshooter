@@ -14,4 +14,4 @@ options:
     page: /deadend.md
 --- 
 
-What kind of [`JsonDocument`](/v6/api/jsondocument/) do you use?
+What kind of `JsonDocument` do you use?

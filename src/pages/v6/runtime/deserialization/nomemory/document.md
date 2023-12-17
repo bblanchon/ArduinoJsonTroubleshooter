@@ -14,4 +14,4 @@ options:
     page: assistant-settings.md
 ---
 
-What kind of [`JsonDocument`](/v6/api/jsondocument/) are you using?
+What kind of `JsonDocument` are you using?

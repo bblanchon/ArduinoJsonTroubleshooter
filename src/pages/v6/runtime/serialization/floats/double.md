@@ -20,7 +20,7 @@ double round2(double value) {
 }
 ```
 
-Now, call this function when inserting the value in the [`JsonDocument`](/v6/api/jsondocument/); for example:
+Now, call this function when inserting the value in the `JsonDocument`; for example:
 
 ```c++
 doc["value"] = round2(value);
