@@ -10,7 +10,7 @@ options:
     page: curl.md
 ---
 
-[`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) could be caused by a timeout while reading the response.
+`EmptyInput` could be caused by a timeout while reading the response.
 
 Please increase the value of the timeout by calling [`Stream::setTimeout()`](https://www.arduino.cc/reference/en/language/functions/communication/stream/streamsettimeout/) before calling `deserializeJson()`. For example:
 

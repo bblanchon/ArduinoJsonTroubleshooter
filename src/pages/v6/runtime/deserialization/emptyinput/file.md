@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-[`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) in the context of a file usually means:
+`EmptyInput` in the context of a file usually means:
 
 * the file is closed
 * the file is opened in the wrong mode

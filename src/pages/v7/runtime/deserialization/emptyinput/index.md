@@ -3,7 +3,7 @@ options:
   http:
     label: An HTTP response
     summary: Input comes from an HTTP response
-    page: http/status.md
+    page: /v6/runtime/deserialization/emptyinput/http/status.md
   file:
     label: A file
     summary: Input comes from a file
@@ -18,6 +18,6 @@ options:
     page: /v6/runtime/deserialization/emptyinput/other.md
 ---
 
-[`EmptyInput`](/v7/api/misc/deserializationerror/#emptyinput) means that the input was empty or contained only spaces or comments.
+`EmptyInput` means that the input was empty or contained only spaces or comments.
 
 Where does your JSON input come from?

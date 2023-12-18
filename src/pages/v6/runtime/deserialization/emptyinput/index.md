@@ -18,6 +18,6 @@ options:
     page: other.md
 ---
 
-[`EmptyInput`](/v6/api/misc/deserializationerror/#emptyinput) means that the input was empty or contained only spaces or comments.
+`EmptyInput` means that the input was empty or contained only spaces or comments.
 
 Where does your JSON input come from?
