@@ -7,7 +7,7 @@ options:
   failure:
     label: "No"
     summary: Providing a non-null default doesn't solve the issue
-    page: pointer.md
+    page: /deadend.md
 ---
 
 As far as the standard is concerned, the behavior of `printf()`, `sprintf()`, and `snprintf()` is undefined if a `%s` refers to a null string.

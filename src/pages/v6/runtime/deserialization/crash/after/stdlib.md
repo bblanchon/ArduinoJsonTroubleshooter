@@ -12,14 +12,10 @@ options:
     label: Yes, there is a call to `printf()`, `sprintf()`, or `snprintf()`
     summary: Program calls `printf()`, `sprintf()`, or `snprintf()`
     page: printf.md
-  success:
-    label: Yes, I found the issue
-    summary: Program dereferences a null pointer
-    page: /done.md
   no-usual-suspect:
     label: "No"
     summary: Program calls neither `strcmp()`, nor `strcpy()`, not `printf()`
-    page: pointer.md
+    page: /deadend.md
 ---
 
 Most of the time, when a program crashes after `deserializeJson()`, it's because it dereferences a null pointer returned by the `JsonDocument`.

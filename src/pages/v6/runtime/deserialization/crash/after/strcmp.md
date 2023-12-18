@@ -7,7 +7,7 @@ options:
   failure:
     label: "No"
     summary: Replacing `strcmp()` with `==` doesn't solve the issue
-    page: pointer.md
+    page: /deadend.md
 ---
 
 As per the standard, the behavior of [`strcmp()`](https://en.cppreference.com/w/c/string/byte/strcmp) is undefined if one of the two arguments is null.

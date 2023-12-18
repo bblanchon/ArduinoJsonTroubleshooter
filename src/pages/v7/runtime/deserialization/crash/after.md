@@ -4,10 +4,10 @@ options:
     label: "Yes"
     summary: Replacing pointer with a `String` solves the issue
     page: /done.md
-  failure:
+  no-dangling-pointer:
     label: "No"
     summary: Replacing pointer with a `String` doesn't solve the issue
-    page: /deadend.md
+    page: /v6/runtime/deserialization/crash/after/stdlib.md
 ---
 
 A programs can also crash after calling `deserializeJson()` because it keeps a pointer to a string stored in the `JsonDocument`.
@@ -21,7 +21,7 @@ const char* username;
 
 void loadConfig() {
   File file = SD.open(filename);
-  StaticJsonDocument<512> doc;
+  JsonDocument doc;
   deserializeJson(doc, file);
   username = doc["username"];  // ⚠️ stores the pointer
   file.close();
@@ -43,7 +43,7 @@ String username;
 
 void loadConfig() {
   File file = SD.open(filename);
-  StaticJsonDocument<512> doc;
+  JsonDocument doc;
   deserializeJson(doc, file);
   username = doc["username"];  // ✅ stores a copy
   file.close();
@@ -56,6 +56,6 @@ void setup() {
 }
 ```
 
-Alternatively, you can use a `char[]` and [`strcpy()`](https://en.cppreference.com/w/c/string/byte/strcpy); I invite you to check the [JsonConfigFile.ino](/v6/example/config/) for the details.
+Alternatively, you can use a `char[]` and [`strcpy()`](https://en.cppreference.com/w/c/string/byte/strcpy); I invite you to check the [JsonConfigFile.ino](/v7/example/config/) for the details.
 
 Did this solve your issue?
