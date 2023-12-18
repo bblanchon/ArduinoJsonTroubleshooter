@@ -22,7 +22,7 @@ options:
     summary: "`deserializeJson()` returns `NoMemory`"
   toodeep:
     label: "`TooDeep`"
-    page: toodeep.md
+    page: /v6/runtime/deserialization/toodeep.md
     summary: "`deserializeJson()` returns `TooDeep`"
   crash:
     label: "I can't tell because the program crashes"
