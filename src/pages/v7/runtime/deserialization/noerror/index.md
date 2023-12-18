@@ -11,7 +11,7 @@ options:
   crash:
     label: My program crashes after calling `deserializeJson()`
     summary: Program crashes after calling `deserializeJson()`
-    page: ../crash/after/index.md
+    page: ../crash/after.md
   empty:
     label: "`JsonDocument` returns empty/null values"
     summary: Program fails to extract values from the `JsonDocument`
