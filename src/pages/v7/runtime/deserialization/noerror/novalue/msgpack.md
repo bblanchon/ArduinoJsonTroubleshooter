@@ -22,7 +22,7 @@ Indeed, any byte in the following ranges is a valid one-byte MessagePack documen
 
 As you can see, these values cover about 63% of all possible values for a random byte; that's why they are very likely to occur.
 
-When the first byte in the input is one of these, [`deserializeMsgPack()`](/v7/api/msgpack/deserializemsgpack) saves the corresponding value in the `JsonDocument` and immediately returns [`Ok`](/v7/api/misc/deserializationerror/#ok), which is the correct behavior.
+When the first byte in the input is one of these, [`deserializeMsgPack()`](/v7/api/msgpack/deserializemsgpack) saves the corresponding value in the `JsonDocument` and immediately returns `Ok`, which is the correct behavior.
 
 To fix this issue, you must repair the input.
 

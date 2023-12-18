@@ -11,7 +11,7 @@ options:
 ---
 
 Indeed, due to an optimization, a `JsonDocument` is limited in the number of nodes it can contain.
-The following table shows the maximum number of nodes for each capacity:
+The following table shows the maximum number of nodes for each architecture:
 
 | CPU architecture | Max nodes  |
 |------------------|------------|
@@ -22,7 +22,6 @@ The following table shows the maximum number of nodes for each capacity:
 {: .table }
 
 You can increase this limit by increasing `ARDUINOJSON_SLOT_ID_SIZE`.
-However, doing will significantly increase memory consumption, so you'll need to increase the capacity of your `JsonDocument`.
-Unfortunately, you cannot count on the ArduinoJson Assistant anymore.
+However, doing will significantly increase memory consumption and you cannot count on the ArduinoJson Assistant anymore.
 
 Did this solve your issue?

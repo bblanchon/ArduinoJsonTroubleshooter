@@ -15,7 +15,7 @@ options:
 In that case, the solution is to wait until some data is available before calling `deserializeJson()`. A simple loop can do the trick:
 
 ```c++
-// wait from an incomming message
+// wait from an incoming message
 while (Serial.available() == 0)
   delay(100);
 

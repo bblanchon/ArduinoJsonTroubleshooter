@@ -16,7 +16,7 @@ For example, this can happen when you call `deserializeJson()` repeatedly and th
 
 ```c++
 void loop() {
-  // wait from an incomming message
+  // wait from an incoming message
   while (Serial.available() == 0)
     delay(100);
     
@@ -27,7 +27,7 @@ void loop() {
 }
 ```
 
-If you use the default settings of the Arduino Serial Monitor, `err` will contains [`Ok`](/v6/api/misc/deserializationerror/#ok) and then `EmptyInput` each time you press "Send".
+If you use the default settings of the Arduino Serial Monitor, `err` will contains `Ok` and then `EmptyInput` each time you press "Send".
 
 Indeed, by default the Arduino Serial Monitor appends [CRLF](https://fr.wikipedia.org/wiki/Carriage_Return_Line_Feed) at the end of the message, so when you enter `{"hello":"world"}` in the input box, what is really sent is `{"hello":"world"}\r\n`.
 Since `deserializeJson()` stops reading immediately at the end of the object, the `\r\n` remains in the serial buffer.
