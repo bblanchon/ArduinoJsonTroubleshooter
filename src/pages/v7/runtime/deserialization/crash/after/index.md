@@ -22,7 +22,7 @@ options:
     page: pointer.md
 ---
 
-Most of the time, when a program crashes after `deserializeJson()`, it's because it dereferences a null pointer returned by the [`JsonDocument`](/v7/api/jsondocument/).
+Most of the time, when a program crashes after `deserializeJson()`, it's because it dereferences a null pointer returned by the `JsonDocument`.
 
 Here are the most common pitfalls:
 
@@ -38,6 +38,6 @@ sprintf(buffer, "Value = %s\n", doc["key"])
 snprintf(buffer, sizeof(buffer), "Value = %s\n", doc["key"])
 ```
 
-For each of these lines, if `"key"` isn't in the [`JsonDocument`](/v7/api/jsondocument/), the program behavior is undefined and is very likely to crash.
+For each of these lines, if `"key"` isn't in the `JsonDocument`, the program behavior is undefined and is very likely to crash.
 
 Do you see something like this in your code?

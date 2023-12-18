@@ -10,7 +10,7 @@ options:
     page: document.md
 ---
 
-[`JsonArray`](/v7/api/jsonarray/) doesn't contain any data: it is a reference to an object stored in the [`JsonDocument`](/v7/api/jsondocument/). It becomes invalid as soon as the [`JsonDocument`](/v7/api/jsondocument/) is destroyed; this could explain the garbage you see in the output.
+[`JsonArray`](/v7/api/jsonarray/) doesn't contain any data: it is a reference to an object stored in the `JsonDocument`. It becomes invalid as soon as the `JsonDocument` is destroyed; this could explain the garbage you see in the output.
 
 For example, here is a function that creates a dangling [`JsonArray`](/v7/api/jsonarray/):
 
@@ -25,9 +25,9 @@ JsonArray createArray() {
 }
 ```
 
-The [`JsonArray`](/v7/api/jsonarray/) returned by this function points to a destructed [`JsonDocument`](/v7/api/jsondocument/), and therefore is likely to produce garbage or crash the program.
+The [`JsonArray`](/v7/api/jsonarray/) returned by this function points to a destructed `JsonDocument`, and therefore is likely to produce garbage or crash the program.
 
-The best way to fix this function is to return the [`JsonDocument`](/v7/api/jsondocument/):
+The best way to fix this function is to return the `JsonDocument`:
 
 ```c++
 JsonDocument createArray() {

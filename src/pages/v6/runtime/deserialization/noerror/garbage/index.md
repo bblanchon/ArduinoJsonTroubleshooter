@@ -18,4 +18,4 @@ options:
     page: /deadend.md
 ---
 
-What is the type of the second argument passed to [`deserializeJson()`](/v6/api/json/deserializejson/)?
+What is the type of the second argument passed to `deserializeJson()`?

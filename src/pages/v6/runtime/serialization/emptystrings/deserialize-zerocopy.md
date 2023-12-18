@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-When you pass a writeable buffer as the input of [`deserializeJson()`](/v6/api/json/deserializejson/), ArduinoJson uses the **zero-copy mode**. Instead of copying the strings from the input into the `JsonDocument`, it stores pointers to the input buffer.
+When you pass a writeable buffer as the input of `deserializeJson()`, ArduinoJson uses the **zero-copy mode**. Instead of copying the strings from the input into the `JsonDocument`, it stores pointers to the input buffer.
 Therefore, the input buffer must stay alive during the whole lifetime of the `JsonDocument`; otherwise, all the strings in the `JsonDocument` will be dangling pointers.
 Usually, this produces grabage in the output, but it can sometimes produce empty strings.
 

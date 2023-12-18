@@ -10,10 +10,10 @@ options:
     page: /deadend.md
 ---
 
-When you pass a writeable buffer as the input of [`deserializeJson()`](/v6/api/json/deserializejson/), ArduinoJson uses the zero-copy mode. Instead of copying the strings from the input into the `JsonDocument`, it stores pointers to the input buffer.
+When you pass a writeable buffer as the input of `deserializeJson()`, ArduinoJson uses the zero-copy mode. Instead of copying the strings from the input into the `JsonDocument`, it stores pointers to the input buffer.
 
 While doing this, the parser modifies the input buffer to unescape special characters and add string terminator.
-When [`deserializeJson()`](/v6/api/json/deserializejson/) returns the input buffer doesn't contain a valid JSON document anymore.
+When `deserializeJson()` returns the input buffer doesn't contain a valid JSON document anymore.
 
 For more information, please see [Why is the input modified?](/v6/issues/altered-input/)
 

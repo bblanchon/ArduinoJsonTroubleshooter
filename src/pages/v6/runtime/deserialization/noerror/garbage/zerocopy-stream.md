@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-The easiest solution is to remove the buffer and pass the input stream directly to [`deserializeJson()`](/v6/api/json/deserializejson/).
+The easiest solution is to remove the buffer and pass the input stream directly to `deserializeJson()`.
 
 For example, assuming the JSON document comes from a file:
 

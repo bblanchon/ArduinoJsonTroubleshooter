@@ -22,7 +22,7 @@ options:
     page: pointer.md
 ---
 
-Most of the time, when a program crashes after [`deserializeJson()`](/v6/api/json/deserializejson/), it's because it dereferences a null pointer returned by the `JsonDocument`.
+Most of the time, when a program crashes after `deserializeJson()`, it's because it dereferences a null pointer returned by the `JsonDocument`.
 
 Here are the most common pitfalls:
 

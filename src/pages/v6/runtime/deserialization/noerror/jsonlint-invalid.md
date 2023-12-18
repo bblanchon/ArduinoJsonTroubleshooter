@@ -15,7 +15,7 @@ After all, size and speed are what matter the most for embedded software, right?
 
 This means that ArduinoJson's parser may accept documents that would be rejected by other parsers.
 
-For example, [`deserializeJson()`](/v6/api/json/deserializejson/) tolerates the following substitutions:
+For example, `deserializeJson()` tolerates the following substitutions:
 
 * `'hello'` instead of `"hello"` (single quotes)
 * `nULL` or `n0n3` instead if `null` (only checks first character and length)

@@ -10,4 +10,4 @@ options:
     page: /deadend.md
 ---
 
-Do you call [`deserializeJson()`](/v6/api/json/deserializejson/) before calling `serializeJson()`? (with the same `JsonDocument`)
+Do you call `deserializeJson()` before calling `serializeJson()`? (with the same `JsonDocument`)

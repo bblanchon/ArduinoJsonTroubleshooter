@@ -12,7 +12,7 @@ options:
 
 [`IncompleteInput`](/v6/api/misc/deserializationerror/#incompleteinput) can be caused by an interruped connection. For example, this problem happens when the client reads to slowly.
 
-Indeed, because it reads bytes one by one, [`deserializeJson()`](/v6/api/json/deserializejson/) can be slow with some implementations of [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/). To speed up the reading, we must add a buffer between the [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/) and [`deserializeJson()`](/v6/api/json/deserializejson/). The easiest way to do this is to use `ReadBufferingStream` from the [StreamUtils library](https://github.com/bblanchon/ArduinoStreamUtils):
+Indeed, because it reads bytes one by one, `deserializeJson()` can be slow with some implementations of [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/). To speed up the reading, we must add a buffer between the [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/) and `deserializeJson()`. The easiest way to do this is to use `ReadBufferingStream` from the [StreamUtils library](https://github.com/bblanchon/ArduinoStreamUtils):
 
 ```c++
 // replace the following line:

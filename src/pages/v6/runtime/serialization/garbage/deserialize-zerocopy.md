@@ -10,7 +10,7 @@ options:
     page: serialize.md
 ---
 
-When you pass a writeable buffer as the input of [`deserializeJson()`](/v6/api/json/deserializejson/), ArduinoJson uses the **zero-copy mode**. Instead of copying the strings from the input into the `JsonDocument`, it stores pointers to the input buffer.
+When you pass a writeable buffer as the input of `deserializeJson()`, ArduinoJson uses the **zero-copy mode**. Instead of copying the strings from the input into the `JsonDocument`, it stores pointers to the input buffer.
 Therefore, the input buffer must stay alive during the whole lifetime of the `JsonDocument`; otherwise, all the strings in the `JsonDocument` will be dangling pointers.
 
 The easiest solution is to disable the zero-copy mode by passing a read-only input buffer. Casting the pointer will do the trick:

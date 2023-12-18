@@ -10,7 +10,7 @@ options:
     page: document.md
 ---
 
-[`JsonVariant`](/v7/api/jsonvariant/) doesn't contain any data: it is a reference to an object stored in the [`JsonDocument`](/v7/api/jsondocument/). It becomes invalid as soon as the [`JsonDocument`](/v7/api/jsondocument/) is destroyed; this could explain the garbage you see in the output.
+[`JsonVariant`](/v7/api/jsonvariant/) doesn't contain any data: it is a reference to an object stored in the `JsonDocument`. It becomes invalid as soon as the `JsonDocument` is destroyed; this could explain the garbage you see in the output.
 
 For example, here is a function that creates a dangling [`JsonVariant`](/v7/api/jsonvariant/):
 
@@ -24,9 +24,9 @@ JsonVariant createVariant() {
 }
 ```
 
-The [`JsonVariant`](/v7/api/jsonvariant/) returned by this function points to a destructed [`JsonDocument`](/v7/api/jsondocument/), and therefore is likely to produce garbage or crash the program.
+The [`JsonVariant`](/v7/api/jsonvariant/) returned by this function points to a destructed `JsonDocument`, and therefore is likely to produce garbage or crash the program.
 
-The best way to fix this function is to return the [`JsonDocument`](/v7/api/jsondocument/):
+The best way to fix this function is to return the `JsonDocument`:
 
 ```c++
 JsonVariant createVariant() {

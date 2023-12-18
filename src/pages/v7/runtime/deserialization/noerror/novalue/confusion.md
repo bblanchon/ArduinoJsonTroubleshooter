@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-When a program fails to extract the values from a [`JsonDocument`](/v7/api/jsondocument/), it's often because there is a confusion between arrays and objects.
+When a program fails to extract the values from a `JsonDocument`, it's often because there is a confusion between arrays and objects.
 
 For example, a common mistake is to write:
 

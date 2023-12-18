@@ -18,7 +18,7 @@ options:
     page: json-or-msgpack.md
 ---
 
-Please print the content of the [`JsonDocument`](/v7/api/jsondocument/) to the serial port like so:
+Please print the content of the `JsonDocument` to the serial port like so:
 
 ```c++
 serializeJson(doc, Serial);

@@ -3,11 +3,11 @@ options:
   slow:
     label: It's slow
     summary: "Deserialisation is slow"
-    page: slow.md
+    page: /v6/runtime/deserialization/noerror/slow.md
   invalid:
     label: "I expected `InvalidInput` instead of `Ok`"
     summary: "`Ok` is incorrect; it should be `InvalidInput`"
-    page: firstchar/index.md
+    page: /v6/runtime/deserialization/noerror/firstchar/index.md
   crash:
     label: My program crashes after calling `deserializeJson()`
     summary: Program crashes after calling `deserializeJson()`

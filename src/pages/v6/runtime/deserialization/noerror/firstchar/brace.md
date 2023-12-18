@@ -10,7 +10,7 @@ options:
     page: ../jsonlint.md
 ---
 
-[`deserializeJson()`](/v6/api/json/deserializejson/) stops reading as soon as the JSON document ends.
+`deserializeJson()` stops reading as soon as the JSON document ends.
 In your case, it will read the input until it reaches the matching `}` and ignore any remaining characters.
 
 Suppose the input looks like this:
@@ -19,11 +19,11 @@ Suppose the input looks like this:
 {"key":"value"}GARBAGE
 ```
 
-Here, [`deserializeJson()`](/v6/api/json/deserializejson/) reads the JSON object `{"key":"value"}` and returns `Ok` ignoring the `GARBAGE` part.
+Here, `deserializeJson()` reads the JSON object `{"key":"value"}` and returns `Ok` ignoring the `GARBAGE` part.
 
 This feature enables:
 
-1. [deserializing in chunks](/v6/how-to/deserialize-a-very-large-document/#deserialization-in-chunks),
+1. deserializing in chunks
 2. parsing [JSON Streams](https://en.wikipedia.org/wiki/JSON_streaming),
 3. reading from non-zero-terminated input strings.
 
