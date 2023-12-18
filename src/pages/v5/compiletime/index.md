@@ -1,5 +1,9 @@
 ---
 options:
+  requires-cpp-compiler:
+    label: ArduinoJson requires a C++ compiler...
+    summary: Error says "ArduinoJson requires a C++ compiler..."
+    page: /v6/compiletime/requires-cpp-compiler.md
   equals:
     label: "'equals' is not a member of 'ArduinoJson::Internals::StringTraits<const int&, void>'"
     summary: Error says "'equals' is not a member of 'ArduinoJson::Internals::StringTraits<const int&, void>'"
