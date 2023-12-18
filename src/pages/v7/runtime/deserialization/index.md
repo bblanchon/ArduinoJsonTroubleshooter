@@ -18,7 +18,7 @@ options:
     summary: "`deserializeJson()` returns `InvalidInput`"
   nomemory:
     label: "`NoMemory`"
-    page: nomemory/index.md
+    page: nomemory.md
     summary: "`deserializeJson()` returns `NoMemory`"
   notsupported:
     label: "`NotSupported`"
@@ -38,4 +38,4 @@ options:
     summary: The program doesn't check the error
 ---
 
-What is the value of [`DeserializationError`](/v7/api/misc/deserializationerror/)?
+What is the value of `DeserializationError`?

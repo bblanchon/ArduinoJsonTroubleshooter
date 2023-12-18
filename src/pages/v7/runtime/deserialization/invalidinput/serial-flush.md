@@ -10,7 +10,7 @@ options:
     page: /v6/runtime/deserialization/invalidinput/serial-voltage.md
 ---    
 
-`deserializeJson()` may return [`InvalidInput`](/v7/api/misc/deserializationerror/#invalidinput) because it starts reading the input mid-stream.
+`deserializeJson()` may return `InvalidInput` because it starts reading the input mid-stream.
 
 For example, it can happen if your program calls `deserializeJson()` in a loop like so:
 
@@ -30,7 +30,7 @@ void loop() {
 }
 ```
 
-The problem with this program is that, if `deserializeJson()` returns an error (such as [`NoMemory`](/v7/api/misc/deserializationerror/#nomemory)), any subsequent call to `deserializeJson()` will return [`InvalidInput`](/v7/api/misc/deserializationerror/#invalidinput). Indeed, `deserializeJson()` stops reading as soon as it encounters an error, so the remainder of the document is still in the serial buffer.
+The problem with this program is that, if `deserializeJson()` returns an error (such as [`NoMemory`](/v7/api/misc/deserializationerror/#nomemory)), any subsequent call to `deserializeJson()` will return `InvalidInput`. Indeed, `deserializeJson()` stops reading as soon as it encounters an error, so the remainder of the document is still in the serial buffer.
 
 The solution is to flush the serial buffer any time an error is detected:
 

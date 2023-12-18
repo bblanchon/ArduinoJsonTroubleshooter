@@ -18,7 +18,7 @@ options:
     summary: "`deserializeJson()` returns `InvalidInput`"
   nomemory:
     label: "`NoMemory`"
-    page: nomemory/index.md
+    page: nomemory.md
     summary: "`deserializeJson()` returns `NoMemory`"
   notsupported:
     label: "`NotSupported`"
@@ -28,13 +28,9 @@ options:
     label: "`TooDeep`"
     page: toodeep.md
     summary: "`deserializeJson()` returns `TooDeep`"
-  crash:
-    label: "I can't tell because the program crashes"
-    page: crash/index.md
-    summary: "The program crashes"
 ---
 
-[`DeserializationError`](/v7/api/misc/deserializationerror/) is the return type of `deserializeJson()`. It tells whether the operation succeeded and indicates the cause of the error.
+`DeserializationError` is the return type of `deserializeJson()`. It tells whether the operation succeeded and indicates the cause of the error.
 
 Modify your program to show the error code, like so:
 

@@ -38,4 +38,4 @@ options:
     summary: The program doesn't check the error
 ---
 
-What is the value of [`DeserializationError`](/v6/api/misc/deserializationerror/)?
+What is the value of `DeserializationError`?
