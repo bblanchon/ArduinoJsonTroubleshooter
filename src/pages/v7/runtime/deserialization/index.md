@@ -20,10 +20,6 @@ options:
     label: "`NoMemory`"
     page: nomemory.md
     summary: "`deserializeJson()` returns `NoMemory`"
-  notsupported:
-    label: "`NotSupported`"
-    page: notsupported/index.md
-    summary: "`deserializeJson()` returns `NotSupported`"
   toodeep:
     label: "`TooDeep`"
     page: toodeep.md
