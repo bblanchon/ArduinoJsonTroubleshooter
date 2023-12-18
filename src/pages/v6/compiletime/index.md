@@ -78,7 +78,7 @@ options:
   invalid-conversion:
     label: invalid use of incomplete type `class InvalidConversion<...>`
     summary: Error says "invalid use of incomplete type `class InvalidConversion<...>`"
-    page: invalid-conversion.md
+    page: invalid-conversion/index.md
 
   jsondocument-copy:
     label: '`JsonDocument::JsonDocument(const JsonDocument&)` is private'

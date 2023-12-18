@@ -12,7 +12,7 @@ options:
 
 It looks like the allocation failed.
 
-Please print the capacity of the [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) to the serial port, like so:
+Please print the capacity of the `DynamicJsonDocument` to the serial port, like so:
 
 ```c++
 Serial.println(doc.capacity());

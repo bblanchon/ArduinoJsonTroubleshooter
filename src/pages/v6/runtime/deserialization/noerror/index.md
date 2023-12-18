@@ -35,7 +35,7 @@ options:
   truncated-strings:
     label: Some strings are truncated
     summary: Some strings are truncated
-    page: truncatedstrings/index.md
+    page: /v6/runtime/deserialization/noerror/truncatedstrings/index.md
 ---
 
 So, what's the problem then?

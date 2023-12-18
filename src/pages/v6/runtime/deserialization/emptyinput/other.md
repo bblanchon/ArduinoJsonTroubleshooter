@@ -12,4 +12,4 @@ options:
 
 The input is probably starting with a NUL character.
 
-What type of input are you passing to [`deserializeJson()`](/v6/api/json/deserializejson/)?
+What type of input are you passing to `deserializeJson()`?

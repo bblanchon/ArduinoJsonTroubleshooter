@@ -10,4 +10,4 @@ options:
     page: headers.md
 ---
 
-Before calling [`deserializeJson()`](/v6/api/json/deserializejson/), did you skip the HTTP headers?
+Before calling `deserializeJson()`, did you skip the HTTP headers?

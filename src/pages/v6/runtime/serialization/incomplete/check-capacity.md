@@ -11,7 +11,7 @@ options:
 ---
 
 
-Please print the value of [`JsonDocument::capacity()`](/v6/api/jsondocument/capacity/), like so:
+Please print the value of `JsonDocument::capacity()`, like so:
 
 ```c++
 Serial.println(doc.capacity());

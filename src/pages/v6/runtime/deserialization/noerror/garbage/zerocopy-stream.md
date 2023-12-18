@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-The easiest solution is to remove the buffer and pass the input stream directly to [`deserializeJson()`](/v6/api/json/deserializejson/).
+The easiest solution is to remove the buffer and pass the input stream directly to `deserializeJson()`.
 
 For example, assuming the JSON document comes from a file:
 
@@ -24,6 +24,6 @@ deserializeJson(doc, buf.get());
 deserializeJson(doc, file);
 ```
 
-Now that the zero-copy mode is disabled, you probably need a larger [`JsonDocument`](/v6/api/jsondocument/), so don't forget to update the capacity. As usual, use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your project.
+Now that the zero-copy mode is disabled, you probably need a larger `JsonDocument`, so don't forget to update the capacity. As usual, use the [ArduinoJson Assistant](/v6/assistant/) to compute the right capacity for your project.
 
 Did this solve your issue?

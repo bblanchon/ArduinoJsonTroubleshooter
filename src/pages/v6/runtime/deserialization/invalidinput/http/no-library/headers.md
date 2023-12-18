@@ -15,7 +15,7 @@ options:
 ---
 
 Just like the HTTP request, the response contains some headers, followed by an empty line, and then followed by the body.
-The body is the part that contains the JSON document; therefore, before calling [`deserializeJson()`](/v6/api/json/deserializejson/), you must skip the headers.
+The body is the part that contains the JSON document; therefore, before calling `deserializeJson()`, you must skip the headers.
 
 To skip the headers, call [`Stream::find()`](https://www.arduino.cc/reference/en/language/functions/communication/stream/streamfind/), like so:
 

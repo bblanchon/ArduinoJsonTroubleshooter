@@ -15,7 +15,7 @@ After all, size and speed are what matter the most for embedded software, right?
 
 This means that ArduinoJson's parser may accept documents that would be rejected by other parsers.
 
-For example, [`deserializeJson()`](/v6/api/json/deserializejson/) tolerates the following substitutions:
+For example, `deserializeJson()` tolerates the following substitutions:
 
 * `'hello'` instead of `"hello"` (single quotes)
 * `nULL` or `n0n3` instead if `null` (only checks first character and length)
@@ -30,6 +30,6 @@ It also ignores the follwing UTF-8 errors:
 
 Lastly, it supports C++-style comments when [ARDUINOSJSON_ENABLE_COMMENTS](/v6/api/config/enable_comments/) is set to `1`.
 
-As a result, you cannot use [`deserializeJson`](/v6/api/json/deserializejson/) as a JSON validator because you'd get many false-negatives.
+As a result, you cannot use `deserializeJson` as a JSON validator because you'd get many false-negatives.
 
 Did this solve your issue?

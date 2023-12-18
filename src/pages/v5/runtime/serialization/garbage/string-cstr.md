@@ -10,9 +10,9 @@ options:
     page: zero-copy.md
 ---
 
-Sometime, it's not the `JsonBuffer` that is destructed, but a string that was added to the [`JsonObject`](/v5/api/jsonobject/).
+Sometime, it's not the `JsonBuffer` that is destructed, but a string that was added to the `JsonObject`.
 
-For example, the following program fills a [`JsonObject`](/v5/api/jsonobject/) with a temporary `String`:
+For example, the following program fills a `JsonObject` with a temporary `String`:
 
 ```c++
 // DON'T DO THAT!!!

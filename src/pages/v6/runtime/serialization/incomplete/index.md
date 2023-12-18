@@ -10,4 +10,4 @@ options:
     page: noloop.md
 ---
 
-Does your program call [`serializeJson()`](/v6/api/json/serializejson/) in a loop?
+Does your program call `serializeJson()` in a loop?

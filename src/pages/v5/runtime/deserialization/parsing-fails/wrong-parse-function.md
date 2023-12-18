@@ -10,7 +10,7 @@ options:
     page: nesting.md
 ---
 
-Maybe you called [`parseObject()`](/v5/api/jsonbuffer/parseobject/) instead of [`parseArray()`](/v5/api/jsonbuffer/parsearray/)
+Maybe you called `parseObject()` instead of `parseArray()`
 
 This is a very common question as people are often confused when the JSON input contains mixed arrays and objects.
 
@@ -23,7 +23,7 @@ For example, if the input is:
 {"mickey":["mouse"],"donald":["duck"]}
 ```
 
-then you must call [`parseObject()`](/v5/api/jsonbuffer/parseobject/) because the root is an object.
+then you must call `parseObject()` because the root is an object.
 
 And, if the input is:
 
@@ -31,9 +31,9 @@ And, if the input is:
 [{"mickey":"mouse","donald":"duck"}]
 ```
 
-then you must call [`parseArray()`](/v5/api/jsonbuffer/parsearray/) because the root is an array.
+then you must call `parseArray()` because the root is an array.
 
-Finally, if you cannot know in advance the type of the root, simply use [`JsonBuffer::parse()`](/v5/api/jsonbuffer/parse/) which returns a [`JsonVariant`](/v5/api/jsonvariant/).
+Finally, if you cannot know in advance the type of the root, simply use `JsonBuffer::parse()` which returns a `JsonVariant`.
 
 See also: [Parsing succeeds but I can't read the values!](/v5/faq/parsing-succeeds-but-i-cant-read-the-values/)
 

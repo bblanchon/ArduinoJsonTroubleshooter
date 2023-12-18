@@ -13,7 +13,7 @@ options:
 Sometimes, the input is invalid because some bytes were dropped when receiving the document.
 Usually, this happens when the receiver reads the stream too slowly, which overflows a buffer somewhere in the path.
 
-Indeed, because it reads bytes one by one, [`deserializeJson()`](/v6/api/json/deserializejson/) can be slow with some implementations of [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/). To speed up the reading, we must add a buffer between the [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/) and [`deserializeJson()`](/v6/api/json/deserializejson/). The easiest way to do this is to use `ReadBufferingStream` from the [StreamUtils library](https://github.com/bblanchon/ArduinoStreamUtils):
+Indeed, because it reads bytes one by one, `deserializeJson()` can be slow with some implementations of [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/). To speed up the reading, we must add a buffer between the [`Stream`](https://www.arduino.cc/reference/en/language/functions/communication/stream/) and `deserializeJson()`. The easiest way to do this is to use `ReadBufferingStream` from the [StreamUtils library](https://github.com/bblanchon/ArduinoStreamUtils):
 
 ```c++
 // replace the following line:

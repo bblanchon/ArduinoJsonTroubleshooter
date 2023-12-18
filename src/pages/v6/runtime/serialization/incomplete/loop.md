@@ -14,9 +14,9 @@ options:
     page: loop-outside.md
 ---
 
-Calling [`serializeJson()`](/v6/api/json/serializejson/) is safe, but you'll run into issues if you modify the same [`JsonDocument`](/v6/api/jsondocument/) in a loop.
+Calling `serializeJson()` is safe, but you'll run into issues if you modify the same `JsonDocument` in a loop.
 
-The best workaround is to move the declaration of the [`JsonDocument`](/v6/api/jsondocument/) inside the loop.
+The best workaround is to move the declaration of the `JsonDocument` inside the loop.
 
 For example:
 

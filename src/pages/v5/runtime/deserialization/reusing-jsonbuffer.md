@@ -10,8 +10,8 @@ options:
     page: reusing-input.md
 ---
 
-This can happen if you reuse the same [`JsonBuffer`](/v5/api/jsonbuffer/).
-The solution is simply to NOT reuse the [`JsonBuffer`](/v5/api/jsonbuffer/).
+This can happen if you reuse the same `JsonBuffer`.
+The solution is simply to NOT reuse the `JsonBuffer`.
 Here is an example:
 
 ```diff

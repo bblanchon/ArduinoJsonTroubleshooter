@@ -14,7 +14,7 @@ Your issue could be due to the "zero-copy" mode.
 
 This mode is active when the input is writable (`char[]` or a `char*`).
 In this mode, ArduinoJson modifies the input string in place: it inserts null terminators and unescapes special characters.
-If you call [`parseObject()`](/v5/api/jsonbuffer/parseobject/) twice with the same input buffer, the first will work, but the second will fail because the input buffer doesn't contain a valid JSON document anymore.
+If you call `parseObject()` twice with the same input buffer, the first will work, but the second will fail because the input buffer doesn't contain a valid JSON document anymore.
 
 The solution is simply to parse the input only once, or get a fresh input at each iteration.
 

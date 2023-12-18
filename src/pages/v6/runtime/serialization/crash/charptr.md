@@ -10,5 +10,5 @@ options:
     page: output-type/index.md
 ---
 
-Does your program insert string pointers in the [`JsonDocument`](/v6/api/jsondocument/)?  
+Does your program insert string pointers in the `JsonDocument`?  
 (for example, `doc["name"] = name` where `name` is a `const char*`)

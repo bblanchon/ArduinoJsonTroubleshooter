@@ -22,7 +22,7 @@ If you try to compile this code, you will get the following error:
 no matching function for call to 'ArduinoJson6194_F1::BasicJsonDocument<ArduinoJson6194_F1::DefaultAllocator>::BasicJsonDocument()'
 ```
 
-These errors occur when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/).
+These errors occur when you forget to pass the capacity to the constructor of `DynamicJsonDocument`.
 
 To fix them, you must specify the capacity of the memory pool, like so:
 

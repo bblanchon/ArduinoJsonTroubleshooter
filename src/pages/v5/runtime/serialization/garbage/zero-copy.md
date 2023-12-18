@@ -30,9 +30,9 @@ JsonObject&  loadPlastic(DynamicJsonBuffer& jsonBuffer){
 }
 ```
 
-Indeed, when called with a `char*` (or a `char[]`), [`JsonBuffer::parseObject()`](/v5/api/jsonbuffer/parseobject/) uses the zero-copy mode. In this mode, the [`JsonObject`](/v5/api/jsonobject/) stores pointers to bytes in the input.
+Indeed, when called with a `char*` (or a `char[]`), `JsonBuffer::parseObject()` uses the zero-copy mode. In this mode, the `JsonObject` stores pointers to bytes in the input.
 
-The zero-copy mode is very efficient, but it requires that the input variable has a longer lifetime than the [`JsonObject`](/v5/api/jsonobject/).
+The zero-copy mode is very efficient, but it requires that the input variable has a longer lifetime than the `JsonObject`.
 
 To fix this function, just change the type of the input to something that is read-only.
 In this particular case, it's possible to pass the `file` directly:
@@ -46,6 +46,6 @@ JsonObject&  loadPlastic(DynamicJsonBuffer& jsonBuffer){
 }
 ```
 
-Now, ArduinoJson will duplicates the relevant pieces of the input in the [`JsonBuffer`](/v5/api/jsonbuffer/).
+Now, ArduinoJson will duplicates the relevant pieces of the input in the `JsonBuffer`.
 
 Did this solve your issue?

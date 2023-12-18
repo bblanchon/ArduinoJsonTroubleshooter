@@ -10,4 +10,4 @@ options:
     page: serialize.md
 ---
 
-Do you call [`deserializeJson()`](/v6/api/json/deserializejson/) before calling [`serializeJson()`](/v6/api/json/serializejson/)? (with the same [`JsonDocument`](/v6/api/jsondocument/))
+Do you call `deserializeJson()` before calling `serializeJson()`? (with the same `JsonDocument`)

@@ -12,4 +12,4 @@ options:
 
 A stack-overflow could cause the crash.
 
-Do you use a [`StaticJsonDocument`](/v6/api/staticjsondocument/)?
+Do you use a `StaticJsonDocument`?

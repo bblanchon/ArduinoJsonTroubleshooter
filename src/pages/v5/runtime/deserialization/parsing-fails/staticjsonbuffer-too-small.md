@@ -10,9 +10,9 @@ options:
     page: staticjsonbuffer-too-big.md
 ---
 
-A [`JsonBuffer`](/v5/api/jsonbuffer/) is a memory pool where the JSON parser stores the tokens of the parsed object.
+A `JsonBuffer` is a memory pool where the JSON parser stores the tokens of the parsed object.
 
-`StaticJsonBuffer` is an implementation of a [`JsonBuffer`](/v5/api/jsonbuffer/) with fixed memory allocation.
+`StaticJsonBuffer` is an implementation of a `JsonBuffer` with fixed memory allocation.
 
 This means that you need to specify the right size for the `StaticJsonBuffer`, otherwise the parser will not be able to allocate the memory it needs, and therefore it will return an error.
 

@@ -10,17 +10,17 @@ options:
     page: /deadend.md
 ---
 
-This error occurs when you declare a variable of type [`JsonDocument`](/v6/api/jsondocument/), like so:
+This error occurs when you declare a variable of type `JsonDocument`, like so:
 
 ```c++
 JsonDocument doc;
 ```
 
-Indeed, in ArduinoJson 6, [`JsonDocument`](/v6/api/jsondocument/) is a base class that cannot be instantiated.
+Indeed, in ArduinoJson 6, `JsonDocument` is a base class that cannot be instantiated.
 Instead, you must use one of the derived classes:
 
-- [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) for a memory pool on the heap
-- [`StaticJsonDocument`](/v6/api/staticjsondocument/) for a memory pool on the stack
+- `DynamicJsonDocument` for a memory pool on the heap
+- `StaticJsonDocument` for a memory pool on the stack
 
 In both cases, you must specify the capacity of the memory pool, like so:
 

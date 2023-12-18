@@ -10,4 +10,4 @@ options:
     page: string-bom.md
 ---
 
-What's the type of the input that you pass to [`deserializeJson()`](/v6/api/json/deserializejson/)
+What's the type of the input that you pass to `deserializeJson()`?

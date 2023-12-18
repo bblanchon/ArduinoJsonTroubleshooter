@@ -10,4 +10,4 @@ options:
     page: large-document.md
 ---
 
-Does one of the strings in the [`JsonDocument`](/v6/api/jsondocument/) contains a NUL (i.e.,  ASCII code 0, or `\u0000`)?
+Does one of the strings in the `JsonDocument` contains a NUL (i.e.,  ASCII code 0, or `\u0000`)?

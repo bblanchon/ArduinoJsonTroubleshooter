@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-You get this error when you try to iterate over a [`JsonDocument`](/v6/api/jsondocument/) or a [`JsonVariant`](/v6/api/jsonvariant/).
+You get this error when you try to iterate over a `JsonDocument` or a `JsonVariant`.
 
 For example, it happens if you do this:
 
@@ -20,9 +20,9 @@ for (JsonPair p : doc["config"]) {
 }
 ```
 
-Indeed, you cannot iterate a [`JsonVariant`](/v6/api/jsonvariant/) like so because there is an ambiguity: the [`JsonVariant`](/v6/api/jsonvariant/) could point to either an array or an object, and this information is only available at runtime.
+Indeed, you cannot iterate a `JsonVariant` like so because there is an ambiguity: the `JsonVariant` could point to either an array or an object, and this information is only available at runtime.
 
-For this reason, we need to tell the compiler which type of structure we expect by casting the [`JsonVariant`](/v6/api/jsonvariant/) to a [`JsonArray`](/v6/api/jsonarray/) or [`JsonObject`](/v6/api/jsonobject/).
+For this reason, we need to tell the compiler which type of structure we expect by casting the `JsonVariant` to a `JsonArray` or `JsonObject`.
 For example, we could solve the above snippet like so:
 
 ```c++

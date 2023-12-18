@@ -10,6 +10,6 @@ options:
     page: noloop.md
 ---
 
-Please replace the call to [`JsonDocument::clear()`](/v6/api/jsondocument/clear/) with [`JsonDocument::garbageCollect()`](/v6/api/jsondocument/garbagecollect/).
+Please replace the call to `JsonDocument::clear()` with `JsonDocument::garbageCollect()`.
 
 Did this solve your issue?

@@ -10,4 +10,4 @@ options:
     page: static.md
 ---
 
-Do you use [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) or [`StaticJsonDocument`](/v6/api/staticjsondocument/)?
+Do you use `DynamicJsonDocument` or `StaticJsonDocument`?

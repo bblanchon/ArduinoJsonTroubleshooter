@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-This error occurs when you pass a string to [`JsonArray::operator[]`](/v6/api/jsonarray/subscript/); i.e., when you use an array like an object.
+This error occurs when you pass a string to `JsonArray::operator[]`; i.e., when you use an array like an object.
 
 For example, if you try to compile the following code:
 
@@ -42,7 +42,7 @@ array[0] = "value";
 
 ```c++
 StaticJsonDocument<128> doc;
-JsonArray obj = doc.createNestedObject("obj");
+JsonObject obj = doc.createNestedObject("obj");
 obj["key"] = "value";
 ```
 

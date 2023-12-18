@@ -10,4 +10,4 @@ options:
     page: document-static.md
 ---
 
-Which kind of [`JsonDocument`](/v6/api/jsondocument/) do you use?
+Which kind of `JsonDocument` do you use?

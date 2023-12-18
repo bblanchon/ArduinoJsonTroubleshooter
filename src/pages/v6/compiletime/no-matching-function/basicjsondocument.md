@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-This error occurs when you forget to pass the capacity to the constructor of [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/), like so:
+This error occurs when you forget to pass the capacity to the constructor of `DynamicJsonDocument`, like so:
 
 ```c++
 DynamicJsonDocument doc;

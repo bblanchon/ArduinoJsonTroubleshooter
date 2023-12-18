@@ -14,7 +14,7 @@ This can happen if you're parsing an array or an object with many nesting levels
 
 You can solve this in two ways:
 
-1. You can pass an additional argument to [`parseObject()`](/v5/api/jsonbuffer/parseobject/) to specify the new limit.
-2. You can define [`ARDUINOJSON_DEFAULT_NESTING_LIMIT`](/v5/api/config/default_nesting_limit/) which is the default for this argument
+1. You can pass an additional argument to `parseObject()` to specify the new limit.
+2. You can define `ARDUINOJSON_DEFAULT_NESTING_LIMIT` which is the default for this argument
 
 Did this solve your issue?

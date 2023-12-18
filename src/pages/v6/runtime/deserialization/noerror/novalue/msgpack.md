@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-It seems that your program fed [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack/) with garbage input.
+It seems that your program fed `deserializeMsgPack()` with garbage input.
 
 Indeed, any byte in the following ranges is a valid one-byte MessagePack document:
 
@@ -22,7 +22,7 @@ Indeed, any byte in the following ranges is a valid one-byte MessagePack documen
 
 As you can see, these values cover about 63% of all possible values for a random byte; that's why they are very likely to occur.
 
-When the first byte in the input is one of these, [`deserializeMsgPack()`](/v6/api/msgpack/deserializemsgpack) saves the corresponding value in the [`JsonDocument`](/v6/api/jsondocument/) and immediately returns [`Ok`](/v6/api/misc/deserializationerror/#ok), which is the correct behavior.
+When the first byte in the input is one of these, `deserializeMsgPack()` saves the corresponding value in the `JsonDocument` and immediately returns `Ok`, which is the correct behavior.
 
 To fix this issue, you must repair the input.
 

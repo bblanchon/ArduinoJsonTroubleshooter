@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-Please print the value of [`JsonDocument::overflowed()`](/v6/api/jsondocument/overflowed/), like so:
+Please print the value of `JsonDocument::overflowed()`, like so:
 
 ```c++
 Serial.println(doc.overflowed());

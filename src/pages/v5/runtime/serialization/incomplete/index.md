@@ -10,4 +10,4 @@ options:
     summary: The program uses a `DynamicJsonBuffer`
 ---
 
-What kind of [`JsonBuffer`](/v5/api/jsonbuffer/) are you using?
+What kind of `JsonBuffer` are you using?

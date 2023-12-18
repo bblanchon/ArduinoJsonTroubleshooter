@@ -10,9 +10,9 @@ options:
     page: assistant-settings.md
 ---
 
-It's possible that the [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) failed to allocate the memory pool.
+It's possible that the `DynamicJsonDocument` failed to allocate the memory pool.
 
-Please print the capacity of the [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) to the serial port, like so:
+Please print the capacity of the `DynamicJsonDocument` to the serial port, like so:
 
 ```c++
 Serial.println(doc.capacity());

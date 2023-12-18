@@ -10,4 +10,4 @@ options:
     page: /deadend.md
 ---
 
-Did you try to declare a [`DynamicJsonDocument`](/v6/api/dynamicjsondocument/) as a member of a `class` or a `struct`?
+Did you try to declare a `DynamicJsonDocument` as a member of a `class` or a `struct`?

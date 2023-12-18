@@ -10,9 +10,9 @@ options:
     page: /deadend.md
 ---
 
-[`deserializeJson()`](/v6/api/json/deserializejson/) can read JSON documents that contain comments, but the support is disabled by default to reduce the footprint of the library.
+`deserializeJson()` can read JSON documents that contain comments, but the support is disabled by default to reduce the footprint of the library.
 
-To enable the support for comments, define [`ARDUINOJSON_ENABLE_COMMENTS`](/v6/api/config/enable_comments/) to `1` before including `ArduinoJson.h`, like so:
+To enable the support for comments, define `ARDUINOJSON_ENABLE_COMMENTS` to `1` before including `ArduinoJson.h`, like so:
 
 ```c++
 #define ARDUINOJSON_ENABLE_COMMENTS 1

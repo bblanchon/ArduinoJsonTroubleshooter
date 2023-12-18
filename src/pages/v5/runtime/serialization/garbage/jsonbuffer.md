@@ -10,9 +10,9 @@ options:
     page: string-cstr.md
 ---
 
-Garbage in the output always has the same cause: the [`JsonObject`](/v5/api/jsonobject/) contains pointers to destructed variables.
+Garbage in the output always has the same cause: the `JsonObject` contains pointers to destructed variables.
 
-This problem happens when the [`JsonObject`](/v5/api/jsonobject/) is constructed with variables that are destroyed before the call to [`printTo()`](/v5/api/jsonobject/printto/)
+This problem happens when the `JsonObject` is constructed with variables that are destroyed before the call to `printTo()`
 
 A typical example is the following:
 
@@ -26,7 +26,7 @@ JsonObject& createObject() {
 }
 ```
 
-The best way to fix this function is to pass the [`JsonBuffer`](/v5/api/jsonbuffer/) as an argument:
+The best way to fix this function is to pass the `JsonBuffer` as an argument:
 
 ```c++
 template<typename TJsonBuffer>
@@ -37,6 +37,6 @@ JsonObject& createObject(TJsonBuffer& jsonBuffer) {
 }
 ```
 
-Note that this function uses a template to allow any kind of [`JsonBuffer`](/v5/api/jsonbuffer/) to be used, not just `StaticJsonBuffer<200>`.
+Note that this function uses a template to allow any kind of `JsonBuffer` to be used, not just `StaticJsonBuffer<200>`.
 
 Did this solve your issue?

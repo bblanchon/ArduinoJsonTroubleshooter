@@ -11,7 +11,7 @@ options:
 ---
 
 Indeed, due to an optimization, a `JsonDocument` is limited in the number of nodes it can contain.
-The following table shows the maximum number of nodes for each capacity:
+The following table shows the maximum number of nodes for each architecture:
 
 | CPU architecture | Max nodes  |
 |------------------|------------|

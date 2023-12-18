@@ -14,8 +14,8 @@ options:
     page: loop-outside-clear.md
 ---
 
-We can try to clear the content of the [`JsonDocument`](/v6/api/jsondocument/).
+We can try to clear the content of the `JsonDocument`.
 
-Please call [`JsonDocument::clear()`](/v6/api/jsondocument/clear/) at the beginning of the loop.
+Please call `JsonDocument::clear()` at the beginning of the loop.
 
 Did this solve your issue?
