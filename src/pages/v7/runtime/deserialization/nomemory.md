@@ -1,0 +1,16 @@
+---
+options:
+  success:
+    label: "Yes"
+    summary: Reducing memory usage fixes the issue
+    page: /done.md
+  failure:
+    label: "No"
+    summary: Reducing memory usage doesn't fix the issue
+    page: /deadend.md
+--- 
+
+Well, that's very bad news. It seems that your microcontroller doesn't have enough RAM to hold the JSON document.
+
+Please read [How to deserialize a very large document?](/v7/how-to/deserialize-a-very-large-document/).
+It shows several techniques you can use to use less RAM.
