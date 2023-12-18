@@ -14,6 +14,6 @@ options:
     page: string-pointer.md
 ---
 
-[`IncompleteInput`](/v7/api/misc/deserializationerror/#incompleteinput) means that [`deserializeJson()`](/v7/api/json/deserializejson/) managed to parse the beginning of the JSON document, but the end was missing.
+[`IncompleteInput`](/v7/api/misc/deserializationerror/#incompleteinput) means that `deserializeJson()` managed to parse the beginning of the JSON document, but the end was missing.
 
-What type of input do you pass to [`deserializeJson()`](/v7/api/json/deserializejson/)?
+What type of input do you pass to `deserializeJson()`?

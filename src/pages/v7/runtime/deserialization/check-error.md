@@ -34,7 +34,7 @@ options:
     summary: "The program crashes"
 ---
 
-[`DeserializationError`](/v7/api/misc/deserializationerror/) is the return type of [`deserializeJson()`](/v7/api/json/deserializejson/). It tells whether the operation succeeded and indicates the cause of the error.
+[`DeserializationError`](/v7/api/misc/deserializationerror/) is the return type of `deserializeJson()`. It tells whether the operation succeeded and indicates the cause of the error.
 
 Modify your program to show the error code, like so:
 

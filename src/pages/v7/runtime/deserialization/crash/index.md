@@ -14,9 +14,9 @@ options:
     summary: "Program crashes after calling `deserializeJson()`"
 ---
 
-I need to know for sure if the program crashes before or after calling [`deserializeJson()`](/v7/api/json/deserializejson/).
+I need to know for sure if the program crashes before or after calling `deserializeJson()`.
 
-Please add some traces around the call to [`deserializeJson()`](/v7/api/json/deserializejson/) and make sure to flush the Serial buffer. You can use the [ArduinoTrace library](https://github.com/bblanchon/ArduinoTrace), like so:
+Please add some traces around the call to `deserializeJson()` and make sure to flush the Serial buffer. You can use the [ArduinoTrace library](https://github.com/bblanchon/ArduinoTrace), like so:
 
 ```c++
 TRACE();

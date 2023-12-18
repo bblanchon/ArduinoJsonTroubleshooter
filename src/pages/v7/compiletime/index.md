@@ -78,22 +78,22 @@ options:
   no-matching-function:
     label: no matching function for call to ...
     summary: Error says "no matching function for call to ..."
-    page: no-matching-function/index.md
+    page: /v6/compiletime/no-matching-function/index.md
 
   passing-volatile-as-this-argument-discards-qualifiers:
     label: passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]
     summary: Error says "passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]"
-    page: passing-volatile-as-this-argument-discards-qualifiers.md
+    page: /v6/compiletime/passing-volatile-as-this-argument-discards-qualifiers.md
 
   cast-void-to-flashstringhelper:
     label: reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed
     summary: Error says "reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed"
-    page: cast-void-to-flashstringhelper.md
+    page: /v6/compiletime/cast-void-to-flashstringhelper.md
 
   member-write-in-char-ptr:
     label: request for member `write` in ..., which is of non-class type `char*`
     summary: Error says "request for member `write` in ..., which is of non-class type `char*`"
-    page: member-write-in-char-ptr.md
+    page: /v6/compiletime/member-write-in-char-ptr.md
 
   staticjsonbuffer:
     label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
@@ -108,7 +108,7 @@ options:
   range-based-for-requires-begin:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
     summary: Error says "this range-based `for` statement requires a suitable "begin" function and none was found"
-    page: iterate-ambiguous.md
+    page: /v6/compiletime/iterate-ambiguous.md
 
   not-in-list:
     label: None of the above

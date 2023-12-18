@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-A programs can also crash after calling [`deserializeJson()`](/v7/api/json/deserializejson/) because it keeps a pointer to a string stored in the [`JsonDocument`](/v7/api/jsondocument/).
+A programs can also crash after calling `deserializeJson()` because it keeps a pointer to a string stored in the [`JsonDocument`](/v7/api/jsondocument/).
 
 Indeed, when [`JsonDocument`](/v7/api/jsondocument/) returns a `const char*`, it doesn't return a copy of the string, but the address of the string in the memory pool. When the [`JsonDocument`](/v7/api/jsondocument/) is destructed, the memory pool gets released and the pointer dangles. Later, when the program tries to use the string, it reads at an invalid memory location and crashes.
 

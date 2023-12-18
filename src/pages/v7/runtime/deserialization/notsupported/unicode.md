@@ -10,7 +10,7 @@ options:
     page: msgpack.md
 ---
 
-[`deserializeJson()`](/v7/api/json/deserializejson/) returns [`NotSupported`](/v7/api/misc/deserializationerror/#notsupported) when is read an UTF-16 escape sequence but support is disabled.
+`deserializeJson()` returns [`NotSupported`](/v7/api/misc/deserializationerror/#notsupported) when is read an UTF-16 escape sequence but support is disabled.
 
 To fix this issue, you must enable support UTF-16 escape sequences by defining [`ARDUINOJSON_DECODE_UNICODE`](/v7/api/config/decode_unicode/) to `1` before including `ArduinoJson.h`, like so:
 

@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-So, I guess that you're not using [`deserializeJson()`](/v7/api/json/deserializejson/) but [`deserializeMsgPack()`](/v7/api/msgpack/deserializemsgpack/), right?
+So, I guess that you're not using `deserializeJson()` but [`deserializeMsgPack()`](/v7/api/msgpack/deserializemsgpack/), right?
 
 Indeed, before [ArduinoJson 6.18](/news/2021/05/04/version-6-18-0/), [`deserializeMsgPack()`](/v7/api/msgpack/deserializemsgpack/) returned [`NotSupported`](/v7/api/misc/deserializationerror/#notsupported) as soon as the input contains an unsupported MsgPack value type:
 

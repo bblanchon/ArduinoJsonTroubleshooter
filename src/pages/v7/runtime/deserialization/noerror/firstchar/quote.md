@@ -10,7 +10,7 @@ options:
     page: ../jsonlint.md
 ---
 
-[`deserializeJson()`](/v7/api/json/deserializejson/) stops reading as soon as the JSON document ends.
+`deserializeJson()` stops reading as soon as the JSON document ends.
 In your case, it will read the input until it reaches the matching `"` and ignore any remaining characters.
 
 Suppose the input looks like this:
@@ -19,7 +19,7 @@ Suppose the input looks like this:
 "hello"GARBAGE
 ```
 
-Here, [`deserializeJson()`](/v7/api/json/deserializejson/) reads the JSON string `"hello"` and returns `Ok` ignoring the `GARBAGE` part.
+Here, `deserializeJson()` reads the JSON string `"hello"` and returns `Ok` ignoring the `GARBAGE` part.
 
 This feature enables:
 
