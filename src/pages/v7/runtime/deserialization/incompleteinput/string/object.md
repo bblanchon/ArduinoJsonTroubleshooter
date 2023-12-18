@@ -7,7 +7,7 @@ options:
  - id: same-with-reserve
    label: "No"
    summary: Calling `String::reserve()` doesn't solve the issue
-   page: string-stream.md
+   page: stream.md
 ---
 
 Please print the content of the string to the serial port, like so:

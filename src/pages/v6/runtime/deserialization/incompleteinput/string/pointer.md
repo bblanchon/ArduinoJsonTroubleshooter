@@ -7,7 +7,7 @@ options:
  - id: larger-buffer
    label: "No"
    summary: Increasing the buffer size doesn't solve the issue
-   page: string-stream.md
+   page: stream.md
 ---
 
 I'll assume that your input is stored in a buffer similar to this one:

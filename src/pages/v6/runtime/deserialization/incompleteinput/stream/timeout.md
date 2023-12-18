@@ -7,11 +7,11 @@ options:
   timeout-increased:
     label: "No"
     summary: Inreasing the timeout doesn't solve the issue
-    page: stream-buffer.md
+    page: buffer.md
     
 ---
 
-[`IncompleteInput`](/v7/api/misc/deserializationerror/#incompleteinput) can be caused by a timeout.
+`IncompleteInput` can be caused by a timeout.
 
 Please increase the value of the timeout by calling [`Stream::setTimeout()`](https://www.arduino.cc/reference/en/language/functions/communication/stream/streamsettimeout/) before calling `deserializeJson()`. For example:
 
