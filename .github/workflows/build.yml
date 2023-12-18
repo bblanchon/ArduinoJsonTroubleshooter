@@ -7,17 +7,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
       - run: npm install
-      - run: npm run build
-      - uses: actions/upload-artifact@v3
-        with:
-          name: arduinojson-troubleshooter
-          path: dist/
+      - name: Lint
+        run: npm run lint
+      - name: Build
+        run: npm run build
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@v4

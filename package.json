@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "markdownlint src/pages"
   },
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.0",
@@ -18,6 +19,7 @@
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-highlightjs": "^4.0.1",
     "markdown-it-replace-link": "^1.2.0",
+    "markdownlint-cli": "^0.38.0",
     "sass": "^1.69.5",
     "vite": "^5.0.10",
     "vue": "^3.3.12"
