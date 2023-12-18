@@ -3,7 +3,7 @@ options:
   string:
     label: "Yes"
     summary: Program uses `String`
-    page: document-string.md
+    page: /v6/runtime/serialization/garbage/document-dynamic-string.md
   no-string:
     label: "No"
     summary: Program doesn't use `String`

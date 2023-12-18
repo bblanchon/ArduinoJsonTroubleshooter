@@ -14,7 +14,7 @@ I'm surprised that the previous solution didn't work.
 
 We can try to change ArduinoJson's storage type to see if it solves your issue.
 
-Please define [ARDUINOJSON_USE_DOUBLE](/v6/api/config/use_double/) to `0` before including `ArduinoJson.h`, like so:
+Please define `ARDUINOJSON_USE_DOUBLE` to `0` before including `ArduinoJson.h`, like so:
 
 ```c++
 #define ARDUINOJSON_USE_DOUBLE 0

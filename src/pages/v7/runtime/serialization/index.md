@@ -3,7 +3,7 @@ options:
   crash:
     label: The program crashes
     summary: Program crashes
-    page: crash/index.md
+    page: /v6/runtime/serialization/crash/progmem.md
   empty:
     label: The output is empty (e.g. `{}`, `[]`, or `null`)
     summary: Output is empty
@@ -23,11 +23,11 @@ options:
   float:
     label: Floating-point values contain too many decimal digits
     summary: Floating-point values contain too many decimal digits
-    page: floats/index.md
+    page: /v6/runtime/serialization/floats/index.md
   slow:
     label: It's slow
     summary: Serialization is slow
-    page: slow.md
+    page: /v6/runtime/serialization/slow.md
 ---
 
 What's the problem?
