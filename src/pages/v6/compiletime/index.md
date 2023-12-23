@@ -115,10 +115,10 @@ options:
     summary: Error says "reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed"
     page: cast-void-to-flashstringhelper.md
 
-  member-write-in-char-ptr:
-    label: request for member `write` in ..., which is of non-class type `char*`
-    summary: Error says "request for member `write` in ..., which is of non-class type `char*`"
-    page: member-write-in-char-ptr.md
+  request-for-member:
+    label: request for member ...
+    summary: Error says "request for member ..."
+    page: request-for-member/index.md
 
   staticjsonbuffer:
     label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
