@@ -6,7 +6,8 @@ export interface Option {
 }
 
 export interface Page {
-  filename?: string
+  filename?: string // only in dev
+  fullPath?: string // only in dev
   content: string
   options?: Option[]
   tags?: string[]

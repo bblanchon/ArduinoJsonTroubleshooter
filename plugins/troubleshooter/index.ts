@@ -22,10 +22,8 @@ export default function TroubleshooterPlugin(
   function checkIntegrity() {
     const errors = getErrors(files)
 
-    for (const error of errors) {
-      const filename = loader.getFullPath(error.file)
-      logger.error(`${filename}: ${error.message}`)
-    }
+    for (const error of errors)
+      logger.error(`${error.file}: ${error.message}`)
 
     if (isProduction && errors.length)
       throw new Error(JSON.stringify(errors, null, 2))
@@ -57,7 +55,10 @@ export default function TroubleshooterPlugin(
     const page: Page = {
       content: file.content
     }
-    if (!isProduction) page.filename = file.filename
+    if (!isProduction) {
+      page.filename = file.filename
+      page.fullPath = file.fullPath
+    }
     if (file.tags) page.tags = file.tags
     if (file.options)
       page.options = file.options.map((option) => ({

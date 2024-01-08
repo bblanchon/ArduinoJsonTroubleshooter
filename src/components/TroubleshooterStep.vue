@@ -1,20 +1,22 @@
 <template>
   <div v-if="step.options" class="troubleshooter-step mb-4">
-    <h2 class="small">
+    <h2>
       <div class="troubleshooter-step-number">
         <div class="text-white rounded-circle" :class="active ? 'bg-primary' : 'bg-secondary'">
           {{ step.number }}
         </div>
       </div>
-      <span v-if="debug" class="text-muted text-monospace">
-        {{ step.filename }}
-      </span>
     </h2>
     <div class="troubleshooter-step-content" v-html="step.content"></div>
     <div class="troubleshooter-step-options">
       <TroubleshooterStepOption v-for="option in step.options" :key="option.hash" :option="option"
         @click="$emit('choose', option)" />
     </div>
+    <p v-if="debug" class="small">
+      <a :href="'vscode://file/' + step.fullPath.replaceAll('\\', '/')">
+        {{ step.filename }}
+      </a>
+    </p>
   </div>
   <div v-else v-html="step.content" class="troubleshooter-step-content" />
 </template>

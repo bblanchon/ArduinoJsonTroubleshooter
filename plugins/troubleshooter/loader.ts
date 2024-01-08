@@ -26,6 +26,7 @@ interface PageFrontmatter {
 
 export interface PageFile {
   filename: string
+  fullPath: string
   content: string
   options?: PageFileOption[]
   tags?: string[]
@@ -58,10 +59,6 @@ export class PageLoader {
     )
   }
 
-  getFullPath(filename: string): string {
-    return path.resolve(this.folder, filename)
-  }
-
   resolve(folder: string, filename: string): string {
     if (filename.startsWith("/")) folder = this.folder
     return path.join(folder, filename)
@@ -72,6 +69,7 @@ export class PageLoader {
   }
 
   loadFile(filename: string): PageFile {
+    filename = path.resolve(this.folder, filename)
     const {
       data: frontmatter,
       content
@@ -82,6 +80,7 @@ export class PageLoader {
     const folder = path.dirname(filename)
     return {
       filename: this.normalizeFilename(filename),
+      fullPath: filename,
       content: this.mdi.render(content),
       tags:
         typeof frontmatter.tags == "string"

@@ -1,7 +1,7 @@
 import { PageFile } from "./loader"
 
 interface PageError {
-  file: string
+  fullPath: string
   message: string
 }
 
@@ -12,7 +12,7 @@ function* getMissingFiles(files: PageFile[]): Generator<PageError> {
     for (const option of file.options || []) {
       if (!filenames.has(option.page))
         yield {
-          file: file.filename,
+          fullPath: file.fullPath,
           message: `file \"${option.page}\" is missing`
         }
     }
@@ -31,7 +31,7 @@ function getUnusedFiles(files: PageFile[]): PageError[] {
   return files
     .filter((file) => !usedPages.has(file.filename))
     .map((file) => ({
-      file: file.filename,
+      fullPath: file.fullPath,
       message: "this file is unused"
     }))
 }
@@ -45,7 +45,7 @@ function* getMissingFields(files: PageFile[]): Generator<PageError> {
       for (const field of requiredFields) {
         if (!option[field])
           yield {
-            file: file.filename,
+            fullPath: file.fullPath,
             message: `option ${index} lacks the \"${field}\" field`
           }
       }
