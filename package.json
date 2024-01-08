@@ -12,16 +12,16 @@
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.0",
     "@types/markdown-it": "^13.0.7",
-    "@types/node": "^20.10.5",
-    "@vitejs/plugin-vue": "^4.5.2",
+    "@types/node": "^20.10.7",
+    "@vitejs/plugin-vue": "^5.0.2",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-highlightjs": "^4.0.1",
-    "markdown-it-replace-link": "^1.2.0",
+    "markdown-it-replace-link": "^1.2.1",
     "markdownlint-cli": "^0.38.0",
-    "sass": "^1.69.5",
-    "vite": "^5.0.10",
-    "vue": "^3.3.13"
+    "sass": "^1.69.7",
+    "vite": "^5.0.11",
+    "vue": "^3.4.5"
   }
 }
