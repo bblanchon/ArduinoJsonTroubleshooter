@@ -15,6 +15,7 @@ options:
 * the file is closed
 * the file is opened in the wrong mode
 * the file is empty
+* the current position is at the end of the file
 
 Please, make sure that the file is opened in "read" mode and try to print the content to make sure it's not empty.
 
