@@ -12,8 +12,8 @@
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.0",
     "@types/markdown-it": "^13.0.7",
-    "@types/node": "^20.10.7",
-    "@vitejs/plugin-vue": "^5.0.2",
+    "@types/node": "^20.11.0",
+    "@vitejs/plugin-vue": "^5.0.3",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.0.0",
     "markdown-it-attrs": "^4.1.6",
@@ -22,6 +22,6 @@
     "markdownlint-cli": "^0.38.0",
     "sass": "^1.69.7",
     "vite": "^5.0.11",
-    "vue": "^3.4.5"
+    "vue": "^3.4.9"
   }
 }
