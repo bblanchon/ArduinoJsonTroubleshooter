@@ -19,6 +19,11 @@ options:
     label: no matching function for call to `...(<unresolved overloaded function type>)`
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
     page: unresolved-overloaded-function-type.md
+
+  add-jsonobject:
+    label: no matching function for call to `...add<JsonObject>()`
+    summary: Error says "no matching function for call to `...add<JsonObject>()`"
+    page: add-jsonobject.md
   
   as-char:
     label: no matching function for call to `...as<char>() const`
