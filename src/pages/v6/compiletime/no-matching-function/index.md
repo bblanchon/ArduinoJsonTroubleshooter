@@ -20,6 +20,11 @@ options:
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
     page: unresolved-overloaded-function-type.md
 
+  add-jsonarray:
+    label: no matching function for call to `...add<JsonArray>()`
+    summary: Error says "no matching function for call to `...add<JsonArray>()`"
+    page: add-jsonarray.md
+
   add-jsonobject:
     label: no matching function for call to `...add<JsonObject>()`
     summary: Error says "no matching function for call to `...add<JsonObject>()`"
