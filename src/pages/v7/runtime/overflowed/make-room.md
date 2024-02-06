@@ -10,9 +10,8 @@ options:
     page: too-small.md
 ---
 
-`JsonDocument::overflowed()` returns `true` when you try to insert a value in the `JsonDocument`, but the memory allocation fails.
-
-The solution is to free some memory.
+This means that ArduinoJson couldn't allocate enough memory for the JSON document.  
+So you must free some memory.
 
 See [How to reduce memory usage?](/v7/how-to/reduce-memory-usage/) for some tips.
 

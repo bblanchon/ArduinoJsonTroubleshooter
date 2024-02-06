@@ -18,7 +18,7 @@ options:
     summary: "`deserializeJson()` returns `InvalidInput`"
   nomemory:
     label: "`NoMemory`"
-    page: nomemory.md
+    page: ../overflowed/index.md
     summary: "`deserializeJson()` returns `NoMemory`"
   toodeep:
     label: "`TooDeep`"

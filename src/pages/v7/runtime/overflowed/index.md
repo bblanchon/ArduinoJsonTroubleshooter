@@ -17,12 +17,8 @@ options:
 Let's check with the [ArduinoJson Assistant](/v7/assistant/) to see if you have enough memory for your JSON document.
 
 1. Open the [ArduinoJson Assistant](/v7/assistant/).
-2. In Step 1:
-    1. Select your board.
-    2. Select the "Serialize" mode.
-    3. Select your input type.
-    4. Click "Next".
-3. In Step 2, enter the JSON document you want to generate.
+2. Set the configuration in step 1, then click "Next".
+3. Enter your JSON document in step 2.
 
 Look below the input field; the Assistant will show the amount of memory required for the JSON document below the input field.  
 It will also tell you if this amount exceeds the available memory on your board.
