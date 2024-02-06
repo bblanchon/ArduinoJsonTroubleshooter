@@ -23,7 +23,7 @@ export default function TroubleshooterPlugin(
     const errors = getErrors(files)
 
     for (const error of errors)
-      logger.error(`${error.file}: ${error.message}`)
+      logger.error(`${error.fullPath}: ${error.message}`)
 
     if (isProduction && errors.length)
       throw new Error(JSON.stringify(errors, null, 2))
