@@ -2247,7 +2247,7 @@ doc[<span class="hljs-string">&quot;hello&quot;</span>] = <span class="hljs-stri
 Please see <a href="/v7/api/json/deserializejson/#custom-reader">custom readers</a> for more details.</p>
 <p>Did this solve your issue?</p>
 `,options:[{id:"success",page:2,label:"Yes",summary:"Passing a supported input type to `deserializeJson()` fixed the issue"},{id:"failure",page:1,label:"No",summary:"Passing a supported input type to `deserializeJson()` didn't fix the issue"}]},{content:`<p>Does your issue concern serialization or deserialization?</p>
-`,options:[{id:"serialization",page:311,label:"Serialization",summary:"The issue concerns serialization"},{id:"deserialization",page:281,label:"Deserialization",summary:"The issue concerns deserialization"}]},{content:`<p>What is the value of <code>DeserializationError</code>?</p>
+`,options:[{id:"serialization",page:316,label:"Serialization",summary:"The issue concerns serialization"},{id:"deserialization",page:281,label:"Deserialization",summary:"The issue concerns deserialization"}]},{content:`<p>What is the value of <code>DeserializationError</code>?</p>
 `,options:[{id:"ok",page:298,label:"<code>Ok</code>",summary:"`deserializeJson()` returns `Ok`"},{id:"emptyinput",page:287,label:"<code>EmptyInput</code>",summary:"`deserializeJson()` returns `EmptyInput`"},{id:"incompleteinput",page:291,label:"<code>IncompleteInput</code>",summary:"`deserializeJson()` returns `IncompleteInput`"},{id:"invalidinput",page:295,label:"<code>InvalidInput</code>",summary:"`deserializeJson()` returns `InvalidInput`"},{id:"nomemory",page:310,label:"<code>NoMemory</code>",summary:"`deserializeJson()` returns `NoMemory`"},{id:"toodeep",page:214,label:"<code>TooDeep</code>",summary:"`deserializeJson()` returns `TooDeep`"},{id:"crash",page:283,label:"I can't tell because the program crashes",summary:"The program crashes"},{id:"unknown",page:282,label:"I don't know what you're talking about",summary:"The program doesn't check the error"}]},{content:`<p><code>DeserializationError</code> is the return type of <code>deserializeJson()</code>. It tells whether the operation succeeded and indicates the cause of the error.</p>
 <p>Modify your program to show the error code, like so:</p>
 <pre><code class="hljs language-c++">DeserializationError error = <span class="hljs-built_in">deserializeJson</span>(doc, input);
@@ -2559,18 +2559,47 @@ It's the result of the JSON serialization (stringification) of the following JSO
 <p>...which was alread serialized (stringified) to JSON.</p>
 <p>So, the bug isn't in the Arduino code, but on the other size, most likely a server.</p>
 <p>Can you modify the code of the server?</p>
-`,options:[{id:"server-fixable",page:308,label:"Yes",summary:"User can modify the server"},{id:"server-unfixable",page:307,label:"No",summary:"User cannot modify the server"}]},{content:`<p>Well, that's very bad news. It seems that your microcontroller doesn't have enough RAM to hold the JSON document.</p>
-<p>Please read <a href="/v7/how-to/deserialize-a-very-large-document/">How to deserialize a very large document?</a>.
-It shows several techniques you can use to use less RAM.</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Reducing memory usage fixes the issue"},{id:"failure",page:1,label:"No",summary:"Reducing memory usage doesn't fix the issue"}]},{content:`<p>What's the problem?</p>
-`,options:[{id:"crash",page:225,label:"The program crashes",summary:"Program crashes"},{id:"empty",page:312,label:"The output is empty (e.g. <code>{}</code>, <code>[]</code>, or <code>null</code>)",summary:"Output is empty"},{id:"incomplete",page:321,label:"The output is incomplete",summary:"Output is incomplete"},{id:"garbage",page:313,label:"The output contains garbage",summary:"Output contains garbage"},{id:"null",page:321,label:"The output contains <code>null</code>",summary:"Output contains null"},{id:"float",page:236,label:"Floating-point values contain too many decimal digits",summary:"Floating-point values contain too many decimal digits"},{id:"slow",page:268,label:"It's slow",summary:"Serialization is slow"}]},{content:`<p>Please print the value of <code>JsonDocument::overflowed()</code>, like so:</p>
+`,options:[{id:"server-fixable",page:308,label:"Yes",summary:"User can modify the server"},{id:"server-unfixable",page:307,label:"No",summary:"User cannot modify the server"}]},{content:`<p>Let's check with the <a href="/v7/assistant/">ArduinoJson Assistant</a> to see if you have enough memory for your JSON document.</p>
+<ol>
+<li>Open the <a href="/v7/assistant/">ArduinoJson Assistant</a>.</li>
+<li>Set the configuration in step 1, then click &quot;Next&quot;.</li>
+<li>Enter your JSON document in step 2.</li>
+</ol>
+<p>Look below the input field; the Assistant will show the amount of memory required for the JSON document below the input field.<br>
+It will also tell you if this amount exceeds the available memory on your board.</p>
+<p>What does the Assistant say?</p>
+`,options:[{id:"loose",page:311,label:"There is a lot more memory than required",summary:"The Assistant says there is a lot more memory than required."},{id:"tight",page:314,label:"There should be enough memory",summary:"The Assistant says there should be just enough memory."},{id:"too-small",page:315,label:"There is not enough memory",summary:"The Assistant says there is not enough memory."}]},{content:`<p>What CPU architecture is this code running on?</p>
+`,options:[{id:"8-bit",page:313,label:"8-bit",summary:"The code is running on an 8-bit CPU"},{id:"32-bit",page:312,label:"32-bit",summary:"The code is running on a 32-bit CPU"},{id:"64-bit",page:1,label:"64-bit",summary:"The code is running on a 64-bit CPU"}]},{content:`<p>Due to an optimization, a <code>JsonDocument</code> can only contain up to 65,535 nodes on a 32-bit CPU.
+A node is a value, a key, or a member of an array.</p>
+<p>You can push this limit by increasing <code>ARDUINOJSON_SLOT_ID_SIZE</code>, like so:</p>
+<pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> ARDUINOJSON_SLOT_ID_SIZE 4</span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ArduinoJson.h&gt;</span></span>
+</code></pre>
+<p>This will increase the limit to 4,294,967,295 nodes, but the memory consumption will increase by 50%.</p>
+<p>Did this solve your issue?</p>
+`,options:[{id:"success",page:2,label:"Yes",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 4 solves the issue."},{id:"slot-id-size-2",page:314,label:"No",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 4 doesn't solve the issue."},{id:"fewer-than-255",page:314,label:"My JSON document contains fewer than 65,535 nodes",summary:"The JSON document contains fewer than 65,535 nodes."}]},{content:`<p>Due to an optimization, a <code>JsonDocument</code> can only contain up to 255 nodes on an 8-bit CPU.
+A node is a value, a key, or a member of an array.</p>
+<p>You can push this limit by increasing <code>ARDUINOJSON_SLOT_ID_SIZE</code>, like so:</p>
+<pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> ARDUINOJSON_SLOT_ID_SIZE 2</span>
+<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ArduinoJson.h&gt;</span></span>
+</code></pre>
+<p>This will increase the limit to 65535 nodes, but the memory consumption will increase by 12.5%.</p>
+<p>Did this solve your issue?</p>
+`,options:[{id:"success",page:2,label:"Yes",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 2 solves the issue."},{id:"slot-id-size-2",page:314,label:"No",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 2 doesn't solve the issue."},{id:"fewer-than-255",page:314,label:"My JSON document contains fewer than 255 nodes",summary:"The JSON document contains fewer than 255 nodes."}]},{content:`<p>This means that ArduinoJson couldn't allocate enough memory for the JSON document.<br>
+So you must free some memory.</p>
+<p>See <a href="/v7/how-to/reduce-memory-usage/">How to reduce memory usage?</a> for some tips.</p>
+<p>Did this solve your issue?</p>
+`,options:[{id:"success",page:2,label:"Yes",summary:"Freeing some memory solves the issue."},{id:"failure",page:315,label:"No",summary:"Freeing some memory doesn't solve the issue."}]},{content:`<p class="display-4">☹️</p>
+<p>I'm afraid you have no other choice but upgrade to a bigger microcontroller.</p>
+`,tags:["needs_assistance"]},{content:`<p>What's the problem?</p>
+`,options:[{id:"crash",page:225,label:"The program crashes",summary:"Program crashes"},{id:"empty",page:317,label:"The output is empty (e.g. <code>{}</code>, <code>[]</code>, or <code>null</code>)",summary:"Output is empty"},{id:"incomplete",page:326,label:"The output is incomplete",summary:"Output is incomplete"},{id:"garbage",page:318,label:"The output contains garbage",summary:"Output contains garbage"},{id:"null",page:326,label:"The output contains <code>null</code>",summary:"Output contains null"},{id:"float",page:236,label:"Floating-point values contain too many decimal digits",summary:"Floating-point values contain too many decimal digits"},{id:"slow",page:268,label:"It's slow",summary:"Serialization is slow"}]},{content:`<p>Please print the value of <code>JsonDocument::overflowed()</code>, like so:</p>
 <pre><code class="hljs language-c++">Serial.<span class="hljs-built_in">println</span>(doc.<span class="hljs-built_in">overflowed</span>());
 </code></pre>
 <p>What value does it print?</p>
-`,options:[{id:"overflowed-1",page:327,label:"<code>1</code> (or <code>true</code>)",summary:"`JsonDocument::overflowed()` returns `true`"},{id:"overflowed-0",page:1,label:"<code>0</code> (or <code>false</code>)",summary:"`JsonDocument::overflowed()` returns `false`"}]},{content:`<p>Which function produces the garbage?</p>
-`,options:[{id:"json",page:315,label:"<code>serializeJson()</code> (or <code>serializeJsonPretty()</code>)",summary:"`serializeJson()` produces garbage"},{id:"msg",page:320,label:"<code>serializeMsgPack()</code>",summary:"`serializeMsgPack()` produces garbage"}]},{content:`<p>Do you use <a href="https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/"><code>String</code></a> in your program?</p>
+`,options:[{id:"overflowed-1",page:310,label:"<code>1</code> (or <code>true</code>)",summary:"`JsonDocument::overflowed()` returns `true`"},{id:"overflowed-0",page:1,label:"<code>0</code> (or <code>false</code>)",summary:"`JsonDocument::overflowed()` returns `false`"}]},{content:`<p>Which function produces the garbage?</p>
+`,options:[{id:"json",page:320,label:"<code>serializeJson()</code> (or <code>serializeJsonPretty()</code>)",summary:"`serializeJson()` produces garbage"},{id:"msg",page:325,label:"<code>serializeMsgPack()</code>",summary:"`serializeMsgPack()` produces garbage"}]},{content:`<p>Do you use <a href="https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/"><code>String</code></a> in your program?</p>
 `,options:[{id:"string",page:242,label:"Yes",summary:"Program uses `String`"},{id:"no-string",page:1,label:"No",summary:"Program doesn't use `String`"}]},{content:`<p>What is the type of the first argument passed to <code>serializeJson()</code>?</p>
-`,options:[{id:"document",page:314,label:"<code>JsonDocument</code>",summary:"Program calls `serializeJson(const JsonDocument&, ...)`"},{id:"array",page:316,label:"<code>JsonArray</code> (or <code>JsonArrayConst</code>)",summary:"Program calls `serializeJson(JsonArrayConst, ...)`"},{id:"object",page:317,label:"<code>JsonObject</code> (or <code>JsonObjectConst</code>)",summary:"Program calls `serializeJson(JsonObjectConst, ...)`"},{id:"variant",page:318,label:"<code>JsonVariant</code> (or <code>JsonVariantConst</code>)",summary:"Program calls `serializeJson(JsonVariantConst, ...)`"}]},{content:`<p><code>JsonArray</code> doesn't contain any data: it is a reference to an object stored in the <code>JsonDocument</code>. It becomes invalid as soon as the <code>JsonDocument</code> is destroyed; this could explain the garbage you see in the output.</p>
+`,options:[{id:"document",page:319,label:"<code>JsonDocument</code>",summary:"Program calls `serializeJson(const JsonDocument&, ...)`"},{id:"array",page:321,label:"<code>JsonArray</code> (or <code>JsonArrayConst</code>)",summary:"Program calls `serializeJson(JsonArrayConst, ...)`"},{id:"object",page:322,label:"<code>JsonObject</code> (or <code>JsonObjectConst</code>)",summary:"Program calls `serializeJson(JsonObjectConst, ...)`"},{id:"variant",page:323,label:"<code>JsonVariant</code> (or <code>JsonVariantConst</code>)",summary:"Program calls `serializeJson(JsonVariantConst, ...)`"}]},{content:`<p><code>JsonArray</code> doesn't contain any data: it is a reference to an object stored in the <code>JsonDocument</code>. It becomes invalid as soon as the <code>JsonDocument</code> is destroyed; this could explain the garbage you see in the output.</p>
 <p>For example, here is a function that creates a dangling <code>JsonArray</code>:</p>
 <pre><code class="hljs language-c++"><span class="hljs-comment">// DON&#x27;T DO THAT!!!  💀</span>
 <span class="hljs-function">JsonArray <span class="hljs-title">createArray</span><span class="hljs-params">()</span> </span>{
@@ -2592,7 +2621,7 @@ It shows several techniques you can use to use less RAM.</p>
 }
 </code></pre>
 <p>Did this solve your issue?</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Extending the lifetime of the `JsonDocument` solves the issue"},{id:"not-destroyed",page:314,label:"No",summary:"Extending the lifetime of the `JsonDocument` doesn't solve the issue"}]},{content:`<p><code>JsonObject</code> doesn't contain any data: it is a reference to an object stored in the <code>JsonDocument</code>. It becomes invalid as soon as the <code>JsonDocument</code> is destroyed; this could explain the garbage you see in the output.</p>
+`,options:[{id:"success",page:2,label:"Yes",summary:"Extending the lifetime of the `JsonDocument` solves the issue"},{id:"not-destroyed",page:319,label:"No",summary:"Extending the lifetime of the `JsonDocument` doesn't solve the issue"}]},{content:`<p><code>JsonObject</code> doesn't contain any data: it is a reference to an object stored in the <code>JsonDocument</code>. It becomes invalid as soon as the <code>JsonDocument</code> is destroyed; this could explain the garbage you see in the output.</p>
 <p>For example, here is a function that creates a dangling <code>JsonObject</code>:</p>
 <pre><code class="hljs language-c++"><span class="hljs-comment">// DON&#x27;T DO THAT!!!  💀</span>
 <span class="hljs-function">JsonObject <span class="hljs-title">createObject</span><span class="hljs-params">()</span> </span>{
@@ -2612,7 +2641,7 @@ It shows several techniques you can use to use less RAM.</p>
 }
 </code></pre>
 <p>Did this solve your issue?</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Extending the lifetime of the `JsonDocument` solves the issue"},{id:"not-destroyed",page:314,label:"No",summary:"Extending the lifetime of the `JsonDocument` doesn't solve the issue"}]},{content:`<p><code>JsonVariant</code> doesn't contain any data: it is a reference to an object stored in the <code>JsonDocument</code>. It becomes invalid as soon as the <code>JsonDocument</code> is destroyed; this could explain the garbage you see in the output.</p>
+`,options:[{id:"success",page:2,label:"Yes",summary:"Extending the lifetime of the `JsonDocument` solves the issue"},{id:"not-destroyed",page:319,label:"No",summary:"Extending the lifetime of the `JsonDocument` doesn't solve the issue"}]},{content:`<p><code>JsonVariant</code> doesn't contain any data: it is a reference to an object stored in the <code>JsonDocument</code>. It becomes invalid as soon as the <code>JsonDocument</code> is destroyed; this could explain the garbage you see in the output.</p>
 <p>For example, here is a function that creates a dangling <code>JsonVariant</code>:</p>
 <pre><code class="hljs language-c++"><span class="hljs-comment">// DON&#x27;T DO THAT!!!  💀</span>
 <span class="hljs-function">JsonVariant <span class="hljs-title">createVariant</span><span class="hljs-params">()</span> </span>{
@@ -2632,7 +2661,7 @@ It shows several techniques you can use to use less RAM.</p>
 }
 </code></pre>
 <p>Did this solve your issue?</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Extending the lifetime of the `JsonDocument` solves the issue"},{id:"not-destroyed",page:314,label:"No",summary:"Extending the lifetime of the `JsonDocument` doesn't solve the issue"}]},{content:`<p><code>serializeMsgPack()</code> share a lot of code with <code>serializeJson()</code>. There is no reason you should produce garbage with one and not the other. You may have found a bug.</p>
+`,options:[{id:"success",page:2,label:"Yes",summary:"Extending the lifetime of the `JsonDocument` solves the issue"},{id:"not-destroyed",page:319,label:"No",summary:"Extending the lifetime of the `JsonDocument` doesn't solve the issue"}]},{content:`<p><code>serializeMsgPack()</code> share a lot of code with <code>serializeJson()</code>. There is no reason you should produce garbage with one and not the other. You may have found a bug.</p>
 `,tags:["needs_assistance"]},{content:`<p><a href="https://msgpack.org/">MessagePack</a> is a binary format, so if you print a document to the serial port, the result would look weird.</p>
 <p>For example, the following program:</p>
 <pre><code class="hljs language-c++">JsonDocument doc;
@@ -2646,49 +2675,10 @@ doc[<span class="hljs-string">&quot;val&quot;</span>] = <span class="hljs-number
 <p>Now that this question is cleared, let's move on with the diagnostic.</p>
 <p>I need you to edit your program to replace <code>serializeMsgPack()</code> with <code>serializeJson()</code>.</p>
 <p>Do you see the garbage in the JSON output?</p>
-`,options:[{id:"json",page:315,label:"Yes, <code>serializeJson()</code> produces garbage too",summary:"`serializeJson()` produces garbage too"},{id:"deserialize-no",page:319,label:"No, <code>serializeJson()</code> doesn't produces garbage",summary:"`serializeJson()` doesn't produces garbage"}]},{content:`<p>Please print the value of <code>JsonDocument::overflowed()</code>, like so:</p>
+`,options:[{id:"json",page:320,label:"Yes, <code>serializeJson()</code> produces garbage too",summary:"`serializeJson()` produces garbage too"},{id:"deserialize-no",page:324,label:"No, <code>serializeJson()</code> doesn't produces garbage",summary:"`serializeJson()` doesn't produces garbage"}]},{content:`<p>Please print the value of <code>JsonDocument::overflowed()</code>, like so:</p>
 <pre><code class="hljs language-c++">Serial.<span class="hljs-built_in">println</span>(doc.<span class="hljs-built_in">overflowed</span>());
 </code></pre>
 <p>What value does it print?</p>
-`,options:[{id:"overflowed-1",page:327,label:"<code>1</code> (or <code>true</code>)",summary:"`JsonDocument::overflowed()` returns `true`"},{id:"overflowed-0",page:326,label:"<code>0</code> (or <code>false</code>)",summary:"`JsonDocument::overflowed()` returns `false`"}]},{content:`<p>What CPU architecture is this code running on?</p>
-`,options:[{id:"8-bit",page:324,label:"8-bit",summary:"The code is running on an 8-bit CPU"},{id:"32-bit",page:323,label:"32-bit",summary:"The code is running on a 32-bit CPU"},{id:"64-bit",page:1,label:"64-bit",summary:"The code is running on a 64-bit CPU"}]},{content:`<p>Due to an optimization, a <code>JsonDocument</code> can only contain up to 65,535 nodes on a 32-bit CPU.
-A node is a value, a key, or a member of an array.</p>
-<p>You can push this limit by increasing <code>ARDUINOJSON_SLOT_ID_SIZE</code>, like so:</p>
-<pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> ARDUINOJSON_SLOT_ID_SIZE 4</span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ArduinoJson.h&gt;</span></span>
-</code></pre>
-<p>This will increase the limit to 4,294,967,295 nodes, but the memory consumption will increase by 50%.</p>
-<p>Did this solve your issue?</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 4 solves the issue."},{id:"slot-id-size-2",page:1,label:"No",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 4 doesn't solve the issue."},{id:"fewer-than-255",page:325,label:"My JSON document contains fewer than 65,535 nodes",summary:"The JSON document contains fewer than 65,535 nodes."}]},{content:`<p>Due to an optimization, a <code>JsonDocument</code> can only contain up to 255 nodes on an 8-bit CPU.
-A node is a value, a key, or a member of an array.</p>
-<p>You can push this limit by increasing <code>ARDUINOJSON_SLOT_ID_SIZE</code>, like so:</p>
-<pre><code class="hljs language-cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> ARDUINOJSON_SLOT_ID_SIZE 2</span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;ArduinoJson.h&gt;</span></span>
-</code></pre>
-<p>This will increase the limit to 65535 nodes, but the memory consumption will increase by 12.5%.</p>
-<p>Did this solve your issue?</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 2 solves the issue."},{id:"slot-id-size-2",page:1,label:"No",summary:"Setting `ARDUINOJSON_SLOT_ID_SIZE` to 2 doesn't solve the issue."},{id:"fewer-than-255",page:325,label:"My JSON document contains fewer than 255 nodes",summary:"The JSON document contains fewer than 255 nodes."}]},{content:`<p><code>JsonDocument::overflowed()</code> returns <code>true</code> when you try to insert a value in the <code>JsonDocument</code>, but the memory allocation fails.</p>
-<p>The solution is to free some memory.</p>
-<p>See <a href="/v7/how-to/reduce-memory-usage/">How to reduce memory usage?</a> for some tips.</p>
-<p>Did this solve your issue?</p>
-`,options:[{id:"success",page:2,label:"Yes",summary:"Freeing some memory solves the issue."},{id:"failure",page:328,label:"No",summary:"Freeing some memory doesn't solve the issue."}]},{content:`<p>Does one of the strings in the <code>JsonDocument</code> contains a NUL (i.e.,  ASCII code 0, or <code>\\u0000</code>)?</p>
-`,options:[{id:"nul",page:215,label:"Yes",summary:"One or more strings contain a NUL"},{id:"no-nul",page:1,label:"No",summary:"No string contains a NUL"}]},{content:`<p>Let's check with the <a href="/v7/assistant/">ArduinoJson Assistant</a> to see if you have enough memory for your JSON document.</p>
-<ol>
-<li>Open the <a href="/v7/assistant/">ArduinoJson Assistant</a>.</li>
-<li>In Step 1:
-<ol>
-<li>Select your board.</li>
-<li>Select the &quot;Serialize&quot; mode.</li>
-<li>Select your input type.</li>
-<li>Click &quot;Next&quot;.</li>
-</ol>
-</li>
-<li>In Step 2, enter the JSON document you want to generate.</li>
-</ol>
-<p>Look below the input field; the Assistant will show the amount of memory required for the JSON document below the input field.<br>
-It will also tell you if this amount exceeds the available memory on your board.</p>
-<p>What does the Assistant say?</p>
-`,options:[{id:"loose",page:322,label:"There is a lot more memory than required",summary:"The Assistant says there is a lot more memory than required."},{id:"tight",page:325,label:"There should be enough memory",summary:"The Assistant says there should be just enough memory."},{id:"too-small",page:328,label:"There is not enough memory",summary:"The Assistant says there is not enough memory."}]},{content:`<p class="display-4">☹️</p>
-<p>I'm afraid you have no other choice but upgrade to a bigger microcontroller.</p>
-`,tags:["needs_assistance"]}];function sa(e,s,n){var o;const t=ea[e];return{...t,number:n||1,hash:s||"#",options:(o=t.options)==null?void 0:o.map((a,i)=>({...a,inputId:`option-${e}-${i}`,hash:(s?s+"/":"#")+a.id,missing:!ea[a.page],selected:!1}))}}function dl(e){var n;const s=[sa(0)];if(e){let t=s[0];for(let o of e.substring(1).split("/")){const a=(n=t.options)==null?void 0:n.find(i=>i.id===o);if(!a){console.error(`Option "${o}" not found`);break}if(a.selected=!0,t.selectedOption=a,t=sa(a.page,a.hash,t.number+1),!t)break;s.push(t)}}return s}function hl(e){return e.map(s=>s.selectedOption).filter(s=>!!s).map((s,n)=>`${n+1}. ${s.summary}`).join(`
+`,options:[{id:"overflowed-1",page:310,label:"<code>1</code> (or <code>true</code>)",summary:"`JsonDocument::overflowed()` returns `true`"},{id:"overflowed-0",page:327,label:"<code>0</code> (or <code>false</code>)",summary:"`JsonDocument::overflowed()` returns `false`"}]},{content:`<p>Does one of the strings in the <code>JsonDocument</code> contains a NUL (i.e.,  ASCII code 0, or <code>\\u0000</code>)?</p>
+`,options:[{id:"nul",page:215,label:"Yes",summary:"One or more strings contain a NUL"},{id:"no-nul",page:1,label:"No",summary:"No string contains a NUL"}]}];function sa(e,s,n){var o;const t=ea[e];return{...t,number:n||1,hash:s||"#",options:(o=t.options)==null?void 0:o.map((a,i)=>({...a,inputId:`option-${e}-${i}`,hash:(s?s+"/":"#")+a.id,missing:!ea[a.page],selected:!1}))}}function dl(e){var n;const s=[sa(0)];if(e){let t=s[0];for(let o of e.substring(1).split("/")){const a=(n=t.options)==null?void 0:n.find(i=>i.id===o);if(!a){console.error(`Option "${o}" not found`);break}if(a.selected=!0,t.selectedOption=a,t=sa(a.page,a.hash,t.number+1),!t)break;s.push(t)}}return s}function hl(e){return e.map(s=>s.selectedOption).filter(s=>!!s).map((s,n)=>`${n+1}. ${s.summary}`).join(`
 `)}const ml=e=>new Promise(s=>setTimeout(s,e)),fl={components:{AssistanceModal:Gr,TroubleshooterStep:ul},data(){return{reportCopied:!1,hash:""}},mounted(){this.hash=location.hash,window.addEventListener("hashchange",()=>this.hash=location.hash)},computed:{needsAssistance(){var s;return!!((s=this.steps[this.steps.length-1].tags)!=null&&s.includes("needs_assistance"))},steps(){return dl(this.hash)},report(){return hl(this.steps)}},methods:{choose(e){document.location.assign(e.hash),ga("set","page",document.location.pathname+document.location.hash),ga("send","pageview"),window.plausible("ArduinoJson Troubleshooter",{props:{hash:document.location.hash}})},async copyReport(){await navigator.clipboard.writeText(this.report),this.reportCopied=!0,await ml(2e3),this.reportCopied=!1}}},gl=se("div",null,[se("p",null,"Hi!"),se("p",null,[tn(" I'm the "),se("i",null,"ArduinoJson Troubleshooter"),tn(", and I'm here to help you fix your problem. I'll ask you a series of questions and give you some instructions along the way. ")]),se("p",null,"Ready? Here we go!")],-1),yl={key:0},bl=se("button",{type:"button",class:"btn btn-primary","data-toggle":"modal","data-target":"#assistance-modal"}," Contact support ",-1),jl=["disabled"];function wl(e,s,n,t,o,a){const i=Cn("TroubleshooterStep"),l=Cn("AssistanceModal");return me(),De("div",null,[gl,(me(!0),De(ve,null,uo(a.steps,(c,u)=>(me(),en(tt,{key:u,name:"fade",mode:"out-in"},{default:Zt(()=>[(me(),en(i,{key:c.hash,step:c,onChoose:a.choose,active:u==a.steps.length-1},null,8,["step","onChoose","active"]))]),_:2},1024))),128)),a.needsAssistance?(me(),De("div",yl,[bl,tn(),se("button",{class:ms(["btn",{"btn-outline-primary":!o.reportCopied,"btn-success":o.reportCopied}]),disabled:o.reportCopied,onClick:s[0]||(s[0]=(...c)=>a.copyReport&&a.copyReport(...c))},zs(o.reportCopied?"✓ Report copied":"Copy troubleshooter's report"),11,jl),ce(l,{id:"assistance-modal",report:a.report},null,8,["report"])])):Qn("",!0)])}Yr(rn(fl,[["render",wl]])).provide("debug",!1).mount("#troubleshooter-app")})();
