@@ -2572,7 +2572,7 @@ JsonArray array = doc[<span class="hljs-string">&quot;values&quot;</span>].<span
 <span class="hljs-built_in">deserializeJson</span>(array, <span class="hljs-string">&quot;[1,2,3]&quot;</span>);  <span class="hljs-comment">// returns Ok</span>
 <span class="hljs-comment">// Now, doc contains {&quot;values&quot;:[1,2,3]}</span>
 </code></pre>
-<p>Note that you can simplify the code by passing the <code>ElementProxy</code> directly to <code>deserializeJson()</code>:</p>
+<p>Note that you can simplify the code by passing the <code>MemberProxy</code> directly to <code>deserializeJson()</code>:</p>
 <pre><code class="hljs language-cpp">JsonDocument doc;
 <span class="hljs-built_in">deserializeJson</span>(doc[<span class="hljs-string">&quot;values&quot;</span>], <span class="hljs-string">&quot;[1,2,3]&quot;</span>);  <span class="hljs-comment">// returns Ok</span>
 <span class="hljs-comment">// Now, doc contains {&quot;values&quot;:[1,2,3]}</span>
