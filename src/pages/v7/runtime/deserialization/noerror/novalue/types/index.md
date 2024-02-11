@@ -108,6 +108,18 @@ options:
     label: "`unsigned short`"
     summary: The program fails to extract an `unsigned short` value
     page: uint16.md
+  array:
+    label: "`JsonArray`"
+    summary: The program fails to extract a `JsonArray`
+    page: array.md
+  object:
+    label: "`JsonObject`"
+    summary: The program fails to extract a `JsonObject`
+    page: object.md
+  other:
+    label: None of the above
+    summary: The type of the extracted value is not listed
+    page: /deadend.md
 ---
 
 What type of value are you trying to read?
