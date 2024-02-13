@@ -11,7 +11,7 @@ options:
   64-bit:
     label: 64-bit
     summary: The code is running on a 64-bit CPU
-    page: /deadend.md
+    page: ../string-64k.md
 ---
 
 What CPU architecture is this code running on?

@@ -7,11 +7,11 @@ options:
   slot-id-size-2:
     label: "No"
     summary: Setting `ARDUINOJSON_SLOT_ID_SIZE` to 4 doesn't solve the issue.
-    page: ../make-room.md
+    page: ../string-64k.md
   fewer-than-255:
     label: My JSON document contains fewer than 65,535 nodes
     summary: The JSON document contains fewer than 65,535 nodes.
-    page: ../make-room.md
+    page: ../string-64k.md
 ---
 
 Due to an optimization, a `JsonDocument` can only contain up to 65,535 nodes on a 32-bit CPU.
