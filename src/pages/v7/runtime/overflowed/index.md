@@ -3,7 +3,7 @@ options:
   loose:
     label: There is a lot more memory than required
     summary: The Assistant says there is a lot more memory than required.
-    page: cpu/index.md
+    page: cpu.md
   tight:
     label: There should be enough memory
     summary: The Assistant says there should be just enough memory.
