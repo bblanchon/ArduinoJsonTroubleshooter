@@ -7,7 +7,7 @@ options:
   timeout-increased:
     label: "No"
     summary: Increasing the timeout doesn't fix the issue
-    page: curl.md
+    page: string-or-stream.md
 ---
 
 `EmptyInput` could be caused by a timeout while reading the response.
