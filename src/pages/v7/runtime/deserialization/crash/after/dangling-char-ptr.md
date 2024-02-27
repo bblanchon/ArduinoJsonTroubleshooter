@@ -10,7 +10,7 @@ options:
     page: /v6/runtime/deserialization/crash/after/stdlib.md
 ---
 
-A programs can also crash after calling `deserializeJson()` because it keeps a pointer to a string stored in the `JsonDocument`.
+Programs often crash because they keep a pointer to a string stored in the `JsonDocument`, even after the `JsonDocument` has been destructed.
 
 Indeed, when `JsonDocument` returns a `const char*`, it doesn't return a copy of the string, but the address of the string in the memory pool. When the `JsonDocument` is destructed, the memory pool gets released and the pointer dangles. Later, when the program tries to use the string, it reads at an invalid memory location and crashes.
 

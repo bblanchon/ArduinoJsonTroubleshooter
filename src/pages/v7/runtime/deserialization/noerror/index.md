@@ -9,9 +9,9 @@ options:
     summary: "`Ok` is incorrect; it should be `InvalidInput`"
     page: /v6/runtime/deserialization/noerror/firstchar/index.md
   crash:
-    label: My program crashes after calling `deserializeJson()`
-    summary: Program crashes after calling `deserializeJson()`
-    page: ../crash/after.md
+    label: My program crashes
+    summary: Program crashes
+    page: ../crash/after/index.md
   empty:
     label: "`JsonDocument` returns empty/null values"
     summary: Program fails to extract values from the `JsonDocument`

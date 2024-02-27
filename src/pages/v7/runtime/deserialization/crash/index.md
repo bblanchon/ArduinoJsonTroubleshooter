@@ -10,7 +10,7 @@ options:
     summary: "Program crashes inside `deserializeJson()`"
   after:
     label: "Two traces: program crashes after calling `deserializeJson()`"
-    page: after.md
+    page: after/index.md
     summary: "Program crashes after calling `deserializeJson()`"
 ---
 
