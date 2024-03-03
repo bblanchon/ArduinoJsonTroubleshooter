@@ -78,7 +78,7 @@ options:
   no-matching-function:
     label: no matching function for call to ...
     summary: Error says "no matching function for call to ..."
-    page: no-matching-function.md
+    page: no-matching-function/index.md
 
   passing-volatile-as-this-argument-discards-qualifiers:
     label: passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]

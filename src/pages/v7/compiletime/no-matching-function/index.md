@@ -15,6 +15,11 @@ options:
     summary: Error says "no matching function for call to `deserializeJson(StaticJsonDocument<200> (&)(), ...)`"
     page: /v6/compiletime/no-matching-function/deserializejson.md
 
+  jsondocument-int:
+    label: no matching function for call to `JsonDocument::JsonDocument(int)`
+    summary: Error says "no matching function for call to `JsonDocument::JsonDocument(int)`"
+    page: jsondocument-int.md
+
   unresolved-overloaded-function-type:
     label: no matching function for call to `...(<unresolved overloaded function type>)`
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
