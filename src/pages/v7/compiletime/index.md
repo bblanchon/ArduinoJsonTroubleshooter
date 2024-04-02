@@ -30,10 +30,10 @@ options:
     summary: Error says "call of overloaded `print(...)` is ambiguous"
     page: /v6/compiletime/print-ambiguous.md
 
-  cannot-bind-object-ref:
-    label: cannot bind non-const lvalue reference of type `ArduinoJson::JsonObject&` ...
-    summary: Error says "cannot bind non-const lvalue reference of type `ArduinoJson::JsonObject&` ..."
-    page: /v6/compiletime/objectref.md
+  cannot-bind-ref:
+    label: cannot bind non-const lvalue reference ...
+    summary: Error says "cannot bind non-const lvalue reference ..."
+    page: cannot-bind-ref/index.md
 
   class-has-no-member-named-read:
     label: "`class Xxx` has no member named `read`"
