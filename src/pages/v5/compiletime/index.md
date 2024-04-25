@@ -4,6 +4,10 @@ options:
     label: ArduinoJson requires a C++ compiler...
     summary: Error says "ArduinoJson requires a C++ compiler..."
     page: /v6/compiletime/requires-cpp-compiler.md
+  no-such-file:
+    label: "ArduinoJson.h: No such file or directory"
+    summary: 'Error says "ArduinoJson.h: No such file or directory"'
+    page: /v6/compiletime/no-such-file/index.md
   equals:
     label: "'equals' is not a member of 'ArduinoJson::Internals::StringTraits<const int&, void>'"
     summary: Error says "'equals' is not a member of 'ArduinoJson::Internals::StringTraits<const int&, void>'"
