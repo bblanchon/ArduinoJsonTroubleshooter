@@ -7,7 +7,7 @@ options:
   to:
     label: "No"
     summary: Calling `add<JsonObject>()` or `to<JsonObject>()` does not fix the issue
-    page: /deadend.md
+    page: ../output/index.md
 ---
 
 A missing object is often due to an incorrectly initialized `JsonObject`.  

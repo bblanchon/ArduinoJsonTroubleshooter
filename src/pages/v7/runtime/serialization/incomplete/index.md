@@ -7,7 +7,7 @@ options:
   overflowed-0:
     label: "`0` (or `false`)"
     summary: "`JsonDocument::overflowed()` returns `false`"
-    page: type.md
+    page: type/index.md
 ---
 
 Please print the value of `JsonDocument::overflowed()`, like so:
