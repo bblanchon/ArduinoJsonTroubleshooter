@@ -5,11 +5,6 @@ options:
     summary: Error says "ArduinoJson requires a C++ compiler..."
     page: /v6/compiletime/requires-cpp-compiler.md
 
-  no-such-file:
-    label: "ArduinoJson.h: No such file or directory"
-    summary: 'Error says "ArduinoJson.h: No such file or directory"'
-    page: /v6/compiletime/no-such-file/index.md
-
   assignment-of-read-only-location:
     label: assignment of read-only location
     summary: Error says "assignment of read-only location"
@@ -24,11 +19,6 @@ options:
     label: '`begin`: no matching overloaded function found'
     summary: 'Error says "`begin`: no matching overloaded function found"'
     page: /v6/compiletime/iterate-ambiguous.md
-
-  error-constants:
-    label: '`bits/error_constants.h`: No such file or directory'
-    summary: 'Error says "`bits/error_constants.h`: No such file or directory'
-    page: /v6/compiletime/path-too-long.md
 
   print-ambiguous:
     label: call of overloaded `print(...)` is ambiguous
@@ -84,6 +74,11 @@ options:
     label: no matching function for call to ...
     summary: Error says "no matching function for call to ..."
     page: no-matching-function/index.md
+
+  no-such-file:
+    label: No such file or directory
+    summary: 'Error says "No such file or directory"'
+    page: /v6/compiletime/no-such-file/index.md
 
   passing-volatile-as-this-argument-discards-qualifiers:
     label: passing `volatile ...` as `this` argument discards qualifiers [-fpermissive]
