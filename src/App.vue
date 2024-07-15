@@ -13,7 +13,7 @@
       <TroubleshooterStep :key="step.hash" :step="step" @choose="choose" :active="idx == steps.length - 1" />
     </Transition>
     <div v-if="needsAssistance">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#assistance-modal">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assistance-modal">
         Contact support
       </button> <button class="btn" :class="{
         'btn-outline-primary': !reportCopied,

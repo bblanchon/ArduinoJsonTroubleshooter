@@ -4,13 +4,7 @@
       <form class="modal-content" ref="issueForm" @submit.prevent="createIssue">
         <div class="modal-header bg-primary text-white">
           <h5 class="modal-title">Contact support</h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           </button>
         </div>
         <div class="modal-body">
@@ -21,105 +15,49 @@
             to submit the issue.<br />
             <b>A GitHub account is required.</b>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="title-input">Title</label>
-            <input
-              type="text"
-              name="title"
-              class="form-control"
-              id="title-input"
-              aria-describedby="title-help"
-              required
-            />
-            <small id="title-help" class="form-text text-muted"
-              >Summarize your issue in one sentence.</small
-            >
+            <input type="text" name="title" class="form-control" id="title-input" aria-describedby="title-help"
+              required />
+            <small id="title-help" class="form-text text-muted">Summarize your issue in one sentence.</small>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="description-input">Description</label>
-            <textarea
-              name="description"
-              rows="3"
-              class="form-control"
-              id="description-input"
-              aria-describedby="description-help"
-              required
-              placeholder="When I do ..., I expect ..., but instead I get ..."
-            ></textarea>
-            <small id="description-help" class="form-text text-muted"
-              >Describe your issue with a few sentences.</small
-            >
+            <textarea name="description" rows="3" class="form-control" id="description-input"
+              aria-describedby="description-help" required
+              placeholder="When I do ..., I expect ..., but instead I get ..."></textarea>
+            <small id="description-help" class="form-text text-muted">Describe your issue with a few sentences.</small>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="mcu-input">Microcontroller</label>
-            <input
-              type="text"
-              name="mcu"
-              class="form-control"
-              id="mcu-input"
-              aria-describedby="mcu-help"
-              placeholder="ESP8266"
-              required
-            />
-            <small id="mcu-help" class="form-text text-muted"
-              >Which processor or with board do you use?</small
-            >
+            <input type="text" name="mcu" class="form-control" id="mcu-input" aria-describedby="mcu-help"
+              placeholder="ESP8266" required />
+            <small id="mcu-help" class="form-text text-muted">Which processor or with board do you use?</small>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="framework-input">Arduino Core / Framework</label>
-            <input
-              type="text"
-              name="framework"
-              class="form-control"
-              id="framework-input"
-              aria-describedby="framework-help"
-              placeholder="ESP8266 core for Arduino v3.0.2"
-            />
-            <small id="framework-help" class="form-text text-muted"
-              >Please include version number.</small
-            >
+            <input type="text" name="framework" class="form-control" id="framework-input"
+              aria-describedby="framework-help" placeholder="ESP8266 core for Arduino v3.0.2" />
+            <small id="framework-help" class="form-text text-muted">Please include version number.</small>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="ide-input">IDE</label>
-            <input
-              type="text"
-              name="ide"
-              class="form-control"
-              id="ide-input"
-              aria-describedby="ide-help"
-              placeholder="Arduino IDE 1.8.16"
-            />
-            <small id="ide-help" class="form-text text-muted"
-              >Please include version number.</small
-            >
+            <input type="text" name="ide" class="form-control" id="ide-input" aria-describedby="ide-help"
+              placeholder="Arduino IDE 1.8.16" />
+            <small id="ide-help" class="form-text text-muted">Please include version number.</small>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="repro-input">Reproduction code</label>
-            <textarea
-              name="repro"
-              rows="10"
-              class="form-control text-monospace"
-              style="font-size: 80%"
-              id="repro-input"
-              aria-describedby="repro-help"
-              placeholder="DynamicJsonDocuemnt doc(1024);\n..."
-            ></textarea>
-            <small id="repro-help" class="form-text text-muted"
-              >Write a few lines of code that demonstrate the issue.</small
-            >
+            <textarea name="repro" rows="10" class="form-control text-monospace" style="font-size: 80%" id="repro-input"
+              aria-describedby="repro-help" placeholder="DynamicJsonDocuemnt doc(1024);\n..."></textarea>
+            <small id="repro-help" class="form-text text-muted">Write a few lines of code that demonstrate the
+              issue.</small>
           </div>
-          <div class="form-group">
+          <div class="mb-3">
             <label for="remarks-input">Remarks</label>
-            <textarea
-              name="remarks"
-              rows="4"
-              class="form-control"
-              id="remarks-input"
-              aria-describedby="remarks-help"
-            ></textarea>
-            <small id="remarks-help" class="form-text text-muted"
-              >Anything else you need to tell us?</small
-            >
+            <textarea name="remarks" rows="4" class="form-control" id="remarks-input"
+              aria-describedby="remarks-help"></textarea>
+            <small id="remarks-help" class="form-text text-muted">Anything else you need to tell us?</small>
           </div>
         </div>
         <div class="modal-footer">
@@ -184,7 +122,7 @@ export default defineComponent({
       console.log("URL", url)
       window.open(url, "_blank")
 
-      $("#assistance-modal").modal("hide")
+      bootstrap.Modal.getInstance(this.$el).hide()
     }
   }
 })
