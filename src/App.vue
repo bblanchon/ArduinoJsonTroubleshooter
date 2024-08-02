@@ -60,8 +60,6 @@ export default {
   methods: {
     choose(option) {
       document.location.assign(option.hash)
-      ga("set", "page", document.location.pathname + document.location.hash)
-      ga("send", "pageview")
       window.plausible("ArduinoJson Troubleshooter", {
         props: {
           hash: document.location.hash
