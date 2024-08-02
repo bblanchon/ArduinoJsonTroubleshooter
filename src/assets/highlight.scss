@@ -64,30 +64,46 @@
 }
 
 .hljs-addition {
-  background-color: #d4edda;
-
-  &::after {
-    content: "✅";
-    position: absolute;
-    top: 1px;
-    left: -6px;
-  }
+  background-color: var(--bs-success-bg-subtle)
 }
 
 .hljs-deletion {
-  background-color: #fae3d4;
-
-  &::after {
-    content: "⛔";
-    position: absolute;
-    top: 1px;
-    left: -6px;
-  }
+  background-color: var(--bs-danger-bg-subtle);
 }
-
 
 .hljs-addition, .hljs-deletion {
   display: inline-block;
   width: 100%;
-  position: relative;
+}
+
+.hljs.language-patch {
+  .hljs-addition {
+    color: var(--bs-success);
+  }
+
+  .hljs-deletion {
+    color: var(--bs-danger);
+  }
+}
+
+/* Add a ✅ or ⛔ to the beginning of each line */
+/* NOTE: use language "patch" if you don't want this style */
+.hljs.language-diff {
+  .hljs-addition, .hljs-deletion {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 1px;
+      left: -6px;
+    }
+  }
+
+  .hljs-addition::after {
+    content: "✅";
+  }
+
+  .hljs-deletion::after {
+    content: "⛔";
+  }
 }

@@ -12,7 +12,7 @@ options:
 
 Here is how to upgrade your code:
 
-```diff
+```patch
 - struct SpiRamAllocator {
 + struct SpiRamAllocator : ArduinoJson::Allocator {
    void* allocate(size_t size) {

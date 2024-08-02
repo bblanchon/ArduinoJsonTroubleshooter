@@ -12,7 +12,7 @@ options:
 
 You must add the `reallocate()` method like so:
 
-```diff
+```patch
   struct SpiRamAllocator {
    void* allocate(size_t size) {
      return heap_caps_malloc(size, MALLOC_CAP_SPIRAM);
