@@ -35,6 +35,11 @@ options:
     summary: Error says "`class Xxx` has no member named `read`"
     page: no-member-named-read.md
 
+  class-has-no-member-named-reallocate:
+    label: "`class Xxx` has no member named `reallocate`; did you mean `deallocate`?"
+    summary: Error says "`class Xxx` has no member named `reallocate`"
+    page: no-member-named-reallocate/index.md
+
   pointer-to-object:
     label: '`const void*` is not a pointer-to-object type'
     summary: Error says "`const void*` is not a pointer-to-object type"
@@ -104,6 +109,11 @@ options:
     label: "`struct Xxx` has no member named `read`"
     summary: Error says "`struct Xxx` has no member named `read`"
     page: no-member-named-read.md
+
+  struct-has-no-member-named-reallocate:
+    label: "`struct Xxx` has no member named `reallocate`; did you mean `deallocate`?"
+    summary: Error says "`struct Xxx` has no member named `reallocate`"
+    page: no-member-named-reallocate/index.md
 
   range-based-for-requires-begin:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
