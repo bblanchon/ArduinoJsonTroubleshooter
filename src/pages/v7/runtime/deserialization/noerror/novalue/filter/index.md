@@ -7,10 +7,10 @@ options:
   overflowed-0:
     label: "`0` (or `false`)"
     summary: "`filter.overflowed()` returns `false`"
-    page: assistant.md
+    page: print.md
 ---
 
-Please print the value of `JsonDocument::overflowed()`, like so:
+Please print the value of `filter.overflowed()`, like so:
 
 ```c++
 Serial.println(filter.overflowed());

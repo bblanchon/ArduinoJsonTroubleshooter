@@ -7,7 +7,7 @@ options:
   failure:
     label: "No"
     summary: Freeing some memory doesn't solve the issue.
-    page: assistant.md
+    page: print.md
 ---
 
 `JsonDocument::overflowed()` returns `true` when you try to insert a value in the `JsonDocument`, but the memory allocation fails.

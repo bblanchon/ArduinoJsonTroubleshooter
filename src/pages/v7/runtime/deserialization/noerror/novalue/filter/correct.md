@@ -4,7 +4,7 @@ options:
     label: "Yes"
     summary: Fixing the filter solves the issue
     page: /done.md
-  filter-ok:
+  assistant:
     label: "No"
     summary: Fixing the filter doesn't solve the issue
     page: ../print.md
