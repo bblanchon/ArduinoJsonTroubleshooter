@@ -20,6 +20,10 @@ options:
     label: Some strings are truncated
     summary: Some strings are truncated
     page: /v6/runtime/deserialization/noerror/truncatedstrings/index.md
+  missing:
+    label: "Some values are missing"
+    summary: Some values are missing
+    page: novalue/index.md
 ---
 
 So, what's the problem then?
