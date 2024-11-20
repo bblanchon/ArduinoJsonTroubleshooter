@@ -2,17 +2,18 @@ import path from "node:path"
 import { readFileSync, readdirSync } from "node:fs"
 
 import MarkdownIt from "markdown-it"
+import type { Options, PluginWithOptions } from "markdown-it"
 import matter from "gray-matter"
 import { createFilter } from "@rollup/pluginutils"
 import { normalizePath } from "vite"
 
 export interface LoaderConfig {
   folder?: string
-  markdownItOptions?: MarkdownIt.Options
-  markdownItUses?: [MarkdownIt.PluginWithOptions, any][]
+  markdownItOptions?: Options
+  markdownItUses?: [PluginWithOptions, any][]
 }
 
-interface PageFileOption {
+export interface PageFileOption {
   id: string
   label: string
   summary: string
@@ -20,7 +21,7 @@ interface PageFileOption {
 }
 
 interface PageFrontmatter {
-  options?: { [id: string]: PageFileOption; }
+  options?: { [id: string]: PageFileOption }
   tags?: string[] | string
 }
 
@@ -64,7 +65,7 @@ export class PageLoader {
     return path.join(folder, filename)
   }
 
-  normalizeFilename(filename) {
+  normalizeFilename(filename: string) {
     return normalizePath(path.relative(this.folder, filename))
   }
 

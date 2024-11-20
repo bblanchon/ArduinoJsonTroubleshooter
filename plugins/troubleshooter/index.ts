@@ -1,9 +1,9 @@
 import { dataToEsm } from "@rollup/pluginutils"
-import { Plugin, Logger, ViteDevServer } from "vite"
+import type { Plugin, Logger, ViteDevServer } from "vite"
 
-import { Page } from "./pages"
+import type { Page } from "./pages"
 import { getErrors } from "./validation"
-import { PageLoader, LoaderConfig, PageFile } from "./loader"
+import { PageLoader, type LoaderConfig, type PageFile } from "./loader"
 
 type UserOptions = LoaderConfig
 
@@ -63,7 +63,7 @@ export default function TroubleshooterPlugin(
     if (file.options)
       page.options = file.options.map((option) => ({
         id: option.id,
-        page: files.findIndex((f) => (f.filename == option.page)),
+        page: files.findIndex((f) => f.filename == option.page),
         label: option.label,
         summary: option.summary
       }))

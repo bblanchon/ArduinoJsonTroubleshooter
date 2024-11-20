@@ -1,4 +1,4 @@
-import { PageFile } from "./loader"
+import type { PageFile } from "./loader"
 
 interface PageError {
   fullPath: string
@@ -37,7 +37,7 @@ function getUnusedFiles(files: PageFile[]): PageError[] {
 }
 
 function* getMissingFields(files: PageFile[]): Generator<PageError> {
-  const requiredFields = ["id", "label", "summary", "page"]
+  const requiredFields = ["id", "label", "summary", "page"] as const
 
   for (const file of files) {
     for (const index in file.options || []) {
@@ -54,7 +54,7 @@ function* getMissingFields(files: PageFile[]): Generator<PageError> {
 }
 
 function getDuplicateOptions(files: PageFile[]): PageError[] {
-  const uniqueFields = ["id", "label", "summary"]
+  const uniqueFields = ["id", "label", "summary"] as const
 
   return files
     .map((file) =>
@@ -64,7 +64,7 @@ function getDuplicateOptions(files: PageFile[]): PageError[] {
           (val, idx) => values.indexOf(val) !== idx
         )
         return duplicates.map((value) => ({
-          file: file.filename,
+          fullPath: file.fullPath,
           message: `duplicate option ${field} \"${value}\"`
         }))
       })
@@ -79,11 +79,11 @@ function getInvalidOptionIds(files: PageFile[]): PageError[] {
         file.options
           ?.filter((option) => /[^a-z0-9\-]/.test(option.id))
           .map((option, index) => ({
-            file: file.filename,
-            message: `invalid id \"${option.id}\" for option ${index}`
+            fullPath: file.fullPath,
+            message: `invalid id \"${option.id}\" for option ${index}`,
           })) || []
     )
-    .flat()
+    .flat();
 }
 
 export function getErrors(files: PageFile[]): PageError[] {
