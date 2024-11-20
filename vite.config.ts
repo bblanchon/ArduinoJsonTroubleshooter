@@ -43,8 +43,7 @@ export default defineConfig(({ mode }) => ({
         [mdiAttrs, { leftDelimiter: "{:", rightDelimiter: "}" }],
         [mdiHljs, { hljs }],
         [
-          // `as any` is a workaround for martinheidegger/markdown-it-replace-link#11
-          mdiReplaceLink as any, // tslint:disable-line
+          mdiReplaceLink,
           {
             replaceLink(link: string) {
               if (mode == "development")
