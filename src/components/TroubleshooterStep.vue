@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { inject, onMounted, useTemplateRef } from "vue"
 
-import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
+import TroubleshooterStepOption from "@/components/TroubleshooterStepOption.vue"
 import type { Step } from "@/troubleshooter"
 
 const debug = inject<boolean>("debug")

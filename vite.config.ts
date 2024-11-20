@@ -1,6 +1,7 @@
 import { resolve } from "node:path"
+import { fileURLToPath, URL } from "node:url"
 
-import { defineConfig, Plugin } from "vite"
+import { defineConfig } from "vite"
 import Vue from "@vitejs/plugin-vue"
 import mdiAttrs from "markdown-it-attrs"
 import mdiHljs from "markdown-it-highlightjs"
@@ -26,6 +27,11 @@ export default defineConfig(({ mode }) => ({
   },
   define: {
     "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+  },
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
   },
   plugins: [
     Vue({

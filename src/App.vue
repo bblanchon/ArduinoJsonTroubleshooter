@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from "vue"
 
-import AssistanceModal from "./components/AssistanceModal.vue"
-import TroubleshooterStep from "./components/TroubleshooterStep.vue"
+import AssistanceModal from "@/components/AssistanceModal.vue"
+import TroubleshooterStep from "@/components/TroubleshooterStep.vue"
 import { getSteps, generateReport } from "./troubleshooter"
 
 const sleep = (m: number) => new Promise((r) => setTimeout(r, m))
