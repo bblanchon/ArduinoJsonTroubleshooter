@@ -1,12 +1,10 @@
-<script setup>
+<script setup lang="ts">
+import type { Option } from "@/troubleshooter"
 import { inject } from "vue"
 
-defineProps({
-  option: {
-    type: Object,
-    required: true,
-  },
-})
+defineProps<{
+  option: Option
+}>()
 
 const debug = inject("debug")
 

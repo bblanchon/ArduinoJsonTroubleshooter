@@ -1,30 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import { inject, onMounted, useTemplateRef } from "vue"
 
 import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
+import type { Option, Step } from "@/troubleshooter"
 
-const debug = inject("debug")
+const debug = inject<boolean>("debug")
 
-const emit = defineEmits(["choose"])
+const emit = defineEmits<{
+  choose: [Option]
+}>()
 
-const props = defineProps({
-  step: {
-    type: Object,
-    required: true,
-  },
-  active: {
-    type: Boolean,
-    default: false,
-  },
-})
+defineProps<{
+  step: Step
+  active?: boolean
+}>()
 
 const containerRef = useTemplateRef("container")
 
 onMounted(() => {
-  const { top, bottom } = containerRef.value.getBoundingClientRect()
+  const { top } = containerRef.value!.getBoundingClientRect()
   const minVisibleHeight = 50
   const isVisible = top + minVisibleHeight < window.innerHeight
-  if (!isVisible) containerRef.value.scrollIntoView({ behavior: "smooth" })
+  if (!isVisible) containerRef.value!.scrollIntoView({ behavior: "smooth" })
 })
 </script>
 
@@ -46,12 +43,12 @@ onMounted(() => {
         v-for="option in step.options"
         :key="option.hash"
         :option="option"
-        @click="$emit('choose', option)"
+        @click="emit('choose', option)"
       />
     </div>
     <p v-if="debug" class="small">
-      <a :href="'vscode://file/' + step.fullPath.replaceAll('\\', '/')">
-        {{ step.filename }}
+      <a :href="'vscode://file/' + step.fullPath!.replaceAll('\\', '/')">
+        {{ step.filename! }}
       </a>
     </p>
   </div>

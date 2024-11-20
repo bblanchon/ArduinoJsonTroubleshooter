@@ -1,11 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, computed } from "vue"
 
 import AssistanceModal from "./components/AssistanceModal.vue"
 import TroubleshooterStep from "./components/TroubleshooterStep.vue"
-import { getSteps, generateReport } from "./troubleshooter"
+import { getSteps, generateReport, type Option } from "./troubleshooter"
 
-const sleep = (m) => new Promise((r) => setTimeout(r, m))
+const sleep = (m: number) => new Promise((r) => setTimeout(r, m))
 
 const reportCopied = ref(false)
 const hash = ref("")
@@ -24,7 +24,7 @@ const needsAssistance = computed(() => {
 
 const report = computed(() => generateReport(steps.value))
 
-function choose(option) {
+function choose(option: Option) {
   document.location.assign(option.hash)
   window.plausible("ArduinoJson Troubleshooter", {
     props: {

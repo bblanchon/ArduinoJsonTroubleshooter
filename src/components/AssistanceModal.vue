@@ -1,19 +1,17 @@
-<script setup>
+<script setup lang="ts">
 import { useTemplateRef } from "vue"
 
-const { report } = defineProps({
-  report: {
-    type: String,
-    required: true,
-  },
-})
+const { report } = defineProps<{
+  report: string
+}>()
 
-const formRef = useTemplateRef("issueForm")
+const formRef = useTemplateRef<HTMLFormElement>("issueForm")
+const modalRef = useTemplateRef<HTMLDivElement>("modal")
 
 function createIssue() {
-  const formData = new FormData(formRef.value)
+  const formData = new FormData(formRef.value!)
 
-  const title = formData.get("title")
+  const title = formData.get("title") as string
   let body = ""
 
   const description = formData.get("description")
@@ -48,12 +46,12 @@ function createIssue() {
   console.log("URL", url)
   window.open(url, "_blank")
 
-  bootstrap.Modal.getInstance(this.$el).hide()
+  bootstrap.Modal.getInstance(modalRef.value!).hide()
 }
 </script>
 
 <template>
-  <div class="modal fade">
+  <div class="modal fade" ref="modal">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
       <form class="modal-content" ref="issueForm" @submit.prevent="createIssue">
         <div class="modal-header bg-primary text-white">

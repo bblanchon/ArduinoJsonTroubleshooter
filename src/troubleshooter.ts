@@ -1,7 +1,7 @@
 /// <reference path="../plugins/troubleshooter/client.d.ts" />
 import pages from "virtual:troubleshooter"
 
-interface Option {
+export interface Option {
   id: string
   label: string
   summary: string
@@ -12,13 +12,15 @@ interface Option {
   selected: boolean
 }
 
-interface Step {
+export interface Step {
   content: string
   number: number
   hash: string
   options?: Option[]
   selectedOption?: Option
   tags?: string[]
+  filename?: string // only in dev
+  fullPath?: string // only in dev
 }
 
 function makeStep(pageId: number, hash?: string, number?: number): Step {
