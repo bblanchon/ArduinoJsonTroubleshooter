@@ -28,9 +28,9 @@ function choose(option) {
   document.location.assign(option.hash)
   window.plausible("ArduinoJson Troubleshooter", {
     props: {
-      hash: document.location.hash
+      hash: document.location.hash,
     },
-  });
+  })
 }
 
 async function copyReport() {
@@ -52,16 +52,37 @@ async function copyReport() {
       </p>
       <p>Ready? Here we go!</p>
     </div>
-    <Transition v-for="step, idx in steps" :key="idx" name="fade" mode="out-in">
-      <TroubleshooterStep :key="step.hash" :step="step" @choose="choose" :active="idx == steps.length - 1" />
+    <Transition
+      v-for="(step, idx) in steps"
+      :key="idx"
+      name="fade"
+      mode="out-in"
+    >
+      <TroubleshooterStep
+        :key="step.hash"
+        :step="step"
+        @choose="choose"
+        :active="idx == steps.length - 1"
+      />
     </Transition>
     <div v-if="needsAssistance">
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assistance-modal">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#assistance-modal"
+      >
         Contact support
-      </button> <button class="btn" :class="{
-        'btn-outline-primary': !reportCopied,
-        'btn-success': reportCopied
-      }" :disabled="reportCopied" @click="copyReport">
+      </button>
+      <button
+        class="btn"
+        :class="{
+          'btn-outline-primary': !reportCopied,
+          'btn-success': reportCopied,
+        }"
+        :disabled="reportCopied"
+        @click="copyReport"
+      >
         {{ reportCopied ? "✓ Report copied" : "Copy troubleshooter's report" }}
       </button>
       <AssistanceModal id="assistance-modal" :report="report" />

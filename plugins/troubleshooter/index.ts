@@ -8,7 +8,7 @@ import { PageLoader, type LoaderConfig, type PageFile } from "./loader"
 type UserOptions = LoaderConfig
 
 export default function TroubleshooterPlugin(
-  userOptions: UserOptions = {}
+  userOptions: UserOptions = {},
 ): Plugin {
   const virtualModuleId = "virtual:troubleshooter"
 
@@ -53,7 +53,7 @@ export default function TroubleshooterPlugin(
 
   function makePage(file: PageFile): Page {
     const page: Page = {
-      content: file.content
+      content: file.content,
     }
     if (!isProduction) {
       page.filename = file.filename
@@ -65,7 +65,7 @@ export default function TroubleshooterPlugin(
         id: option.id,
         page: files.findIndex((f) => f.filename == option.page),
         label: option.label,
-        summary: option.summary
+        summary: option.summary,
       }))
     return page
   }
@@ -110,10 +110,10 @@ export default function TroubleshooterPlugin(
           code: dataToEsm(generatePages(), {
             compact: true,
             namedExports: false,
-            preferConst: true
-          })
+            preferConst: true,
+          }),
         }
       }
-    }
+    },
   }
 }

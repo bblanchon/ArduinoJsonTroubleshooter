@@ -30,11 +30,15 @@ jobs:
           cache: "npm"
 
       - run: npm install
+
       - name: Lint
         run: npm run lint
 
       - name: Type check
         run: npm run type-check
+
+      - name: Format check
+        run: npm run format-check
 
       - name: Setup Pages
         id: pages

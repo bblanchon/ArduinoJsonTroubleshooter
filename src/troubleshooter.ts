@@ -33,7 +33,7 @@ function makeStep(pageId: number, hash?: string, number?: number): Step {
       hash: (hash ? hash + "/" : "#") + option.id,
       missing: !pages[option.page],
       selected: false,
-    }))
+    })),
   }
 }
 
@@ -43,9 +43,7 @@ export function getSteps(hash?: string): Step[] {
   if (hash) {
     let lastStep = steps[0]
     for (let optionId of hash.substring(1).split("/")) {
-      const option = lastStep.options?.find(
-        (option) => option.id === optionId
-      )
+      const option = lastStep.options?.find((option) => option.id === optionId)
       if (!option) {
         console.error(`Option "${optionId}" not found`)
         break
