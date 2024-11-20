@@ -2,13 +2,9 @@
 import { inject, onMounted, useTemplateRef } from "vue"
 
 import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
-import type { Option, Step } from "@/troubleshooter"
+import type { Step } from "@/troubleshooter"
 
 const debug = inject<boolean>("debug")
-
-const emit = defineEmits<{
-  choose: [Option]
-}>()
 
 defineProps<{
   step: Step
@@ -43,7 +39,6 @@ onMounted(() => {
         v-for="option in step.options"
         :key="option.hash"
         :option="option"
-        @click="emit('choose', option)"
       />
     </div>
     <p v-if="debug" class="small">

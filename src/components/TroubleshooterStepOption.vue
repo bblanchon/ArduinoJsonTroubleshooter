@@ -7,27 +7,50 @@ defineProps<{
 }>()
 
 const debug = inject("debug")
-
-const emit = defineEmits(["check"])
 </script>
 
 <template>
-  <div class="form-check">
-    <input
-      type="radio"
-      :id="option.inputId"
-      class="form-check-input"
-      :checked="option.selected"
-      @click="$emit('check')"
-      :disabled="option.missing"
-    />
-    <label
-      class="form-check-label"
-      :for="option.inputId"
-      v-html="option.label"
-    ></label>
+  <div>
+    <a
+      :href="option.hash"
+      :class="{
+        active: option.selected,
+        disabled: option.missing,
+      }"
+    >
+      <span class="checkmark"></span>
+      <span v-html="option.label"></span>
+    </a>
     <div v-if="debug" class="d-block mb-2 small text-muted">
       {{ option.summary }}
     </div>
   </div>
 </template>
+
+<style scoped>
+a {
+  color: var(--bs-body-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.8ch;
+  content: "";
+}
+
+a.active .checkmark {
+  color: white;
+  border: 0.3em solid #00828a;
+}
+
+a.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+</style>
