@@ -49,7 +49,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-@import "../assets/highlight.scss";
+@use "../assets/highlight.scss";
 
 .troubleshooter-step {
   position: relative;
