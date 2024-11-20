@@ -1,3 +1,57 @@
+<script setup>
+import { useTemplateRef } from "vue"
+
+const { report } = defineProps({
+  report: {
+    type: String,
+    required: true
+  }
+})
+
+const formRef = useTemplateRef("issueForm")
+
+function createIssue() {
+  const formData = new FormData(formRef.value)
+
+  const title = formData.get("title")
+  let body = ""
+
+  const description = formData.get("description")
+  if (description) body += `**Description**\n${description}\n\n`
+
+  body += `**Troubleshooter's report**\n${report}\n\n`
+
+  const mcu = formData.get("mcu")
+  const framework = formData.get("framework")
+  const ide = formData.get("ide")
+  if (mcu || framework || ide) {
+    body += "**Environment**\n"
+    if (mcu) body += "* Microcontroller: " + mcu + "\n"
+    if (framework) body += "* Core/Framework: " + framework + "\n"
+    if (ide) body += "* IDE: " + ide + "\n"
+    body += "\n"
+  }
+
+  const repro = formData.get("repro")
+  if (repro) {
+    body += "**Reproduction code**\n```c++\n"
+    body += repro
+    body += "\n```\n\n"
+  }
+
+  const remarks = formData.get("remarks")
+  if (remarks) body += `**Remarks**\n${remarks}\n\n`
+
+  const queryString = new URLSearchParams({ title, body }).toString()
+  const url =
+    "https://github.com/bblanchon/ArduinoJson/issues/new?" + queryString
+  console.log("URL", url)
+  window.open(url, "_blank")
+
+  bootstrap.Modal.getInstance(this.$el).hide()
+}
+</script>
+
 <template>
   <div class="modal fade">
     <div class="modal-dialog modal-dialog-scrollable modal-lg">
@@ -72,58 +126,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { defineComponent } from "vue"
-
-export default defineComponent({
-  props: {
-    report: {
-      type: String,
-      required: true
-    }
-  },
-  methods: {
-    createIssue() {
-      const formData = new FormData(this.$refs.issueForm)
-
-      const title = formData.get("title")
-      let body = ""
-
-      const description = formData.get("description")
-      if (description) body += `**Description**\n${description}\n\n`
-
-      body += `**Troubleshooter's report**\n${this.report}\n\n`
-
-      const mcu = formData.get("mcu")
-      const framework = formData.get("framework")
-      const ide = formData.get("ide")
-      if (mcu || framework || ide) {
-        body += "**Environment**\n"
-        if (mcu) body += "* Microcontroller: " + mcu + "\n"
-        if (framework) body += "* Core/Framework: " + framework + "\n"
-        if (ide) body += "* IDE: " + ide + "\n"
-        body += "\n"
-      }
-
-      const repro = formData.get("repro")
-      if (repro) {
-        body += "**Reproduction code**\n```c++\n"
-        body += repro
-        body += "\n```\n\n"
-      }
-
-      const remarks = formData.get("remarks")
-      if (remarks) body += `**Remarks**\n${remarks}\n\n`
-
-      const queryString = new URLSearchParams({ title, body }).toString()
-      const url =
-        "https://github.com/bblanchon/ArduinoJson/issues/new?" + queryString
-      console.log("URL", url)
-      window.open(url, "_blank")
-
-      bootstrap.Modal.getInstance(this.$el).hide()
-    }
-  }
-})
-</script>

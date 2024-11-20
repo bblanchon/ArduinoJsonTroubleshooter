@@ -1,3 +1,46 @@
+<script setup>
+import { ref, onMounted, computed } from "vue"
+
+import AssistanceModal from "./components/AssistanceModal.vue"
+import TroubleshooterStep from "./components/TroubleshooterStep.vue"
+import { getSteps, generateReport } from "./troubleshooter"
+
+const sleep = (m) => new Promise((r) => setTimeout(r, m))
+
+const reportCopied = ref(false)
+const hash = ref("")
+
+onMounted(() => {
+  hash.value = location.hash
+  window.addEventListener("hashchange", () => (hash.value = location.hash))
+})
+
+const steps = computed(() => getSteps(hash.value))
+
+const needsAssistance = computed(() => {
+  const currentStep = steps.value[steps.value.length - 1]
+  return !!currentStep.tags?.includes("needs_assistance")
+})
+
+const report = computed(() => generateReport(steps.value))
+
+function choose(option) {
+  document.location.assign(option.hash)
+  window.plausible("ArduinoJson Troubleshooter", {
+    props: {
+      hash: document.location.hash
+    },
+  });
+}
+
+async function copyReport() {
+  await navigator.clipboard.writeText(report.value)
+  reportCopied.value = true
+  await sleep(2000)
+  reportCopied.value = false
+}
+</script>
+
 <template>
   <div>
     <div>
@@ -25,56 +68,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import AssistanceModal from "./components/AssistanceModal.vue"
-import TroubleshooterStep from "./components/TroubleshooterStep.vue"
-import { getSteps, generateReport } from "./troubleshooter"
-
-const sleep = (m) => new Promise((r) => setTimeout(r, m))
-
-export default {
-  components: { AssistanceModal, TroubleshooterStep },
-  data() {
-    return {
-      reportCopied: false,
-      hash: ""
-    }
-  },
-  mounted() {
-    this.hash = location.hash
-    window.addEventListener("hashchange", () => (this.hash = location.hash))
-  },
-  computed: {
-    needsAssistance() {
-      const currentStep = this.steps[this.steps.length - 1]
-      return !!currentStep.tags?.includes("needs_assistance")
-    },
-    steps() {
-      return getSteps(this.hash)
-    },
-    report() {
-      return generateReport(this.steps)
-    }
-  },
-  methods: {
-    choose(option) {
-      document.location.assign(option.hash)
-      window.plausible("ArduinoJson Troubleshooter", {
-        props: {
-          hash: document.location.hash
-        },
-      });
-    },
-    async copyReport() {
-      await navigator.clipboard.writeText(this.report)
-      this.reportCopied = true
-      await sleep(2000)
-      this.reportCopied = false
-    },
-  }
-}
-</script>
 
 <style lang="scss">
 .fade-enter-active,

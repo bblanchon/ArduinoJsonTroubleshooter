@@ -1,3 +1,18 @@
+<script setup>
+import { inject } from 'vue'
+
+defineProps({
+  option: {
+    type: Object,
+    required: true
+  }
+})
+
+const debug = inject("debug")
+
+const emit = defineEmits(["check"])
+</script>
+
 <template>
   <div class="form-check">
     <input type="radio" :id="option.inputId" class="form-check-input" :checked="option.selected" @click="$emit('check')"
@@ -8,22 +23,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import { defineComponent } from "vue"
-
-export default defineComponent({
-  inject: ["debug"],
-  emits: ["check"],
-  props: {
-    option: {
-      type: Object,
-      required: true
-    }
-  }
-})
-</script>
-
-<style lang="scss" scoped>
-
-</style>

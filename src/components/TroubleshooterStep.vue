@@ -1,5 +1,35 @@
+<script setup>
+import { inject, onMounted, useTemplateRef } from 'vue'
+
+import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
+
+const debug = inject("debug")
+
+const emit = defineEmits(["choose"])
+
+const props = defineProps({
+  step: {
+    type: Object,
+    required: true
+  },
+  active: {
+    type: Boolean,
+    default: false
+  }
+})
+
+const containerRef = useTemplateRef('container')
+
+onMounted(() => {
+  const { top, bottom } = containerRef.value.getBoundingClientRect();
+  const minVisibleHeight = 50
+  const isVisible = top + minVisibleHeight < window.innerHeight;
+  if (!isVisible) containerRef.value.scrollIntoView({ behavior: "smooth" })
+})
+</script>
+
 <template>
-  <div v-if="step.options" class="troubleshooter-step mb-4">
+  <div v-if="step.options" class="troubleshooter-step mb-4" ref="container">
     <h2>
       <div class="troubleshooter-step-number">
         <div class="text-white rounded-circle" :class="active ? 'bg-primary' : 'bg-secondary'">
@@ -18,35 +48,8 @@
       </a>
     </p>
   </div>
-  <div v-else v-html="step.content" class="troubleshooter-step-content" />
+  <div v-else v-html="step.content" class="troubleshooter-step-content" ref="container" />
 </template>
-
-<script>
-import { defineComponent } from "vue"
-import TroubleshooterStepOption from "./TroubleshooterStepOption.vue"
-
-export default defineComponent({
-  inject: ["debug"],
-  emits: ["choose"],
-  props: {
-    step: {
-      type: Object,
-      required: true
-    },
-    active: {
-      type: Boolean,
-      default: false
-    }
-  },
-  components: { TroubleshooterStepOption },
-  async mounted() {
-    const { top, bottom } = this.$el.getBoundingClientRect();
-    const minVisibleHeight = 50
-    const isVisible = top + minVisibleHeight < window.innerHeight;
-    if (!isVisible) this.$el.scrollIntoView({ behavior: "smooth" })
-  }
-})
-</script>
 
 <style lang="scss">
 @use "../assets/highlight.scss";
