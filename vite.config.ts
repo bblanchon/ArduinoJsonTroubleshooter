@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => ({
       formats: ["iife"],
       name: "ArduinoJsonTroubleshooter",
       fileName: (format) => "troubleshooter.js",
+      cssFileName: "style",
     },
   },
   define: {
