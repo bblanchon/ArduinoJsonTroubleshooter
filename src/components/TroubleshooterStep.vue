@@ -23,24 +23,18 @@ onMounted(() => {
 
 <template>
   <div v-if="step.options" class="troubleshooter-step mb-4" ref="container">
-    <h2>
-      <div class="troubleshooter-step-number">
-        <div
-          class="text-white rounded-circle"
-          :class="active ? 'bg-primary' : 'bg-secondary'"
-        >
-          {{ step.number }}
-        </div>
-      </div>
+    <h2 class="troubleshooter-step-number" :class="{ active }">
+      <span class="visually-hidden">Step</span>
+      {{ step.number }}
     </h2>
     <div class="troubleshooter-step-content" v-html="step.content"></div>
-    <div class="troubleshooter-step-options">
+    <ul class="troubleshooter-step-options">
       <TroubleshooterStepOption
         v-for="option in step.options"
         :key="option.hash"
         :option="option"
       />
-    </div>
+    </ul>
     <p v-if="debug" class="small">
       <a :href="'vscode://file/' + step.fullPath!.replaceAll('\\', '/')">
         {{ step.filename! }}
@@ -82,10 +76,9 @@ onMounted(() => {
 
 .troubleshooter-step-number {
   position: absolute;
-  left: 0px;
-}
-
-.troubleshooter-step-number > * {
+  top: 0;
+  left: 0;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,5 +86,17 @@ onMounted(() => {
   font-weight: normal;
   width: 1.7em;
   height: 1.7em;
+  color: white;
+  background-color: var(--bs-secondary);
+
+  &.active {
+    background-color: var(--bs-primary);
+  }
+}
+
+.troubleshooter-step-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 </style>

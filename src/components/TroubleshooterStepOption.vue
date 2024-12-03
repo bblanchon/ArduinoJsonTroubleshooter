@@ -10,7 +10,7 @@ const debug = inject("debug")
 </script>
 
 <template>
-  <div>
+  <li>
     <a
       :href="option.hash"
       :class="{
@@ -24,7 +24,7 @@ const debug = inject("debug")
     <div v-if="debug" class="d-block mb-2 small text-muted">
       {{ option.summary }}
     </div>
-  </div>
+  </li>
 </template>
 
 <style scoped>
