@@ -1,5 +1,10 @@
 ---
 options:
+  default-contructor:
+    label: "`Class::Class()` (where `Class` can be any class or struct name)" 
+    summary: Error says "no matching function for call to `Class::Class()`"
+    page: default-contructor.md
+
   converttojson:
     label: "`convertToJson(...)`"
     summary: Error says "no matching function for call to `convertToJson(...)`"
