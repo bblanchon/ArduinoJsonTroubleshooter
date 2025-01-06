@@ -1,10 +1,5 @@
 ---
 options:
-  basicjsondocument:
-    label: "`BasicJsonDocument::BasicJsonDocument()`"
-    summary: Error says "no matching function for call to `BasicJsonDocument::BasicJsonDocument()`"
-    page: /v6/compiletime/no-matching-function/basicjsondocument.md
-
   converttojson:
     label: "`convertToJson(...)`"
     summary: Error says "no matching function for call to `convertToJson(...)`"
