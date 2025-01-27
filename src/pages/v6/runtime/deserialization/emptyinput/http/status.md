@@ -1,5 +1,9 @@
 ---
 options:
+  success:
+    label: "`200`"
+    summary: The status code is `200`
+    page: timeout.md
   redirect:
     label: "`300` to `399`"
     summary: The status code indicates a redirection
