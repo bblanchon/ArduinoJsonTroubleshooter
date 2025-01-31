@@ -7,7 +7,7 @@ options:
   larger-buffer:
     label: "No"
     summary: Increasing serial buffer size doesn't solves the issue
-    page: stream-bom.md
+    page: ../stream-bom.md
 ---
 
 Sometimes, the input is invalid because some bytes were dropped when receiving the document.

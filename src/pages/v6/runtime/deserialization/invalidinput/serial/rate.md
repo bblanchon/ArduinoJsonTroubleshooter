@@ -7,11 +7,11 @@ options:
   better:
     label: Somehow
     summary: Reducing baud rate improves the situation
-    page: serial-cable.md
+    page: cable.md
   not-better:
     label: "No"
     summary: Reducing baud rate doesn't fix the issue
-    page: serial-jsonlint.md
+    page: jsonlint.md
 ---
 
 Any kind of communication is subject to errors: sometimes you send a `1` and receive a `0`.

@@ -3,11 +3,11 @@ options:
   valid:
     label: "Yes"
     summary: "`jsonlint` says the document is valid"
-    page: serial-buffer.md
+    page: buffer.md
   invalid:
     label: "No"
     summary: "`jsonlint` says the document is invalid"
-    page: jsonlint-bad.md
+    page: ../jsonlint-bad.md
 ---
 
 We need to make sure that the JSON document is valid.

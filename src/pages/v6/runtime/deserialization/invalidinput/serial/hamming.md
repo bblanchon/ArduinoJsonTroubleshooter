@@ -7,7 +7,7 @@ options:
   ecc:
     label: "No"
     summary: Error-correction codes doesn't fix the issue
-    page: serial-jsonlint.md
+    page: jsonlint.md
 ---
 
 [Error-correction codes (ECC)](https://en.wikipedia.org/wiki/Error_correction_code) are a way of transmitting the data with redundant information that allows the receiver to fix most of the errors.

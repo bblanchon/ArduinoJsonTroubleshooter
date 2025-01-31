@@ -7,11 +7,11 @@ options:
   improved:
     label: Somehow
     summary: Upgrading the cables improves the situation
-    page: serial-hamming.md
+    page: hamming.md
   no-improvment:
     label: "No"
     summary: Upgrading the cables doesn't solve the issue
-    page: serial-jsonlint.md
+    page: jsonlint.md
 --- 
 
 Any electric wire acts as an antenna; the longer the wire, the stronger the effect. This antenna picks up every electromagnetic field in the environment, which induces a current in the wire. On long wires, this current is strong enough to introduce errors in the communication.

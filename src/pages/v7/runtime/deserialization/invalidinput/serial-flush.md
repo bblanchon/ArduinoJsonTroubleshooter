@@ -7,7 +7,7 @@ options:
   flush:
     label: "No"
     summary: Flushing the serial buffer doesn't fix the issue
-    page: /v6/runtime/deserialization/invalidinput/serial-voltage.md
+    page: /v6/runtime/deserialization/invalidinput/serial/voltage.md
 ---    
 
 `deserializeJson()` may return `InvalidInput` because it starts reading the input mid-stream.

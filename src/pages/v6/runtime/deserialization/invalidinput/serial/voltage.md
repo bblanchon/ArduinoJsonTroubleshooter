@@ -7,7 +7,7 @@ options:
   voltage-ok:
     label: "No"
     summary: The issue is not a voltage mismatch
-    page: serial-rate.md
+    page: rate.md
 ---
 
 Not all microcontrollers use the same voltage for the serial port.

@@ -7,7 +7,7 @@ options:
   serial:
     label: A serial port
     summary: Input comes from a serial port
-    page: serial.md
+    page: serial/index.md
   file:
     label: A file
     summary: Input comes from a file
