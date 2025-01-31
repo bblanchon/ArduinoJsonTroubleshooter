@@ -7,7 +7,7 @@ options:
   invalid:
     label: "No"
     summary: "jsonlint says the document is invalid"
-    page: /v6/runtime/deserialization/invalidinput/jsonlint-bad.md
+    page: stream-jsonlint-bad.md
 ---
 
 We need to make sure that the JSON document is valid.
