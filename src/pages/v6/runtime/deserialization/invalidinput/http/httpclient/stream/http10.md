@@ -7,7 +7,7 @@ options:
   changed:
     label:  "No"
     summary: "Calling `HTTPClient::useHTTP10(true)` doesn't solve the issue"
-    page: stream-jsonlint.md
+    page: jsonlint.md
 ---
 
 When you call `HTTPClient::getStream()`, you bypass the part that handles [Chunked Transfer Encoding](https://en.wikipedia.org/wiki/Chunked_transfer_encoding).

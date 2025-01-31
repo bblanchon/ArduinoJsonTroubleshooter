@@ -3,7 +3,7 @@ options:
   chunk-encoded:
     label: It's preceded by a line composed of letters and numbers
     summary: The document looks like it's chunk-encoded
-    page: stream-chunk-encoded.md
+    page: chunk-encoded.md
   comments:
     label: It contains comments
     summary: The document contains comments
