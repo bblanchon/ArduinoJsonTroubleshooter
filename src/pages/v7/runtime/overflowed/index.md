@@ -7,7 +7,7 @@ options:
   tight:
     label: There should be enough memory
     summary: The Assistant says there should be just enough memory.
-    page: make-room.md
+    page: when.md
   too-small:
     label: There is not enough memory
     summary: The Assistant says there is not enough memory.

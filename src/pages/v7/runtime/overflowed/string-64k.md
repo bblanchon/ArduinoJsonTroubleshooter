@@ -7,11 +7,11 @@ options:
   string-length-size-4:
     label: "No"
     summary: Setting `ARDUINOJSON_STRING_LENGTH_SIZE` to 4 doesn't solve the issue
-    page: make-room.md
+    page: when.md
   fewer-than-255:
     label: No string contains more than 65,535 characters
     summary: No string contains more than 65,535 characters
-    page: make-room.md
+    page: when.md
 ---
 
 
