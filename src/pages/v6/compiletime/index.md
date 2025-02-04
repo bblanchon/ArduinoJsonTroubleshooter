@@ -143,7 +143,7 @@ options:
   not-in-list:
     label: None of the above
     summary:  The error is not in the list
-    page: /unknown-error.md
+    page: /error/check.md
 ---
 
 Please look at the **first** error in the compiler output, and tell me what it is...
