@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { inject } from "vue"
-
 import ChoiceStepOption from "@/components/steps/ChoiceStepOption.vue"
 import type { Step } from "@/troubleshooter"
-
-const debug = inject<boolean>("debug")
 
 const { step } = defineProps<{
   step: Step
@@ -26,11 +22,6 @@ const { step } = defineProps<{
         :option="option"
       />
     </ul>
-    <p v-if="debug" class="small">
-      <a :href="'vscode://file/' + step.fullPath!.replaceAll('\\', '/')">
-        {{ step.filename! }}
-      </a>
-    </p>
   </div>
 </template>
 

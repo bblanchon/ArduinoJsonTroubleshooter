@@ -16,6 +16,8 @@ const { step } = defineProps<{
   active?: boolean
 }>()
 
+const debug = inject<boolean>("debug")
+
 const containerRef = useTemplateRef("container")
 
 onMounted(() => {
@@ -33,6 +35,14 @@ const stepComponent = computed<Component>(() => {
 
 <template>
   <div ref="container" class="mb-4">
+    <div v-if="debug" class="small mb-1">
+      <a
+        :href="'vscode://file/' + step.fullPath!.replaceAll('\\', '/')"
+        class="link-opacity-10 link-opacity-50-hover"
+      >
+        {{ step.filename! }}
+      </a>
+    </div>
     <component :is="stepComponent" :step="step" :active="active" />
   </div>
 </template>
