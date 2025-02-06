@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { Option } from "@/troubleshooter"
 import { inject } from "vue"
+
+import type { Option } from "@/troubleshooter"
 
 defineProps<{
   option: Option
