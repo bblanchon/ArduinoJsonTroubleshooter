@@ -1,7 +1,8 @@
 ---
+tags: error-matcher
 options:
   requires-cpp-compiler:
-    label: ArduinoJson requires a C++ compiler...
+    label: ArduinoJson requires a C\\+\\+ compiler...
     summary: Error says "ArduinoJson requires a C++ compiler..."
     page: /v6/compiletime/requires-cpp-compiler.md
 
@@ -16,7 +17,7 @@ options:
     page: /v6/compiletime/ambiguous-string-assign.md
 
   begin-not-found:
-    label: '`begin`: no matching overloaded function found'
+    label: "'begin': no matching overloaded function found"
     summary: 'Error says "`begin`: no matching overloaded function found"'
     page: /v6/compiletime/iterate-ambiguous.md
 
@@ -126,4 +127,4 @@ options:
     page: /unknown-error.md
 ---
 
-Please look at the **first** error in the compiler output, and tell me what it is...
+Please copy and paste the full compiler output in the box below.

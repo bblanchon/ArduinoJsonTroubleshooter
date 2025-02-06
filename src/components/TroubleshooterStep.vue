@@ -7,10 +7,12 @@ import {
   useTemplateRef,
 } from "vue"
 
+import type { Step } from "@/troubleshooter"
+
 import ChoiceStep from "@/components/steps/ChoiceStep.vue"
 import FinalStep from "@/components/steps/FinalStep.vue"
-import type { Step } from "@/troubleshooter"
-import StepNumber from "./steps/StepNumber.vue"
+import StepNumber from "@/components/steps/StepNumber.vue"
+import ErrorMatcherStep from "@/components/steps/ErrorMatcherStep.vue"
 
 const { step } = defineProps<{
   number: number
@@ -37,6 +39,7 @@ onMounted(() => {
 })
 
 const stepComponent = computed<Component>(() => {
+  if (step.tags?.includes("error-matcher")) return ErrorMatcherStep
   if (step.options) return ChoiceStep
   else return FinalStep
 })
