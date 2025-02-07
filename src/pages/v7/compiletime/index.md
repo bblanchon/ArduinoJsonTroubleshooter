@@ -47,13 +47,13 @@ options:
     label: "`class Xxx` has no member named `read`"
     summary: Error says "`class Xxx` has no member named `read`"
     page: no-member-named-read.md
-    regex: class \\w+ has no member named 'read'
+    regex: class \S+ has no member named 'read'
 
   class-has-no-member-named-reallocate:
     label: "`class Xxx` has no member named `reallocate`; did you mean `deallocate`?"
     summary: Error says "`class Xxx` has no member named `reallocate`"
     page: no-member-named-reallocate/index.md
-    regex: class \\w+ has no member named 'reallocate'
+    regex: class \S+ has no member named 'reallocate'
 
   pointer-to-object:
     label: '`const void*` is not a pointer-to-object type'
@@ -137,13 +137,13 @@ options:
     label: "`struct Xxx` has no member named `read`"
     summary: Error says "`struct Xxx` has no member named `read`"
     page: no-member-named-read.md
-    regex: "'struct \\w+' has no member named 'read'"
+    regex: struct \S+ has no member named 'read'
 
   struct-has-no-member-named-reallocate:
     label: "`struct Xxx` has no member named `reallocate`; did you mean `deallocate`?"
     summary: Error says "`struct Xxx` has no member named `reallocate`"
     page: no-member-named-reallocate/index.md
-    regex: "'struct \\w+' has no member named 'reallocate'"
+    regex: struct \S+ has no member named 'reallocate'
 
   range-based-for-requires-begin:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
