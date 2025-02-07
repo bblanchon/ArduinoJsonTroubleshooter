@@ -14,7 +14,6 @@ export interface Option {
 
 export interface Step {
   content: string
-  number: number
   hash: string
   options?: Option[]
   selectedOption?: Option
@@ -27,7 +26,6 @@ function makeStep(pageId: number, hash?: string, number?: number): Step {
   const page = pages[pageId]
   return {
     ...page,
-    number: number || 1,
     hash: hash || "#",
     options: page.options?.map((option, idx) => ({
       ...option,
@@ -52,7 +50,7 @@ export function getSteps(hash?: string): Step[] {
       }
       option.selected = true
       lastStep.selectedOption = option
-      lastStep = makeStep(option.page, option.hash, lastStep.number + 1)
+      lastStep = makeStep(option.page, option.hash)
       if (!lastStep) break
       steps.push(lastStep)
     }

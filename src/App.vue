@@ -53,6 +53,7 @@ async function copyReport() {
     >
       <TroubleshooterStep
         :key="step.hash"
+        :number="idx + 1"
         :step="step"
         :active="idx == steps.length - 1"
       />

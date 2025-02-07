@@ -13,6 +13,7 @@ import type { Step } from "@/troubleshooter"
 import StepNumber from "./steps/StepNumber.vue"
 
 const { step } = defineProps<{
+  number: number
   step: Step
   active?: boolean
 }>()
@@ -56,7 +57,7 @@ const showStepNumber = computed<boolean>(() => !!step.options)
     <div class="d-flex gap-3">
       <StepNumber
         v-if="showStepNumber"
-        :number="step.number"
+        :number="number"
         :active="active"
         class="flex-shrink-0"
       />
