@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Option, Step } from "@/troubleshooter"
+import { findOptionByRegex, type Option, type Step } from "@/troubleshooter"
 import { ref, watch } from "vue"
 import ChoiceStepOption from "./ChoiceStepOption.vue"
 import { useRouteHash } from "@/composable/router"
@@ -30,12 +30,8 @@ function scan() {
   invalidFeedback.value = ""
   const match = input.value.match(/error: (.*)$/m)
   if (match) {
-    const errorText = match[1]
-    const option =
-      step.options!.find(
-        (o) => o.regex && errorText.match(new RegExp(o.regex)),
-      ) || step.options![step.options!.length - 1]
-    window.location.hash = option.hash
+    const option = findOptionByRegex(step, match[1])
+    window.location.hash = option ? option.hash : step.hash
   } else {
     invalidFeedback.value = input.value
       ? "There should be a line starting with 'error: '"

@@ -41,7 +41,7 @@ options:
     label: cannot bind non-const lvalue reference ...
     summary: Error says "cannot bind non-const lvalue reference ..."
     page: cannot-bind-ref/index.md
-    regex: cannot bind non-const lvalue reference to an rvalue of type
+    regex: cannot bind non-const lvalue reference
 
   class-has-no-member-named-read:
     label: "`class Xxx` has no member named `read`"

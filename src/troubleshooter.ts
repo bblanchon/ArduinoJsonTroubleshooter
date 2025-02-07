@@ -68,3 +68,19 @@ export function generateReport(steps: Step[]): string {
     .map((option, index) => `${index + 1}. ${option!.summary}`)
     .join("\n")
 }
+
+export function findOptionByRegex(
+  step: Step,
+  text: string,
+): Option | undefined {
+  debugger
+  const option = step.options?.find(
+    (o) => o.regex && text.match(new RegExp(o.regex)),
+  )
+  if (!option) return undefined
+  const nestedOption = findOptionByRegex(
+    makeStep(option.page, option.hash, step.number),
+    text,
+  )
+  return nestedOption ?? option
+}
