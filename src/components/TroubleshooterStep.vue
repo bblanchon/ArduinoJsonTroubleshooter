@@ -21,11 +21,18 @@ const debug = inject<boolean>("debug")
 
 const containerRef = useTemplateRef("container")
 
-onMounted(() => {
+function isVisible() {
   const { top } = containerRef.value!.getBoundingClientRect()
   const minVisibleHeight = 50
-  const isVisible = top + minVisibleHeight < window.innerHeight
-  if (!isVisible) containerRef.value!.scrollIntoView({ behavior: "smooth" })
+  return top + minVisibleHeight < window.innerHeight
+}
+
+function scrollToView() {
+  containerRef.value!.scrollIntoView({ behavior: "smooth" })
+}
+
+onMounted(() => {
+  if (!isVisible()) setTimeout(scrollToView, 50)
 })
 
 const stepComponent = computed<Component>(() => {
