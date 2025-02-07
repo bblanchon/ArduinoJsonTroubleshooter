@@ -35,7 +35,7 @@ So do either this:
 ```c++
 JsonDocument doc;
 JsonArray array = doc.to<JsonArray>();
-array[0] = "value";  // ERROR
+array[0] = "value";
 ```
 
 ...or that:
