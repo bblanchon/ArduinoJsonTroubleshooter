@@ -22,6 +22,9 @@ const debug = inject("debug")
       <span class="checkmark"></span>
       <span v-html="option.label"></span>
     </a>
+    <div v-if="debug && option.regex" class="d-block small text-secondary">
+      /{{ option.regex }}/
+    </div>
     <div v-if="debug" class="d-block mb-2 small text-muted">
       {{ option.summary }}
     </div>

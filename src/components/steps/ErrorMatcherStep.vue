@@ -47,16 +47,21 @@ function scan() {
 
 <template>
   <div>
-    <div v-html="step.content"></div>
-    <ul v-if="displayMode === 'choices'" class="list-unstyled m-0">
-      <ChoiceStepOption
-        v-for="option in step.options"
-        :key="option.hash"
-        :option="option"
-      />
-    </ul>
+    <div v-if="displayMode === 'choices'">
+      <div v-html="step.content"></div>
+      <ul class="list-unstyled m-0">
+        <ChoiceStepOption
+          v-for="option in step.options"
+          :key="option.hash"
+          :option="option"
+        />
+      </ul>
+    </div>
     <form v-if="displayMode == 'textarea'" @submit.prevent="scan">
       <div class="mb-3">
+        <div class="form-label">
+          Please copy the complete compiler output and paste it below.
+        </div>
         <textarea
           class="form-control"
           :class="{ 'is-invalid': invalidFeedback }"

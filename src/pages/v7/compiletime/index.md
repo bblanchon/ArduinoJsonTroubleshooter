@@ -17,7 +17,7 @@ options:
     label: ambiguous overload for `operator=` (operand types are `String` and ...)
     summary: Error says "ambiguous overload for `operator=` (operand types are `String` and ...)"
     page: /v6/compiletime/ambiguous-string-assign.md
-    regex: ambiguous overload for 'operator=' \\(operand types are 'String' and ...\\)
+    regex: ambiguous overload for 'operator=' \(operand types are 'String' and
 
   begin-not-found:
     label: "'begin': no matching overloaded function found"
@@ -25,11 +25,17 @@ options:
     page: /v6/compiletime/iterate-ambiguous.md
     regex: "'begin': no matching overloaded function found"
 
+  begin-not-declared:
+    label: "'begin' was not declared in this scope"
+    summary: Error says "'begin' was not declared in this scope"
+    page: /v6/compiletime/iterate-ambiguous.md
+    regex: "'begin' was not declared in this scope"
+
   print-ambiguous:
     label: call of overloaded `print(...)` is ambiguous
     summary: Error says "call of overloaded `print(...)` is ambiguous"
     page: /v6/compiletime/print-ambiguous.md
-    regex: call of overloaded 'print\\(.*\\)' is ambiguous
+    regex: call of overloaded '(print|println)\(.*\)' is ambiguous
 
   cannot-bind-ref:
     label: cannot bind non-const lvalue reference ...
