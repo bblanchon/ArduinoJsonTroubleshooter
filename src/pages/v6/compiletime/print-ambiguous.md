@@ -10,7 +10,7 @@ options:
     page: /deadend.md
 ---
 
-This error usually occurs when you pass a `JsonVariant` to [`Serial::print()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/) or [`Serial::print()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/).
+This error usually occurs when you pass a `JsonVariant` to [`Serial::print()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/) or [`Serial::println()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/).
 
 To fix it, you need to explicitly cast the `JsonVariant` to a type supported by [`Serial::print()`](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/), like so:
 
