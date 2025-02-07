@@ -10,8 +10,6 @@ const { step } = defineProps<{
 
 const input = ref("")
 
-const selectedOption = ref<Option>()
-
 type DisplayMode = "textarea" | "choices"
 
 const displayMode = ref<DisplayMode>()

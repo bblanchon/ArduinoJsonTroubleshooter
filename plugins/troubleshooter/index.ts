@@ -66,6 +66,7 @@ export default function TroubleshooterPlugin(
         page: files.findIndex((f) => f.filename == option.page),
         label: option.label,
         summary: option.summary,
+        regex: option.regex,
       }))
     return page
   }

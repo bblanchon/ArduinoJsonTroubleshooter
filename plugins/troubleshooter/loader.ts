@@ -79,7 +79,6 @@ export class PageLoader {
       readFileSync(filename),
       { excerpt: false },
     )
-    console.log(filename, frontmatter)
     const folder = path.dirname(filename)
     return {
       filename: this.normalizeFilename(filename),

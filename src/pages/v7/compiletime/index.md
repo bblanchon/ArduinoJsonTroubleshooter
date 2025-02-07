@@ -5,7 +5,7 @@ options:
     label: ArduinoJson requires a C++ compiler...
     summary: Error says "ArduinoJson requires a C++ compiler..."
     page: /v6/compiletime/requires-cpp-compiler.md
-    regex: ArduinoJson requires a C\\+\\+ compiler
+    regex: ArduinoJson requires a C\+\+ compiler
 
   assignment-of-read-only-location:
     label: assignment of read-only location
