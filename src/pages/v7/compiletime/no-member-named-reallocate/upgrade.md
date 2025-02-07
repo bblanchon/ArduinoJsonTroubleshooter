@@ -31,7 +31,7 @@ Here is how to upgrade your code:
 - using SpiRamJsonDocument = BasicJsonDocument<SpiRamAllocator>;
 + SpiRamAllocator allocator;
 
-- SpiRamJsonDocument doc;
+- SpiRamJsonDocument doc(4096);
 + JsonDocument doc(&allocator);
 ```
 
