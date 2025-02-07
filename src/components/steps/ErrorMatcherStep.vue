@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { Option, Step } from "@/troubleshooter"
-import { computed, ref, watch } from "vue"
+import { ref, watch } from "vue"
 import ChoiceStepOption from "./ChoiceStepOption.vue"
+import { useRouteHash } from "@/composable/router"
 
 const { step } = defineProps<{
   step: Step
@@ -13,13 +14,14 @@ const selectedOption = ref<Option>()
 
 type DisplayMode = "textarea" | "choices"
 
-const displayMode = ref<DisplayMode>("textarea")
+const displayMode = ref<DisplayMode>()
+
+const hash = useRouteHash()
 
 watch(
-  () => step,
+  hash,
   () => {
-    selectedOption.value = step.options!.find((o) => o.selected)
-    if (selectedOption.value) displayMode.value = "choices"
+    displayMode.value = hash.value === step.hash ? "textarea" : "choices"
   },
   { immediate: true },
 )
