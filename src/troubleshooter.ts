@@ -10,6 +10,7 @@ export interface Option {
   hash: string
   missing: boolean
   selected: boolean
+  regex?: string
 }
 
 export interface Step {
@@ -29,6 +30,7 @@ function makeStep(pageId: number, hash?: string, number?: number): Step {
     hash: hash || "#",
     options: page.options?.map((option, idx) => ({
       ...option,
+      regex: option.regex,
       inputId: `option-${pageId}-${idx}`,
       hash: (hash ? hash + "/" : "#") + option.id,
       missing: !pages[option.page],

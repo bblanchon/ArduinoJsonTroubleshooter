@@ -3,6 +3,7 @@ export interface Option {
   label: string
   summary: string
   page: number
+  regex?: string
 }
 
 export interface Page {
