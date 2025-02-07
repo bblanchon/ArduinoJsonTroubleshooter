@@ -73,13 +73,12 @@ export function findOptionByRegex(
   step: Step,
   text: string,
 ): Option | undefined {
-  debugger
   const option = step.options?.find(
     (o) => o.regex && text.match(new RegExp(o.regex)),
   )
   if (!option) return undefined
   const nestedOption = findOptionByRegex(
-    makeStep(option.page, option.hash, step.number),
+    makeStep(option.page, option.hash),
     text,
   )
   return nestedOption ?? option
