@@ -1,19 +1,15 @@
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from "vue"
+import { ref, computed, watch } from "vue"
 
 import AssistanceModal from "@/components/AssistanceModal.vue"
 import TroubleshooterStep from "@/components/TroubleshooterStep.vue"
 import { getSteps, generateReport } from "./troubleshooter"
+import { useRouteHash } from "./composable/router"
 
 const sleep = (m: number) => new Promise((r) => setTimeout(r, m))
 
 const reportCopied = ref(false)
-const hash = ref("")
-
-onMounted(() => {
-  hash.value = location.hash
-  window.addEventListener("hashchange", () => (hash.value = location.hash))
-})
+const hash = useRouteHash()
 
 const steps = computed(() => getSteps(hash.value))
 
