@@ -31,7 +31,6 @@ function scan() {
   const match = input.value.match(/error: (.*)$/m)
   if (match) {
     const errorText = match[1]
-    console.log(step.options)
     const option =
       step.options!.find(
         (o) => o.regex && errorText.match(new RegExp(o.regex)),
