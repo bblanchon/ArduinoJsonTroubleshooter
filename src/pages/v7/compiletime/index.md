@@ -59,7 +59,7 @@ options:
     label: '`const void*` is not a pointer-to-object type'
     summary: Error says "`const void*` is not a pointer-to-object type"
     page: /v6/compiletime/not-pointer-to-object.md
-    regex: "'is not a pointer-to-object type'"
+    regex: is not a pointer-to-object type
 
   doesnt-name-a-type:
     label: '`doc` does not name a type'
@@ -71,7 +71,7 @@ options:
     label: '`DynamicJsonBuffer` is a class from ArduinoJson 5'
     summary: Error says "`DynamicJsonBuffer` is a class from ArduinoJson 5"
     page: class-from-arduinojson5/index.md
-    regex: "'DynamicJsonBuffer' is not a member of ArduinoJson 5"
+    regex: DynamicJsonBuffer is a class from ArduinoJson 5 
 
   expected-identifier-before-string-constant:
     label: 'expected identifier before string constant'
@@ -83,7 +83,7 @@ options:
     label: invalid conversion from `const char*` to `char*` [-fpermissive]
     summary: Error says "invalid conversion from `const char*` to `char*` [-fpermissive]"
     page: /v6/compiletime/char-pointer-conversion.md
-    regex: invalid conversion from 'const char\\*' to 'char\\*'
+    regex: to 'char\*' \[-fpermissive\]
 
   invalid-conversion:
     label: invalid use of incomplete type `class InvalidConversion<...>`
@@ -131,7 +131,7 @@ options:
     label: '`StaticJsonBuffer` is a class from ArduinoJson 5'
     summary: Error says "`StaticJsonBuffer` is a class from ArduinoJson 5"
     page: class-from-arduinojson5/index.md
-    regex: "'StaticJsonBuffer' is not a member of ArduinoJson 5"
+    regex: StaticJsonBuffer is a class from ArduinoJson 5
 
   struct-has-no-member-named-read:
     label: "`struct Xxx` has no member named `read`"

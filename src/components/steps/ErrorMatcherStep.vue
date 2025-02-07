@@ -60,7 +60,7 @@ function scan() {
         <textarea
           class="form-control"
           :class="{ 'is-invalid': invalidFeedback }"
-          rows="6"
+          rows="10"
           placeholder="Paste compiler output here!"
           v-model.trim="input"
         ></textarea>
