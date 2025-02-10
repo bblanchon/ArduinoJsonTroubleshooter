@@ -48,7 +48,7 @@ options:
   not-in-list:
     label: None of the above
     summary:  The error is not in the list
-    page: /error/check.md
+    page: /unknown-error.md
 ---
 
 Which error is it?
