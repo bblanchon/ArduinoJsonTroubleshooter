@@ -25,16 +25,6 @@ options:
     summary: Error says "no matching function for call to `...(<unresolved overloaded function type>)`"
     page: /v6/compiletime/no-matching-function/unresolved-overloaded-function-type.md
 
-  add-jsonarray:
-    label: "`...add<JsonArray>()`"
-    summary: Error says "no matching function for call to `...add<JsonArray>()`"
-    page: /v6/compiletime/no-matching-function/add-jsonarray.md
-
-  add-jsonobject:
-    label: "`...add<JsonObject>()`"
-    summary: Error says "no matching function for call to `...add<JsonObject>()`"
-    page: /v6/compiletime/no-matching-function/add-jsonobject.md
-
   not-in-list:
     label: None of the above
     summary:  The error is not in the list
