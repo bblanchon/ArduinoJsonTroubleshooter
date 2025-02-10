@@ -119,7 +119,7 @@ options:
     label: reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed
     summary: Error says "reinterpret_cast from `const void` to `const __FlashStringHelper *` is not allowed"
     page: /v6/compiletime/cast-void-to-flashstringhelper.md
-    regex: reinterpret_cast from 'const void' to 'const __FlashStringHelper \\*' is not allowed
+    regex: reinterpret_cast from 'const void' to 'const __FlashStringHelper \*' is not allowed
 
   request-for-member:
     label: request for member ...
