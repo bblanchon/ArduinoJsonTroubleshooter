@@ -89,7 +89,7 @@ options:
     label: invalid use of incomplete type `class InvalidConversion<...>`
     summary: Error says "invalid use of incomplete type `class InvalidConversion<...>`"
     page: /v6/compiletime/invalid-conversion/index.md
-    regex: invalid use of incomplete type 'class InvalidConversion'
+    regex: invalid use of incomplete type 'class \S+InvalidConversion
 
   jsondocument-not-declared:
     label: '`JsonDocument` was not declared in this scope'
