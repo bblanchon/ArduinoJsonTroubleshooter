@@ -75,7 +75,7 @@ options:
     summary: Error says "invalid use of incomplete type `class InvalidConversion<...>`"
     page: invalid-conversion/index.md
 
-  jsondocument-copy:
+  jsondocument-copy-constructor-private:
     label: '`JsonDocument::JsonDocument(const JsonDocument&)` is private'
     summary: 'Error says "`JsonDocument::JsonDocument(const JsonDocument&)` is private"'
     page: jsondocument-private.md
@@ -139,6 +139,11 @@ options:
     label: this range-based `for` statement requires a suitable "begin" function and none was found
     summary: Error says "this range-based `for` statement requires a suitable "begin" function and none was found"
     page: iterate-ambiguous.md
+
+  jsondocument-copy-constructor-deleted:
+    label: use of deleted function 'JsonDocument::JsonDocument(const JsonDocument&)'
+    summary: Error says "use of deleted function 'JsonDocument::JsonDocument(const JsonDocument&)'"
+    page: jsondocument-private.md
 
   not-in-list:
     label: None of the above
