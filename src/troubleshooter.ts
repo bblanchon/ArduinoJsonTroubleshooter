@@ -10,6 +10,7 @@ export interface Option {
   hash: string
   missing: boolean
   selected: boolean
+  regex?: string
 }
 
 export interface Step {
@@ -29,6 +30,7 @@ function makeStep(pageId: number, hash?: string, number?: number): Step {
     hash: hash || "#",
     options: page.options?.map((option, idx) => ({
       ...option,
+      regex: option.regex,
       inputId: `option-${pageId}-${idx}`,
       hash: (hash ? hash + "/" : "#") + option.id,
       missing: !pages[option.page],
@@ -65,4 +67,19 @@ export function generateReport(steps: Step[]): string {
     .filter((option) => !!option)
     .map((option, index) => `${index + 1}. ${option!.summary}`)
     .join("\n")
+}
+
+export function findOptionByRegex(
+  step: Step,
+  text: string,
+): Option | undefined {
+  const option = step.options?.find(
+    (o) => o.regex && text.match(new RegExp(o.regex)),
+  )
+  if (!option) return undefined
+  const nestedOption = findOptionByRegex(
+    makeStep(option.page, option.hash),
+    text,
+  )
+  return nestedOption ?? option
 }
