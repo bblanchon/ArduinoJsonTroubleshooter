@@ -43,17 +43,11 @@ options:
     regex: cannot bind non-const lvalue reference
     page: cannot-bind-ref/index.md
 
-  class-has-no-member-named-read:
-    label: "`class Xxx` has no member named `read`"
-    summary: Error says "`class Xxx` has no member named `read`"
-    regex: class \S+ has no member named 'read'
-    page: no-member-named/read.md
-
-  class-has-no-member-named-reallocate:
-    label: "`class Xxx` has no member named `reallocate`; did you mean `deallocate`?"
-    summary: Error says "`class Xxx` has no member named `reallocate`"
-    regex: class \S+ has no member named 'reallocate'
-    page: no-member-named/reallocate/index.md
+  class-has-no-member-named:
+    label: "`class Xxx` has no member named ..."
+    summary: Error says "`class Xxx` has no member named ..."
+    regex: class \S+ has no member named
+    page: no-member-named/index.md
 
   pointer-to-object:
     label: '`const void*` is not a pointer-to-object type'
@@ -133,11 +127,11 @@ options:
     regex: StaticJsonBuffer is a class from ArduinoJson 5
     page: class-from-arduinojson5/index.md
 
-  struct-has-no-member-named-read:
-    label: "`struct Xxx` has no member named `read`"
-    summary: Error says "`struct Xxx` has no member named `read`"
-    regex: struct \S+ has no member named 'read'
-    page: no-member-named/read.md
+  struct-has-no-member-named:
+    label: "`struct Xxx` has no member named ..."
+    summary: Error says "`struct Xxx` has no member named ..."
+    regex: struct \S+ has no member named
+    page: no-member-named/index.md
 
   struct-has-no-member-named-reallocate:
     label: "`struct Xxx` has no member named `reallocate`; did you mean `deallocate`?"
