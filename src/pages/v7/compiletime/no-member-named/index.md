@@ -1,5 +1,25 @@
 ---
 options:
+  getelement:
+    label: "... has no member named 'getElement'"
+    summary: Error says "... has no member named 'getElement'"
+    regex: has no member named 'getElement'
+    page: getelement.md
+  getmember:
+    label: "... has no member named 'getMember'"
+    summary: Error says "... has no member named 'getMember'"
+    regex: has no member named 'getMember'
+    page: getmember.md
+  getoraddelement:
+    label: "... has no member named 'getOrAddElement'"
+    summary: Error says "... has no member named 'getOrAddElement'"
+    regex: has no member named 'getOrAddElement'
+    page: getoraddelement.md
+  getoraddmember:
+    label: "... has no member named 'getOrAddMember'"
+    summary: Error says "... has no member named 'getOrAddMember'"
+    regex: has no member named 'getOrAddMember'
+    page: getoraddmember.md
   read:
     label: "... has no member named 'read'"
     summary: Error says "... has no member named 'read'"
