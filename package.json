@@ -26,10 +26,10 @@
     "markdown-it-highlightjs": "^4.2.0",
     "markdown-it-replace-link": "^1.2.2",
     "markdownlint-cli": "^0.44.0",
-    "prettier": "^3.4.2",
-    "sass": "^1.83.4",
+    "prettier": "^3.5.0",
+    "sass": "^1.84.0",
     "typescript": "~5.7.3",
-    "vite": "^6.0.11",
+    "vite": "^6.1.0",
     "vue": "^3.5.13",
     "vue-tsc": "^2.2.0"
   }
