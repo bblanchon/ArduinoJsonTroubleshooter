@@ -48,6 +48,7 @@ a {
   height: 1em;
   margin-right: 0.8ch;
   content: "";
+  flex: none;
 }
 
 a.active .checkmark {
