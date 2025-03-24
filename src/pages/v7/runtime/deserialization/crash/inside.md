@@ -1,18 +1,19 @@
 ---
 options:
-  no-dangling-ptr:
-    label: "Yes"
-    summary: Removing dangling pointers doesn't prevent the crash
-    page: before.md
-  success:
-    label: "No"
+  dangling-ptr:
+    label: Yes, removing dangling pointers prevents the crash.
     summary: Removing dangling pointers prevents the crash
     page: /done.md
+  no-dangling-ptr:
+    label: No, the program still crashes even though no dangling pointer is passed to `deserializeJson()`.
+    summary: No dangling pointer is passed to `deserializeJson()`
+    page: before.md
 ---
 
-Passing a dangling pointer could cause a crash.
+The crash could be caused by a [dangling pointer](https://en.wikipedia.org/wiki/Dangling_pointer).
 
-If you pass a pointer to `deserializeJson()`, make sure that this pointer is still valid. For example, if the pointer is returned by a function, inspect the function to make sure pointer is not refering to a stack variable:
+If you pass a pointer to `deserializeJson()`, make sure that this pointer is still valid.  
+For example, if a function returns a pointer, make sure the pointer is not referring to a stack variable:
 
 ```c++
 // 💀 DON'T DO THAT!!!
@@ -40,6 +41,6 @@ const char* input = readInput().c_str();
 String input = readInput();
 ```
 
-Please review your code to make sure you're not passsing a dangling pointer to `deserializeJson()`.
+Please review your code to ensure you don't pass a dangling pointer to `deserializeJson()`.
 
-Does your program still crash?
+Did this solve your issue?

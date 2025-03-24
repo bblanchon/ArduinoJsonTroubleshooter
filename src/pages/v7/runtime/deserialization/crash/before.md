@@ -1,18 +1,18 @@
 ---
 options:
-  failure:
-    label: "Yes"
-    summary: Reducing stack usage doesn't prevent the crash
-    page: /deadend.md
-  success:
-    label: "No"
+  stack-overflow:
+    label: Yes, reducing stack usage prevents the crash.
     summary: Reducing stack usage prevents the crash
     page: /done.md
+  no-stack-overflow:
+    label: No, the program still crashes even though stack usage is small.
+    summary: Reducing stack usage doesn't prevent the crash
+    page: ub-elsewhere.md
 ---
 
-I think this could be a stack-overflow.
+The crash could be caused by a [stack overflow](https://en.wikipedia.org/wiki/Stack_overflow).
 
-Please check in your code if there aren't some large variable in the stack. Look for things like:
+Please check your code to see if there aren't some large variables in the stack. Look for things like:
 
 * `char buffer[1024]`
 * `int matrix[64][64][64]`
@@ -27,4 +27,4 @@ Move them to the heap by using one of the following:
 
 In the last resort, you can use [`malloc()`](https://en.cppreference.com/w/c/memory/malloc) and [`free()`](https://en.cppreference.com/w/c/memory/free).
 
-Does your program still crash?
+Did this solve your issue?
