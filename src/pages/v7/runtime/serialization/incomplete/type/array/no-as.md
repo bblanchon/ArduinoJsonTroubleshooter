@@ -7,7 +7,7 @@ options:
   to:
     label: "No"
     summary: Calling `add<JsonArray>()` or `to<JsonArray>()` does not fix the issue
-    page: ../output/index.md
+    page: ../../output/index.md
 ---
 
 A missing array is often due to an incorrectly initialized `JsonArray`.  
