@@ -28,7 +28,7 @@ const invalidFeedback = ref("")
 
 function scan() {
   invalidFeedback.value = ""
-  const match = input.value.match(/error: (.*)$/m)
+  const match = input.value.match(/(?:error:|Library Manager: Warning!) (.*)$/m)
   if (match) {
     const option = findOptionByRegex(step, match[1])
     window.location.hash = option ? option.hash : step.hash

@@ -91,6 +91,12 @@ options:
     regex: "'JsonDocument' was not declared in this scope"
     page: /v6/compiletime/not-declared-in-this-scope/no-arduinojson.md
 
+  more-than-one-package:
+    label: More than one package has been found by ArduinoJson
+    summary: Error says "More than one package has been found by ArduinoJson"
+    regex: More than one package has been found by ArduinoJson
+    page: more-than-one-package.md
+
   no-matching-function:
     label: no matching function for call to ...
     summary: Error says "no matching function for call to ..."
